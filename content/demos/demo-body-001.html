@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>为什么会放屁？ - 十亿个什么与为什么</title>
+<style>
+  /* ===== Reset & Base ===== */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --green-start: #43b581;
+    --green-end: #2ecc71;
+    --blue-start: #5b9bd5;
+    --blue-end: #3498db;
+    --orange-start: #e8a838;
+    --orange-end: #e67e22;
+    --bg: #f5f3ef;
+    --card-radius: 20px;
+    --font-stack: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+      "Microsoft YaHei", "Noto Sans SC", "Source Han Sans SC", sans-serif;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,.06);
+    --shadow-md: 0 4px 16px rgba(0,0,0,.08);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,.12);
+  }
+
+  html { font-size: 16px; }
+  body {
+    font-family: var(--font-stack);
+    background: #e8e6e1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 16px 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== Phone Frame ===== */
+  .phone-frame {
+    width: 390px;
+    max-width: 100vw;
+    min-height: 100vh;
+    background: var(--bg);
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 0 0 4px #1a1a1a, 0 0 0 6px #333, var(--shadow-lg);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ===== Status Bar ===== */
+  .status-bar {
+    background: linear-gradient(135deg, var(--green-start), var(--green-end));
+    color: #fff;
+    padding: 12px 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .status-bar .product-name {
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: .5px;
+  }
+  .status-bar .time {
+    font-variant-numeric: tabular-nums;
+  }
+  .status-bar .icons { display: flex; gap: 6px; align-items: center; }
+  .status-bar .dot { width: 4px; height: 4px; border-radius: 50%; background: #fff; }
+
+  /* ===== Scrollable Content ===== */
+  .content {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 80px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ===== Question Header ===== */
+  .question-header {
+    background: linear-gradient(135deg, var(--green-start), #27ae60);
+    color: #fff;
+    padding: 28px 24px 32px;
+    border-radius: 0 0 32px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .question-header::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    right: -20px;
+    width: 120px;
+    height: 120px;
+    background: rgba(255,255,255,.08);
+    border-radius: 50%;
+  }
+  .question-header::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 100px;
+    height: 100px;
+    background: rgba(255,255,255,.05);
+    border-radius: 50%;
+  }
+  .category-tag {
+    display: inline-block;
+    background: rgba(255,255,255,.22);
+    backdrop-filter: blur(8px);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    margin-bottom: 14px;
+  }
+  .question-text {
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.35;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+  .age-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,.18);
+    backdrop-filter: blur(8px);
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .age-badge .star { font-size: 14px; }
+
+  /* ===== Cards Container ===== */
+  .cards { padding: 20px 16px; display: flex; flex-direction: column; gap: 20px; }
+
+  /* ===== Knowledge Card ===== */
+  .knowledge-card {
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    animation: cardSlideIn .5s ease-out backwards;
+  }
+  .knowledge-card:nth-child(1) { animation-delay: .1s; }
+  .knowledge-card:nth-child(2) { animation-delay: .25s; }
+  .knowledge-card:nth-child(3) { animation-delay: .4s; }
+
+  @keyframes cardSlideIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Layer colors */
+  .card-layer1 { background: #fff; border: 2px solid rgba(67,181,129,.2); }
+  .card-layer1 .card-top { background: linear-gradient(135deg, var(--green-start), var(--green-end)); }
+  .card-layer1 .card-badge-layer { background: var(--green-start); }
+  .card-layer1 .audio-play { background: var(--green-start); }
+  .card-layer1 .wave-bar { background: var(--green-start); }
+
+  .card-layer2 { background: #fff; border: 2px solid rgba(91,155,213,.2); }
+  .card-layer2 .card-top { background: linear-gradient(135deg, var(--blue-start), var(--blue-end)); }
+  .card-layer2 .card-badge-layer { background: var(--blue-start); }
+  .card-layer2 .audio-play { background: var(--blue-start); }
+  .card-layer2 .wave-bar { background: var(--blue-start); }
+
+  .card-layer3 { background: #fff; border: 2px solid rgba(232,168,56,.2); }
+  .card-layer3 .card-top { background: linear-gradient(135deg, var(--orange-start), var(--orange-end)); }
+  .card-layer3 .card-badge-layer { background: var(--orange-start); }
+  .card-layer3 .audio-play { background: var(--orange-start); }
+  .card-layer3 .wave-bar { background: var(--orange-start); }
+
+  /* Card Top */
+  .card-top {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+  }
+  .card-badge-layer {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(255,255,255,.25);
+  }
+  .card-badge-layer .layer-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .card-layer-label { font-size: 13px; font-weight: 600; opacity: .9; }
+
+  /* Child Bubble (follow-up question) */
+  .child-bubble {
+    margin: 16px 20px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .child-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-sm);
+  }
+  .child-bubble-text {
+    background: #f0f7ff;
+    border-radius: 0 16px 16px 16px;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2c3e50;
+    line-height: 1.5;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Card Illustration */
+  .card-illustration {
+    margin: 16px 20px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .card-illustration img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .illustration-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #adb5bd;
+  }
+  .illustration-placeholder .illus-icon { font-size: 40px; }
+  .illustration-placeholder .illus-text { font-size: 12px; font-weight: 500; }
+
+  /* Audio Bar */
+  .audio-bar {
+    margin: 0 20px;
+    background: #f8f9fa;
+    border-radius: 14px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: background .2s;
+  }
+  .audio-bar:hover { background: #f1f3f5; }
+  .audio-bar:active { transform: scale(.98); }
+  .audio-play {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform .2s;
+    box-shadow: var(--shadow-sm);
+  }
+  .audio-play.playing { animation: pulse 1.5s infinite; }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+  .audio-play svg { width: 16px; height: 16px; fill: #fff; }
+  .audio-waves {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    flex: 1;
+    height: 24px;
+  }
+  .wave-bar {
+    width: 3px;
+    border-radius: 2px;
+    opacity: .3;
+    transition: height .15s ease, opacity .15s ease;
+  }
+  .audio-bar.active .wave-bar {
+    animation: waveAnim .8s ease-in-out infinite alternate;
+    opacity: .7;
+  }
+  @keyframes waveAnim {
+    0% { height: 6px; }
+    100% { height: 22px; }
+  }
+  .audio-duration {
+    font-size: 12px;
+    color: #868e96;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+  }
+
+  /* Answer Text */
+  .answer-text {
+    padding: 16px 20px 20px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #2c3e50;
+    font-weight: 400;
+  }
+  .answer-text .highlight {
+    background: linear-gradient(180deg, transparent 60%, rgba(46,204,113,.2) 60%);
+    font-weight: 600;
+  }
+
+  /* ===== Parent Section ===== */
+  .parent-section {
+    margin: 8px 16px 24px;
+  }
+  .parent-toggle {
+    width: 100%;
+    background: #fff;
+    border: 2px solid #e9ecef;
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all .2s;
+    font-family: var(--font-stack);
+  }
+  .parent-toggle:hover { border-color: #dee2e6; box-shadow: var(--shadow-sm); }
+  .parent-toggle-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .parent-toggle-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .parent-toggle-text {
+    font-size: 15px;
+    font-weight: 600;
+    color: #495057;
+  }
+  .parent-toggle-arrow {
+    font-size: 14px;
+    color: #adb5bd;
+    transition: transform .3s;
+  }
+  .parent-toggle.open .parent-toggle-arrow {
+    transform: rotate(180deg);
+  }
+  .parent-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s cubic-bezier(.4,0,.2,1);
+  }
+  .parent-content.open {
+    max-height: 1200px;
+  }
+  .parent-cards {
+    padding: 16px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* Science Card */
+  .science-card {
+    background: linear-gradient(135deg, #f8f4ff, #eee5ff);
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid rgba(102,126,234,.12);
+  }
+  .science-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .science-card-header .icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+  .science-card-header .title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #5b4a9e;
+  }
+  .science-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #555;
+  }
+
+  /* Experiment Card */
+  .experiment-card {
+    background: linear-gradient(135deg, #fff8e1, #fff3cd);
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid rgba(255,193,7,.15);
+  }
+  .experiment-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .experiment-card-header .icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f9a825, #ff8f00);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+  .experiment-card-header .title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #e65100;
+  }
+  .experiment-name {
+    font-size: 18px;
+    font-weight: 800;
+    color: #bf360c;
+    margin-bottom: 14px;
+  }
+  .experiment-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .experiment-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .step-number {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f9a825, #ff8f00);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .step-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #5d4037;
+  }
+  .say-to-child {
+    background: rgba(255,255,255,.6);
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+    border-left: 3px solid #f9a825;
+  }
+  .say-to-child-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #f57f17;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
+  .say-to-child-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #5d4037;
+    font-style: italic;
+  }
+  .experiment-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .meta-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255,255,255,.65);
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #795548;
+  }
+
+  /* ===== Bottom Nav ===== */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 390px;
+    max-width: 100vw;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(0,0,0,.06);
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 0 calc(8px + env(safe-area-inset-bottom, 0px));
+    z-index: 200;
+  }
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 4px 8px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform .15s;
+    text-decoration: none;
+  }
+  .nav-item:active { transform: scale(.9); }
+  .nav-icon {
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+  .nav-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #adb5bd;
+  }
+  .nav-item.active .nav-label { color: var(--green-start); }
+  .nav-item.center-btn .nav-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--green-start), var(--green-end));
+    margin-top: -18px;
+    box-shadow: 0 4px 14px rgba(67,181,129,.35);
+    font-size: 22px;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 420px) {
+    body { padding: 0; }
+    .phone-frame { border-radius: 0; box-shadow: none; min-height: 100vh; }
+    .bottom-nav { width: 100%; border-radius: 0; }
+  }
+
+  /* Scrollbar */
+  .content::-webkit-scrollbar { width: 0; }
+</style>
+</head>
+<body>
+
+<div class="phone-frame">
+
+  <!-- Status Bar -->
+  <div class="status-bar">
+    <span class="time">10:24</span>
+    <span class="product-name">十亿个什么与为什么</span>
+    <div class="icons">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+  <!-- Scrollable Content -->
+  <div class="content">
+
+    <!-- Question Header -->
+    <div class="question-header">
+      <div class="category-tag">第1圈 &middot; 我的身体</div>
+      <h1 class="question-text">为什么会放屁？</h1>
+      <div class="age-badge">
+        <span class="star">&#11088;</span>
+        <span>适合 2-4 岁</span>
+      </div>
+    </div>
+
+    <!-- Knowledge Cards -->
+    <div class="cards">
+
+      <!-- ===== Layer 1: Green ===== -->
+      <div class="knowledge-card card-layer1">
+        <div class="card-top">
+          <div class="card-badge-layer">
+            <span class="layer-icon">1</span>
+            <span>简单回答</span>
+          </div>
+          <span class="card-layer-label">初次好奇</span>
+        </div>
+        <div class="card-illustration">
+          <div class="illustration-placeholder">
+            <span class="illus-icon">&#127981;</span>
+            <span class="illus-text">肚子里的小工厂正在冒泡泡</span>
+          </div>
+          <img src="" alt="卡通插图：一个可爱的小朋友肚子里有一个微笑的小工厂，工厂烟囱冒出彩色的小气泡，气泡从肚子里飘出来" style="display:none;" onerror="this.style.display='none';this.previousElementSibling.style.display='flex';" onload="if(this.src){this.style.display='block';this.previousElementSibling.style.display='none';}">
+        </div>
+        <div class="audio-bar" data-layer="1" onclick="playAudio(this, 1)">
+          <div class="audio-play">
+            <svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg>
+          </div>
+          <div class="audio-waves" id="waves-1"></div>
+          <span class="audio-duration">0:18</span>
+        </div>
+        <div class="answer-text">
+          因为你的肚子里有一个<span class="highlight">小工厂</span>，它在帮你把吃进去的食物变成营养。工厂工作的时候会冒出一些<span class="highlight">小气泡</span>，这些气泡在肚子里越攒越多，然后就从屁股那里<span class="highlight">"噗"地跑出来</span>啦！
+        </div>
+      </div>
+
+      <!-- ===== Layer 2: Blue ===== -->
+      <div class="knowledge-card card-layer2">
+        <div class="card-top">
+          <div class="card-badge-layer">
+            <span class="layer-icon">2</span>
+            <span>深入一点</span>
+          </div>
+          <span class="card-layer-label">追问探索</span>
+        </div>
+        <div class="child-bubble">
+          <div class="child-avatar">&#128103;</div>
+          <div class="child-bubble-text">为什么肚子里会有气泡呢？</div>
+        </div>
+        <div class="card-illustration">
+          <div class="illustration-placeholder">
+            <span class="illus-icon">&#129379;</span>
+            <span class="illus-text">可乐冒泡泡，肚子也冒泡泡</span>
+          </div>
+          <img src="" alt="卡通插图：左边是一瓶打开冒泡的可乐，右边是一个小朋友的肚子也在冒出类似的小泡泡，两者用等号连接" style="display:none;" onerror="this.style.display='none';this.previousElementSibling.style.display='flex';" onload="if(this.src){this.style.display='block';this.previousElementSibling.style.display='none';}">
+        </div>
+        <div class="audio-bar" data-layer="2" onclick="playAudio(this, 2)">
+          <div class="audio-play">
+            <svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg>
+          </div>
+          <div class="audio-waves" id="waves-2"></div>
+          <span class="audio-duration">0:22</span>
+        </div>
+        <div class="answer-text">
+          因为你吃东西的时候会<span class="highlight">吞进去一些空气</span>呀，而且肚子里有好多好多特别小的<span class="highlight">小帮手</span>，它们帮你消化食物的时候也会产生气体。就像可乐打开会冒泡泡一样，你的肚子也会"冒泡泡"！
+        </div>
+      </div>
+
+      <!-- ===== Layer 3: Orange ===== -->
+      <div class="knowledge-card card-layer3">
+        <div class="card-top">
+          <div class="card-badge-layer">
+            <span class="layer-icon">3</span>
+            <span>再深一层</span>
+          </div>
+          <span class="card-layer-label">刨根问底</span>
+        </div>
+        <div class="child-bubble">
+          <div class="child-avatar">&#128103;</div>
+          <div class="child-bubble-text">那为什么有时候屁会臭臭的？</div>
+        </div>
+        <div class="card-illustration">
+          <div class="illustration-placeholder">
+            <span class="illus-icon">&#129382;</span>
+            <span class="illus-text">鸡蛋和肉肉会让小帮手产生臭臭气体</span>
+          </div>
+          <img src="" alt="卡通插图：可爱的肠道小帮手细菌正在分解鸡蛋和肉，旁边冒出绿色的臭臭气体云朵；另一边分解水果蔬菜则冒出清新的小花朵" style="display:none;" onerror="this.style.display='none';this.previousElementSibling.style.display='flex';" onload="if(this.src){this.style.display='block';this.previousElementSibling.style.display='none';}">
+        </div>
+        <div class="audio-bar" data-layer="3" onclick="playAudio(this, 3)">
+          <div class="audio-play">
+            <svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg>
+          </div>
+          <div class="audio-waves" id="waves-3"></div>
+          <span class="audio-duration">0:28</span>
+        </div>
+        <div class="answer-text">
+          因为有些食物被小帮手们分解的时候，会产生一种<span class="highlight">臭臭的气体</span>。比如吃了鸡蛋或者肉肉，就比较容易产生臭屁。吃水果蔬菜的屁就没那么臭哦！所以说——<span class="highlight">放屁很正常，每个人都会放屁</span>，连爸爸妈妈也会！
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== Parent Section ===== -->
+    <div class="parent-section">
+      <button class="parent-toggle" onclick="toggleParent(this)" aria-expanded="false">
+        <div class="parent-toggle-left">
+          <div class="parent-toggle-icon">&#128101;</div>
+          <span class="parent-toggle-text">家长知识卡</span>
+        </div>
+        <span class="parent-toggle-arrow">&#9660;</span>
+      </button>
+
+      <div class="parent-content" id="parent-content">
+        <div class="parent-cards">
+
+          <!-- Science Card -->
+          <div class="science-card">
+            <div class="science-card-header">
+              <div class="icon">&#128300;</div>
+              <span class="title">科学解释</span>
+            </div>
+            <p>肠道细菌发酵食物残渣产生气体（氢气、甲烷、硫化氢等），经肛门排出即为屁。含硫食物（蛋、肉）产生的硫化氢是臭味来源。正常人每天放屁10-20次，完全正常。</p>
+          </div>
+
+          <!-- Experiment Card -->
+          <div class="experiment-card">
+            <div class="experiment-card-header">
+              <div class="icon">&#129514;</div>
+              <span class="title">亲子小实验</span>
+            </div>
+            <div class="experiment-name">肚子泡泡实验</div>
+            <div class="experiment-steps">
+              <div class="experiment-step">
+                <div class="step-number">1</div>
+                <div class="step-text">在透明杯子里倒入半杯<strong>温水</strong>，告诉宝宝："这是你的小肚子"</div>
+              </div>
+              <div class="experiment-step">
+                <div class="step-number">2</div>
+                <div class="step-text">加入一勺<strong>小苏打</strong>，搅拌均匀，说："这是你吃进去的食物"</div>
+              </div>
+              <div class="experiment-step">
+                <div class="step-number">3</div>
+                <div class="step-text">倒入一点<strong>白醋</strong>，观察大量泡泡冒出来！说："看！这就是肚子里产生的小气泡，它们跑出来就是屁啦！"</div>
+              </div>
+            </div>
+            <div class="say-to-child">
+              <div class="say-to-child-label">&#128172; 可以这样对孩子说</div>
+              <div class="say-to-child-text">"你看这些泡泡，和你肚子里产生的气泡是一样的道理哦！泡泡太多了装不下，就要跑出来，噗——！"</div>
+            </div>
+            <div class="experiment-meta">
+              <div class="meta-tag">&#129520; 温水 + 小苏打 + 白醋</div>
+              <div class="meta-tag">&#9202; 约 5 分钟</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- Bottom Nav Bar -->
+  <div class="bottom-nav">
+    <a class="nav-item active" href="javascript:void(0)">
+      <div class="nav-icon">&#128269;</div>
+      <span class="nav-label">发现</span>
+    </a>
+    <a class="nav-item" href="javascript:void(0)">
+      <div class="nav-icon">&#128247;</div>
+      <span class="nav-label">拍一拍</span>
+    </a>
+    <a class="nav-item center-btn" href="javascript:void(0)">
+      <div class="nav-icon">&#10068;</div>
+      <span class="nav-label">问一问</span>
+    </a>
+    <a class="nav-item" href="javascript:void(0)">
+      <div class="nav-icon">&#128218;</div>
+      <span class="nav-label">好奇档案</span>
+    </a>
+    <a class="nav-item" href="javascript:void(0)">
+      <div class="nav-icon">&#128100;</div>
+      <span class="nav-label">我的</span>
+    </a>
+  </div>
+
+</div><!-- /phone-frame -->
+
+<script>
+(function() {
+  'use strict';
+
+  // ===== Generate Wave Bars =====
+  for (let i = 1; i <= 3; i++) {
+    const container = document.getElementById('waves-' + i);
+    if (!container) continue;
+    const count = 28;
+    for (let j = 0; j < count; j++) {
+      const bar = document.createElement('div');
+      bar.className = 'wave-bar';
+      const h = 4 + Math.random() * 14;
+      bar.style.height = h + 'px';
+      bar.style.animationDelay = (Math.random() * 0.8) + 's';
+      container.appendChild(bar);
+    }
+  }
+
+  // ===== Answer Texts for TTS =====
+  const answers = {
+    1: '因为你的肚子里有一个小工厂，它在帮你把吃进去的食物变成营养。工厂工作的时候会冒出一些小气泡，这些气泡在肚子里越攒越多，然后就从屁股那里噗地跑出来啦！',
+    2: '因为你吃东西的时候会吞进去一些空气呀，而且肚子里有好多好多特别小的小帮手，它们帮你消化食物的时候也会产生气体。就像可乐打开会冒泡泡一样，你的肚子也会冒泡泡！',
+    3: '因为有些食物被小帮手们分解的时候，会产生一种臭臭的气体。比如吃了鸡蛋或者肉肉，就比较容易产生臭屁。吃水果蔬菜的屁就没那么臭哦！所以说，放屁很正常，每个人都会放屁，连爸爸妈妈也会！'
+  };
+
+  // ===== Current Playback State =====
+  let currentUtterance = null;
+  let currentBar = null;
+
+  // ===== Stop all audio =====
+  function stopAll() {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    document.querySelectorAll('.audio-bar').forEach(function(bar) {
+      bar.classList.remove('active');
+      const btn = bar.querySelector('.audio-play');
+      if (btn) {
+        btn.classList.remove('playing');
+        btn.innerHTML = '<svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg>';
+      }
+    });
+    currentUtterance = null;
+    currentBar = null;
+  }
+
+  // ===== Play Audio with Web Speech API =====
+  window.playAudio = function(barEl, layer) {
+    // If currently playing this layer, stop
+    if (currentBar === barEl && currentUtterance) {
+      stopAll();
+      return;
+    }
+
+    // Stop any current playback
+    stopAll();
+
+    // Check for Speech Synthesis support
+    if (!('speechSynthesis' in window)) {
+      alert('您的浏览器不支持语音播放功能');
+      return;
+    }
+
+    const text = answers[layer];
+    if (!text) return;
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'zh-CN';
+    utterance.rate = 0.88;
+    utterance.pitch = 1.15;
+
+    // Try to find a Chinese voice
+    const voices = window.speechSynthesis.getVoices();
+    const zhVoice = voices.find(function(v) {
+      return v.lang.indexOf('zh') === 0;
+    });
+    if (zhVoice) {
+      utterance.voice = zhVoice;
+    }
+
+    // Set playing state
+    currentBar = barEl;
+    currentUtterance = utterance;
+    barEl.classList.add('active');
+    var playBtn = barEl.querySelector('.audio-play');
+    if (playBtn) {
+      playBtn.classList.add('playing');
+      playBtn.innerHTML = '<svg viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>';
+    }
+
+    utterance.onend = function() {
+      stopAll();
+    };
+    utterance.onerror = function() {
+      stopAll();
+    };
+
+    window.speechSynthesis.speak(utterance);
+  };
+
+  // ===== Load voices (some browsers load async) =====
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.getVoices();
+    if (window.speechSynthesis.onvoiceschanged !== undefined) {
+      window.speechSynthesis.onvoiceschanged = function() {
+        window.speechSynthesis.getVoices();
+      };
+    }
+  }
+
+  // ===== Parent Section Toggle =====
+  window.toggleParent = function(btn) {
+    var content = document.getElementById('parent-content');
+    var isOpen = btn.classList.contains('open');
+    if (isOpen) {
+      btn.classList.remove('open');
+      content.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    } else {
+      btn.classList.add('open');
+      content.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      // Scroll into view after animation
+      setTimeout(function() {
+        content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    }
+  };
+
+})();
+</script>
+
+</body>
+</html>
