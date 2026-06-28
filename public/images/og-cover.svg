@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8F5E9"/>
+      <stop offset="50%" style="stop-color:#FFF8E1"/>
+      <stop offset="100%" style="stop-color:#E3F2FD"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="200" cy="315" r="120" fill="#FFFFFF" opacity="0.6"/>
+  <text x="200" y="300" text-anchor="middle" font-size="80" fill="#333">🐰</text>
+  <text x="200" y="370" text-anchor="middle" font-size="16" font-family="sans-serif" fill="#666" font-weight="bold">问问兔</text>
+  <circle cx="1000" cy="315" r="120" fill="#FFFFFF" opacity="0.6"/>
+  <text x="1000" y="300" text-anchor="middle" font-size="80" fill="#333">🐻</text>
+  <text x="1000" y="370" text-anchor="middle" font-size="16" font-family="sans-serif" fill="#666" font-weight="bold">答答熊</text>
+  <text x="600" y="240" text-anchor="middle" font-size="56" font-family="sans-serif" fill="#2E7D32" font-weight="bold">十亿个什么与为什么</text>
+  <text x="600" y="310" text-anchor="middle" font-size="24" font-family="sans-serif" fill="#666">2-6岁好奇心即时响应引擎</text>
+  <text x="600" y="380" text-anchor="middle" font-size="20" font-family="sans-serif" fill="#999">孩子问为什么？10秒内获得孩子听得懂的回答</text>
+  <rect x="420" y="430" width="360" height="60" rx="30" fill="#4CAF50"/>
+  <text x="600" y="468" text-anchor="middle" font-size="22" font-family="sans-serif" fill="#FFFFFF" font-weight="bold">让好奇心被认真对待</text>
+</svg>
