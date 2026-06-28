@@ -1,0 +1,4 @@
+{"total": {"lines":{"total":169,"covered":155,"skipped":0,"pct":91.71},"statements":{"total":205,"covered":189,"skipped":0,"pct":92.19},"functions":{"total":58,"covered":53,"skipped":0,"pct":91.37},"branches":{"total":86,"covered":75,"skipped":0,"pct":87.2},"branchesTrue":{"total":0,"covered":0,"skipped":0,"pct":"Unknown"}}
+,"/home/admin/workspace/billion-whys/src/h5/stores/analytics.js": {"lines":{"total":37,"covered":37,"skipped":0,"pct":100},"functions":{"total":8,"covered":8,"skipped":0,"pct":100},"statements":{"total":38,"covered":37,"skipped":0,"pct":97.36},"branches":{"total":17,"covered":16,"skipped":0,"pct":94.11}}
+,"/home/admin/workspace/billion-whys/src/h5/stores/content.js": {"lines":{"total":132,"covered":118,"skipped":0,"pct":89.39},"functions":{"total":50,"covered":45,"skipped":0,"pct":90},"statements":{"total":167,"covered":152,"skipped":0,"pct":91.01},"branches":{"total":69,"covered":59,"skipped":0,"pct":85.5}}
+}

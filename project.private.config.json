@@ -1,0 +1,19 @@
+{
+  "projectname": "billion-whys",
+  "setting": {
+    "compileHotReLoad": true,
+    "urlCheck": false
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        { "name": "发现页", "pathName": "pages/discover/discover", "query": "" },
+        { "name": "问题详情", "pathName": "pages/question/question", "query": "id=body_001" },
+        { "name": "搜索", "pathName": "pages/ask/ask", "query": "" },
+        { "name": "好奇档案", "pathName": "pages/archive/archive", "query": "" },
+        { "name": "我的", "pathName": "pages/profile/profile", "query": "" },
+        { "name": "隐私协议", "pathName": "pages/privacy/privacy", "query": "" }
+      ]
+    }
+  }
+}

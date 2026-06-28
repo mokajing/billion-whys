@@ -1,0 +1,43 @@
+{
+  "miniprogramRoot": "src/miniprogram/",
+  "projectname": "billion-whys",
+  "description": "十亿个什么与为什么 - 2-6岁儿童好奇心即时响应小程序",
+  "appid": "touristappid",
+  "setting": {
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "bigPackageSizeSupport": true,
+    "uglifyFileName": false,
+    "ignoreUploadUnusedFiles": true,
+    "useCompilerPlugins": false,
+    "minifyWXML": true,
+    "minifyWXSS": true,
+    "minifyJS": true,
+    "autoAudits": false,
+    "checkSiteMap": true,
+    "disableUseStrict": false,
+    "uploadWithSourceMap": true,
+    "useStaticServer": false,
+    "urlCheck": true,
+    "compileHotReLoad": true,
+    "skylineRenderEnable": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "3.5.0",
+  "srcMiniprogramRoot": "src/miniprogram/",
+  "packOptions": {
+    "ignore": [
+      { "type": "folder", "value": "../h5" },
+      { "type": "folder", "value": "../../node_modules" },
+      { "type": "folder", "value": "../../scripts" },
+      { "type": "folder", "value": "../../coverage" }
+    ]
+  },
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  }
+}

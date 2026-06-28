@@ -1,0 +1,41 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:focus-visible {
+  outline: 2px solid var(--color-primary, #1A5C3A);
+  outline-offset: 2px;
+}
+
+body {
+  font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: #f5f5f5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --color-primary: #1A5C3A;
+  --color-layer1: #4CAF50;
+  --color-layer1-bg: #F8FFF8;
+  --color-layer1-border: #C8E6C9;
+  --color-layer2: #2196F3;
+  --color-layer2-bg: #F0F7FF;
+  --color-layer2-border: #BBDEFB;
+  --color-layer3: #FF9800;
+  --color-layer3-bg: #FFFBF0;
+  --color-layer3-border: #FFE0B2;
+  --color-parent-bg: #FAFAFA;
+  --color-science: #F3E5F5;
+  --color-experiment: #E8F5E9;
+  --radius-card: 20px;
+  --radius-button: 12px;
+  --shadow-card: 0 2px 12px rgba(0,0,0,0.06);
+  --nav-height: 56px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

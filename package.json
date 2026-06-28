@@ -1,0 +1,41 @@
+{
+  "name": "billion-whys",
+  "version": "0.3.12",
+  "description": "十亿个什么与为什么 - 2-6岁儿童好奇心即时响应产品",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:h5": "vite --host 0.0.0.0 --port 3000",
+    "prebuild": "bash scripts/sync-images.sh",
+    "build": "npm run build:h5 && npm run build:mp-data",
+    "build:h5": "vite build",
+    "preview:h5": "vite preview",
+    "dev:mp": "echo 'Use WeChat DevTools to open src/miniprogram'",
+    "build:mp-data": "node scripts/build-mp-data.cjs",
+    "sync-images": "bash scripts/sync-images.sh",
+    "lint": "eslint src/",
+    "format": "prettier --write src/",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "validate": "node scripts/validate-schema.cjs"
+  },
+  "dependencies": {
+    "pinia": "^2.1.0",
+    "vue": "^3.4.0",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "@vitest/coverage-v8": "^4.1.9",
+    "@vue/test-utils": "^2.4.11",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^9.0.0",
+    "eslint-plugin-vue": "^10.9.2",
+    "globals": "^17.6.0",
+    "jsdom": "^29.1.1",
+    "prettier": "^3.3.0",
+    "vite": "^5.4.0",
+    "vitest": "^4.1.9"
+  }
+}
