@@ -1,0 +1,75 @@
+<view class="archive-page">
+  <view class="archive-header">
+    <text class="header-title">📊 好奇档案</text>
+    <text class="header-sub">记录每一次好奇心的旅程</text>
+  </view>
+
+  <view class="tab-bar" aria-role="tablist">
+    <view class="tab-item {{activeTab === 'history' ? 'active' : ''}}"
+      data-tab="history" bindtap="onSwitchTab"
+      aria-role="tab" aria-selected="{{activeTab === 'history'}}" aria-label="浏览历史">
+      <text>浏览历史</text>
+    </view>
+    <view class="tab-item {{activeTab === 'favorites' ? 'active' : ''}}"
+      data-tab="favorites" bindtap="onSwitchTab"
+      aria-role="tab" aria-selected="{{activeTab === 'favorites'}}" aria-label="我的收藏 {{favoriteCount}} 条">
+      <text>收藏 ({{favoriteCount}})</text>
+    </view>
+  </view>
+
+  <view wx:if="{{activeTab === 'history'}}">
+    <view wx:if="{{!isEmpty}}" class="stats-bar" aria-label="探索统计">
+      <view class="stat-item" aria-label="已探索 {{totalViewed}} 条">
+        <text class="stat-num">{{totalViewed}}</text>
+        <text class="stat-label">已探索</text>
+      </view>
+      <view class="stat-item" aria-label="今日探索 {{todayViewedCount}} 条">
+        <text class="stat-num">{{todayViewedCount}}</text>
+        <text class="stat-label">今日</text>
+      </view>
+      <view class="stat-item" aria-label="连续探索 {{streakDays}} 天">
+        <text class="stat-num">{{streakDays}}</text>
+        <text class="stat-label">连续天</text>
+      </view>
+    </view>
+
+    <view wx:if="{{isEmpty}}" class="empty-state">
+      <view class="empty-icon"><ip-face role="rabbit" size="48" /></view>
+      <text class="empty-text">还没有探索记录</text>
+      <text class="empty-sub">去发现页看看有什么有趣的问题吧！</text>
+      <button class="go-btn" bindtap="onGoDiscover" aria-label="去探索">去探索</button>
+    </view>
+
+    <view wx:for="{{historyGroups}}" wx:key="date" class="history-group">
+      <text class="group-date">{{item.date}}</text>
+      <view wx:for="{{item.items}}" wx:for-item="q" wx:key="id"
+        class="history-item" data-id="{{q.id}}" bindtap="onQuestionTap"
+        aria-role="button" aria-label="{{q.question}}">
+        <text class="hi-text">{{q.question}}</text>
+        <view class="hi-meta">
+          <text class="hi-age">{{q.age}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{activeTab === 'favorites'}}">
+    <view wx:if="{{favoriteCount === 0}}" class="empty-state">
+      <text class="empty-icon">☆</text>
+      <text class="empty-text">还没有收藏</text>
+      <text class="empty-sub">在问题详情页点击星标即可收藏</text>
+      <button class="go-btn" bindtap="onGoDiscover" aria-label="去发现">去发现</button>
+    </view>
+
+    <view wx:for="{{favoriteList}}" wx:key="id"
+      class="history-item" data-id="{{item.id}}"
+      bindtap="onQuestionTap" bindlongpress="onFavoriteLongPress"
+      aria-role="button" aria-label="{{item.question}} 长按可取消收藏">
+      <text class="fav-star">★</text>
+      <text class="hi-text">{{item.question}}</text>
+      <view class="hi-meta">
+        <text class="hi-age">{{item.age}}</text>
+      </view>
+    </view>
+  </view>
+</view>

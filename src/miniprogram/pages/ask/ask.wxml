@@ -1,0 +1,89 @@
+<view class="ask-page">
+  <view class="ask-header">
+    <text class="header-title">问一问</text>
+    <text class="header-sub">输入你想知道的问题</text>
+  </view>
+
+  <view class="search-box" aria-role="search">
+    <text class="search-icon">🔍</text>
+    <input
+      value="{{keyword}}"
+      type="text"
+      placeholder="为什么会下雨？为什么要睡觉？"
+      maxlength="50"
+      aria-label="搜索问题"
+      bindinput="onInput"
+      confirm-type="search"
+      bindconfirm="doSearch"
+    />
+    <view wx:if="{{keyword}}" class="clear-btn" bindtap="onClear" aria-role="button" aria-label="清除搜索">
+      <text>✕</text>
+    </view>
+  </view>
+
+  <view wx:if="{{hasSearched && results.length > 0}}" class="search-results" aria-live="polite">
+    <text class="results-title">找到 {{results.length}} 个相关问题</text>
+    <view wx:for="{{results}}" wx:key="id"
+      class="result-item" data-id="{{item.id}}" bindtap="onResultTap"
+      aria-role="button" aria-label="{{item.question}}">
+      <text class="ri-icon">💡</text>
+      <view class="ri-content">
+        <text class="ri-text">{{item.question}}</text>
+        <text class="ri-tags">{{item.tagsText}}</text>
+      </view>
+      <text class="ri-arrow">›</text>
+    </view>
+  </view>
+
+  <view wx:if="{{hasSearched && results.length === 0}}" class="no-result" aria-live="polite">
+    <view class="nr-icon"><ip-face role="rabbit" size="48" /></view>
+    <text class="nr-text">问问兔也在学习这个问题呢！</text>
+    <text class="nr-sub">试试看看下面这些相关的问题</text>
+    <view wx:if="{{suggestions.length > 0}}" class="suggest-section">
+      <text class="suggest-title">你可能想问</text>
+      <view wx:for="{{suggestions}}" wx:key="id"
+        class="result-item" data-id="{{item.id}}" bindtap="onResultTap"
+        aria-role="button" aria-label="{{item.question}}">
+        <text class="ri-icon">✨</text>
+        <view class="ri-content">
+          <text class="ri-text">{{item.question}}</text>
+          <text class="ri-tags">{{item.tagsText}}</text>
+        </view>
+        <text class="ri-arrow">›</text>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{!keyword && recentSearches.length > 0}}" class="recent-section">
+    <view class="recent-header">
+      <text class="recent-title">最近搜过</text>
+      <view class="recent-clear" bindtap="onClearHistory" aria-role="button" aria-label="清空搜索历史">
+        <text>清空</text>
+      </view>
+    </view>
+    <view class="recent-tags">
+      <text wx:for="{{recentSearches}}" wx:key="*this"
+        class="recent-tag" data-term="{{item}}" bindtap="onRecentTap"
+        aria-role="button" aria-label="搜索：{{item}}">{{item}}</text>
+    </view>
+  </view>
+
+  <view wx:if="{{!keyword}}" class="hot-section">
+    <text class="hot-title">大家都在问</text>
+    <view wx:for="{{hotQuestions}}" wx:key="id"
+      class="hot-item" data-id="{{item.id}}" bindtap="onResultTap"
+      aria-role="button" aria-label="{{item.question}}">
+      <text class="hot-icon">❓</text>
+      <text class="hot-text">{{item.question}}</text>
+    </view>
+  </view>
+
+  <view wx:if="{{!keyword}}" class="hint-section">
+    <text class="hint-label">试试问：</text>
+    <view class="hint-tags">
+      <text wx:for="{{hints}}" wx:key="*this"
+        class="hint-tag" data-hint="{{item}}" bindtap="onHintTap"
+        aria-role="button" aria-label="{{item}}">{{item}}</text>
+    </view>
+  </view>
+</view>

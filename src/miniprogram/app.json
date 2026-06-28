@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/discover/discover",
+    "pages/question/question",
+    "pages/ask/ask",
+    "pages/archive/archive",
+    "pages/profile/profile",
+    "pages/privacy/privacy"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#1A5C3A",
+    "navigationBarTitleText": "十亿个什么与为什么",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f5f5f5",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#767676",
+    "selectedColor": "#1A5C3A",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      { "pagePath": "pages/discover/discover", "text": "发现", "iconPath": "assets/tab-discover.png", "selectedIconPath": "assets/tab-discover-active.png" },
+      { "pagePath": "pages/ask/ask", "text": "问一问", "iconPath": "assets/tab-ask.png", "selectedIconPath": "assets/tab-ask-active.png" },
+      { "pagePath": "pages/archive/archive", "text": "好奇档案", "iconPath": "assets/tab-archive.png", "selectedIconPath": "assets/tab-archive-active.png" },
+      { "pagePath": "pages/profile/profile", "text": "我的", "iconPath": "assets/tab-profile.png", "selectedIconPath": "assets/tab-profile-active.png" }
+    ]
+  },
+  "preloadRule": {
+    "pages/discover/discover": {
+      "network": "all",
+      "packages": ["__APP__"]
+    }
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "usingComponents": {
+    "ip-face": "/components/ip-face/ip-face"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "__usePrivacyCheck__": true
+}

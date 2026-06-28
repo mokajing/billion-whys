@@ -1,0 +1,35 @@
+.ip-face {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  transform-origin: 24px 38px;
+}
+
+.ip-face__svg {
+  display: block;
+}
+
+/* V8.0 第69轮：问问兔鞠躬动效（0.5s前倾+0.3s回弹=0.8s总，心理学家周教授要求） */
+.ip-face--bowing {
+  animation: ip-face-bow 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes ip-face-bow {
+  0% {
+    transform: rotate(0deg);
+  }
+  62.5% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* UX总监苏体验要求：动效降级为静态鞠躬 pose */
+  .ip-face--bowing {
+    animation: none;
+    transform: rotate(15deg);
+  }
+}

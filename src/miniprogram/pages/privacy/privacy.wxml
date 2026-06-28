@@ -1,0 +1,41 @@
+<view class="privacy-page" aria-role="article" aria-label="隐私政策">
+  <view class="back-btn" bindtap="onBack" aria-role="button" aria-label="返回">← 返回</view>
+  <view class="privacy-header">
+    <text class="privacy-title" aria-role="heading" aria-level="1">隐私政策</text>
+    <text class="privacy-version">版本：v{{version || 'unknown'}} | 更新日期：{{releaseDate || '—'}}</text>
+  </view>
+
+  <view class="privacy-section">
+    <text class="section-title">一、我们收集哪些信息</text>
+    <text class="section-body">本小程序不收集任何儿童个人信息。所有浏览记录、探索统计与反馈行动记录（👍/👎/↻ 重置）仅保存在您的设备本地存储中，不会上传至任何服务器。</text>
+  </view>
+
+  <view class="privacy-section">
+    <text class="section-title">二、本地存储说明</text>
+    <text class="section-body">我们在您的设备上存储以下数据：\n1. 浏览历史：记录您查看过的问题，用于展示探索进度\n2. 探索统计：连续天数、已探索数量等，用于激励持续学习\n3. 反馈行动记录：您对答案给出的 👍/👎/↻ 重置行动次数（仅含行动类型与时间戳，不含问题内容或儿童身份），用于本地展示 7 天反馈趋势\n\n这些数据完全保存在您的微信小程序本地存储中，清除小程序数据即可删除。</text>
+  </view>
+
+  <view class="privacy-section">
+    <text class="section-title">三、我们如何保护信息</text>
+    <text class="section-body">本小程序采用"零收集"原则：\n- 不收集儿童姓名、年龄、照片等个人信息\n- 不要求注册或登录\n- 不使用第三方数据追踪工具\n- 不向任何第三方共享数据</text>
+  </view>
+
+  <view class="privacy-section">
+    <text class="section-title">四、儿童隐私保护</text>
+    <text class="section-body">本产品面向2-6岁儿童家庭设计，我们严格遵守《儿童个人信息网络保护规定》和《未成年人保护法》的相关要求，不主动收集任何儿童个人信息。</text>
+  </view>
+
+  <view class="privacy-section">
+    <text class="section-title">五、探索记录</text>
+    <text class="section-body">我们在您的设备本地记录浏览历史、探索进度（如连续天数、已探索数量）和反馈行动次数（👍/👎/↻ 重置），仅用于展示您的探索成就与反馈趋势。这些数据完全保存在您的设备上，不会上传至任何服务器。</text>
+  </view>
+
+  <view class="privacy-section">
+    <text class="section-title">六、联系我们</text>
+    <text class="section-body">如果您对本隐私政策有任何疑问或建议，欢迎通过"我的"页面中的"意见反馈"联系我们。\n\n反馈邮箱：feedback@billionwhys.com</text>
+  </view>
+
+  <view class="privacy-footer">
+    <text class="footer-text">十亿个什么与为什么 | 守护每个孩子的好奇心</text>
+  </view>
+</view>

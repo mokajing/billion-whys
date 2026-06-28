@@ -1,0 +1,120 @@
+<view class="profile-page">
+  <view class="profile-header">
+    <view class="avatar"><ip-face role="rabbit" size="56" /></view>
+    <view class="title">小探险家的好奇世界</view>
+    <view class="subtitle">好奇心是最厉害的超能力</view>
+  </view>
+
+  <view class="stats-card" aria-label="探索统计">
+    <view class="stat-item" aria-label="知识库 {{totalQuestions}} 条">
+      <view class="stat-num">{{totalQuestions}}</view>
+      <view class="stat-label">知识库</view>
+    </view>
+    <view class="stat-item" aria-label="已探索 {{viewedCount}} 条">
+      <view class="stat-num">{{viewedCount}}</view>
+      <view class="stat-label">已探索</view>
+    </view>
+    <view class="stat-item" aria-label="连续探索 {{streakDays}} 天">
+      <view class="stat-num">{{streakDays}}</view>
+      <view class="stat-label">连续天数</view>
+    </view>
+    <view class="stat-item" aria-label="收藏 {{favoriteCount}} 条">
+      <view class="stat-num">{{favoriteCount}}</view>
+      <view class="stat-label">收藏</view>
+    </view>
+    <view class="stat-item" aria-label="已反馈 {{feedbackCount}} 条">
+      <view class="stat-num">{{feedbackCount}}</view>
+      <view class="stat-label">已反馈</view>
+    </view>
+  </view>
+
+  <view wx:if="{{streakMessage}}" class="streak-message" aria-live="polite">
+    <text>{{streakMessage}}</text>
+  </view>
+
+  <view class="feedback-trend" aria-label="过去7天反馈趋势">
+    <view class="ft-header">
+      <text class="ft-title">过去7天反馈了 {{feedbackTrendTotal}} 次</text>
+      <view class="ft-legend">
+        <text class="ft-leg ft-leg-up">👍</text>
+        <text class="ft-leg ft-leg-down">👎</text>
+        <text class="ft-leg ft-leg-reset">↻</text>
+      </view>
+    </view>
+    <view wx:if="{{feedbackTrendTotal > 0}}" class="ft-bars-wrap">
+      <view class="ft-bars" aria-label="过去7天反馈了 {{feedbackTrendTotal}} 次">
+        <view
+          wx:for="{{feedbackTrend7d}}"
+          wx:key="date"
+          class="ft-bar-col {{expandedDay === item.date ? 'ft-bar-col-expanded' : ''}}"
+          bindtap="onTapDay"
+          data-date="{{item.date}}"
+          data-total="{{item.total}}"
+          aria-role="button"
+          aria-expanded="{{expandedDay === item.date}}"
+          aria-label="{{item.label}} 反馈 {{item.total}} 次"
+        >
+          <view class="ft-bar-stack">
+            <view class="ft-bar ft-bar-up" style="height:{{item.upH}}rpx;"></view>
+            <view class="ft-bar ft-bar-down" style="height:{{item.downH}}rpx;"></view>
+            <view class="ft-bar ft-bar-reset" style="height:{{item.resetH}}rpx;"></view>
+          </view>
+          <text class="ft-bar-label">{{item.label}}</text>
+        </view>
+      </view>
+      <!-- V8.5 Sprint 14：当日明细（accordion 模式，同时只展开 1 列） -->
+      <view wx:if="{{expandedDay}}" class="ft-detail" aria-label="{{expandedDay}} 反馈明细">
+        <view class="ft-detail-header">
+          <text>{{detailHeader}}</text>
+        </view>
+        <view wx:if="{{detailList.length > 0}}" class="ft-detail-list">
+          <view
+            wx:for="{{detailList}}"
+            wx:key="time"
+            class="ft-detail-item {{item.hasId ? 'ft-detail-item-clickable' : 'ft-detail-item-disabled'}}"
+            bindtap="{{item.hasId ? 'onTapDetailItem' : ''}}"
+            data-id="{{item.id}}"
+            aria-role="{{item.hasId ? 'button' : ''}}"
+            aria-label="{{item.hasId ? ('再读一遍：' + item.title) : ''}}"
+          >
+            <text class="ft-detail-icon ft-detail-icon-{{item.action}}">{{item.icon}}</text>
+            <text class="ft-detail-time">{{item.time}}</text>
+            <text wx:if="{{item.showDepth}}" class="ft-detail-depth" aria-label="读到第{{item.depth}}层">读到第{{item.depth}}层</text>
+            <text class="ft-detail-title">{{item.title}}</text>
+          </view>
+        </view>
+        <view wx:else class="ft-detail-empty">
+          <text>🌱 这天没有反馈明细</text>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="ft-empty">
+      <text>🌱 这周还没有反馈，看完一个答案试试 👍 或 👎 吧</text>
+    </view>
+  </view>
+
+  <view class="menu-list" aria-role="list">
+    <view class="menu-item" bindtap="onFeedback" aria-role="button" aria-label="意见反馈" aria-expanded="{{showFeedback}}">
+      <text class="menu-icon">💬</text>
+      <text class="menu-text">意见反馈</text>
+      <text class="menu-arrow {{showFeedback ? 'open' : ''}}">▼</text>
+    </view>
+    <view wx:if="{{showFeedback}}" class="feedback-panel" aria-live="polite">
+      <text class="feedback-text">感谢您使用「十亿个什么与为什么」！如有任何建议或问题，欢迎联系我们：</text>
+      <text class="feedback-email">📮 反馈邮箱：feedback@billionwhys.com</text>
+      <text class="feedback-text">您的每一条建议都会帮助我们做得更好 🌱</text>
+    </view>
+    <view class="menu-item" bindtap="onAbout" aria-role="button" aria-label="关于我们">
+      <text class="menu-icon">📖</text>
+      <text class="menu-text">关于我们</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="menu-item" bindtap="onPrivacy" aria-role="button" aria-label="隐私政策">
+      <text class="menu-icon">🔒</text>
+      <text class="menu-text">隐私政策</text>
+      <text class="menu-arrow">›</text>
+    </view>
+  </view>
+
+  <view class="version">v{{version}}</view>
+</view>

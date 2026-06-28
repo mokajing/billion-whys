@@ -1,0 +1,178 @@
+<view class="question-detail" wx:if="{{question}}">
+  <view class="question-header">
+    <view class="back-btn" bindtap="onGoBack" aria-role="button" aria-label="返回上一页">← 返回</view>
+    <text class="category-tag">{{categoryLabel}}</text>
+    <text class="question-text">{{question.question}}</text>
+    <text class="age-badge">适合 {{question.age}}</text>
+    <view class="fav-btn {{isFavorite ? 'active' : ''}}" bindtap="onToggleFavorite" aria-role="button" aria-label="{{isFavorite ? '取消收藏' : '收藏这个问题'}}" aria-pressed="{{isFavorite}}">
+      <text>{{isFavorite ? '★' : '☆'}}</text>
+    </view>
+  </view>
+
+  <view class="scroll-content" aria-role="article" aria-label="{{question.question}}">
+    <!-- IP Scene Dialogues -->
+    <view class="ip-scene" wx:if="{{ipDialogues.length > 0}}">
+      <view wx:for="{{ipDialogues}}" wx:key="index" class="ip-bubble {{item.role}}">
+        <view class="ip-line">
+          <view class="ip-avatar"><ip-face role="{{item.role}}" size="24" /></view>
+          <text class="ip-name {{item.role}}">{{item.role === 'bear' ? '答答熊' : '问问兔'}}</text>
+        </view>
+        <text class="ip-dialogue">{{item.text}}</text>
+      </view>
+    </view>
+
+    <!-- Layer 1 -->
+    <view class="knowledge-card layer1">
+      <text class="card-badge badge-l1">💬 第1层 · 直接回答</text>
+      <view class="card-illustration" wx:if="{{layer1Image}}">
+        <image src="{{layer1Image}}" mode="aspectFill" aria-label="{{question.question}} 插图" binderror="onImgError" data-field="layer1Image" />
+      </view>
+      <view class="card-placeholder" wx:elif="{{!layer1Image}}">
+        <text class="placeholder-icon">{{categoryIcon}}</text>
+        <text class="placeholder-text">精彩插画即将到来</text>
+      </view>
+      <text class="answer-text">{{question.layer1 ? question.layer1.answer : ''}}</text>
+    </view>
+
+    <!-- 答案反馈 (V7.9 第68轮 / V8.0 第69轮 🌟→问问兔鞠躬SVG / V8.1 第70轮 试试互动实验CTA) -->
+    <view class="feedback-thanks" wx:if="{{currentFeedback}}" aria-role="status" aria-live="polite">
+      <ip-face role="rabbit" size="40" mood="bowing" />
+      <text class="ft-text">谢谢你的反馈，我们会让问问兔更努力！</text>
+      <view class="ft-cta" wx:if="{{hasExperiment}}" bindtap="onScrollToExperiment" aria-role="button" aria-label="试试和问问兔一起做互动实验">🤲 试试互动实验</view>
+      <!-- V8.3 第71轮 Sprint 12：再评一次 次级CTA，闭合反馈循环（COO反馈率北极星≥5%） -->
+      <view class="ft-reset" bindtap="onResetFeedback" aria-role="button" aria-label="清除当前反馈，重新选择有用或没用">↻ 再评一次</view>
+    </view>
+    <view class="feedback-section" wx:else aria-role="group" aria-label="答案反馈">
+      <text class="fb-prompt">这个回答对孩子有用吗？</text>
+      <view class="fb-buttons">
+        <view class="fb-btn {{currentFeedback === 'up' ? 'active' : ''}}" bindtap="onFeedbackUp" aria-role="button" aria-label="有用" aria-pressed="{{currentFeedback === 'up'}}">
+          <text>👍 有用</text>
+        </view>
+        <view class="fb-btn fb-down {{currentFeedback === 'down' ? 'active' : ''}}" bindtap="onFeedbackDown" aria-role="button" aria-label="没用" aria-pressed="{{currentFeedback === 'down'}}">
+          <text>👎 没用</text>
+        </view>
+      </view>
+    </view>
+
+    <text class="next-hint" wx:if="{{question.layer2 && !showDeeper}}"></text>
+    <view class="expand-hint" wx:if="{{question.layer2 && !showDeeper}}">
+      <view class="expand-btn" bindtap="onExpandDeeper" aria-role="button" aria-label="展开更多回答">问问兔还有更多发现哦 👇</view>
+    </view>
+
+    <block wx:if="{{question.layer2 && showDeeper}}">
+    <text class="next-hint">继续追问 👇</text>
+
+    <!-- Layer 2 -->
+    <view class="knowledge-card layer2">
+      <text class="card-badge badge-l2">🔄 第2层 · 继续追问</text>
+      <view wx:if="{{question.layer2.followUp}}" class="child-bubble">
+        <view class="bubble-avatar"><ip-face role="rabbit" size="20" /></view>
+        <text class="bubble-text bubble-l2">{{question.layer2.followUp}}</text>
+      </view>
+      <view class="card-illustration" wx:if="{{layer2Image}}">
+        <image src="{{layer2Image}}" mode="aspectFill" aria-label="{{question.question}} 延伸插图" binderror="onImgError" data-field="layer2Image" />
+      </view>
+      <text class="answer-text">{{question.layer2.answer}}</text>
+    </view>
+
+    <text class="next-hint" wx:if="{{question.layer3}}">还想知道更多 👇</text>
+
+    <!-- Layer 3 -->
+    <view class="knowledge-card layer3" wx:if="{{question.layer3}}">
+      <text class="card-badge badge-l3">🌟 第3层 · 趣味延伸</text>
+      <view wx:if="{{question.layer3.followUp}}" class="child-bubble">
+        <view class="bubble-avatar"><ip-face role="rabbit" size="20" /></view>
+        <text class="bubble-text bubble-l3">{{question.layer3.followUp}}</text>
+      </view>
+      <view class="card-illustration" wx:if="{{layer3Image}}">
+        <image src="{{layer3Image}}" mode="aspectFill" aria-label="{{question.question}} 趣味延伸插图" binderror="onImgError" data-field="layer3Image" />
+      </view>
+      <text class="answer-text">{{question.layer3.answer}}</text>
+    </view>
+    </block>
+
+    <!-- Warm closing -->
+    <view class="warm-closing">
+      <text class="wc-icon">🌟</text>
+      <text class="wc-text">{{warmClosingText}}</text>
+      <text class="wc-sub">好奇心是最厉害的超能力哦！</text>
+    </view>
+
+    <!-- Related Curiosity -->
+    <view class="related-section" wx:if="{{relatedQuestions.length > 0}}">
+      <view class="related-title"><ip-face role="rabbit" size="20" /> 你可能还想知道</view>
+      <scroll-view scroll-x class="related-scroll">
+        <view wx:for="{{relatedQuestions}}" wx:key="id" class="related-card"
+          data-id="{{item.id}}" bindtap="onRelatedTap"
+          aria-role="button" aria-label="{{item.question}}">
+          <text class="related-text">{{item.question}}</text>
+        </view>
+      </scroll-view>
+    </view>
+
+    <!-- Parent Section -->
+    <view class="parent-section">
+      <view class="parent-header" bindtap="onToggleParent" aria-role="button" aria-expanded="{{showParent}}" aria-controls="mp-parent-body">
+        <text>📖 给大人看的（点击展开）</text>
+        <text class="arrow {{showParent ? 'open' : ''}}">▼</text>
+      </view>
+      <view id="mp-parent-body" class="parent-body" wx:if="{{showParent}}">
+        <view class="safety-notice" wx:if="{{safetyNotice}}">{{safetyNotice}}</view>
+        <view class="info-card science">
+          <text class="label">📖 科学原理</text>
+          <view wx:if="{{scienceImage}}" class="science-img-wrapper">
+            <image src="{{scienceImage}}" class="section-img" mode="aspectFill" aria-label="科学原理参考图" binderror="onImgError" data-field="scienceImage" />
+            <text class="img-caption">实验场景参考图</text>
+          </view>
+          <text class="text">{{question.science || ''}}</text>
+        </view>
+        <view class="info-card experiment" wx:if="{{hasExperiment}}">
+          <text class="label">🧪 亲子小实验</text>
+          <text wx:if="{{expTypeLabel}}" class="exp-type-badge">{{expTypeLabel}}</text>
+          <view wx:if="{{expImage}}" class="science-img-wrapper">
+            <image src="{{expImage}}" class="section-img" mode="aspectFill" aria-label="实验示意图" binderror="onImgError" data-field="expImage" />
+            <text class="img-caption">实验示意图</text>
+          </view>
+          <block wx:if="{{isExpObj}}">
+            <text class="exp-name">{{expName}}</text>
+            <view wx:if="{{expMaterials}}" class="exp-materials">
+              <text class="materials-label">📦 材料准备</text>
+              <text class="materials-text">{{expMaterials}}</text>
+            </view>
+            <text wx:if="{{expDuration}}" class="exp-duration">⏱ 预计时间：{{expDuration}}</text>
+            <view class="exp-steps">
+              <view wx:for="{{expSteps}}" wx:key="index" class="exp-step">
+                <text class="step-num">{{index + 1}}</text>
+                <text class="step-text">{{item}}</text>
+              </view>
+            </view>
+            <view wx:if="{{expSayToChild}}" class="say-to-child">
+              <text class="stc-label">💬 可以这样对孩子说</text>
+              <text class="stc-text">{{expSayToChild}}</text>
+            </view>
+          </block>
+          <block wx:else>
+            <text class="answer-text">{{expLegacyText}}</text>
+          </block>
+        </view>
+      </view>
+    </view>
+
+    <!-- Question Navigation -->
+    <view class="question-nav" wx:if="{{prevQuestion || nextQuestion}}" aria-role="navigation" aria-label="问题导航">
+      <view wx:if="{{prevQuestion}}" class="nav-btn prev" bindtap="onNavPrev" aria-role="button" aria-label="上一个问题：{{prevQuestion.question}}">
+        <text>← {{prevQuestion.question}}</text>
+      </view>
+      <view wx:if="{{nextQuestion}}" class="nav-btn next" bindtap="onNavNext" aria-role="button" aria-label="下一个问题：{{nextQuestion.question}}">
+        <text>{{nextQuestion.question}} →</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="not-found" wx:else>
+  <view class="nf-icon"><ip-face role="rabbit" size="48" /></view>
+  <text class="nf-title">问问兔找不到这个问题</text>
+  <text class="nf-sub">试试去发现页看看其他问题吧</text>
+  <view class="nf-btn" bindtap="onGoBack" aria-role="button" aria-label="去发现页">去发现页</view>
+</view>
