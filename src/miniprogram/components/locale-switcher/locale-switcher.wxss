@@ -1,0 +1,24 @@
+/* V8.25 Sprint 34: LocaleSwitcher MP 样式 — 与 H5 LocaleSwitcher.vue 同构 */
+.locale-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  padding: 4px 10px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1rpx solid #eee;
+}
+.ls-btn {
+  padding: 4px 8px;
+  font-size: 13px;
+  color: #888;
+  border-radius: 10px;
+}
+.ls-btn.active {
+  color: #fff;
+  background: #ff8a3d;
+}
+.ls-sep {
+  color: #ddd;
+}
