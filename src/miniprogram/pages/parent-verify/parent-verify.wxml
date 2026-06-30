@@ -1,0 +1,49 @@
+<view class="pv-page">
+  <view class="pv-header">
+    <view class="pv-avatar"><ip-face role="rabbit" size="64" /></view>
+    <view class="pv-title">欢迎来到「十亿个什么与为什么」</view>
+    <view class="pv-subtitle">本小程序专为 2-6 岁小朋友设计，请家长完成以下简单验证后即可陪同孩子使用。</view>
+  </view>
+
+  <view wx:if="{{!answered}}" class="pv-card">
+    <view class="pv-progress">第 {{currentIndex + 1}} / {{questions.length}} 题</view>
+
+    <view class="pv-question" wx:for="{{questions}}" wx:key="id" wx:for-index="qidx" wx:if="{{qidx === currentIndex}}">
+      <view class="pv-q-text">{{item.question}}</view>
+      <view class="pv-options">
+        <view
+          wx:for="{{item.options}}"
+          wx:for-item="opt"
+          wx:for-index="oidx"
+          wx:key="oidx"
+          class="pv-option {{answers[qidx] === oidx ? 'pv-option-selected' : ''}}"
+          bindtap="onSelectOption"
+          data-qidx="{{qidx}}"
+          data-oidx="{{oidx}}"
+        >
+          <text class="pv-option-letter">{{['A','B','C'][oidx]}}</text>
+          <text class="pv-option-text">{{opt}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="pv-actions">
+      <view wx:if="{{currentIndex > 0}}" class="pv-btn pv-btn-secondary" bindtap="onPrev">上一题</view>
+      <view class="pv-btn pv-btn-primary" bindtap="onNext">
+        {{currentIndex === questions.length - 1 ? '提交验证' : '下一题'}}
+      </view>
+    </view>
+  </view>
+
+  <view wx:else class="pv-success">
+    <view class="pv-success-icon">✅</view>
+    <view class="pv-success-text">家长验证通过</view>
+    <view class="pv-success-tip">正在进入小程序，请陪同孩子一起探索～</view>
+  </view>
+
+  <view class="pv-footer">
+    <view class="pv-footer-row">单次会话 ≤ 15 分钟</view>
+    <view class="pv-footer-row">每日累计 ≤ 30 分钟</view>
+    <view class="pv-footer-row">22:00 - 6:00 不可用</view>
+  </view>
+</view>
