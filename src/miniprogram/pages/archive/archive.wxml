@@ -1,43 +1,43 @@
 <view class="archive-page">
   <view class="archive-header">
-    <text class="header-title">📊 好奇档案</text>
-    <text class="header-sub">记录每一次好奇心的旅程</text>
+    <text class="header-title">{{t['archive.title']}}</text>
+    <text class="header-sub">{{t['archive.subtitle']}}</text>
   </view>
 
-  <view class="tab-bar" aria-role="tablist">
+  <view class="tab-bar" aria-role="tablist" aria-label="{{t['archive.tabBarAria']}}">
     <view class="tab-item {{activeTab === 'history' ? 'active' : ''}}"
       data-tab="history" bindtap="onSwitchTab"
-      aria-role="tab" aria-selected="{{activeTab === 'history'}}" aria-label="浏览历史">
-      <text>浏览历史</text>
+      aria-role="tab" aria-selected="{{activeTab === 'history'}}" aria-label="{{t['archive.tabHistory']}}">
+      <text>{{t['archive.tabHistory']}}</text>
     </view>
     <view class="tab-item {{activeTab === 'favorites' ? 'active' : ''}}"
       data-tab="favorites" bindtap="onSwitchTab"
-      aria-role="tab" aria-selected="{{activeTab === 'favorites'}}" aria-label="我的收藏 {{favoriteCount}} 条">
-      <text>收藏 ({{favoriteCount}})</text>
+      aria-role="tab" aria-selected="{{activeTab === 'favorites'}}" aria-label="{{tabFavoritesAria}}">
+      <text>{{tabFavoritesText}}</text>
     </view>
   </view>
 
   <view wx:if="{{activeTab === 'history'}}">
-    <view wx:if="{{!isEmpty}}" class="stats-bar" aria-label="探索统计">
-      <view class="stat-item" aria-label="已探索 {{totalViewed}} 条">
+    <view wx:if="{{!isEmpty}}" class="stats-bar" aria-label="{{t['archive.statsAria']}}">
+      <view class="stat-item" aria-label="{{statViewedAria}}">
         <text class="stat-num">{{totalViewed}}</text>
-        <text class="stat-label">已探索</text>
+        <text class="stat-label">{{t['archive.statViewed']}}</text>
       </view>
-      <view class="stat-item" aria-label="今日探索 {{todayViewedCount}} 条">
+      <view class="stat-item" aria-label="{{statTodayAria}}">
         <text class="stat-num">{{todayViewedCount}}</text>
-        <text class="stat-label">今日</text>
+        <text class="stat-label">{{t['archive.statToday']}}</text>
       </view>
-      <view class="stat-item" aria-label="连续探索 {{streakDays}} 天">
+      <view class="stat-item" aria-label="{{statStreakAria}}">
         <text class="stat-num">{{streakDays}}</text>
-        <text class="stat-label">连续天</text>
+        <text class="stat-label">{{t['archive.statStreak']}}</text>
       </view>
     </view>
 
     <view wx:if="{{isEmpty}}" class="empty-state">
       <view class="empty-icon"><ip-face role="rabbit" size="48" /></view>
-      <text class="empty-text">还没有探索记录</text>
-      <text class="empty-sub">去发现页看看有什么有趣的问题吧！</text>
-      <button class="go-btn" bindtap="onGoDiscover" aria-label="去探索">去探索</button>
+      <text class="empty-text">{{t['archive.emptyHistory']}}</text>
+      <text class="empty-sub">{{t['archive.emptyHistorySub']}}</text>
+      <button class="go-btn" bindtap="onGoDiscover" aria-label="{{t['archive.goDiscover']}}">{{t['archive.goDiscover']}}</button>
     </view>
 
     <view wx:for="{{historyGroups}}" wx:key="date" class="history-group">
@@ -56,15 +56,15 @@
   <view wx:if="{{activeTab === 'favorites'}}">
     <view wx:if="{{favoriteCount === 0}}" class="empty-state">
       <text class="empty-icon">☆</text>
-      <text class="empty-text">还没有收藏</text>
-      <text class="empty-sub">在问题详情页点击星标即可收藏</text>
-      <button class="go-btn" bindtap="onGoDiscover" aria-label="去发现">去发现</button>
+      <text class="empty-text">{{t['archive.emptyFav']}}</text>
+      <text class="empty-sub">{{t['archive.emptyFavSub']}}</text>
+      <button class="go-btn" bindtap="onGoDiscover" aria-label="{{t['archive.goDiscoverFav']}}">{{t['archive.goDiscoverFav']}}</button>
     </view>
 
     <view wx:for="{{favoriteList}}" wx:key="id"
       class="history-item" data-id="{{item.id}}"
       bindtap="onQuestionTap" bindlongpress="onFavoriteLongPress"
-      aria-role="button" aria-label="{{item.question}} 长按可取消收藏">
+      aria-role="button" aria-label="{{item.favAria}}">
       <text class="fav-star">★</text>
       <text class="hi-text">{{item.question}}</text>
       <view class="hi-meta">
