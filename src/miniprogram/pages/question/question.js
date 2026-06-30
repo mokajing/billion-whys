@@ -1,7 +1,12 @@
 const content = require('../../utils/content')
 const { categoryLabels, categoryIcons, expTypeLabels } = require('../../utils/constants')
-const { safeToast, safeSwitchTab, safeRedirectTo, safeNavigateBack } = require('../../utils/safe-wx')
+const { safeToast, safeSwitchTab, safeRedirectTo, safeNavigateBack, safeCreateSelectorQuery, safePageScrollTo } = require('../../utils/safe-wx')
 const analytics = require('../../utils/analytics')
+const storage = require('../../utils/storage')
+const i18n = require('../../utils/i18n')
+
+// V8.16 第84轮 Sprint 25：照护者自我效能 A/B 实验键（与 H5 stores/ab.js 同键）
+const AB_EXPERIMENT_KEY = 'caregiver_affirmation_v1'
 
 Page({
   data: {
@@ -33,12 +38,23 @@ Page({
     categoryIcon: '❓',
     currentFeedback: null,
     hasExperiment: false,
+    // V8.16 第84轮 Sprint 25：A/B affirmation 文案
+    affirmationText: '',
+    // V8.17 第85轮 Sprint 26：i18n 注入
+    locale: i18n.getLocale(),
+    t: i18n.dict(),
+    ageText: '',
+    prevAria: '',
+    nextAria: '',
   },
 
   onLoad(options) {
     try {
       const id = options.id
       if (!id) { safeSwitchTab('/pages/discover/discover'); return }
+      // P1-3 分包懒加载：按 id 推断 category 异步预加载对应分包（不阻塞当前渲染）
+      const cat = content.getCategoryFromId(id)
+      if (cat) content.preloadCategoryAsync(cat)
       const q = content.getById(id)
       if (!q) { safeSwitchTab('/pages/discover/discover'); return }
       const isExpObj = typeof q.experiment === 'object' && q.experiment !== null
@@ -58,6 +74,8 @@ Page({
       const related = content.suggestRelated(q.question)
         .filter(r => r.id !== id).slice(0, 3)
         .map(r => ({ id: r.id, question: r.question }))
+      const prevQuestion = idx > 0 ? { id: catQuestions[idx - 1].id, question: catQuestions[idx - 1].question } : null
+      const nextQuestion = idx < catQuestions.length - 1 ? { id: catQuestions[idx + 1].id, question: catQuestions[idx + 1].question } : null
       this.setData({
         question: {
           id: q.id,
@@ -89,14 +107,23 @@ Page({
         layer3Image: content.toWebP((q.layer3 && q.layer3.image) || ''),
         scienceImage: content.toWebP(q.scienceImage || ''),
         ipDialogues: content.parseIpScene(q.ipScene || ''),
-        prevQuestion: idx > 0 ? { id: catQuestions[idx - 1].id, question: catQuestions[idx - 1].question } : null,
-        nextQuestion: idx < catQuestions.length - 1 ? { id: catQuestions[idx + 1].id, question: catQuestions[idx + 1].question } : null,
+        prevQuestion,
+        nextQuestion,
         isFavorite: content.isFavorite(id),
         relatedQuestions: related,
         currentFeedback: content.getAnswerFeedback(id),
         hasExperiment: !!(q.experiment && (q.experiment.name || q.experiment.steps || q.experiment.experimentType)),
+        ageText: i18n.t('qd.age', { age: q.age }),
+        prevAria: prevQuestion ? i18n.t('qd.prevAria', { q: prevQuestion.question }) : '',
+        nextAria: nextQuestion ? i18n.t('qd.nextAria', { q: nextQuestion.question }) : '',
       })
       content.markViewed(id, q.category)
+      // V8.16 第84轮 Sprint 25：A/B 分桶 + 曝光埋点（幂等，同 experiment 只发一次）
+      // CTO+法务张律：纯 Math.random coin-flip，不读身份字段；走 storage.emitABExpose eventLog 单一通道
+      const abVariant = storage.getABVariant(AB_EXPERIMENT_KEY)
+      const affirmationText = storage.getABCopy(AB_EXPERIMENT_KEY)
+      storage.emitABExpose(AB_EXPERIMENT_KEY, abVariant)
+      this.setData({ affirmationText })
     } catch (err) {
       console.error('[BillionWhys] question onLoad error:', err)
       safeToast({ title: '加载失败，正在返回', icon: 'none' })
@@ -110,7 +137,20 @@ Page({
 
   onImgError(e) {
     const field = e.currentTarget.dataset.field
-    if (field) this.setData({ [field]: '' })
+    if (!field) return
+    // P0-3 CDN fallback：主 CDN 加载失败时尝试备用 raw.githubusercontent.com，仍失败则清空
+    const current = this.data[field]
+    if (current && current.indexOf('cdn.jsdelivr.net') !== -1) {
+      // 切换到备用 CDN（raw.githubusercontent.com）
+      const fallback = content.toWebPFallback
+        ? content.toWebPFallback(current.replace(content.CDN_BASE + '/', ''))
+        : ''
+      if (fallback) {
+        this.setData({ [field]: fallback })
+        return
+      }
+    }
+    this.setData({ [field]: '' })
   },
 
   onToggleFavorite() {
@@ -129,6 +169,10 @@ Page({
     this.setData({ currentFeedback: 'up' })
     // V8.2 第71轮 Sprint 11：闭合 反馈→CTA→实验 增长漏斗（COO+AI小智+CCO）
     analytics.feedbackUp(id)
+    // V8.16 第84轮 Sprint 25：A/B 目标转化埋点 — feedback_up 即 ab_convert goal=feedback_up
+    // 后端老稳：走 storage.emitABConvert eventLog 单一通道，detail=experiment:variant:goal
+    const abVariant = storage.getABVariant(AB_EXPERIMENT_KEY)
+    analytics.abConvert(AB_EXPERIMENT_KEY, abVariant, 'feedback_up')
   },
 
   onFeedbackDown() {
@@ -166,16 +210,22 @@ Page({
     // V8.2 第71轮 Sprint 11：埋点 cta_experiment
     const id = this.data.question && this.data.question.id
     if (id) analytics.ctaExperiment(id)
-    const query = wx.createSelectorQuery().in(this)
+    // P1-2 整改：wx.createSelectorQuery / wx.pageScrollTo 走 safe-wx 守卫
+    const query = safeCreateSelectorQuery(this)
+    if (!query) {
+      // 兜底：直接滚到底部，少数机型 boundingClientRect 不可用时仍能跳到实验区
+      safePageScrollTo(9999)
+      return
+    }
     query.select('.parent-section').boundingClientRect((rect) => {
       if (rect && typeof rect.top === 'number') {
-        wx.pageScrollTo({
-          scrollTop: rect.top + (getCurrentPages().slice(-1)[0].scrollTop || 0),
-          duration: 300,
-        })
+        const pages = (typeof getCurrentPages === 'function') ? getCurrentPages() : []
+        const lastPage = pages[pages.length - 1]
+        const baseTop = (lastPage && typeof lastPage.scrollTop === 'number') ? lastPage.scrollTop : 0
+        safePageScrollTo(rect.top + baseTop)
       } else {
         // Fallback: 不带偏移的滚动（少数机型 boundingClientRect 失败）
-        wx.pageScrollTo({ scrollTop: 9999, duration: 300 })
+        safePageScrollTo(9999)
       }
     }).exec()
   },
