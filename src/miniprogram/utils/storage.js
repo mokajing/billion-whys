@@ -17,6 +17,15 @@ const KEYS = {
   ANSWER_FEEDBACK: 'bw_answer_feedback',
   // V8.4 第72轮 Sprint 13：反馈行动流水（与 H5 stores/content.js FEEDBACK_LOG_KEY 同名同结构）
   FEEDBACK_LOG: 'bw_feedback_log',
+  // V8.13 第81轮 Sprint 22：当日明细预览/再读本地计数（MP 端 analytics 不落地本地）
+  DETAIL_ACTION_COUNT: 'bw_detail_action_count',
+  // V8.14 第82轮 Sprint 23：i18n locale 持久化（出海前置）
+  // Why: 法务张律放行 — locale 是用户偏好非儿童身份；本轮仅内部切换不向用户暴露
+  LOCALE: 'bw_locale',
+  // V8.15 第83轮 Sprint 24：事件总线统一治理 — eventLog 单一通道（与 H5 analytics.eventLog 同结构）
+  // Why: CTO+后端老稳 — 未来 batch upload 走 eventLog 单一 endpoint；feedback_* 不再双轨存储
+  // 法务张律放行：detail 仅 questionId 非儿童身份；meta 字段白名单（depth/layer/source）
+  EVENT_LOG: 'bw_event_log',
 }
 
 function getViewHistory() {
@@ -267,6 +276,211 @@ function getFeedbackDepthByDate(dateStr) {
   return { L1: 0, L2: 0, L3: 0, total: 0 }
 }
 
+// V8.13 第81轮 Sprint 22：累计参与度汇总 — 与 H5 stores/content.js feedbackSummary getter 同构
+// Why: CEO 周远见 — 8 阶漏斗已建但 Profile 第一屏无累计值；毒舌老王：把累计抬到第一屏
+// 法务张律放行：纯本地 feedbackLog 计数非儿童身份；隐私政策条款 5"反馈行动次数"已涵盖
+function getFeedbackSummary() {
+  const log = getFeedbackLog()
+  let up = 0, down = 0, reset = 0, depthL2 = 0, depthL3 = 0, sevenDayTotal = 0
+  const dayMs = 86400000
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  const todayTs = today.getTime()
+  const sevenStart = todayTs - 6 * dayMs
+  for (const e of log) {
+    if (e.action === 'up') up++
+    else if (e.action === 'down') down++
+    else if (e.action === 'reset') reset++
+    const d = e.depth || 1
+    if (d === 2) depthL2++
+    else if (d === 3) depthL3++
+    if (e.ts >= sevenStart && e.ts < todayTs + dayMs) sevenDayTotal++
+  }
+  return { total: log.length, up, down, reset, depthL2, depthL3, sevenDayTotal }
+}
+
+// V8.13 第81轮 Sprint 22：MP 端本地预览/再读计数 — H5 端从 analytics events 聚合
+// Why: MP analytics.js 走 wx.reportEvent 不落地本地，需独立计数器；法务张律放行：纯本地行为计数非儿童身份
+function getDetailActionCount(type) {
+  if (type !== 'preview' && type !== 'replay') return 0
+  const raw = safeGetStorageSync(KEYS.DETAIL_ACTION_COUNT, null)
+  if (!raw) return 0
+  const obj = typeof raw === 'string' ? JSON.parse(raw) : raw
+  return Number(obj[type]) || 0
+}
+
+function incrementDetailActionCount(type) {
+  if (type !== 'preview' && type !== 'replay') return
+  const next = {
+    preview: getDetailActionCount('preview'),
+    replay: getDetailActionCount('replay'),
+  }
+  next[type] = next[type] + 1
+  safeSetStorageSync(KEYS.DETAIL_ACTION_COUNT, next)
+}
+
+// V8.14 第82轮 Sprint 23：locale 持久化（i18n 出海前置）
+// V8.21 第89轮 Sprint 30：locale 子标签持久化（en-GB/en-US/en-AU 等 BCP-47 subtag 原样存储，与 H5 同构）
+// Why: 法务张律放行 — locale 是用户偏好非儿童身份；subtag 不引入新身份字段；本轮仅内部切换不向用户暴露
+// CEO 裁决：getLocale 保留 subtag（'en-GB' 而非归一 'en'），subtag 信息一旦丢失难恢复；t() 内部各自 normalize
+const SUPPORTED_BASES = ['zh', 'en']
+
+function normalizeLocale(locale) {
+  if (!locale || typeof locale !== 'string') return 'zh'
+  const base = locale.toLowerCase().split('-')[0]
+  return SUPPORTED_BASES.indexOf(base) >= 0 ? base : 'zh'
+}
+
+function getLocale() {
+  const v = safeGetStorageSync(KEYS.LOCALE, 'zh')
+  if (!v) return 'zh'
+  const base = normalizeLocale(v)
+  return base === 'zh' ? 'zh' : v
+}
+
+function setLocale(locale) {
+  const base = normalizeLocale(locale)
+  if (base === 'zh') {
+    return safeSetStorageSync(KEYS.LOCALE, 'zh')
+  }
+  return safeSetStorageSync(KEYS.LOCALE, locale)
+}
+
+// V8.15 第83轮 Sprint 24：事件总线单一入口（MP 端 — 与 H5 analytics.emitEvent 同构）
+// Why: CTO 陈架构 — feedback_* 系列此前走 wx.reportEvent 不落地本地，无法做 batch upload；
+//   后端老稳：eventLog 落地后未来可单次 flush 全量同步；安全李姐：纯本地 storage 不触发网络
+// 法务张律放行：detail 仅 questionId（category-NNN 格式）非儿童身份；meta 白名单防身份泄漏
+// 测试虫虫：cap 200、90 天 prune，与 H5 同规格
+const EVENT_LOG_MAX = 200
+const EVENT_LOG_RETENTION_DAYS = 90
+
+function getEventLog() {
+  const arr = safeGetStorageSync(KEYS.EVENT_LOG, [])
+  if (!Array.isArray(arr)) return []
+  const cutoff = Date.now() - EVENT_LOG_RETENTION_DAYS * 86400000
+  return arr
+    .filter(x => x && typeof x.name === 'string' && typeof x.ts === 'number' && x.ts >= cutoff)
+    .slice(-EVENT_LOG_MAX)
+}
+
+function emitEvent(name, detail, meta) {
+  if (!name || typeof name !== 'string') return
+  const log = getEventLog()
+  const entry = { name, detail: String(detail || ''), ts: Date.now() }
+  if (meta && typeof meta === 'object' && !Array.isArray(meta)) {
+    const safe = {}
+    for (const k of Object.keys(meta)) {
+      if (['depth', 'layer', 'source'].includes(k)) safe[k] = meta[k]
+    }
+    if (Object.keys(safe).length > 0) entry.meta = safe
+  }
+  log.push(entry)
+  safeSetStorageSync(KEYS.EVENT_LOG, log.slice(-EVENT_LOG_MAX))
+}
+
+// V8.15 Sprint 24：跨源事件计数 — 同时扫描 eventLog 与 detail_action_count（向后兼容）
+// Why: 测试虫虫 — sprint22 老测试可能仍依赖 detail_action_count；双源聚合不破坏 API
+function countEvent(name) {
+  if (!name) return 0
+  let n = 0
+  const log = getEventLog()
+  for (const ev of log) {
+    if (ev && ev.name === name) n++
+  }
+  // 兼容旧路径：feedback_detail_preview/replay 仍可能在 detail_action_count 中
+  if (name === 'feedback_detail_preview') n += getDetailActionCount('preview')
+  if (name === 'feedback_detail_replay') n += getDetailActionCount('replay')
+  return n
+}
+
+// V8.15 Sprint 24：flushAll 只读 hook — 供未来 batch upload 单次 flush（不触发网络）
+// Why: 后端老稳 — 单一 endpoint 单一 schema；CTO：本轮只读，下一轮再设计上传
+function flushAll() {
+  return {
+    feedbackLog: getFeedbackLog(),
+    eventLog: getEventLog(),
+    detailActionCount: safeGetStorageSync(KEYS.DETAIL_ACTION_COUNT, null) || null,
+  }
+}
+
+// V8.16 第84轮 Sprint 25：照护者自我效能 A/B 框架（MP 端 — 与 H5 stores/ab.js 同构）
+// Why: COO+CCO — V8.15 事件总线闭合后，北极星漏斗第11阶"妈妈自我效能"解锁
+// CTO 陈架构：MVP 纯 Math.random coin-flip，不接后端、不读身份字段
+// 法务张律红线：分桶算法禁止读取任何 device/account/locale 字段；bucket 是实验分配元数据非儿童身份
+// 心理学家周教授红线：B 变体必须肯定行为而非施压后果（否决 guilt-trip 文案）
+// 社会学刘教授：文案用"你"包容隔代抚养/单亲/双亲，不预设核心家庭叙事
+// 测试虫虫：emitABExpose 必须幂等（同 experiment 只发一次），防 onShow 重渲染刷数
+// 后端老稳：ab_* 走 V8.15 eventLog 单一通道，detail=experiment:variant:goal，meta 留空
+//   事件总线 API 冻结，本轮不动 meta allowlist（sprint24 测试不破）
+const AB_KEY = 'bw_ab_assignments'
+const AB_EXPERIMENTS = {
+  caregiver_affirmation_v1: {
+    variants: ['A', 'B'],
+    // CCO 文若水终稿 27 字；心理学家周教授放行（肯定型非施压）；社会学刘教授放行（主语"你"包容）
+    // P2-5 整改：原 "你回答得真好——你的孩子会记住这一刻的" 对家长施压感边界模糊，
+    // 改为更中性、肯定陪伴的表述，避免 guilt-trip 风险
+    copy: {
+      A: '',
+      B: '你陪伴得真好——这一刻很珍贵。',
+    },
+  },
+}
+
+// 内存级幂等曝光标记（同 experiment 只发一次 ab_expose）
+const _abExposed = {}
+
+function getABAssignments() {
+  const obj = safeGetStorageSync(AB_KEY, {})
+  return obj && typeof obj === 'object' && !Array.isArray(obj) ? obj : {}
+}
+
+function setABAssignments(obj) {
+  return safeSetStorageSync(AB_KEY, obj || {})
+}
+
+// 返回该 experiment 当前桶；不存在则 coin-flip 持久化
+// Why: 法务张律红线 — 纯 Math.random，不读取任何身份字段做分层
+function getABVariant(experimentKey) {
+  const config = AB_EXPERIMENTS[experimentKey]
+  if (!config) return 'A'
+  const assignments = getABAssignments()
+  const existing = assignments[experimentKey]
+  if (existing && config.variants.includes(existing)) return existing
+  const idx = Math.random() < 0.5 ? 0 : 1
+  const picked = config.variants[idx] || config.variants[0]
+  assignments[experimentKey] = picked
+  setABAssignments(assignments)
+  return picked
+}
+
+function getABCopy(experimentKey) {
+  const config = AB_EXPERIMENTS[experimentKey]
+  if (!config) return ''
+  const variant = getABAssignments()[experimentKey]
+  if (!variant || !config.variants.includes(variant)) return ''
+  return config.copy[variant] || ''
+}
+
+// 幂等曝光埋点：同 experiment 只发一次 ab_expose
+// Why: 测试虫虫 — onShow 在 tab 切换时可能重复触发
+function emitABExpose(experimentKey, variant) {
+  if (!experimentKey || !variant) return
+  if (_abExposed[experimentKey]) return
+  _abExposed[experimentKey] = true
+  emitEvent('ab_expose', `${experimentKey}:${variant}`)
+}
+
+// 目标转化埋点：调用点判断目标已达成（如 feedbackUp）即触发
+function emitABConvert(experimentKey, variant, goalName) {
+  if (!experimentKey || !variant) return
+  emitEvent('ab_convert', `${experimentKey}:${variant}:${goalName || 'default'}`)
+}
+
+// 测试辅助：重置内存 exposed 标记（仅单测调用）
+function _resetABExposed() {
+  for (const k of Object.keys(_abExposed)) delete _abExposed[k]
+}
+
 module.exports = {
   KEYS,
   getViewHistory,
@@ -291,4 +505,21 @@ module.exports = {
   getFeedbackTrend7dTotal,
   getFeedbackDetailByDate,
   getFeedbackDepthByDate,
+  getFeedbackSummary,
+  getDetailActionCount,
+  incrementDetailActionCount,
+  getLocale,
+  setLocale,
+  // V8.15 第83轮 Sprint 24：事件总线统一治理
+  getEventLog,
+  emitEvent,
+  countEvent,
+  flushAll,
+  // V8.16 第84轮 Sprint 25：A/B 框架
+  AB_EXPERIMENTS,
+  getABVariant,
+  getABCopy,
+  emitABExpose,
+  emitABConvert,
+  _resetABExposed,
 }
