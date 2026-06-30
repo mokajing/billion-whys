@@ -46,6 +46,26 @@
       {
         "type": "folder",
         "value": "../../coverage"
+      },
+      {
+        "type": "folder",
+        "value": "../../content/images"
+      },
+      {
+        "type": "folder",
+        "value": "../../content/seed-library"
+      },
+      {
+        "type": "folder",
+        "value": "../../docs"
+      },
+      {
+        "type": "folder",
+        "value": "../../.git"
+      },
+      {
+        "type": "folder",
+        "value": "../../.github"
       }
     ]
   },
