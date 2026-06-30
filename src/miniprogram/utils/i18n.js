@@ -217,6 +217,11 @@ const DICT = {
     'privacy.back': '← 返回',
     'privacy.versionLine': '版本：v{v} | 更新日期：{d}',
     'privacy.footer': '十亿个什么与为什么 | 守护每个孩子的好奇心',
+
+    // --- LocaleSwitcher (V8.25 Sprint 34) — flag-off 默认不渲染，V9 出海翻 flag 即上 ---
+    'locale.switcher.aria': '语言切换',
+    'locale.switcher.zh': '中',
+    'locale.switcher.en': 'EN',
   },
   en: {
     // --- Profile summary (V8.14) ---
@@ -418,6 +423,11 @@ const DICT = {
     'privacy.back': '← Back',
     'privacy.versionLine': 'Version: v{v} | Updated: {d}',
     'privacy.footer': 'A Billion Whys | Guarding every child\'s curiosity',
+
+    // --- LocaleSwitcher (V8.25 Sprint 34) — flag-off 默认不渲染，V9 出海翻 flag 即上 ---
+    'locale.switcher.aria': 'Language switch',
+    'locale.switcher.zh': '中',
+    'locale.switcher.en': 'EN',
   },
   // V8.21 Sprint 30: en-GB 子分支 hook 占位（与 H5 同构；V9 出海文案专项时直接注入 spelling 分叉）
   'en-GB': {},
@@ -478,6 +488,19 @@ function dict(locale) {
   return DICT[base] || DICT.zh
 }
 
+// V8.25 第93轮 Sprint 34：LocaleSwitcher FeatureFlag 化预埋（V9 出海前置 P0）
+// Why: 北极星漏斗第19阶"LocaleSwitcher FeatureFlag 化预埋"；与 H5 src/h5/utils/i18n.js 同构
+// 法务张律 一票否决：默认 false 是合规底线；en DICT 179 key 覆盖不全 + 内容 270 条仍 zh-only
+// CTO 陈架构 + 毒舌老王：模块顶层 let flag；测试钩子 _setLocaleSwitcherEnabled
+// CPO 叶用户：V9 LLM 翻译流水线就绪后翻 flag；本轮纯 UI 协议层预埋，零网络延续
+let LOCALE_SWITCHER_ENABLED = false
+function isLocaleSwitcherEnabled() {
+  return LOCALE_SWITCHER_ENABLED === true
+}
+function _setLocaleSwitcherEnabled(v) {
+  LOCALE_SWITCHER_ENABLED = v === true
+}
+
 module.exports = {
   DICT,
   normalizeLocale,
@@ -485,4 +508,6 @@ module.exports = {
   setLocale,
   t,
   dict,
+  isLocaleSwitcherEnabled,
+  _setLocaleSwitcherEnabled,
 }
