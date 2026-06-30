@@ -69,6 +69,47 @@
   background: #FAFAFA;
   border-radius: 20rpx;
 }
+/* V8.13 第81轮 Sprint 22：累计参与度汇总卡片（与 H5 Profile.vue 配色同构） */
+.ft-summary-card {
+  margin: 0 32rpx 24rpx;
+  padding: 22rpx 28rpx;
+  background: #E8F5E9;
+  border-radius: 20rpx;
+  min-height: 96rpx;
+  display: flex;
+  flex-direction: column;
+}
+.ft-summary-card.ft-summary-empty {
+  background: #F5F5F5;
+}
+.ft-summary-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin-bottom: 8rpx;
+}
+.ft-summary-row.ft-summary-depth,
+.ft-summary-row.ft-summary-channel {
+  color: #388E3C;
+}
+.ft-summary-main {
+  font-weight: 600;
+  font-size: 30rpx;
+  color: #2E7D32;
+  margin-right: 16rpx;
+}
+.ft-summary-break {
+  font-size: 26rpx;
+  color: #4CAF50;
+}
+.ft-summary-depth,
+.ft-summary-channel {
+  font-size: 26rpx;
+}
+.ft-summary-empty-text {
+  font-size: 28rpx;
+  color: #555;
+}
 .ft-header {
   display: flex;
   align-items: center;
@@ -159,6 +200,37 @@
   text-align: center;
   padding: 16rpx 0;
 }
+/* V8.11 Sprint 20：当日反馈深度分布可视化 — 水平堆叠条 + 文案 */
+.ft-depth-viz {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin: 12rpx 0 16rpx;
+  padding: 12rpx 16rpx;
+  background: #F1F8E9;
+  border-radius: 12rpx;
+}
+.ft-depth-bar {
+  display: flex;
+  flex: 1;
+  height: 16rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+  background: #E0E0E0;
+  min-width: 120rpx;
+}
+.ft-depth-seg {
+  height: 100%;
+}
+.ft-depth-seg-l1 { background: #A5D6A7; }
+.ft-depth-seg-l2 { background: #66BB6A; }
+.ft-depth-seg-l3 { background: #2E7D32; }
+.ft-depth-text {
+  font-size: 20rpx;
+  color: #2E7D32;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
 .ft-bar-stack {
   height: 48rpx;
   display: flex;
@@ -239,4 +311,53 @@
   font-size: 22rpx;
   color: #767676;
   margin-top: 40rpx;
+}
+
+/* 未成年人保护：今日使用时长卡片 */
+.mp-usage-card {
+  margin: 16rpx 0;
+  padding: 24rpx 28rpx;
+  background: #E8F5E9;
+  border-radius: 16rpx;
+  border-left: 6rpx solid #1A5C3A;
+}
+
+.mp-usage-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.mp-usage-row-sub {
+  font-size: 22rpx;
+  color: #666;
+  margin-top: 8rpx;
+}
+
+.mp-usage-label {
+  color: #1A5C3A;
+  font-weight: 600;
+}
+
+.mp-usage-value {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #1A5C3A;
+}
+
+.mp-usage-bar {
+  height: 12rpx;
+  background: #fff;
+  border-radius: 6rpx;
+  margin: 12rpx 0;
+  overflow: hidden;
+}
+
+.mp-usage-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #1A5C3A);
+  border-radius: 6rpx;
+  transition: width 0.3s ease;
 }
