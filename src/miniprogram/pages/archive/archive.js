@@ -1,5 +1,6 @@
 const content = require('../../utils/content')
-const { safeToast } = require('../../utils/safe-wx')
+const { safeToast, safeSwitchTab, safeShowActionSheet } = require('../../utils/safe-wx')
+const i18n = require('../../utils/i18n')
 
 Page({
   data: {
@@ -11,9 +12,28 @@ Page({
     isEmpty: true,
     favoriteList: [],
     favoriteCount: 0,
+    // V8.18 Sprint 27：i18n 注入
+    locale: 'zh',
+    t: i18n.dict('zh'),
+    tabFavoritesText: '',
+    tabFavoritesAria: '',
+    statViewedAria: '',
+    statTodayAria: '',
+    statStreakAria: '',
   },
 
   onShow() {
+    const locale = i18n.getLocale()
+    const t = i18n.dict(locale)
+    this.setData({
+      locale,
+      t,
+      tabFavoritesText: i18n.t('archive.tabFavoritesText', { n: this.data.favoriteCount }, locale),
+      tabFavoritesAria: i18n.t('archive.tabFavoritesAria', { n: this.data.favoriteCount }, locale),
+      statViewedAria: i18n.t('archive.statViewed', undefined, locale),
+      statTodayAria: i18n.t('archive.statToday', undefined, locale),
+      statStreakAria: i18n.t('archive.statStreak', undefined, locale),
+    })
     this.loadHistory()
     this.loadFavorites()
   },
@@ -26,8 +46,20 @@ Page({
     try {
       const favIds = content.getFavorites()
       const list = favIds.map(id => content.getById(id)).filter(Boolean)
-        .map(q => ({ id: q.id, question: q.question, category: q.category, age: q.age }))
-      this.setData({ favoriteList: list, favoriteCount: list.length })
+        .map(q => ({
+          id: q.id,
+          question: q.question,
+          category: q.category,
+          age: q.age,
+          favAria: i18n.t('archive.favLongPressAria', { q: q.question }, this.data.locale),
+        }))
+      const count = list.length
+      this.setData({
+        favoriteList: list,
+        favoriteCount: count,
+        tabFavoritesText: i18n.t('archive.tabFavoritesText', { n: count }, this.data.locale),
+        tabFavoritesAria: i18n.t('archive.tabFavoritesAria', { n: count }, this.data.locale),
+      })
     } catch (_e) {
       this.setData({ favoriteList: [], favoriteCount: 0 })
     }
@@ -75,7 +107,7 @@ Page({
       })
     } catch (_e) {
       this.setData({ historyGroups: [], streakDays: 0, totalViewed: 0, todayViewedCount: 0, isEmpty: true })
-      safeToast({ title: '记录加载失败', icon: 'none' })
+      safeToast({ title: i18n.t('archive.loadErrorToast', undefined, this.data.locale), icon: 'none' })
     }
   },
 
@@ -84,24 +116,23 @@ Page({
   },
 
   onGoDiscover() {
-    wx.switchTab({ url: '/pages/discover/discover' })
+    safeSwitchTab('/pages/discover/discover')
   },
 
   onFavoriteLongPress(e) {
     const id = e.currentTarget.dataset.id
     const item = this.data.favoriteList.find(f => f.id === id)
     const question = item ? item.question : ''
-    wx.showActionSheet({
-      itemList: ['取消收藏'],
+    const locale = this.data.locale
+    safeShowActionSheet({
+      itemList: [i18n.t('archive.confirmOk', undefined, locale)],
       itemColor: '#1A5C3A',
-      success: (res) => {
-        if (res.tapIndex === 0) {
-          content.toggleFavorite(id)
-          this.loadFavorites()
-          safeToast({ title: '已取消收藏', icon: 'success' })
-        }
-      },
-      fail: () => {},
+    }).then((tapIndex) => {
+      if (tapIndex === 0) {
+        content.toggleFavorite(id)
+        this.loadFavorites()
+        safeToast({ title: i18n.t('archive.toastRemoved', undefined, locale), icon: 'success' })
+      }
     })
   },
 
