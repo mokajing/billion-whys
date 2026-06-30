@@ -1,10 +1,10 @@
 <view class="question-detail" wx:if="{{question}}">
   <view class="question-header">
-    <view class="back-btn" bindtap="onGoBack" aria-role="button" aria-label="返回上一页">← 返回</view>
+    <view class="back-btn" bindtap="onGoBack" aria-role="button" aria-label="{{t['qd.backAria']}}">{{t['qd.back']}}</view>
     <text class="category-tag">{{categoryLabel}}</text>
     <text class="question-text">{{question.question}}</text>
-    <text class="age-badge">适合 {{question.age}}</text>
-    <view class="fav-btn {{isFavorite ? 'active' : ''}}" bindtap="onToggleFavorite" aria-role="button" aria-label="{{isFavorite ? '取消收藏' : '收藏这个问题'}}" aria-pressed="{{isFavorite}}">
+    <text class="age-badge">{{ageText}}</text>
+    <view class="fav-btn {{isFavorite ? 'active' : ''}}" bindtap="onToggleFavorite" aria-role="button" aria-label="{{isFavorite ? t['qd.favRemoveAria'] : t['qd.favAddAria']}}" aria-pressed="{{isFavorite}}">
       <text>{{isFavorite ? '★' : '☆'}}</text>
     </view>
   </view>
@@ -15,7 +15,7 @@
       <view wx:for="{{ipDialogues}}" wx:key="index" class="ip-bubble {{item.role}}">
         <view class="ip-line">
           <view class="ip-avatar"><ip-face role="{{item.role}}" size="24" /></view>
-          <text class="ip-name {{item.role}}">{{item.role === 'bear' ? '答答熊' : '问问兔'}}</text>
+          <text class="ip-name {{item.role}}">{{item.role === 'bear' ? t['qd.bear'] : t['qd.rabbit']}}</text>
         </view>
         <text class="ip-dialogue">{{item.text}}</text>
       </view>
@@ -23,7 +23,7 @@
 
     <!-- Layer 1 -->
     <view class="knowledge-card layer1">
-      <text class="card-badge badge-l1">💬 第1层 · 直接回答</text>
+      <text class="card-badge badge-l1">{{t['qd.layer1Badge']}}</text>
       <view class="card-illustration" wx:if="{{layer1Image}}">
         <image src="{{layer1Image}}" mode="aspectFill" aria-label="{{question.question}} 插图" binderror="onImgError" data-field="layer1Image" />
       </view>
@@ -37,34 +37,34 @@
     <!-- 答案反馈 (V7.9 第68轮 / V8.0 第69轮 🌟→问问兔鞠躬SVG / V8.1 第70轮 试试互动实验CTA) -->
     <view class="feedback-thanks" wx:if="{{currentFeedback}}" aria-role="status" aria-live="polite">
       <ip-face role="rabbit" size="40" mood="bowing" />
-      <text class="ft-text">谢谢你的反馈，我们会让问问兔更努力！</text>
-      <view class="ft-cta" wx:if="{{hasExperiment}}" bindtap="onScrollToExperiment" aria-role="button" aria-label="试试和问问兔一起做互动实验">🤲 试试互动实验</view>
+      <text class="ft-text">{{t['qd.thanks']}}</text>
+      <view class="ft-cta" wx:if="{{hasExperiment}}" bindtap="onScrollToExperiment" aria-role="button" aria-label="{{t['qd.expAria']}}">{{t['qd.expCta']}}</view>
       <!-- V8.3 第71轮 Sprint 12：再评一次 次级CTA，闭合反馈循环（COO反馈率北极星≥5%） -->
-      <view class="ft-reset" bindtap="onResetFeedback" aria-role="button" aria-label="清除当前反馈，重新选择有用或没用">↻ 再评一次</view>
+      <view class="ft-reset" bindtap="onResetFeedback" aria-role="button" aria-label="{{t['qd.resetAria']}}">{{t['qd.resetCta']}}</view>
     </view>
-    <view class="feedback-section" wx:else aria-role="group" aria-label="答案反馈">
-      <text class="fb-prompt">这个回答对孩子有用吗？</text>
+    <view class="feedback-section" wx:else aria-role="group" aria-label="{{t['qd.feedbackAria']}}">
+      <text class="fb-prompt">{{t['qd.feedbackPrompt']}}</text>
       <view class="fb-buttons">
-        <view class="fb-btn {{currentFeedback === 'up' ? 'active' : ''}}" bindtap="onFeedbackUp" aria-role="button" aria-label="有用" aria-pressed="{{currentFeedback === 'up'}}">
-          <text>👍 有用</text>
+        <view class="fb-btn {{currentFeedback === 'up' ? 'active' : ''}}" bindtap="onFeedbackUp" aria-role="button" aria-label="{{t['qd.usefulAria']}}" aria-pressed="{{currentFeedback === 'up'}}">
+          <text>{{t['qd.useful']}}</text>
         </view>
-        <view class="fb-btn fb-down {{currentFeedback === 'down' ? 'active' : ''}}" bindtap="onFeedbackDown" aria-role="button" aria-label="没用" aria-pressed="{{currentFeedback === 'down'}}">
-          <text>👎 没用</text>
+        <view class="fb-btn fb-down {{currentFeedback === 'down' ? 'active' : ''}}" bindtap="onFeedbackDown" aria-role="button" aria-label="{{t['qd.uselessAria']}}" aria-pressed="{{currentFeedback === 'down'}}">
+          <text>{{t['qd.useless']}}</text>
         </view>
       </view>
     </view>
 
     <text class="next-hint" wx:if="{{question.layer2 && !showDeeper}}"></text>
     <view class="expand-hint" wx:if="{{question.layer2 && !showDeeper}}">
-      <view class="expand-btn" bindtap="onExpandDeeper" aria-role="button" aria-label="展开更多回答">问问兔还有更多发现哦 👇</view>
+      <view class="expand-btn" bindtap="onExpandDeeper" aria-role="button" aria-label="{{t['qd.layer2Cta']}}">{{t['qd.layer2Cta']}}</view>
     </view>
 
     <block wx:if="{{question.layer2 && showDeeper}}">
-    <text class="next-hint">继续追问 👇</text>
+    <text class="next-hint">{{t['qd.layer2CtaShort']}}</text>
 
     <!-- Layer 2 -->
     <view class="knowledge-card layer2">
-      <text class="card-badge badge-l2">🔄 第2层 · 继续追问</text>
+      <text class="card-badge badge-l2">{{t['qd.layer2Badge']}}</text>
       <view wx:if="{{question.layer2.followUp}}" class="child-bubble">
         <view class="bubble-avatar"><ip-face role="rabbit" size="20" /></view>
         <text class="bubble-text bubble-l2">{{question.layer2.followUp}}</text>
@@ -75,11 +75,11 @@
       <text class="answer-text">{{question.layer2.answer}}</text>
     </view>
 
-    <text class="next-hint" wx:if="{{question.layer3}}">还想知道更多 👇</text>
+    <text class="next-hint" wx:if="{{question.layer3}}">{{t['qd.layer3Cta']}}</text>
 
     <!-- Layer 3 -->
     <view class="knowledge-card layer3" wx:if="{{question.layer3}}">
-      <text class="card-badge badge-l3">🌟 第3层 · 趣味延伸</text>
+      <text class="card-badge badge-l3">{{t['qd.layer3Badge']}}</text>
       <view wx:if="{{question.layer3.followUp}}" class="child-bubble">
         <view class="bubble-avatar"><ip-face role="rabbit" size="20" /></view>
         <text class="bubble-text bubble-l3">{{question.layer3.followUp}}</text>
@@ -95,7 +95,9 @@
     <view class="warm-closing">
       <text class="wc-icon">🌟</text>
       <text class="wc-text">{{warmClosingText}}</text>
-      <text class="wc-sub">好奇心是最厉害的超能力哦！</text>
+      <text class="wc-sub">{{t['qd.warmClosing']}}</text>
+      <!-- V8.16 第84轮 Sprint 25：照护者自我效能 affirmation（A/B B 变体） -->
+      <text class="wc-affirm" wx:if="{{affirmationText}}">{{affirmationText}}</text>
     </view>
 
     <!-- Related Curiosity -->
@@ -114,6 +116,7 @@
     <view class="parent-section">
       <view class="parent-header" bindtap="onToggleParent" aria-role="button" aria-expanded="{{showParent}}" aria-controls="mp-parent-body">
         <text>📖 给大人看的（点击展开）</text>
+        <text wx:if="{{question.safetyLevel === 'B'}}" class="safety-badge-b">⚠️ 需大人全程陪同</text>
         <text class="arrow {{showParent ? 'open' : ''}}">▼</text>
       </view>
       <view id="mp-parent-body" class="parent-body" wx:if="{{showParent}}">
@@ -159,11 +162,11 @@
     </view>
 
     <!-- Question Navigation -->
-    <view class="question-nav" wx:if="{{prevQuestion || nextQuestion}}" aria-role="navigation" aria-label="问题导航">
-      <view wx:if="{{prevQuestion}}" class="nav-btn prev" bindtap="onNavPrev" aria-role="button" aria-label="上一个问题：{{prevQuestion.question}}">
+    <view class="question-nav" wx:if="{{prevQuestion || nextQuestion}}" aria-role="navigation" aria-label="{{t['qd.navAria']}}">
+      <view wx:if="{{prevQuestion}}" class="nav-btn prev" bindtap="onNavPrev" aria-role="button" aria-label="{{prevAria}}">
         <text>← {{prevQuestion.question}}</text>
       </view>
-      <view wx:if="{{nextQuestion}}" class="nav-btn next" bindtap="onNavNext" aria-role="button" aria-label="下一个问题：{{nextQuestion.question}}">
+      <view wx:if="{{nextQuestion}}" class="nav-btn next" bindtap="onNavNext" aria-role="button" aria-label="{{nextAria}}">
         <text>{{nextQuestion.question}} →</text>
       </view>
     </view>
