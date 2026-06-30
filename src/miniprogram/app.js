@@ -17,7 +17,7 @@ const minorProtection = require('./utils/minor-protection')
 let version = '0.0.0'
 let releaseDate = ''
 try {
-  const v = require('./data/version.json')
+  const v = require('./data/version-data')
   version = v.version || version
   releaseDate = v.releaseDate || ''
 } catch (_e) { /* 开发期未构建时降级 */ }
