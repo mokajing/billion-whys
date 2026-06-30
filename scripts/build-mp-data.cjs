@@ -16,25 +16,36 @@ categories.forEach(cat => {
 const outDir = path.join(__dirname, '../src/miniprogram/data')
 if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true })
 
-// 主包仍保留全量 questions.json 作为兼容兜底（content.js 优先走分包，分包加载失败时可降级）
+// Bug fix: WeChat MP cannot require .json files directly; must use .js wrappers.
+// We write BOTH .json (for reference) and .js (for require) versions.
+// The local package.json with type:commonjs ensures Node treats .js as CJS.
+
+// 主包全量数据
+fs.writeFileSync(path.join(outDir, 'questions.json'), JSON.stringify(allQuestions))
 fs.writeFileSync(
-  path.join(outDir, 'questions.json'),
-  JSON.stringify(allQuestions)
+  path.join(outDir, 'questions-data.js'),
+  '// AUTO-GENERATED. Do not edit. Source: content/seed-library/*.json\n' +
+  '"use strict";\n' +
+  'module.exports = ' + JSON.stringify(allQuestions) + ';\n'
 )
 
-// P1-3 分包：写入 src/miniprogram/subpackages/<cat>/data.json
+// P1-3 分包：写入 src/miniprogram/subpackages/<cat>/data.{json,js}
 const subRoot = path.join(__dirname, '../src/miniprogram/subpackages')
 if (!fs.existsSync(subRoot)) fs.mkdirSync(subRoot, { recursive: true })
 categories.forEach(cat => {
   const subDir = path.join(subRoot, cat)
   if (!fs.existsSync(subDir)) fs.mkdirSync(subDir, { recursive: true })
+  // Write both .json and .js for subpackages
+  fs.writeFileSync(path.join(subDir, 'data.json'), JSON.stringify(byCategory[cat]))
   fs.writeFileSync(
-    path.join(subDir, 'data.json'),
-    JSON.stringify(byCategory[cat])
+    path.join(subDir, 'data.js'),
+    '// AUTO-GENERATED.\n"use strict";\nmodule.exports = ' + JSON.stringify(byCategory[cat]) + ';\n'
   )
+  // Local package.json to force CommonJS
+  fs.writeFileSync(path.join(subDir, 'package.json'), '{"type": "commonjs"}\n')
 })
 
-// 索引文件：主包加载时仅读取轻量索引（id/category/age/question/tags）供发现页/搜索使用
+// 索引文件
 const indexData = allQuestions.map(q => ({
   id: q.id,
   category: q.category,
@@ -43,25 +54,32 @@ const indexData = allQuestions.map(q => ({
   tags: q.tags || [],
   safetyLevel: q.safetyLevel || 'A',
 }))
+fs.writeFileSync(path.join(outDir, 'questions-index.json'), JSON.stringify(indexData))
 fs.writeFileSync(
-  path.join(outDir, 'questions-index.json'),
-  JSON.stringify(indexData)
+  path.join(outDir, 'questions-index-data.js'),
+  '// AUTO-GENERATED.\n"use strict";\nmodule.exports = ' + JSON.stringify(indexData) + ';\n'
 )
 
-// 版本号单一源：从 package.json 注入 MP，避免 app.js/profile.js/privacy.wxml 三处硬编码漂移
+// 版本号
 const pkg = JSON.parse(
   fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8')
 )
 const releaseDate = new Date().toISOString().slice(0, 10)
 fs.writeFileSync(
   path.join(outDir, 'version.json'),
-  JSON.stringify({
-    version: pkg.version,
-    releaseDate,
-  })
+  JSON.stringify({ version: pkg.version, releaseDate })
+)
+fs.writeFileSync(
+  path.join(outDir, 'version-data.js'),
+  '// AUTO-GENERATED.\n"use strict";\nmodule.exports = ' +
+  JSON.stringify({ version: pkg.version, releaseDate }) + ';\n'
 )
 
-console.log(`Built ${allQuestions.length} questions into miniprogram/data/questions.json`)
+// Local package.json to force CommonJS for data/ folder
+fs.writeFileSync(path.join(outDir, 'package.json'), '{"type": "commonjs"}\n')
+
+console.log(`Built ${allQuestions.length} questions into miniprogram/data/`)
 console.log(`Built ${categories.length} subpackages under miniprogram/subpackages/`)
-console.log(`Built lightweight index (${indexData.length} entries) into miniprogram/data/questions-index.json`)
-console.log(`Wrote version ${pkg.version} (${releaseDate}) to miniprogram/data/version.json`)
+console.log(`Built lightweight index (${indexData.length} entries)`)
+console.log(`Wrote version ${pkg.version} (${releaseDate})`)
+console.log(`Generated .js wrappers for WeChat MP require compatibility`)
