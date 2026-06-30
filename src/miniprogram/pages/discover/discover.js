@@ -2,6 +2,7 @@ const content = require('../../utils/content')
 const { categories, categoryIcons } = require('../../utils/constants')
 const { safeToast, safePageScrollTo } = require('../../utils/safe-wx')
 const analytics = require('../../utils/analytics')
+const i18n = require('../../utils/i18n')
 
 const DEFAULT_SHOW = 8
 
@@ -17,6 +18,8 @@ Page({
     categoryIcons,
     loadError: false,
     dailyPick: null,
+    locale: i18n.getLocale(),
+    t: i18n.dict(),
   },
 
   onLoad() {
@@ -40,12 +43,14 @@ Page({
         totalCount: all.length,
         loadError: false,
         dailyPick,
+        subtitleText: i18n.t('discover.subtitle', { n: all.length }),
+        dailyPickAria: dailyPick ? (i18n.t('discover.dailyTag') + ' ' + dailyPick.question) : '',
       })
       this.refreshList()
       analytics.pageView('discover')
     } catch (_e) {
       this.setData({ totalCount: 0, displayQuestions: [], loadError: true })
-      safeToast({ title: '内容加载失败', icon: 'none' })
+      safeToast({ title: i18n.t('discover.loadError'), icon: 'none' })
     }
   },
 
@@ -66,6 +71,8 @@ Page({
       displayQuestions: display,
       totalFiltered: filtered.length,
       hasMore: filtered.length > DEFAULT_SHOW && !expanded,
+      expandMoreText: i18n.t('discover.expand', { n: filtered.length }),
+      collapseText: i18n.t('discover.collapse'),
     })
   },
 
