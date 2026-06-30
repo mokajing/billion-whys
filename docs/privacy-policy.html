@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>《十亿个什么与为什么》小程序隐私保护政策</title>
+  <meta name="description" content="十亿个什么与为什么小程序隐私保护政策 - 面向 2-6 岁儿童及其家长的未成年人保护方案">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; max-width: 820px; margin: 0 auto; padding: 24px 16px 80px; color: #222; line-height: 1.75; background: #FAFAF7; }
+    h1 { font-size: 26px; color: #1A5C3A; border-bottom: 3px solid #1A5C3A; padding-bottom: 12px; }
+    h2 { font-size: 22px; color: #1A5C3A; margin-top: 32px; border-left: 4px solid #1A5C3A; padding-left: 12px; }
+    h3 { font-size: 18px; color: #333; margin-top: 24px; }
+    blockquote { background: #E8F5E9; border-left: 4px solid #1A5C3A; margin: 12px 0; padding: 12px 16px; color: #555; }
+    .pp-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .pp-table th, .pp-table td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+    .pp-table th { background: #1A5C3A; color: #fff; }
+    .pp-table tr:nth-child(even) { background: #F5F5F5; }
+    code { background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+    a { color: #1A5C3A; }
+    ul, ol { padding-left: 24px; }
+    li { margin: 4px 0; }
+    p { margin: 8px 0; }
+    footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #ddd; font-size: 13px; color: #888; text-align: center; }
+  </style>
+</head>
+<body>
+<h1>《十亿个什么与为什么》小程序隐私保护政策</h1>
+<blockquote>生效日期：2026 年 6 月 30 日 版本号：v1.0.0 适用范围：微信小程序「十亿个什么与为什么」（以下简称&quot;本小程序&quot;）</blockquote>
+<h2>一、协议生效日期与更新机制</h2>
+<ol><li><strong>生效日期</strong>：本政策自 2026 年 6 月 30 日起正式生效。</li><li><strong>更新机制</strong>：本政策可能因业务调整、法律法规变化或微信平台规则更新而修订。当本政策发生重大变更时，我们将在小程序首屏显著位置以弹窗形式提前 7 天公示变更内容，并要求监护人重新确认同意。</li><li><strong>版本追溯</strong>：历史版本可向开发者邮箱（见&quot;联系方式&quot;章节）申请获取，保留期不少于 3 年。</li><li><strong>修订触发条件</strong>包括但不限于：</li></ol>
+<ul><li>收集、使用个人信息的目的、方式、范围发生实质性变化；</li><li>接入新的第三方 SDK 或新增信息共享对象；</li><li>监护人权利实现机制发生变化；</li><li>法律法规或监管要求变更。</li></ul>
+<h2>二、信息收集清单</h2>
+<p>本小程序面向 2-6 岁儿童及其家长，遵循&quot;最小必要&quot;原则，<strong>严格不收集未成年人个人信息</strong>。</p>
+<h3>2.1 不收集的信息类型</h3>
+<table class="pp-table">
+<thead><tr><th>类别</th><th>是否收集</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>未成年人真实姓名</td><td>否</td><td>不要求填写</td></tr>
+<tr><td>未成年人身份证号 / 出生年月</td><td>否</td><td>不要求填写</td></tr>
+<tr><td>未成年人手机号</td><td>否</td><td>不申请 <code>getPhoneNumber</code> 授权</td></tr>
+<tr><td>未成年人地理位置</td><td>否</td><td>不申请 <code>getLocation</code> / <code>chooseLocation</code> 授权</td></tr>
+<tr><td>未成年人头像 / 照片</td><td>否</td><td>不申请相册、相机授权</td></tr>
+<tr><td>未成年人通讯录 / 设备标识</td><td>否</td><td>不申请通讯录、IMEI 授权</td></tr>
+<tr><td>未成年人生物识别信息（指纹 / 面部）</td><td>否</td><td>不接入任何生物识别接口</td></tr>
+<tr><td>未成年人麦克风录音</td><td>否</td><td>不申请 <code>getRecorderManager</code> 授权</td></tr>
+<tr><td>微信社交关系链</td><td>否</td><td>不调用 <code>wx.getUserInfo</code> / 不获取好友列表</td></tr>
+</tbody></table>
+<h3>2.2 必要的非个人信息（自动采集）</h3>
+<p>为保障小程序基本运行，仅在本地处理以下数据，不上传服务器：</p>
+<table class="pp-table">
+<thead><tr><th>数据项</th><th>用途</th><th>存储位置</th><th>是否上传</th></tr></thead>
+<tbody>
+<tr><td>设备品牌 / 型号</td><td>UI 适配（屏幕尺寸）</td><td>本地 storage</td><td>否</td></tr>
+<tr><td>屏幕分辨率</td><td>内容布局</td><td>本地 storage</td><td>否</td></tr>
+<tr><td>系统语言</td><td>中英文切换</td><td>本地 storage</td><td>否</td></tr>
+<tr><td>微信基础库版本</td><td>兼容性判断</td><td>本地 storage</td><td>否</td></tr>
+</tbody></table>
+<h3>2.3 监护人主动选择上传的信息</h3>
+<p>下列信息仅在监护人<strong>主动操作</strong>时产生，且默认不上传：</p>
+<table class="pp-table">
+<thead><tr><th>数据项</th><th>触发场景</th><th>存储位置</th><th>保留期</th></tr></thead>
+<tbody>
+<tr><td>家长陪同问答结果</td><td>首次启动家长验证页</td><td>本地 storage</td><td>7 天</td></tr>
+<tr><td>单次使用时长 / 日累计时长</td><td>时间管理</td><td>本地 storage</td><td>当日</td></tr>
+<tr><td>举报内容快照</td><td>监护人点击&quot;举报不当内容&quot;</td><td>服务器</td><td>90 天后自动删除</td></tr>
+<tr><td>家长控制面板设置</td><td>家长主动进入控制面板</td><td>本地 storage</td><td>直到家长重置</td></tr>
+</tbody></table>
+<h3>2.4 申请的微信授权清单</h3>
+<p>本小程序仅申请以下 1 项授权，且均为可选：</p>
+<table class="pp-table">
+<thead><tr><th>授权</th><th>API</th><th>是否必需</th><th>用途</th><th>拒绝影响</th></tr></thead>
+<tbody>
+<tr><td>本地存储</td><td><code>wx.setStorageSync</code></td><td>必需</td><td>存储使用时长、家长设置</td><td>无法实现时间管理</td></tr>
+</tbody></table>
+<p><strong>不申请</strong>：位置、手机号、相机、相册、麦克风、通讯录、蓝牙、运动数据等任何敏感授权。</p>
+<h2>三、信息使用范围</h2>
+<h3>3.1 允许的使用方式</h3>
+<ol><li><strong>内容展示</strong>：将素材库中的&quot;为什么&quot;问题、答案、插图呈现给用户；</li><li><strong>基础运行</strong>：依据屏幕尺寸做 UI 适配；</li><li><strong>时间管理</strong>：依据本地 storage 中的累计时长触发休息提示；</li><li><strong>举报处理</strong>：在监护人主动举报后，将举报内容快照用于人工审核。</li></ol>
+<h3>3.2 严禁的使用方式</h3>
+<p>本小程序明确<strong>禁止</strong>以下行为：</p>
+<ol><li>❌ 不进行用户画像（profiling）；</li><li>❌ 不使用任何推荐算法（recommendation algorithm）；</li><li>❌ 不基于使用行为做个性化推送；</li><li>❌ 不进行 A/B 测试与行为分析埋点；</li><li>❌ 不将使用数据用于商业变现、广告竞价、数据交易；</li><li>❌ 不进行精准营销或定向投放；</li><li>❌ 不向未成年人推送任何商业信息。</li></ol>
+<h3>3.3 自动化决策声明</h3>
+<p>本小程序不使用任何自动化决策机制对用户产生法律效力或类似重大影响，不进行自动化画像、自动化推荐、自动化定价。</p>
+<h2>四、信息存储与保护</h2>
+<h3>4.1 存储位置</h3>
+<table class="pp-table">
+<thead><tr><th>数据类别</th><th>存储位置</th><th>加密</th></tr></thead>
+<tbody>
+<tr><td>使用时长 / 家长设置</td><td>微信小程序本地 storage（<code>wx.setStorageSync</code>）</td><td>微信平台沙箱隔离</td></tr>
+<tr><td>举报内容快照</td><td>阿里云 ECS（华东 2，上海）</td><td>TLS 传输 + AES-256 静态加密</td></tr>
+<tr><td>监护人邮箱（仅举报回访时主动提供）</td><td>阿里云 RDS</td><td>TLS + AES-256</td></tr>
+</tbody></table>
+<h3>4.2 存储期限</h3>
+<ul><li>本地 storage：监护人可通过&quot;家长控制面板 &gt; 重置隐私协议同意&quot;一键清除；</li><li>举报内容快照：90 天后自动删除；</li><li>监护人邮箱：仅在举报处理期间使用，处理完毕后 30 天内删除。</li></ul>
+<h3>4.3 安全措施</h3>
+<ol><li><strong>传输安全</strong>：所有网络请求强制 HTTPS / TLS 1.2+；</li><li><strong>访问控制</strong>：服务器仅授权 2 名内部审核人员访问举报数据，操作日志保留 6 个月；</li><li><strong>数据隔离</strong>：举报数据与素材库物理分库；</li><li><strong>安全审计</strong>：每季度进行 1 次安全自查，每年聘请第三方进行 1 次安全评估；</li><li><strong>应急响应</strong>：发生或可能发生数据泄露时，72 小时内启动应急响应并报告监管部门。</li></ol>
+<h2>五、信息共享、转让与公开披露</h2>
+<h3>5.1 共享</h3>
+<p>本小程序<strong>不向任何第三方共享</strong>未成年人个人信息或使用数据。</p>
+<h3>5.2 转让</h3>
+<p>本小程序<strong>不向任何第三方转让</strong>用户数据。如因合并、收购等需要转让，将提前 30 天公示，并要求监护人重新同意。</p>
+<h3>5.3 公开披露</h3>
+<p>除法律法规强制要求或监管部门依法调取外，本小程序<strong>不进行任何形式的公开披露</strong>。</p>
+<h3>5.4 第三方 SDK 清单</h3>
+<p>本小程序<strong>未接入任何第三方 SDK</strong>（包括但不限于统计 SDK、广告 SDK、推送 SDK、登录 SDK）。所有功能均由开发者自研实现。</p>
+<h2>六、未成年人特别保护条款</h2>
+<h3>6.1 适用对象</h3>
+<p>本条款适用于 2-6 岁儿童及其监护人。本小程序假设所有使用者均为未成年人，采取最高保护标准。</p>
+<h3>6.2 监护人同意机制</h3>
+<ol><li>首次启动小程序时，<strong>强制</strong>进入&quot;家长验证页&quot;（详见《未成年人保护方案》第 1 章）；</li><li>监护人完成简单问答或扫码验证后，方可进入主界面；</li><li>进入&quot;成人科普&quot;页面时，<strong>二次</strong>要求监护人确认；</li><li>未通过验证的，一律按未成年人模式呈现内容。</li></ol>
+<h3>6.3 内容分级承诺</h3>
+<ol><li>2-6 岁主界面内容严格遵守&quot;三无&quot;标准：无暴力、无恐怖、无性暗示；</li><li>涉及&quot;流血 / 做梦 / 死亡&quot;等敏感话题，仅以&quot;成人科普&quot;层隐藏呈现，需家长验证后查看；</li><li>实验类内容强制提示&quot;家长陪同&quot;。</li></ol>
+<h3>6.4 时间管理承诺</h3>
+<ol><li>单次使用 ≤ 15 分钟，每日累计 ≤ 30 分钟；</li><li>22:00-次日 6:00 默认禁用（监护人可在控制面板关闭）；</li><li>时间到达后强制退出至家长验证页。</li></ol>
+<h3>6.5 商业化限制</h3>
+<ol><li>未成年人内容<strong>无任何广告</strong>；</li><li><strong>无虚拟支付、无内购</strong>；</li><li><strong>无诱导分享 / 关注 / 转发</strong>；</li><li><strong>无排行榜 / 无竞技机制</strong>。</li></ol>
+<h3>6.6 不收集承诺</h3>
+<p>本小程序郑重承诺：不以任何形式收集、存储、使用未成年人个人信息。所有使用数据均存储于本地，监护人可随时清除。</p>
+<h2>七、用户权利</h2>
+<h3>7.1 查询权</h3>
+<p>监护人可通过&quot;家长控制面板 &gt; 数据查看&quot;查询本地存储的所有数据，包括：</p>
+<ul><li>累计使用时长</li><li>家长验证记录</li><li>内容过滤设置</li><li>举报历史</li></ul>
+<h3>7.2 更正权</h3>
+<p>监护人可在&quot;家长控制面板&quot;中更正：</p>
+<ul><li>内容过滤等级</li><li>使用时段限制</li><li>通知偏好</li></ul>
+<h3>7.3 删除权</h3>
+<p>监护人可通过以下方式删除数据：</p>
+<ol><li><strong>一键清除本地数据</strong>：家长控制面板 &gt; 重置隐私协议同意；</li><li><strong>删除举报记录</strong>：向 <code>support@billion-whys.example</code> 发送邮件，注明举报编号，我们将在 15 个工作日内删除并邮件回执；</li><li><strong>卸载小程序</strong>：卸载后微信将自动清除本地 storage。</li></ol>
+<h3>7.4 撤回同意权</h3>
+<p>监护人可随时通过&quot;家长控制面板 &gt; 撤回同意&quot;撤回对本政策的同意，撤回后小程序将无法继续使用，直至监护人重新同意。</p>
+<h3>7.5 账号注销</h3>
+<p>本小程序不要求用户注册账号，因此不涉及账号注销。本地数据清除等同于&quot;注销&quot;。</p>
+<h3>7.6 响应时限</h3>
+<p>我们将在收到监护人请求后 <strong>15 个工作日内</strong>予以响应，复杂情况不超过 30 个工作日。</p>
+<h2>八、Cookie 与本地存储使用说明</h2>
+<h3>8.1 Cookie</h3>
+<p>微信小程序环境不使用 Cookie。</p>
+<h3>8.2 本地存储（<code>wx.setStorageSync</code>）清单</h3>
+<table class="pp-table">
+<thead><tr><th>键名</th><th>用途</th><th>含敏感信息</th><th>默认保留</th></tr></thead>
+<tbody>
+<tr><td><code>parent_verified</code></td><td>家长验证状态</td><td>否</td><td>7 天</td></tr>
+<tr><td><code>single_use_ms</code></td><td>单次使用计时</td><td>否</td><td>当日</td></tr>
+<tr><td><code>daily_use_ms</code></td><td>日累计使用计时</td><td>否</td><td>当日 24:00 清零</td></tr>
+<tr><td><code>content_filter_level</code></td><td>内容过滤等级</td><td>否</td><td>直至重置</td></tr>
+<tr><td><code>night_mode_disabled</code></td><td>是否关闭夜间禁用</td><td>否</td><td>直至重置</td></tr>
+<tr><td><code>last_read_topic</code></td><td>上次浏览的题目</td><td>否</td><td>当日</td></tr>
+<tr><td><code>report_history</code></td><td>举报历史</td><td>否</td><td>90 天</td></tr>
+</tbody></table>
+<h3>8.3 本地存储清除</h3>
+<p>监护人在以下场景可清除本地存储：</p>
+<ol><li>主动点击&quot;家长控制面板 &gt; 清除所有数据&quot;；</li><li>长按小程序图标选择&quot;删除小程序&quot;；</li><li>微信&quot;设置 &gt; 通用 &gt; 存储空间 &gt; 清理缓存&quot;。</li></ol>
+<h2>九、隐私协议变更通知机制</h2>
+<ol><li><strong>重大变更</strong>：提前 7 天在小程序首屏弹窗公示，要求监护人重新确认同意；</li><li><strong>一般变更</strong>：在&quot;家长控制面板 &gt; 协议历史&quot;中公示，不强制重新同意；</li><li><strong>紧急变更</strong>（如法律强制要求）：立即生效，并在 24 小时内通过弹窗通知；</li><li><strong>历史版本</strong>：保留 3 年，可向开发者邮箱申请获取。</li></ol>
+<p>变更类型判定标准：</p>
+<ul><li>重大变更：收集范围、使用目的、共享对象、监护人权利实现机制发生变化；</li><li>一般变更：联系邮箱、文档排版、文字润色等。</li></ul>
+<h2>十、联系方式与投诉渠道</h2>
+<h3>10.1 开发者信息</h3>
+<ul><li><strong>开发者名称</strong>：十亿个什么与为什么项目组</li><li><strong>统一社会信用代码</strong>：（由注册主体填写）</li><li><strong>小程序 AppID</strong>：（由注册主体填写）</li><li><strong>ICP 备案号</strong>：（由注册主体填写）</li></ul>
+<h3>10.2 联系方式</h3>
+<ul><li><strong>监护人事务专用邮箱</strong>：<code>support@billion-whys.example</code></li><li><strong>投诉举报邮箱</strong>：<code>report@billion-whys.example</code></li><li><strong>通讯地址</strong>：（由注册主体填写）</li><li><strong>响应时限</strong>：7 个工作日内首次回复</li></ul>
+<h3>10.3 外部投诉渠道</h3>
+<p>如对本小程序的隐私处理不满意，监护人可向以下机构投诉：</p>
+<ol><li><strong>网信办违法和不良信息举报中心</strong>：https://www.12377.cn / 12377 热线</li><li><strong>全国&quot;扫黄打非&quot;工作小组办公室</strong>：12390</li><li><strong>消费者投诉</strong>：12315</li><li><strong>未成年人家事审判</strong>：12338（全国妇联维权热线）</li></ol>
+<h3>10.4 监管部门</h3>
+<ul><li>国家互联网信息办公室</li><li>工业和信息化部</li><li>公安部网络安全保卫局</li></ul>
+<h2>十一、法律依据</h2>
+<p>本政策依据以下法律法规制定：</p>
+<ol><li><strong>《中华人民共和国未成年人保护法》</strong>（2021 年 6 月 1 日施行）第七章&quot;网络保护&quot;专章；</li><li><strong>《未成年人网络保护条例》</strong>（2024 年 1 月 1 日施行）；</li><li><strong>《儿童个人信息网络保护规定》</strong>（国家网信办 2019 年第 4 号令）；</li><li><strong>《中华人民共和国个人信息保护法》</strong>（2021 年 11 月 1 日施行）——尤其第二节&quot;敏感个人信息的处理规则&quot;与第三节&quot;未成年人个人信息的特别规定&quot;（第 31 条）；</li><li><strong>《中华人民共和国网络安全法》</strong>（2017 年 6 月 1 日施行）；</li><li><strong>《中华人民共和国民法典》</strong>第 19、20、1034-1039 条；</li><li><strong>《微信小程序平台运营规范》</strong>及<strong>《微信未成年人模式规范》</strong>最新版本；</li><li><strong>《移动互联网应用程序（App）收集使用个人信息备案管理办法》</strong>。</li></ol>
+<h3>11.1 关键条款对照</h3>
+<table class="pp-table">
+<thead><tr><th>法律条款</th><th>本政策对应实现</th></tr></thead>
+<tbody>
+<tr><td>未保法第 72 条（信息保护）</td><td>第二章不收集清单 + 第六章特别保护</td></tr>
+<tr><td>未保法第 73 条（内容分类）</td><td>第六章 6.3 内容分级承诺</td></tr>
+<tr><td>未保法第 74 条（时间管理）</td><td>第六章 6.4 时间管理承诺</td></tr>
+<tr><td>未保法第 75 条（防沉迷）</td><td>第六章 6.4 + 6.5</td></tr>
+<tr><td>未网条例第 20 条（监护人同意）</td><td>第六章 6.2 监护人同意机制</td></tr>
+<tr><td>未网条例第 26 条（内容分级）</td><td>第六章 6.3</td></tr>
+<tr><td>未网条例第 32 条（广告限制）</td><td>第六章 6.5 商业化限制</td></tr>
+<tr><td>个保法第 31 条（未成年人敏感信息）</td><td>第二章 + 第六章 6.6</td></tr>
+<tr><td>儿童信息保护规定第 7 条（监护人同意）</td><td>第六章 6.2</td></tr>
+<tr><td>儿童信息保护规定第 13 条（数据最小化）</td><td>第二章 2.1</td></tr>
+</tbody></table>
+<h2>附录 A：术语定义</h2>
+<ul><li><strong>未成年人</strong>：根据《民法典》第 19、20 条，未满 18 周岁的自然人为未成年人，其中不满 8 周岁为无民事行为能力人。本小程序目标用户为 2-6 岁儿童，属无民事行为能力人，所有处理行为均须由监护人代为作出。</li><li><strong>监护人</strong>：未成年人父母或依法指定监护人，对本小程序隐私同意、数据清除、举报等行为享有决定权。</li><li><strong>个人信息</strong>：以电子或其他方式记录的能够单独或者与其他信息结合识别特定自然人身份的各种信息。</li><li><strong>敏感个人信息</strong>：包括但不限于生物识别、宗教信仰、特定身份、医疗健康、金融账户、行踪轨迹、不满 14 周岁未成年人个人信息。</li></ul>
+<h2>附录 B：版本历史</h2>
+<table class="pp-table">
+<thead><tr><th>版本</th><th>生效日期</th><th>主要变更</th></tr></thead>
+<tbody>
+<tr><td>v1.0.0</td><td>2026-06-30</td><td>首次发布</td></tr>
+</tbody></table>
+<p><strong>文档结束</strong></p>
+<footer>
+  © 2026 十亿个什么与为什么 · 本页面由 docs/privacy-policy.md 自动生成（scripts/build-privacy-html.cjs）
+</footer>
+</body>
+</html>
