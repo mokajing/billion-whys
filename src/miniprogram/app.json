@@ -5,7 +5,9 @@
     "pages/ask/ask",
     "pages/archive/archive",
     "pages/profile/profile",
-    "pages/privacy/privacy"
+    "pages/privacy/privacy",
+    "pages/parent-verify/parent-verify",
+    "pages/report/report"
   ],
   "window": {
     "navigationBarBackgroundColor": "#1A5C3A",
@@ -33,6 +35,14 @@
       "packages": ["__APP__"]
     }
   },
+  "subPackages": [
+    { "root": "subpackages/body/", "name": "body", "pages": [] },
+    { "root": "subpackages/animals/", "name": "animals", "pages": [] },
+    { "root": "subpackages/food/", "name": "food", "pages": [] },
+    { "root": "subpackages/home/", "name": "home", "pages": [] },
+    { "root": "subpackages/nature/", "name": "nature", "pages": [] },
+    { "root": "subpackages/society/", "name": "society", "pages": [] }
+  ],
   "lazyCodeLoading": "requiredComponents",
   "usingComponents": {
     "ip-face": "/components/ip-face/ip-face"
