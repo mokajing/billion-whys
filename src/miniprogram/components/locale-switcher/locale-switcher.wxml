@@ -1,0 +1,29 @@
+<!--
+  V8.25 第93轮 Sprint 34：LocaleSwitcher 组件（MP 自定义组件，与 H5 LocaleSwitcher.vue 同构）
+  Why: CEO 周远见 — 北极星漏斗第19阶；V9 出海翻译流水线就绪后翻 flag 即上
+  法务张律 一票否决：默认 flag-off 不渲染 — en DICT 179 key 覆盖不全 + 内容 270 条仍 zh-only
+  前端小凡：双端同构；label 走 i18n.t() 查表（安全李姐红线）；零网络延续
+  毒舌老王：flag-off 必须 wx:if 不渲染，不占位
+-->
+<view
+  wx:if="{{enabled}}"
+  class="locale-switcher"
+  role="group"
+  aria-label="{{ariaLabel}}"
+>
+  <view
+    class="ls-btn {{currentBase === 'zh' ? 'active' : ''}}"
+    role="button"
+    aria-pressed="{{currentBase === 'zh'}}"
+    aria-label="{{zhLabel}}"
+    bindtap="selectZh"
+  >{{zhLabel}}</view>
+  <view class="ls-sep" aria-hidden="true">|</view>
+  <view
+    class="ls-btn {{currentBase === 'en' ? 'active' : ''}}"
+    role="button"
+    aria-pressed="{{currentBase === 'en'}}"
+    aria-label="{{enLabel}}"
+    bindtap="selectEn"
+  >{{enLabel}}</view>
+</view>
