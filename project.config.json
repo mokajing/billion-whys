@@ -2,7 +2,7 @@
   "miniprogramRoot": "src/miniprogram/",
   "projectname": "billion-whys",
   "description": "十亿个什么与为什么 - 2-6岁儿童好奇心即时响应小程序",
-  "appid": "TOURIST_APPID_PERSONAL_PENDING",
+  "appid": "wxb8d98b0d4b1d9d97",
   "setting": {
     "es6": true,
     "enhance": true,
@@ -31,10 +31,22 @@
   "srcMiniprogramRoot": "src/miniprogram/",
   "packOptions": {
     "ignore": [
-      { "type": "folder", "value": "../h5" },
-      { "type": "folder", "value": "../../node_modules" },
-      { "type": "folder", "value": "../../scripts" },
-      { "type": "folder", "value": "../../coverage" }
+      {
+        "type": "folder",
+        "value": "../h5"
+      },
+      {
+        "type": "folder",
+        "value": "../../node_modules"
+      },
+      {
+        "type": "folder",
+        "value": "../../scripts"
+      },
+      {
+        "type": "folder",
+        "value": "../../coverage"
+      }
     ]
   },
   "editorSetting": {
