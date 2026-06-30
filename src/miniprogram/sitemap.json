@@ -6,6 +6,7 @@
     { "action": "allow", "page": "pages/ask/ask" },
     { "action": "allow", "page": "pages/archive/archive" },
     { "action": "allow", "page": "pages/profile/profile" },
-    { "action": "disallow", "page": "pages/privacy/privacy" }
+    { "action": "disallow", "page": "pages/privacy/privacy" },
+    { "action": "disallow", "page": "*" }
   ]
 }
