@@ -1,4 +1,4 @@
-const questions = require('../data/questions.json')
+const questions = require('../data/questions-data')
 const storage = require('./storage')
 const { safeToast, safeNavigateTo, safePageScrollTo, safeLoadSubpackage } = require('./safe-wx')
 const analytics = require('./analytics')
