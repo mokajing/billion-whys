@@ -5,6 +5,6 @@
     "__usePrivacyCheck__": true
   },
   "privacyContractName": "用户隐私保护指引",
-  "privacyPolicyExternalUrl": "https://mokajing.github.io/billion-whys/privacy-policy.html",
+  "privacyPolicyExternalUrl": "https://cdn.jsdelivr.net/gh/mokajing/billion-whys@main/docs/privacy-policy.html",
   "privacyPolicyExternalUrlFallback": "https://raw.githubusercontent.com/mokajing/billion-whys/main/docs/privacy-policy.html"
 }
