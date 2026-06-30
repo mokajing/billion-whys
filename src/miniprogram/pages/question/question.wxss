@@ -52,6 +52,8 @@
 .wc-icon { display: block; font-size: 72rpx; margin-bottom: 20rpx; }
 .wc-text { display: block; font-size: 28rpx; color: #C45000; line-height: 1.8; font-weight: 500; }
 .wc-sub { display: block; font-size: 24rpx; color: #8D6508; margin-top: 16rpx; font-weight: 600; }
+/* V8.16 第84轮 Sprint 25：affirmation 行 — UX 苏体验裁决复用 warmClosing 调色，不引新色彩 */
+.wc-affirm { display: block; font-size: 26rpx; color: #6B4500; line-height: 1.7; margin-top: 20rpx; padding-top: 16rpx; border-top: 2rpx dashed rgba(196, 80, 0, 0.25); font-weight: 500; }
 
 .parent-section { margin-top: 16rpx; background: #FAFAFA; border-radius: 24rpx; overflow: hidden; border: 2rpx solid #eee; }
 .parent-header { padding: 28rpx 36rpx; display: flex; align-items: center; justify-content: space-between; font-size: 28rpx; color: #666; font-weight: 500; }
@@ -186,3 +188,16 @@
   flex-shrink: 0;
 }
 .ft-reset:active { transform: scale(0.96); }
+
+/* P2-6: safetyLevel B 徽章 */
+.safety-badge-b {
+  display: inline-block;
+  background: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #F59E0B;
+  border-radius: 8rpx;
+  padding: 4rpx 12rpx;
+  font-size: 22rpx;
+  margin-left: 12rpx;
+  font-weight: 500;
+}
