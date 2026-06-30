@@ -2,6 +2,7 @@ const content = require('../../utils/content')
 const storage = require('../../utils/storage')
 const { safeToast } = require('../../utils/safe-wx')
 const analytics = require('../../utils/analytics')
+const i18n = require('../../utils/i18n')
 
 Page({
   data: {
@@ -12,6 +13,9 @@ Page({
     hints: [],
     hasSearched: false,
     recentSearches: [],
+    resultsTitle: '',
+    locale: i18n.getLocale(),
+    t: i18n.dict(),
   },
 
   onLoad() {
@@ -32,7 +36,7 @@ Page({
       })
       analytics.pageView('ask')
     } catch (_e) {
-      safeToast({ title: '内容加载失败', icon: 'none' })
+      safeToast({ title: i18n.t('discover.loadError'), icon: 'none' })
     }
   },
 
@@ -60,6 +64,7 @@ Page({
       suggestions,
       hasSearched: true,
       recentSearches: storage.getSearchHistory(),
+      resultsTitle: i18n.t('ask.resultsFound', { n: results.length }),
     })
     analytics.search(kw, results.length)
   },
