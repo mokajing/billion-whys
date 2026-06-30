@@ -1,10 +1,10 @@
 <view class="discover-page">
   <view class="discover-header">
-    <text class="header-title">十亿个什么与为什么</text>
-    <text class="header-sub">{{totalCount}} 个问题等你来探索</text>
+    <text class="header-title">{{t['discover.title']}}</text>
+    <text class="header-sub">{{subtitleText}}</text>
   </view>
 
-  <scroll-view class="category-tabs" scroll-x enable-flex aria-role="tablist" aria-label="内容分类">
+  <scroll-view class="category-tabs" scroll-x enable-flex aria-role="tablist" aria-label="{{t['discover.loading']}}">
     <view wx:for="{{categories}}" wx:key="key"
       class="cat-tab {{activeCategory === item.key ? 'active' : ''}}"
       aria-role="tab" aria-selected="{{activeCategory === item.key}}"
@@ -14,12 +14,12 @@
     </view>
   </scroll-view>
 
-  <view wx:if="{{dailyPick && activeCategory === 'all'}}" class="daily-pick" aria-role="region" aria-label="今日好奇推荐">
-    <view class="dp-card" bindtap="onDailyPickTap" aria-role="button" aria-label="今天的为什么 {{dailyPick.question}}">
+  <view wx:if="{{dailyPick && activeCategory === 'all'}}" class="daily-pick" aria-role="region" aria-label="{{t['discover.dailyTag']}}">
+    <view class="dp-card" bindtap="onDailyPickTap" aria-role="button" aria-label="{{dailyPickAria}}">
       <view class="dp-bubble">
         <view class="dp-rabbit"><ip-face role="rabbit" size="32" /></view>
         <view class="dp-bubble-text">
-          <text class="dp-tag">✨ 今天的为什么</text>
+          <text class="dp-tag">{{t['discover.dailyTag']}}</text>
           <text class="dp-question">{{dailyPick.question}}</text>
         </view>
       </view>
@@ -30,13 +30,13 @@
   <view class="question-list">
     <view wx:if="{{!totalCount && !loadError}}" class="loading-state" aria-live="polite">
       <view class="loading-icon"><ip-face role="rabbit" size="32" /></view>
-      <text class="loading-text">问问兔正在准备中…</text>
+      <text class="loading-text">{{t['discover.loading']}}</text>
     </view>
 
     <view wx:elif="{{loadError}}" class="loading-state" aria-live="polite">
       <text class="loading-icon">😿</text>
-      <text class="loading-text">内容加载失败</text>
-      <view class="retry-btn" bindtap="onRetry" aria-role="button" aria-label="重新加载">重新加载</view>
+      <text class="loading-text">{{t['discover.loadError']}}</text>
+      <view class="retry-btn" bindtap="onRetry" aria-role="button" aria-label="{{t['discover.retry']}}">{{t['discover.retry']}}</view>
     </view>
 
     <block wx:else>
@@ -58,7 +58,7 @@
     </view>
 
     <view wx:if="{{hasMore || expanded}}" class="expand-btn" bindtap="onToggleExpand" aria-role="button" aria-expanded="{{expanded}}">
-      <text>{{expanded ? '收起' : '展开更多（共 ' + totalFiltered + ' 条）'}}</text>
+      <text>{{expanded ? collapseText : expandMoreText}}</text>
     </view>
     </block>
   </view>
