@@ -94,6 +94,127 @@ function safeRemoveStorageSync(key) {
   try { wx.removeStorageSync(key) } catch (_e) { /* */ }
 }
 
+/**
+ * 安全封装 wx.createSelectorQuery
+ * 兼容低版本基础库 + 沙盒异常兜底
+ * 返回 query 实例；若环境不支持则返回 null
+ */
+function safeCreateSelectorQuery(pageInstance) {
+  if (!isWx || typeof wx.createSelectorQuery !== 'function') return null
+  try {
+    const query = wx.createSelectorQuery()
+    // pageInstance 调用 .in(this) 限定组件作用域；缺失则退化为页面级
+    return (pageInstance && typeof query.in === 'function') ? query.in(pageInstance) : query
+  } catch (_e) { return null }
+}
+
+/**
+ * 安全封装 wx.showActionSheet
+ * Promise 形式 resolve tapIndex（取消/失败 resolve -1）
+ */
+function safeShowActionSheet(opts) {
+  if (!isWx || typeof wx.showActionSheet !== 'function') return Promise.resolve(-1)
+  return new Promise(resolve => {
+    try {
+      wx.showActionSheet({
+        itemList: (opts && opts.itemList) || [],
+        itemColor: (opts && opts.itemColor) || '#000000',
+        success: res => resolve(typeof res.tapIndex === 'number' ? res.tapIndex : -1),
+        fail: () => resolve(-1),
+      })
+    } catch (_e) { resolve(-1) }
+  })
+}
+
+/**
+ * 安全封装 wx.getUpdateManager
+ * 返回 updateManager 实例或 null（低版本不支持）
+ */
+function safeGetUpdateManager() {
+  if (!isWx || typeof wx.getUpdateManager !== 'function') return null
+  try { return wx.getUpdateManager() } catch (_e) { return null }
+}
+
+/**
+ * 安全封装 wx.showModal — Promise 形式 resolve {confirm, cancel}
+ * 与 safeModal 区别：返回完整 modalRes 字段，便于隐私弹窗等需要 event 字段的场景
+ */
+function safeShowModal(opts) {
+  if (!isWx || typeof wx.showModal !== 'function') return Promise.resolve({ confirm: false, cancel: true })
+  return new Promise(resolve => {
+    try {
+      wx.showModal({
+        title: (opts && opts.title) || '提示',
+        content: (opts && opts.content) || '',
+        showCancel: !(opts && opts.showCancel === false),
+        confirmText: (opts && opts.confirmText) || '确定',
+        cancelText: (opts && opts.cancelText) || '取消',
+        success: res => resolve({ confirm: !!res.confirm, cancel: !!res.cancel }),
+        fail: () => resolve({ confirm: false, cancel: true }),
+      })
+    } catch (_e) { resolve({ confirm: false, cancel: true }) }
+  })
+}
+
+/**
+ * 安全封装 wx.onNeedPrivacyAuthorization
+ * 注册隐私授权回调；低版本不支持时静默降级（业务方可继续运行）
+ * cb 接收 resolve 函数，由业务方决定 agree/disagree
+ */
+function safeOnNeedPrivacyAuthorization(cb) {
+  if (!isWx || typeof wx.onNeedPrivacyAuthorization !== 'function') return false
+  try {
+    wx.onNeedPrivacyAuthorization(cb)
+    return true
+  } catch (_e) { return false }
+}
+
+/**
+ * 安全获取 SDK 版本号字符串；不存在返回 '0.0.0'
+ */
+function safeGetSDKVersion() {
+  if (!isWx || typeof wx.getSystemInfoSync !== 'function') return '0.0.0'
+  try {
+    const info = wx.getSystemInfoSync()
+    return (info && info.SDKVersion) || '0.0.0'
+  } catch (_e) { return '0.0.0' }
+}
+
+/**
+ * 语义化版本比较：返回 -1 / 0 / 1
+ * 仅比较数字段；非数字段视为 0
+ */
+function compareSDKVersion(target) {
+  const cur = safeGetSDKVersion()
+  const a = cur.split('.').map(x => parseInt(x, 10) || 0)
+  const b = String(target || '0.0.0').split('.').map(x => parseInt(x, 10) || 0)
+  for (let i = 0; i < Math.max(a.length, b.length); i++) {
+    const ai = a[i] || 0
+    const bi = b[i] || 0
+    if (ai < bi) return -1
+    if (ai > bi) return 1
+  }
+  return 0
+}
+
+/**
+ * 安全封装 wx.loadSubpackage
+ * 用于 P1-3 分包懒加载。Promise 形式 resolve true/false
+ * 低版本不支持或分包名缺失时 resolve(false)
+ */
+function safeLoadSubpackage(name) {
+  if (!isWx || typeof wx.loadSubpackage !== 'function') return Promise.resolve(false)
+  return new Promise(resolve => {
+    try {
+      wx.loadSubpackage({
+        name: name,
+        success: () => resolve(true),
+        fail: () => resolve(false),
+      })
+    } catch (_e) { resolve(false) }
+  })
+}
+
 module.exports = {
   isWx,
   safeToast,
@@ -106,4 +227,14 @@ module.exports = {
   safeGetStorageSync,
   safeSetStorageSync,
   safeRemoveStorageSync,
+  // P1-2 新增守卫
+  safeCreateSelectorQuery,
+  safeShowActionSheet,
+  safeGetUpdateManager,
+  safeShowModal,
+  safeOnNeedPrivacyAuthorization,
+  safeGetSDKVersion,
+  compareSDKVersion,
+  // P1-3 分包懒加载
+  safeLoadSubpackage,
 }
