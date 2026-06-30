@@ -1,30 +1,30 @@
 <view class="profile-page">
   <view class="profile-header">
     <view class="avatar"><ip-face role="rabbit" size="56" /></view>
-    <view class="title">小探险家的好奇世界</view>
-    <view class="subtitle">好奇心是最厉害的超能力</view>
+    <view class="title">{{t['profile.title']}}</view>
+    <view class="subtitle">{{t['qd.warmClosing']}}</view>
   </view>
 
-  <view class="stats-card" aria-label="探索统计">
-    <view class="stat-item" aria-label="知识库 {{totalQuestions}} 条">
+  <view class="stats-card" aria-label="{{t['profile.statsAria']}}">
+    <view class="stat-item" aria-label="{{statLibraryAria}}">
       <view class="stat-num">{{totalQuestions}}</view>
-      <view class="stat-label">知识库</view>
+      <view class="stat-label">{{t['profile.statLibrary']}}</view>
     </view>
-    <view class="stat-item" aria-label="已探索 {{viewedCount}} 条">
+    <view class="stat-item" aria-label="{{statViewedAria}}">
       <view class="stat-num">{{viewedCount}}</view>
-      <view class="stat-label">已探索</view>
+      <view class="stat-label">{{t['profile.statViewed']}}</view>
     </view>
-    <view class="stat-item" aria-label="连续探索 {{streakDays}} 天">
+    <view class="stat-item" aria-label="{{statStreakAria}}">
       <view class="stat-num">{{streakDays}}</view>
-      <view class="stat-label">连续天数</view>
+      <view class="stat-label">{{t['profile.statStreak']}}</view>
     </view>
-    <view class="stat-item" aria-label="收藏 {{favoriteCount}} 条">
+    <view class="stat-item" aria-label="{{statFavAria}}">
       <view class="stat-num">{{favoriteCount}}</view>
-      <view class="stat-label">收藏</view>
+      <view class="stat-label">{{t['profile.statFav']}}</view>
     </view>
-    <view class="stat-item" aria-label="已反馈 {{feedbackCount}} 条">
+    <view class="stat-item" aria-label="{{statFeedbackAria}}">
       <view class="stat-num">{{feedbackCount}}</view>
-      <view class="stat-label">已反馈</view>
+      <view class="stat-label">{{t['profile.statFeedback']}}</view>
     </view>
   </view>
 
@@ -32,9 +32,25 @@
     <text>{{streakMessage}}</text>
   </view>
 
-  <view class="feedback-trend" aria-label="过去7天反馈趋势">
+  <view wx:if="{{summary.total > 0}}" class="ft-summary-card" aria-label="{{summaryAriaLabel}}">
+    <view class="ft-summary-row">
+      <text class="ft-summary-main">{{summaryTotalText}}</text>
+      <text class="ft-summary-break">👍{{summary.up}} · 👎{{summary.down}} · ↻{{summary.reset}}</text>
+    </view>
+    <view wx:if="{{summary.showDepth}}" class="ft-summary-row ft-summary-depth">
+      <text>{{summaryDepthText}}</text>
+    </view>
+    <view wx:if="{{previewCount + replayCount > 0}}" class="ft-summary-row ft-summary-channel">
+      <text>{{summaryPreviewText}} · {{summaryReplayText}}</text>
+    </view>
+  </view>
+  <view wx:else class="ft-summary-card ft-summary-empty" aria-label="{{summaryAriaLabel}}">
+    <text class="ft-summary-empty-text">{{summaryEmptyText}}</text>
+  </view>
+
+  <view class="feedback-trend" aria-label="{{t['profile.trendAria']}}">
     <view class="ft-header">
-      <text class="ft-title">过去7天反馈了 {{feedbackTrendTotal}} 次</text>
+      <text class="ft-title">{{trendTitleText}}</text>
       <view class="ft-legend">
         <text class="ft-leg ft-leg-up">👍</text>
         <text class="ft-leg ft-leg-down">👎</text>
@@ -42,7 +58,7 @@
       </view>
     </view>
     <view wx:if="{{feedbackTrendTotal > 0}}" class="ft-bars-wrap">
-      <view class="ft-bars" aria-label="过去7天反馈了 {{feedbackTrendTotal}} 次">
+      <view class="ft-bars" aria-label="{{trendBarAria}}">
         <view
           wx:for="{{feedbackTrend7d}}"
           wx:key="date"
@@ -52,7 +68,7 @@
           data-total="{{item.total}}"
           aria-role="button"
           aria-expanded="{{expandedDay === item.date}}"
-          aria-label="{{item.label}} 反馈 {{item.total}} 次"
+          aria-label="{{item.ariaLabel}}"
         >
           <view class="ft-bar-stack">
             <view class="ft-bar ft-bar-up" style="height:{{item.upH}}rpx;"></view>
@@ -63,9 +79,18 @@
         </view>
       </view>
       <!-- V8.5 Sprint 14：当日明细（accordion 模式，同时只展开 1 列） -->
-      <view wx:if="{{expandedDay}}" class="ft-detail" aria-label="{{expandedDay}} 反馈明细">
+      <view wx:if="{{expandedDay}}" class="ft-detail" aria-label="{{dayDetailAria}}">
         <view class="ft-detail-header">
           <text>{{detailHeader}}</text>
+        </view>
+        <!-- V8.11 Sprint 20：当日反馈深度分布（L2+L3>0 才显示） -->
+        <view wx:if="{{depthViz.show}}" class="ft-depth-viz" aria-label="{{depthViz.ariaLabel}}">
+          <view class="ft-depth-bar">
+            <view wx:if="{{depthViz.L1}}" class="ft-depth-seg ft-depth-seg-l1" style="width: {{depthViz.l1Pct}}%"></view>
+            <view wx:if="{{depthViz.L2}}" class="ft-depth-seg ft-depth-seg-l2" style="width: {{depthViz.l2Pct}}%"></view>
+            <view wx:if="{{depthViz.L3}}" class="ft-depth-seg ft-depth-seg-l3" style="width: {{depthViz.l3Pct}}%"></view>
+          </view>
+          <text class="ft-depth-text">{{depthViz.text}}</text>
         </view>
         <view wx:if="{{detailList.length > 0}}" class="ft-detail-list">
           <view
@@ -73,30 +98,44 @@
             wx:key="time"
             class="ft-detail-item {{item.hasId ? 'ft-detail-item-clickable' : 'ft-detail-item-disabled'}}"
             bindtap="{{item.hasId ? 'onTapDetailItem' : ''}}"
+            bindlongpress="{{item.hasId ? 'onPreviewDetail' : ''}}"
             data-id="{{item.id}}"
             aria-role="{{item.hasId ? 'button' : ''}}"
-            aria-label="{{item.hasId ? ('再读一遍：' + item.title) : ''}}"
+            aria-label="{{item.hasId ? item.replayAria : ''}}"
           >
             <text class="ft-detail-icon ft-detail-icon-{{item.action}}">{{item.icon}}</text>
             <text class="ft-detail-time">{{item.time}}</text>
-            <text wx:if="{{item.showDepth}}" class="ft-detail-depth" aria-label="读到第{{item.depth}}层">读到第{{item.depth}}层</text>
+            <text wx:if="{{item.showDepth}}" class="ft-detail-depth" aria-label="{{item.depthAria}}">{{item.depthText}}</text>
             <text class="ft-detail-title">{{item.title}}</text>
           </view>
         </view>
         <view wx:else class="ft-detail-empty">
-          <text>🌱 这天没有反馈明细</text>
+          <text>{{t['profile.dayEmpty']}}</text>
         </view>
       </view>
     </view>
     <view wx:else class="ft-empty">
-      <text>🌱 这周还没有反馈，看完一个答案试试 👍 或 👎 吧</text>
+      <text>{{t['profile.trendEmpty']}}</text>
     </view>
   </view>
 
   <view class="menu-list" aria-role="list">
-    <view class="menu-item" bindtap="onFeedback" aria-role="button" aria-label="意见反馈" aria-expanded="{{showFeedback}}">
+    <view class="mp-usage-card" aria-label="今日使用时长">
+      <view class="mp-usage-row">
+        <text class="mp-usage-label">今日剩余使用时间</text>
+        <text class="mp-usage-value">{{remainingMin}} 分钟</text>
+      </view>
+      <view class="mp-usage-bar">
+        <view class="mp-usage-bar-fill" style="width: {{usagePct}}%"></view>
+      </view>
+      <view class="mp-usage-row mp-usage-row-sub">
+        <text>已使用 {{dailyUsedMin}} / 30 分钟</text>
+        <text wx:if="{{parentVerified}}">家长验证 ✓</text>
+      </view>
+    </view>
+    <view class="menu-item" bindtap="onFeedback" aria-role="button" aria-label="{{t['profile.menuFeedbackAria']}}" aria-expanded="{{showFeedback}}">
       <text class="menu-icon">💬</text>
-      <text class="menu-text">意见反馈</text>
+      <text class="menu-text">{{t['profile.menuFeedback']}}</text>
       <text class="menu-arrow {{showFeedback ? 'open' : ''}}">▼</text>
     </view>
     <view wx:if="{{showFeedback}}" class="feedback-panel" aria-live="polite">
@@ -104,17 +143,27 @@
       <text class="feedback-email">📮 反馈邮箱：feedback@billionwhys.com</text>
       <text class="feedback-text">您的每一条建议都会帮助我们做得更好 🌱</text>
     </view>
-    <view class="menu-item" bindtap="onAbout" aria-role="button" aria-label="关于我们">
+    <view class="menu-item" bindtap="onAbout" aria-role="button" aria-label="{{t['profile.menuAboutAria']}}">
       <text class="menu-icon">📖</text>
-      <text class="menu-text">关于我们</text>
+      <text class="menu-text">{{t['profile.menuAbout']}}</text>
       <text class="menu-arrow">›</text>
     </view>
-    <view class="menu-item" bindtap="onPrivacy" aria-role="button" aria-label="隐私政策">
+    <view class="menu-item" bindtap="onPrivacy" aria-role="button" aria-label="{{t['profile.menuPrivacyAria']}}">
       <text class="menu-icon">🔒</text>
-      <text class="menu-text">隐私政策</text>
+      <text class="menu-text">{{t['profile.menuPrivacy']}}</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="menu-item" bindtap="onReport" aria-role="button" aria-label="举报不当内容">
+      <text class="menu-icon">🚩</text>
+      <text class="menu-text">举报不当内容</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="menu-item" bindtap="onParentControl" aria-role="button" aria-label="家长控制面板">
+      <text class="menu-icon">👨‍👩‍👧</text>
+      <text class="menu-text">家长控制面板</text>
       <text class="menu-arrow">›</text>
     </view>
   </view>
 
-  <view class="version">v{{version}}</view>
+  <view class="version">{{versionFooterText}}</view>
 </view>
