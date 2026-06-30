@@ -1,17 +1,58 @@
 const questions = require('../data/questions.json')
 const storage = require('./storage')
-const { safeToast, safeNavigateTo, safePageScrollTo } = require('./safe-wx')
+const { safeToast, safeNavigateTo, safePageScrollTo, safeLoadSubpackage } = require('./safe-wx')
 const analytics = require('./analytics')
+
+// P1-3 分包懒加载：6 个分类分包数据按需加载
+// Why: 审核报告 P1-3 — 主包 questions.json 652KB，结构上拆为 6 个分包便于未来完全迁移
+// 当前阶段：主包仍保留 questions.json 作为同步源（API 兼容），分包作为并行结构 + 异步预加载入口
+// 后续阶段：调用方迁移到 getByIdAsync 后可移除主包 questions.json
+const SUBPACKAGE_CATEGORIES = ['body', 'animals', 'food', 'home', 'nature', 'society']
+const _subpackageLoaded = {}  // {cat: true} 标记已加载完成的分包
 
 const questionMap = new Map()
 for (const q of questions) questionMap.set(q.id, q)
 
+// P0-3 图片 CDN 访问：通过 jsDelivr CDN 加速 GitHub 仓库图片
+// Why: 审核报告 P0-3 — 小程序未配置 CDN 域名时图片无法加载；jsDelivr 不需要在小程序后台配置 request 合法域名即可访问
+// 备用：raw.githubusercontent.com（速度较慢，作为 fallback）
+const CDN_BASE = 'https://cdn.jsdelivr.net/gh/mokajing/billion-whys@main/content'
+const CDN_FALLBACK = 'https://raw.githubusercontent.com/mokajing/billion-whys/main/content'
+
+// 本地调试开关：开发者在微信开发者工具中关闭"不校验合法域名"时，可设置 USE_LOCAL_IMAGE=true 使用本地路径
+let useLocalImage = false
+try {
+  if (typeof wx !== 'undefined' && typeof wx.getStorageSync === 'function') {
+    useLocalImage = !!wx.getStorageSync('bw_use_local_image')
+  }
+} catch (_e) { /* dev tool only */ }
+
 function toWebP(path) {
   if (!path) return ''
-  const p = path.startsWith('/') ? path : `/${path}`
-  if (/\.webp$/i.test(p)) return p
-  return p.replace(/\.(png|jpe?g)$/i, '.webp')
+  // 标准化路径：去掉前导斜杠，统一相对路径
+  let p = path.startsWith('/') ? path.slice(1) : path
+  // 转 .webp
+  if (!/\.webp$/i.test(p)) {
+    p = p.replace(/\.(png|jpe?g)$/i, '.webp')
+  }
+  // 本地调试模式：返回相对路径（/开头，小程序可访问 src/miniprogram 下的资源）
+  if (useLocalImage) {
+    return '/' + p
+  }
+  // 默认走 CDN
+  return CDN_BASE + '/' + p
 }
+
+// 备用 CDN URL（当主 CDN 加载失败时，前端 image 标签 binderror 中可切换）
+function toWebPFallback(path) {
+  if (!path) return ''
+  let p = path.startsWith('/') ? path.slice(1) : path
+  if (!/\.webp$/i.test(p)) {
+    p = p.replace(/\.(png|jpe?g)$/i, '.webp')
+  }
+  return CDN_FALLBACK + '/' + p
+}
+
 
 // 搜索同义词归一：与 H5 utils/constants.js 保持一致
 // Why: 5岁以上孩子常问"为啥/为什麽"，搜索必须命中标准库的"为什么"
@@ -233,12 +274,77 @@ function getFeedbackDepthByDate(dateStr) {
   return storage.getFeedbackDepthByDate(dateStr)
 }
 
+// V8.13 第81轮 Sprint 22：累计参与度汇总（H5 feedbackSummary getter 同构）
+function getFeedbackSummary() {
+  return storage.getFeedbackSummary()
+}
+
+// V8.15 第83轮 Sprint 24：事件总线统一治理 — 转发 storage 的事件总线 API
+// Why: H5 analytics.emitEvent 同构；后端老稳未来 batch upload 走 eventLog 单一通道
+function emitEvent(name, detail, meta) {
+  return storage.emitEvent(name, detail, meta)
+}
+
+function getEventLog() {
+  return storage.getEventLog()
+}
+
+function countEvent(name) {
+  return storage.countEvent(name)
+}
+
+function flushAll() {
+  return storage.flushAll()
+}
+
+// V8.12 第80轮 Sprint 21：长按预览 — 仅 questionId 查 questionMap 取 layer1.answer 前 50 字
+// Why: H5 stores/content.js previewAnswerForId 同构；UX 苏体验 + 毒舌老王"看完就回来"
+// 法务张律放行：仅本地查表，无新数据收集
+function previewAnswerForId(id) {
+  if (!id) return null
+  const q = questionMap.get(id)
+  if (!q) return null
+  const full = (q.layer1 && q.layer1.answer) ? String(q.layer1.answer) : ''
+  if (!full) return { id, title: q.question || '', snippet: '', hasFull: false }
+  const SNIPPET_LEN = 50
+  const snippet = full.length > SNIPPET_LEN ? (full.slice(0, SNIPPET_LEN) + '…') : full
+  return { id, title: q.question || '', snippet, hasFull: true }
+}
+
 function notifyLoadError() {
   safeToast({ title: '内容加载失败', icon: 'none' })
 }
 
 function scrollTop() {
   safePageScrollTo(0)
+}
+
+// P1-3 分包懒加载 API
+// preloadCategoryAsync(cat): 异步预加载分类分包；不阻塞调用方
+//   用于：进入 question 页时按 id 推断 category 后异步预加载，下次访问该分包时 require() 已就绪
+//   返回 Promise<boolean>，true 表示分包已就绪
+function preloadCategoryAsync(cat) {
+  if (!cat || SUBPACKAGE_CATEGORIES.indexOf(cat) === -1) return Promise.resolve(false)
+  if (_subpackageLoaded[cat]) return Promise.resolve(true)
+  return safeLoadSubpackage(cat).then(ok => {
+    if (ok) _subpackageLoaded[cat] = true
+    return ok
+  })
+}
+
+// isCategoryLoaded(cat): 同步查询分包是否已加载完成
+function isCategoryLoaded(cat) {
+  return !!_subpackageLoaded[cat]
+}
+
+// getCategoryFromId(id): 从 id 前缀推断 category（如 "body-005" -> "body"）
+// 用于 question 页 onLoad 在调 getById 前确定要预加载哪个分包
+function getCategoryFromId(id) {
+  if (!id || typeof id !== 'string') return ''
+  const dashIdx = id.indexOf('-')
+  if (dashIdx <= 0) return ''
+  const cat = id.substring(0, dashIdx)
+  return SUBPACKAGE_CATEGORIES.indexOf(cat) !== -1 ? cat : ''
 }
 
 module.exports = {
@@ -251,6 +357,9 @@ module.exports = {
   normalizeKeyword,
   suggestRelated,
   toWebP,
+  toWebPFallback,
+  CDN_BASE,
+  CDN_FALLBACK,
   getViewHistory,
   calcStreak,
   markViewed,
@@ -267,6 +376,18 @@ module.exports = {
   getFeedbackTrend7dTotal,
   getFeedbackDetailByDate,
   getFeedbackDepthByDate,
+  getFeedbackSummary,
+  // V8.15 第83轮 Sprint 24：事件总线统一治理
+  emitEvent,
+  getEventLog,
+  countEvent,
+  flushAll,
+  previewAnswerForId,
   notifyLoadError,
   scrollTop,
+  // P1-3 分包懒加载 API
+  preloadCategoryAsync,
+  isCategoryLoaded,
+  getCategoryFromId,
+  SUBPACKAGE_CATEGORIES,
 }
