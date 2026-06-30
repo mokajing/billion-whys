@@ -1,8 +1,10 @@
 {
   "desc": "本文件用于配置小程序接口权限相关，并设置了隐私合规相关开关。",
-  "owner": "Devix",
+  "owner": "个人主体（待补全）",
   "setting": {
     "__usePrivacyCheck__": true
   },
-  "privacyContractName": "用户隐私保护指引"
+  "privacyContractName": "用户隐私保护指引",
+  "privacyPolicyExternalUrl": "https://mokajing.github.io/billion-whys/privacy-policy.html",
+  "privacyPolicyExternalUrlFallback": "https://raw.githubusercontent.com/mokajing/billion-whys/main/docs/privacy-policy.html"
 }
