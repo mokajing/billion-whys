@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "家长验证",
+  "usingComponents": {
+    "ip-face": "/components/ip-face/ip-face"
+  }
+}
