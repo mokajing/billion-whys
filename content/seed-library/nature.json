@@ -2179,5 +2179,149 @@
     "scienceImage": "images/nature/nature-045-experiment.webp",
     "warmClosing": "龙卷风虽然很厉害，但了解了它的原理就不那么害怕了，知识就是最好的保护！",
     "locale": "zh-CN"
+  },
+  {
+    "id": "nature-046",
+    "category": "nature",
+    "question": "为什么冰会化成水？",
+    "age": "2-4岁",
+    "tags": [
+      "水",
+      "融化"
+    ],
+    "safetyLevel": "A",
+    "baselineEpoch": "post-sprint53",
+    "locale": "zh-CN",
+    "layer1": {
+      "answer": "冰是冻硬的水。太阳晒一晒、手摸一摸，冰就变暖变软，化回成水啦！",
+      "image": "images/nature/nature-046-layer1.webp"
+    },
+    "layer2": {
+      "followUp": "为什么暖和了冰就会化？",
+      "answer": "冰里的小水点本来手拉手排得整整齐齐站成一列一列，所以硬硬的。暖和起来以后，它们就松开手到处跑来跑去，冰就软软地化成水了。就像小朋友排队站好时很整齐，一解散就到处跑。",
+      "image": "images/nature/nature-046-layer2.webp"
+    },
+    "layer3": {
+      "followUp": "那化成水之后还能变回冰吗？",
+      "answer": "能！水冷到零度以下就会重新结成冰。水、冰、还有水蒸气，都是同一种东西——只是冷热不同：分子靠得近就是冰，散开就是水，飞上天就是气。地球上的水一直在这三种样子之间变来变去。",
+      "image": "images/nature/nature-046-layer3.webp"
+    },
+    "science": "冰是水的固态相。水分子在固态中通过氢键形成规则六方晶格，分子间距离固定、振动受限，宏观表现为硬度。温度升至熔点（0℃，1atm）时，热能足以破坏部分氢键，晶格崩解，分子获得平动自由度，转为液态。熔化是吸热相变过程（熔化热约334J/g），过程中温度保持不变直至完全熔化。水的固液气三态相变由温度与压强共同决定（相图）。",
+    "experiment": {
+      "name": "冰块赛跑实验",
+      "experimentType": "hands-on",
+      "duration": "约10分钟",
+      "steps": [
+        "准备两块一样大的冰",
+        "一块放在阴凉的碗里，一块放在太阳晒得到的碗里",
+        "过几分钟看看哪一块先化完"
+      ],
+      "sayToChild": "你看，太阳晒到的那块冰化得快，因为它暖和得更快。太阳送的热越多，冰化得越快！",
+      "materials": [
+        "两块冰",
+        "两个碗"
+      ],
+      "safetyNote": "冰很凉，不要长时间贴在皮肤上",
+      "image": "images/nature/nature-046-experiment.webp"
+    },
+    "ipScene": "问问兔拿着一块冰说：\"它怎么在滴水？\"答答熊说：\"它暖和了，正在脱掉硬硬的外套变回水呢！\"",
+    "warmClosing": "下次吃冰棍的时候，你可以告诉大人：冰棍在嘴里暖和了，正在化成水呢！",
+    "scienceImage": "images/nature/nature-046-science.png"
+  },
+  {
+    "id": "nature-047",
+    "category": "nature",
+    "question": "为什么太阳那么热？",
+    "age": "2-4岁",
+    "tags": [
+      "太阳",
+      "热"
+    ],
+    "safetyLevel": "A",
+    "baselineEpoch": "post-sprint53",
+    "locale": "zh-CN",
+    "layer1": {
+      "answer": "太阳是一个超级大的火球，离我们很远很远，但它把光和热送到地球，晒在身上暖暖的！",
+      "image": "images/nature/nature-047-layer1.webp"
+    },
+    "layer2": {
+      "followUp": "火球的热是怎么过来的？",
+      "answer": "太阳不停在肚子里把气烧成一团团火，发出很多光和热。这些热变成看不见的小子弹一路飞过太空，飞了八分钟才到地球，钻进我们身上就变成暖暖的感觉。",
+      "image": "images/nature/nature-047-layer2.webp"
+    },
+    "layer3": {
+      "followUp": "那太阳会不会烧完？",
+      "answer": "太阳不是真的在烧，它肚子里在玩一种叫\"核聚变\"的把戏——小小的气撞在一起变成大一点的气，会放出超多热。太阳已经玩了46亿年，还能再玩50亿年，等气用完了才会慢慢变凉。",
+      "image": "images/nature/nature-047-layer3.webp"
+    },
+    "science": "太阳能量来源于核心的氢核聚变（质子-质子链反应）：4个氢核聚变为1个氦核，质量亏损约0.7%按E=mc²转化为能量（约3.8×10²⁶ J/s），以电磁辐射形式向外传递。能量经辐射区、对流区到达光球层，以可见光与红外辐射向外传播，地球仅接收到约二十亿分之一。太阳光度由核心聚变速率与流体静力学平衡自调节维持稳态。",
+    "experiment": {
+      "name": "阳光冰块实验",
+      "experimentType": "hands-on",
+      "duration": "约10分钟",
+      "steps": [
+        "找两块一样大的冰",
+        "一块放太阳晒得到的地方，一块放阴凉处",
+        "过一会看哪块先化完"
+      ],
+      "sayToChild": "太阳晒到的那块化得快，因为太阳把热送过来了。太阳的热真的能飞到我们这里！",
+      "materials": [
+        "两块冰",
+        "两个碗"
+      ],
+      "safetyNote": "不要直视太阳，会伤眼睛",
+      "image": "images/nature/nature-047-experiment.webp"
+    },
+    "ipScene": "问问兔晒着太阳说：\"太阳在抱我吗？\"答答熊说：\"是太阳把热送过太空飞过来抱你啦！\"",
+    "warmClosing": "下次晒太阳暖暖的时候，记得那是太阳飞了八分钟送来的拥抱！",
+    "scienceImage": "images/nature/nature-047-science.png"
+  },
+  {
+    "id": "nature-048",
+    "category": "nature",
+    "question": "为什么会有白天和黑夜？",
+    "age": "2-4岁",
+    "tags": [
+      "地球",
+      "昼夜"
+    ],
+    "safetyLevel": "A",
+    "baselineEpoch": "post-sprint53",
+    "locale": "zh-CN",
+    "layer1": {
+      "answer": "地球像个大皮球在转圈圈。转到对着太阳那一面是白天，背着太阳那一面就是黑夜！",
+      "image": "images/nature/nature-048-layer1.webp"
+    },
+    "layer2": {
+      "followUp": "转一圈要多久？",
+      "answer": "地球一天转一圈。你住的地方转到对着太阳，天就亮了；继续转过去背对太阳，天就黑了。就像你围着篝火转，对着火那面亮，背对火那面黑。一圈正好一天，所以一天有白天也有黑夜。",
+      "image": "images/nature/nature-048-layer2.webp"
+    },
+    "layer3": {
+      "followUp": "那为什么不是全世界同时是白天？",
+      "answer": "因为地球是圆的，太阳一次只能照到一半。被照到的那半边是白天，没照到的那半边是黑夜。地球转着圈，白天黑夜就在全世界轮流跑——这边天亮时，地球另一边正好天黑。",
+      "image": "images/nature/nature-048-layer3.webp"
+    },
+    "science": "地球自转（绕自转轴自西向东旋转，周期约23h56m4s，称恒星日）导致地表某点周期性朝向与背向太阳，形成昼夜交替。太阳光为平行光，因地球为球体，同一时刻仅半个球面被照亮（昼半球），另一半为夜半球，分界为晨昏线。由于自转方向自西向东，观察者见太阳东升西落。昼夜长度受公转与黄赤交角（23.5°）影响呈季节性变化。",
+    "experiment": {
+      "name": "手电筒照地球实验",
+      "experimentType": "hands-on",
+      "duration": "约5分钟",
+      "steps": [
+        "在黑暗的房间里打开手电筒",
+        "把手电筒照在皮球或地球仪上",
+        "慢慢转动球，看哪一面亮、哪一面暗"
+      ],
+      "sayToChild": "你看，对着灯的那面亮，背对灯的那面暗。我们住的大球转着圈，所以有白天和黑夜！",
+      "materials": [
+        "手电筒",
+        "皮球或地球仪"
+      ],
+      "safetyNote": "不要直视手电筒灯泡",
+      "image": "images/nature/nature-048-experiment.webp"
+    },
+    "ipScene": "问问兔问：\"天为什么会黑？\"答答熊转着皮球说：\"我们住的大球在转圈，转到背光那面就天黑啦！\"",
+    "warmClosing": "今晚天黑的时候，告诉大人：我们转到背对太阳那面啦，明天转回来就又天亮！",
+    "scienceImage": "images/nature/nature-048-science.png"
   }
 ]
