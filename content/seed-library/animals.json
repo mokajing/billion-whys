@@ -2188,7 +2188,8 @@
       ],
       "duration": "约10分钟",
       "safetyNote": "户外观察请大人陪同，注意交通安全；不要直视强太阳光",
-      "experimentType": "observation"
+      "experimentType": "observation",
+      "image": "images/animals/animals-046-experiment.png"
     },
     "warmClosing": "下次看到天上大雁排队飞过，你可以告诉大人：它们在玩接力赛，轮流当领队呢！",
     "locale": "zh-CN",
