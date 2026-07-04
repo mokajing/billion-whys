@@ -1,3 +1,3 @@
 // AUTO-GENERATED.
 "use strict";
-module.exports = {"version":"0.3.29","releaseDate":"2026-06-30"};
+module.exports = {"version":"0.3.55","releaseDate":"2026-07-04"};
