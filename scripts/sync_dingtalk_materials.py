@@ -25,7 +25,8 @@ from datetime import datetime
 # DingTalk skill access
 SKILL_DIR = Path.home() / ".claude" / "skills" / "devix-dingtalk-skill"
 sys.path.insert(0, str(SKILL_DIR))
-from scripts.dingtalk_doc import list_nodes, read_doc
+from scripts.dingtalk_doc import read_doc
+from scripts._mcp_client import try_servers as _mcp_try_servers, DingMCPError
 
 BASE_DIR = Path("/home/admin/workspace/billion-whys")
 SEED_DIR = BASE_DIR / "content" / "seed-library"
@@ -34,11 +35,50 @@ GEN_SCRIPT = Path.home() / ".claude" / "skills" / "generate-image" / "generate_i
 
 # DingTalk folder IDs
 REAL_MATERIAL_FOLDER_ID = "qnYMoO1rWxnkbPonCjG62BXbJ47Z3je9"
+BRAINSTORM_FOLDER_ID = "jb9Y4gmKWrp9bLopC4GZmNxQJGXn6lpz"  # 素材话题 (brainstorm detail files)
 
 ART_STYLE = (
     "儿童绘本插画风格，温暖可爱，色彩明亮，简洁卡通，适合2-6岁幼儿，"
     "扁平化设计，无文字，白色背景，1024x1024"
 )
+
+MAX_RETRIES_MCP = 5
+MCP_RETRY_DELAY = 10
+
+
+def mcp_call_with_retry(tool_name, arguments, max_retries=MAX_RETRIES_MCP):
+    """Call DingTalk MCP tool with retry on transient errors"""
+    for attempt in range(max_retries):
+        try:
+            return _mcp_try_servers("doc", tool_name, arguments, timeout=90)
+        except (DingMCPError, Exception) as e:
+            if attempt == max_retries - 1:
+                raise
+            wait = MCP_RETRY_DELAY * (attempt + 1)
+            log(f"  MCP call {tool_name} failed (attempt {attempt+1}): {e}. Retrying in {wait}s...")
+            time.sleep(wait)
+
+
+def list_all_nodes(folder_id):
+    """List all nodes in a folder with pagination"""
+    all_nodes = []
+    page_token = None
+    page = 0
+    while True:
+        page += 1
+        args = {"folderId": folder_id, "pageSize": 50}
+        if page_token:
+            args["pageToken"] = page_token
+        log(f"  Fetching page {page} (got {len(all_nodes)} so far)...")
+        result = mcp_call_with_retry("list_nodes", args)
+        nodes = result.get("nodes", [])
+        all_nodes.extend(nodes)
+        page_token = result.get("nextPageToken")
+        has_more = result.get("hasMore", False)
+        if not has_more or not page_token:
+            break
+        time.sleep(2)
+    return all_nodes
 
 
 def log(msg):
@@ -128,6 +168,62 @@ def parse_topic_doc(markdown: str, doc_id: str, doc_name: str) -> dict:
 
     return topic
 
+
+
+
+def parse_brainstorm_doc(markdown: str, doc_name: str) -> list:
+    """解析 brainstorm 详细内容文档（多题/文件）为结构化题目列表"""
+    topics = []
+    # Split by ### topic headers (lowercase id like animals-2071)
+    blocks = re.split(r'\n###\s+([a-z]+-\d+)\s*\n', markdown)
+    for i in range(1, len(blocks), 2):
+        tid = blocks[i]
+        content = blocks[i+1] if i+1 < len(blocks) else ""
+        cat = tid.rsplit("-", 1)[0]
+        topic = {"id": tid, "category": cat, "tags": [], "safetyLevel": "A", "locale": "zh-CN"}
+
+        m = re.search(r'\*\*问题\*\*[:：]\s*(.+?)\s*\*\*', content)
+        if m: topic["question"] = m.group(1).strip()
+        m = re.search(r'\*\*年龄段\*\*[:：]\s*(.+?)\s*\*\*', content)
+        if m: topic["age"] = m.group(1).strip()
+
+        m = re.search(r'\*\*Layer 1[^*]*\*\*[:：]\s*(.+?)(?:\*\*追问|$)', content, re.DOTALL)
+        if m: topic["layer1"] = {"answer": m.group(1).strip(), "image": ""}
+        m = re.search(r'\*\*Layer 2[^*]*\*\*[:：]\s*(.+?)(?:\*\*追问|$)', content, re.DOTALL)
+        if m: topic["layer2"] = {"answer": m.group(1).strip(), "image": ""}
+        m = re.search(r'\*\*Layer 3[^*]*\*\*[:：]\s*(.+?)(?:\*\*科学原理|$)', content, re.DOTALL)
+        if m: topic["layer3"] = {"answer": m.group(1).strip(), "image": ""}
+
+        m = re.search(r'\*\*科学原理\*\*[:：]\s*(.+?)(?:\*\*实验|$)', content, re.DOTALL)
+        if m:
+            topic["science"] = m.group(1).strip()
+            topic["scienceImage"] = ""
+
+        m = re.search(r'\*\*实验\*\*[:：]\s*(.+?)(?:\*\*材料|$)', content, re.DOTALL)
+        exp_steps = []
+        if m:
+            exp_steps = [m.group(1).strip()]
+        m = re.search(r'\*\*材料\*\*[:：]\s*(.+?)(?:\*\*IP场景|$)', content, re.DOTALL)
+        materials = []
+        if m:
+            materials = [x.strip() for x in re.split(r'[、,，]', m.group(1)) if x.strip()]
+        topic["experiment"] = {
+            "name": topic.get("question", "") + "·小实验",
+            "steps": exp_steps,
+            "materials": materials,
+            "image": "",
+            "sayToChild": "",
+            "duration": "约5分钟",
+            "safetyNote": "需家长全程陪同",
+            "experimentType": "观察"
+        }
+        m = re.search(r'\*\*IP场景\*\*[:：]\s*(.+?)(?:---|$)', content, re.DOTALL)
+        if m: topic["ipScene"] = m.group(1).strip()
+        topic["warmClosing"] = ""
+
+        if topic.get("question"):
+            topics.append(topic)
+    return topics
 
 def load_seed_library():
     """Load all seed-library JSON files into dict by id (lowercase keys for case-insensitive match)"""
@@ -222,10 +318,13 @@ def ensure_image(topic_id: str, layer: str, prompt: str, dry_run: bool = False) 
 def sync(dry_run: bool = False):
     log("=== DingTalk 真实素材 → seed-library 同步 ===")
 
-    # Step 1: List all 真实素材 files
-    result = list_nodes(folder_id=REAL_MATERIAL_FOLDER_ID)
-    nodes = result.get("nodes", [])
+    # Step 1: List all 真实素材 files with pagination
+    nodes = list_all_nodes(REAL_MATERIAL_FOLDER_ID)
     log(f"DingTalk 真实素材: {len(nodes)} files")
+    # Also scan brainstorm 素材话题 folder for multi-topic detail files
+    bs_nodes = list_all_nodes(BRAINSTORM_FOLDER_ID)
+    bs_detail = [n for n in bs_nodes if "详细内容" in n.get("name", "")]
+    log(f"DingTalk 素材话题 brainstorm: {len(bs_detail)} detail files")
 
     # Step 2: Load local seed-library
     local_topics = load_seed_library()
@@ -258,9 +357,9 @@ def sync(dry_run: bool = False):
 
         log(f"\nProcessing {topic_id_display}: {name}")
 
-        # Read doc
+        # Read doc with retry
         try:
-            doc_result = read_doc(url=f"https://alidocs.dingtalk.com/i/nodes/{node_id}")
+            doc_result = mcp_call_with_retry("get_document_content", {"nodeId": f"https://alidocs.dingtalk.com/i/nodes/{node_id}"})
             md = doc_result.get("markdown", "")
             if not md:
                 log(f"  empty doc, skip")
@@ -320,6 +419,60 @@ def sync(dry_run: bool = False):
             img_abs = BASE_DIR / "content" / img_rel
             if not (img_abs.exists() and img_abs.stat().st_size > 1000):
                 missing_images.append((topic_id, "experiment", exp.get("name", "")[:80]))
+
+    # Step 3.5: Parse brainstorm detail files (multi-topic per doc)
+    for n in bs_detail:
+        name = n.get("name", "")
+        node_id = n.get("nodeId")
+        try:
+            doc_result = read_doc(url=f"https://alidocs.dingtalk.com/i/nodes/{node_id}")
+            md = doc_result.get("markdown", "")
+            if not md: continue
+            bs_topics = parse_brainstorm_doc(md, name)
+            for topic in bs_topics:
+                tid = topic["id"].lower()
+                cat = topic["category"]
+                if cat not in by_cat: continue
+                if tid in local_topics:
+                    # Update missing fields
+                    local = local_topics[tid]
+                    updated = False
+                    for key in ["question","age","tags","layer1","layer2","layer3","science","scienceImage","experiment","ipScene"]:
+                        if key in topic and (key not in local or not local.get(key)):
+                            local[key] = topic[key]
+                            updated = True
+                    if updated:
+                        updated_count += 1
+                        log(f"  updated {tid} from brainstorm")
+                    topic = local
+                else:
+                    # New topic
+                    new_count += 1
+                    log(f"  NEW brainstorm topic: {tid}")
+                    by_cat[cat].append(topic)
+                    local_topics[tid] = topic
+                    topic["_category_file"] = cat
+                # Check missing images
+                for layer_key in ["layer1","layer2","layer3"]:
+                    ld = topic.get(layer_key, {})
+                    if ld and not ld.get("image"):
+                        img_rel = f"images/{cat}/{tid}-{layer_key}.png"
+                        img_abs = BASE_DIR / "content" / img_rel
+                        if not (img_abs.exists() and img_abs.stat().st_size > 1000):
+                            missing_images.append((tid, layer_key, ld.get("answer","")[:80]))
+                if topic.get("science") and not topic.get("scienceImage"):
+                    img_rel = f"images/{cat}/{tid}-science.png"
+                    img_abs = BASE_DIR / "content" / img_rel
+                    if not (img_abs.exists() and img_abs.stat().st_size > 1000):
+                        missing_images.append((tid, "science", topic.get("science","")[:80]))
+                exp = topic.get("experiment", {})
+                if exp and not exp.get("image"):
+                    img_rel = f"images/{cat}/{tid}-experiment.png"
+                    img_abs = BASE_DIR / "content" / img_rel
+                    if not (img_abs.exists() and img_abs.stat().st_size > 1000):
+                        missing_images.append((tid, "experiment", exp.get("name","")[:80]))
+        except Exception as e:
+            log(f"  brainstorm read failed {name}: {e}")
 
     log(f"\n=== Sync Summary ===")
     log(f"New topics: {new_count}")
