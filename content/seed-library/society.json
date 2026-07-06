@@ -2201,5 +2201,46 @@
     },
     "ipScene": "问问兔每次经过小区门口都跟保安叔叔挥手，问\"为什么这里总有人站着？\"答答熊说\"保安叔叔是我们小区的守护者，就像每个蜂巢门口都有守卫的蜜蜂，保护大家安安全全地生活。\"",
     "warmClosing": ""
+  },
+  {
+    "id": "society-2072",
+    "category": "society",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么超市里的东西不能随便拿，要先付钱？",
+    "age": "3-5岁",
+    "layer1": {
+      "answer": "超市里的东西是超市老板用钱买来的，所以我们也要用钱跟老板换。就像你拿玩具跟小朋友换零食一样，要经过同意。",
+      "image": "images/society/society-2072-layer1.webp"
+    },
+    "layer2": {
+      "answer": "超市里的东西不是天上掉下来的，是农民种出来、工人做出来、司机运过来的。超市老板先付钱给这些人，把东西放在货架上。我们付钱给超市，就是把超市之前花的钱补上，还能让超市继续开下去。",
+      "image": "images/society/society-2072-layer2.webp"
+    },
+    "layer3": {
+      "answer": "这是\"交换\"的规则——你付出钱，换来需要的东西。商品从生产到上架有很多人付出了劳动，价格包含了这些劳动的价值。付钱是公平交易的规则，不付钱就拿叫\"偷\"，是不对的。",
+      "image": "images/society/society-2072-layer3.webp"
+    },
+    "science": "商品经济的基本逻辑：商品价格 = 原材料成本 \\+ 劳动力成本 \\+ 运输成本 \\+ 利润。交易是价值交换行为，物权法保护商品所有权。\"先付后用\"是市场的基本规则。",
+    "scienceImage": "images/society/society-2072-science.webp",
+    "experiment": {
+      "name": "为什么超市里的东西不能随便拿，要先付钱？·小实验",
+      "steps": [
+        "在家玩\"开超市\"游戏——用玩具当商品，自己画\"钱\"来交易。让孩子轮流当老板和顾客，体验\"用钱交换\"的规则。"
+      ],
+      "materials": [
+        "玩具",
+        "纸",
+        "笔"
+      ],
+      "image": "images/society/society-2072-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "问问兔在超市拿起一包饼干就要走，答答熊拉住它说\"等一下！饼干是超市老板从饼干工厂换来的，我们要用钱跟老板交换，这样才公平。来，我们一起去收银台完成这个交换仪式。\"",
+    "warmClosing": ""
   }
 ]
