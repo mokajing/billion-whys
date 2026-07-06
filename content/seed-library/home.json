@@ -2320,5 +2320,45 @@
     },
     "ipScene": "答答熊在打扫卫生，问问兔好奇地把手放在吸尘口，\"哇，它在吸我的手！\"答答熊说\"吸尘器在玩一个把空气吃掉、把灰尘留下的游戏！\"",
     "warmClosing": ""
+  },
+  {
+    "id": "home-2075",
+    "category": "home",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么胶水能粘东西？",
+    "age": "4-6岁",
+    "layer1": {
+      "answer": "胶水是液体的时候可以流进东西的小缝隙里，变干了以后就像很多小手，把两样东西紧紧拉住。",
+      "image": "images/home/home-2075-layer1.webp"
+    },
+    "layer2": {
+      "answer": "胶水涂上去的时候是湿的，里面有很多小分子。水分蒸发后，小分子们手拉手变成一张结实的网，把两样东西粘在一起。就像泥巴湿的时候能粘手，干了就变成硬块。",
+      "image": "images/home/home-2075-layer2.webp"
+    },
+    "layer3": {
+      "answer": "胶水的粘接力来自两方面：一是胶水渗入物体表面的微小孔隙，干了后像钩子一样钩住（机械锚固）；二是胶水分子和物体表面分子互相吸引（化学吸附）。不同胶水适合不同材料。",
+      "image": "images/home/home-2075-layer3.webp"
+    },
+    "science": "胶粘三阶段：润湿（胶液铺展渗入表面微孔）→固化（溶剂挥发或化学反应）→形成粘接层（机械互锁\\+分子间范德华力/氢键）。不同材料需匹配不同胶粘剂。",
+    "scienceImage": "images/home/home-2075-science.webp",
+    "experiment": {
+      "name": "为什么胶水能粘东西？·小实验",
+      "steps": [
+        "用白胶粘两张纸，一张刷厚胶、一张刷薄胶。干后比较哪张粘得更牢——发现薄胶反而更牢（因为胶水太多不易干）。"
+      ],
+      "materials": [
+        "白胶",
+        "纸张"
+      ],
+      "image": "images/home/home-2075-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "问问兔的手工作品散架了，急得跳脚。答答熊拿出胶水说\"别急，胶水是小小大力士，它钻进纸的缝隙里，等干了就变成千万只小手，把你的作品抓紧！\"",
+    "warmClosing": ""
   }
 ]
