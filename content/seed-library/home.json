@@ -2280,5 +2280,45 @@
     },
     "ipScene": "答答熊拿出一把钥匙和一把透明锁模型，问\"你看，钥匙上的锯齿像小楼梯，每个台阶刚好把锁里的小柱子顶到正确的高度！\"问问兔惊叹\"原来钥匙是会说话的密码！\"",
     "warmClosing": ""
+  },
+  {
+    "id": "home-2074",
+    "category": "home",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么吸尘器能把灰尘吸进去？",
+    "age": "3-5岁",
+    "layer1": {
+      "answer": "吸尘器像一个大嘴巴，使劲吸气，把灰尘和碎屑都吸进肚子里了。",
+      "image": "images/home/home-2074-layer1.webp"
+    },
+    "layer2": {
+      "answer": "吸尘器里面有个风扇转得飞快，把机器里的空气推出去，机器里就变空了——空气少了，外面的空气就会带着灰尘冲进去填补。",
+      "image": "images/home/home-2074-layer2.webp"
+    },
+    "layer3": {
+      "answer": "吸尘器里的电机带动风扇高速旋转，把机器内部的空气排出去，形成低压区。外面的空气（气压高）带着灰尘从吸口冲进低压区，灰尘被过滤网拦住，干净空气从后面排出。",
+      "image": "images/home/home-2074-layer3.webp"
+    },
+    "science": "负压原理：电机驱动离心风扇将机内空气排出，在集尘腔内形成低于大气压的负压区。大气压将外部空气和灰尘压入吸口，气流经过滤系统分离灰尘后排出。",
+    "scienceImage": "images/home/home-2074-science.webp",
+    "experiment": {
+      "name": "为什么吸尘器能把灰尘吸进去？·小实验",
+      "steps": [
+        "拿一张薄纸放在吸尘器吸口前，看纸被吸进去。再把纸放在吸尘器排风口后面，看纸被吹飞——感受吸尘器\"吃进去\"和\"吐出来\"的两个方向。"
+      ],
+      "materials": [
+        "吸尘器",
+        "薄纸"
+      ],
+      "image": "images/home/home-2074-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "答答熊在打扫卫生，问问兔好奇地把手放在吸尘口，\"哇，它在吸我的手！\"答答熊说\"吸尘器在玩一个把空气吃掉、把灰尘留下的游戏！\"",
+    "warmClosing": ""
   }
 ]
