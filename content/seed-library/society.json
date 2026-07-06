@@ -2242,5 +2242,46 @@
     },
     "ipScene": "问问兔在超市拿起一包饼干就要走，答答熊拉住它说\"等一下！饼干是超市老板从饼干工厂换来的，我们要用钱跟老板交换，这样才公平。来，我们一起去收银台完成这个交换仪式。\"",
     "warmClosing": ""
+  },
+  {
+    "id": "society-2073",
+    "category": "society",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么有的人喜欢辣的，有的人不喜欢？",
+    "age": "4-6岁",
+    "layer1": {
+      "answer": "因为每个人的舌头不一样，就像有的人喜欢红色有的人喜欢蓝色，有的人喜欢辣有的人不喜欢，这很正常呀。",
+      "image": "images/society/society-2073-layer1.webp"
+    },
+    "layer2": {
+      "answer": "辣不是一种味道，而是一种\"热热的感觉\"。辣椒里的辣椒素刺激舌头上的感觉神经，让人觉得\"辣\"。有的人从小习惯吃辣，感觉神经\"习惯\"了。有的人没吃过，神经特别敏感，觉得很刺激。",
+      "image": "images/society/society-2073-layer2.webp"
+    },
+    "layer3": {
+      "answer": "辣是辣椒素激活TRPV1痛觉受体的结果，不是味觉。TRPV1本用于感知高温（\\>43°C），辣椒素让它误以为\"被烫了\"。长期吃辣会降低TRPV1敏感度，所以\"越吃越能吃辣\"。牛奶中的酪蛋白能包裹辣椒素带走，所以解辣。",
+      "image": "images/society/society-2073-layer3.webp"
+    },
+    "science": "辣椒素（Capsaicin）激活TRPV1受体，该受体正常感知43°C以上高温。不同个体的TRPV1基因表达量和敏感度不同，加上文化/饮食习惯的差异，导致对辣的耐受度有巨大个体差异。",
+    "scienceImage": "images/society/society-2073-science.webp",
+    "experiment": {
+      "name": "为什么有的人喜欢辣的，有的人不喜欢？·小实验",
+      "steps": [
+        "家庭小调查：让全家人各自尝一小点辣味零食，用1-5分给辣度打分。比较不同人的分数，讨论\"为什么每个人感觉不一样\"。"
+      ],
+      "materials": [
+        "辣味零食（不太辣的）",
+        "水",
+        "牛奶"
+      ],
+      "image": "images/society/society-2073-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "问问兔看答答熊吃辣椒面不改色，自己也尝了一口，结果辣得跳起来。\"为什么你不觉得辣？\"答答熊说\"我的舌头跟辣椒是老朋友了，你的舌头还是第一次见辣椒，被热情地烫了一下！\"",
+    "warmClosing": ""
   }
 ]
