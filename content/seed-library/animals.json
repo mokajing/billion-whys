@@ -2313,5 +2313,48 @@
     },
     "ipScene": "问问兔看着鱼缸里的金鱼担心地问\"它一直泡在水里不会淹死吗？\"答答熊说\"鱼才不怕水呢！水是它的空气，它用鳃把水里的氧气捞出来，就像你用鼻子从空气里捞氧气一样。\"",
     "warmClosing": ""
+  },
+  {
+    "id": "animals-2074",
+    "category": "animals",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么狗见面要互相闻屁股？",
+    "age": "4-6岁",
+    "layer1": {
+      "answer": "狗用鼻子代替眼睛了解对方——闻一闻就知道对方是谁、吃了什么饭、开不开心。屁股是狗狗的\"名片\"。",
+      "image": "images/animals/animals-2074-layer1.webp"
+    },
+    "layer2": {
+      "answer": "狗屁股附近有特殊的腺体，会分泌一种带味道的液体，每只狗的味道都不一样。这就像狗狗的\"身份证\"，别的狗闻一下就知道\"你是谁、你是男是女、你今天心情好不好\"。",
+      "image": "images/animals/animals-2074-layer2.webp"
+    },
+    "layer3": {
+      "answer": "狗肛门两侧有肛门腺，分泌含信息素的液体，编码了狗的性别、年龄、健康状况、情绪和饮食等大量信息。狗的嗅觉灵敏度是人类的一万倍以上，通过闻屁股可以在几秒内完成信息交换。",
+      "image": "images/animals/animals-2074-layer3.webp"
+    },
+    "science": "犬科肛门腺分泌的信息素含有挥发性脂肪酸、蛋白质和类固醇等，每只狗都有独特的化学\"指纹\"。犁鼻器（Jacobson's organ）专门处理信息素，通过嗅闻行为收集社交信息。",
+    "scienceImage": "images/animals/animals-2074-science.webp",
+    "experiment": {
+      "name": "为什么狗见面要互相闻屁股？·小实验",
+      "steps": [
+        "类比简化：给几个不同颜色的杯子分别装上醋、酱油、柠檬汁，让孩子蒙眼靠闻来分辨。说明\"气味也能传递信息\"。"
+      ],
+      "materials": [
+        "几个杯子",
+        "醋",
+        "酱油",
+        "柠檬汁",
+        "眼罩"
+      ],
+      "image": "images/animals/animals-2074-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "问问兔看到两只狗互相闻屁股，捂着嘴笑\"它们在干嘛？\"答答熊说\"这是狗狗的握手礼仪！它们的屁股上有味道名片，一闻就知道对方是谁、今天吃了什么，比我们交换名片还快呢。\"",
+    "warmClosing": ""
   }
 ]
