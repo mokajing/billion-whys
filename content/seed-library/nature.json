@@ -2445,5 +2445,45 @@
     },
     "ipScene": "问问兔在河边捡到一块光滑的鹅卵石，又看到路边一块粗糙的石头。\"为什么它们不一样？\"答答熊说\"河里那块石头被水洗了几万年的澡，棱角都被洗掉了。路边那块石头还没开始洗澡呢！\"",
     "warmClosing": ""
+  },
+  {
+    "id": "nature-2074",
+    "category": "nature",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么云不会从天上掉下来？",
+    "age": "3-5岁",
+    "layer1": {
+      "answer": "因为云是由很小很小的水滴组成的，它们轻得像羽毛，空气托着它们，掉不下来。",
+      "image": "images/nature/nature-2074-layer1.webp"
+    },
+    "layer2": {
+      "answer": "云是无数极小的水滴或冰晶聚在一起。每个水滴轻得几乎没重量，空气的上升气流把它们托住了。当水滴变大变重，空气托不住了，就会掉下来——那就是下雨啦。",
+      "image": "images/nature/nature-2074-layer2.webp"
+    },
+    "layer3": {
+      "answer": "云滴直径约0.01-0.02mm，终端下落速度极慢（约1cm/s），被上升气流轻易抵消。只有当云滴通过碰并增长到直径\\>0.5mm变成雨滴时，下落速度超过上升气流，才会以雨的形式落下。",
+      "image": "images/nature/nature-2074-layer3.webp"
+    },
+    "science": "云滴的斯托克斯沉降速度与直径平方成正比。直径10μm云滴沉降速度约0.3cm/s，而典型上升气流速度为5-10cm/s。当云滴长大到雨滴（\\>500μm），沉降速度达数m/s，克服上升气流，形成降水。",
+    "scienceImage": "images/nature/nature-2074-science.webp",
+    "experiment": {
+      "name": "为什么云不会从天上掉下来？·小实验",
+      "steps": [
+        "用喷雾瓶在空中喷水雾，观察细小的雾滴悬浮在空中慢慢飘，但大水滴很快落下——小水滴轻，空气托得住；大水滴重，空气托不住。"
+      ],
+      "materials": [
+        "喷雾瓶",
+        "水"
+      ],
+      "image": "images/nature/nature-2074-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "问问兔躺在草地上看云，突然担心\"云会不会掉下来砸到我？\"答答熊哈哈大笑\"云是最轻的棉花糖，空气用看不见的手一直托着它们。等它们喝水喝太胖了，才会变成雨掉下来。\"",
+    "warmClosing": ""
   }
 ]
