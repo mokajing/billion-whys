@@ -2365,5 +2365,44 @@
     },
     "ipScene": "问问兔趴在窗边看天空\"天空怎么变成黄油色了？\"答答熊说\"云宝宝喝饱了水，把太阳光里的蓝色都藏起来了，只剩下黄色光偷偷溜出来告诉我们——快下雨啦！\"",
     "warmClosing": ""
+  },
+  {
+    "id": "nature-2072",
+    "category": "nature",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么冬天呼气能看到白雾，夏天看不到？",
+    "age": "3-5岁",
+    "layer1": {
+      "answer": "因为冬天外面冷，你嘴里呼出来的热气一碰到冷空气就变成了小水滴，这些小水滴飘在空中就是白雾。夏天外面热，热气不会变成水，就看不见了。",
+      "image": "images/nature/nature-2072-layer1.webp"
+    },
+    "layer2": {
+      "answer": "你呼出的气里有很多看不见的水蒸气。冬天空气冷，热的蒸气一碰到冷空气马上变成小水滴，就像烧开水时冒的白气。夏天空气本身就很热，蒸气不会变成水，所以看不见。",
+      "image": "images/nature/nature-2072-layer2.webp"
+    },
+    "layer3": {
+      "answer": "呼出的气体温度约37°C，湿度接近100%。冬天外界气温低，呼气中的水蒸气遇冷空气后迅速降温到露点以下，凝结成微小的水滴，形成可见白雾。夏天外界温度高，水蒸气保持气态，不可见。",
+      "image": "images/nature/nature-2072-layer3.webp"
+    },
+    "science": "露点凝结：37°C饱和湿空气含约44g/m³水蒸气，遇0°C空气后降温，超过0°C空气的饱和水汽量（约5g/m³），多余水蒸气凝结为可见液滴。夏天气温高，饱和水汽量大，一般不触发凝结。",
+    "scienceImage": "images/nature/nature-2072-science.webp",
+    "experiment": {
+      "name": "为什么冬天呼气能看到白雾，夏天看不到？·小实验",
+      "steps": [
+        "让孩子对着冰箱冷冻室呼一口气——看到白雾！再对着室温空气呼气——看不到。对比理解\"冷才有白雾\"。"
+      ],
+      "materials": [
+        "冰箱冷冻室"
+      ],
+      "image": "images/nature/nature-2072-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "冬天早晨，问问兔对着窗户哈气，看白雾升腾。\"我是小火车！\"答答熊说\"你呼出的热气在冬天变成了看得见的云朵，夏天它们就隐形啦。\"",
+    "warmClosing": ""
   }
 ]
