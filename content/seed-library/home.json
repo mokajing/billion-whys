@@ -2160,5 +2160,45 @@
     "locale": "zh-CN",
     "scienceImage": "images/home/home-045-experiment.webp",
     "warmClosing": "听水壶唱歌，泡泡在水里噼里啪啦像小鞭炮！"
+  },
+  {
+    "id": "home-2071",
+    "category": "home",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么遥控器可以控制电视，但看不见中间有绳子？",
+    "age": "3-5岁",
+    "layer1": {
+      "answer": "遥控器会发出一种看不见的光，电视能\"看到\"这种光，就知道你要它做什么了。",
+      "image": "images/home/home-2071-layer1.webp"
+    },
+    "layer2": {
+      "answer": "遥控器前面有个小灯泡，会发出一种人眼看不见的光叫红外线。按下按钮时，遥控器用这种光给电视发暗号，电视收到暗号就换台了。",
+      "image": "images/home/home-2071-layer2.webp"
+    },
+    "layer3": {
+      "answer": "遥控器用红外线发送信号，就像用手电筒照摩斯密码一样。红外线是看不见的光，走直线，所以要对着电视才行。现在有些遥控器用蓝牙或无线电波，就不需要对方向了。",
+      "image": "images/home/home-2071-layer3.webp"
+    },
+    "science": "红外遥控使用940nm左右的红外LED，通过调制脉冲编码发送指令。红外线是电磁波，直线传播，无法穿透墙壁。蓝牙遥控使用2.4GHz无线电波，可穿透障碍物。",
+    "scienceImage": "images/home/home-2071-science.webp",
+    "experiment": {
+      "name": "为什么遥控器可以控制电视，但看不见中间有绳子？·小实验",
+      "steps": [
+        "用手机相机对准遥控器前端的红外灯，按下按钮，在手机屏幕上可以看到紫色光点——这就是遥控器发出的红外线。"
+      ],
+      "materials": [
+        "手机",
+        "遥控器"
+      ],
+      "image": "images/home/home-2071-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "问问兔拿起遥控器对着天花板按，电视没反应。答答熊说\"遥控器和电视在说悄悄话，你要让它们面对面才行！\"然后教问问兔用手机相机看到遥控器的\"秘密光\"。",
+    "warmClosing": ""
   }
 ]
