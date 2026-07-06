@@ -2127,5 +2127,201 @@
     "locale": "zh-CN",
     "scienceImage": "images/body/body-045-experiment.webp",
     "warmClosing": "坐麻了不要急，活动活动脚趾，等电话线重新接通就好啦！"
+  },
+  {
+    "id": "body-2071",
+    "category": "body",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么我有时候觉得时间过得快，有时候觉得时间过得慢？",
+    "age": "4-6岁",
+    "layer1": {
+      "answer": "开心的时候时间像小兔子跑得快，等着的时候时间像小蜗牛慢慢爬。",
+      "image": "images/body/body-2071-layer1.webp"
+    },
+    "layer2": {
+      "answer": "大脑里有个\"注意力闹钟\"，当你在做有趣的事时闹钟不响，时间就偷偷溜走了；当你一直盯着时钟等，闹钟滴答滴答，时间就变慢了。",
+      "image": "images/body/body-2071-layer2.webp"
+    },
+    "layer3": {
+      "answer": "我们的大脑不是用钟表计时的，而是用\"发生了多少事\"来感觉时间。开心时大脑忙着处理有趣的事，顾不上数时间；无聊时大脑一直在数\"还有多久\"，所以感觉特别慢。",
+      "image": "images/body/body-2071-layer3.webp"
+    },
+    "science": "时间知觉受多巴胺和注意力分配影响。愉悦活动激活多巴胺系统，降低对时间流逝的监测；无聊或等待时前额叶持续监测时间间隔，产生\"时间膨胀\"效应。",
+    "scienceImage": "images/body/body-2071-science.webp",
+    "experiment": {
+      "name": "为什么我有时候觉得时间过得快，有时候觉得时间过得慢？·小实验",
+      "steps": [
+        "和孩子玩\"猜时间\"游戏——闭眼，觉得过了1分钟就举手。分别在做有趣游戏时和干坐着等待时各测一次，比较两次感觉的差异。"
+      ],
+      "materials": [
+        "手机计时器"
+      ],
+      "image": "images/body/body-2071-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "问问兔在等答答熊做蛋糕，问\"为什么等蛋糕的时间比吃蛋糕的时间长那么多？\"答答熊笑着拿出计时器带问问兔玩猜时间游戏。",
+    "warmClosing": ""
+  },
+  {
+    "id": "body-2072",
+    "category": "body",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么有时候我很困但就是睡不着？",
+    "age": "3-6岁",
+    "layer1": {
+      "answer": "因为你的身体累了，但你的小脑袋还在想好玩的事情，不想下班呢。",
+      "image": "images/body/body-2072-layer1.webp"
+    },
+    "layer2": {
+      "answer": "睡觉需要两个条件：身体要安静，大脑也要安静。有时候身体已经很累了，但大脑还在兴奋地跑来跑去，就像关了灯但电视还开着。",
+      "image": "images/body/body-2072-layer2.webp"
+    },
+    "layer3": {
+      "answer": "困是身体发出的信号，但能不能睡着还需要大脑切换到休息模式。如果睡前太兴奋、太紧张或者脑子里一直在想事情，大脑的\"清醒开关\"就关不掉，身体和大脑就打架了。",
+      "image": "images/body/body-2072-layer3.webp"
+    },
+    "science": "入睡需要从交感神经（兴奋）切换到副交感神经（放松）主导。睡前高唤醒状态（兴奋/焦虑）使皮质醇升高，抑制褪黑素作用，造成\"困但睡不着\"的入睡障碍。",
+    "scienceImage": "images/body/body-2072-science.webp",
+    "experiment": {
+      "name": "为什么有时候我很困但就是睡不着？·小实验",
+      "steps": [
+        "建立一个\"睡前降温仪式\"——关大灯开小夜灯、深呼吸3次、让妈妈讲一个安静的故事，试试看入睡是不是变快了。"
+      ],
+      "materials": [
+        "小夜灯",
+        "绘本"
+      ],
+      "image": "images/body/body-2072-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "问问兔躺在被窝里翻来翻去，眼睛睁得大大的。答答熊端来一杯温牛奶，教问问兔做\"小熊呼吸法\"——鼻子吸气4秒，嘴巴慢慢呼气6秒。",
+    "warmClosing": ""
+  },
+  {
+    "id": "body-2073",
+    "category": "body",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么哭了以后鼻子会堵住？",
+    "age": "3-5岁",
+    "layer1": {
+      "answer": "因为眼泪从眼睛流出来的时候，有一些偷偷跑进鼻子里了，鼻子就堵住啦。",
+      "image": "images/body/body-2073-layer1.webp"
+    },
+    "layer2": {
+      "answer": "眼睛和鼻子之间有一条秘密通道，叫\"鼻泪管\"。哭的时候眼泪太多了，一部分从眼睛流出来，另一部分通过这条通道流进鼻子里，鼻子就感觉堵堵的。",
+      "image": "images/body/body-2073-layer2.webp"
+    },
+    "layer3": {
+      "answer": "眼睛每天都会分泌少量眼泪来保持湿润，这些眼泪平时都通过鼻泪管悄悄流进鼻子里，你根本感觉不到。但哭的时候眼泪产量大增，通道来不及排，就堵在鼻子里了。",
+      "image": "images/body/body-2073-layer3.webp"
+    },
+    "science": "泪液由泪腺分泌，经泪点→泪小管→泪囊→鼻泪管流入下鼻道。日常基础分泌量约1μL/min，哭泣时分泌量激增至100倍以上，鼻泪管引流能力饱和，导致鼻塞感和鼻涕增多。",
+    "scienceImage": "images/body/body-2073-science.webp",
+    "experiment": {
+      "name": "为什么哭了以后鼻子会堵住？·小实验",
+      "steps": [
+        "让孩子在不哭的时候轻轻按压内眼角，感受那里有一个小凹点——那就是眼泪进入鼻子的通道入口。"
+      ],
+      "materials": [
+        "镜子"
+      ],
+      "image": "images/body/body-2073-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "问问兔因为摔倒哭了，擦干眼泪后吸着鼻子说\"鼻子也哭了\"。答答熊拿出一个小画板，画了一条从眼睛到鼻子的弯弯管道，说\"眼泪走了秘密通道！\"",
+    "warmClosing": ""
+  },
+  {
+    "id": "body-2074",
+    "category": "body",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么挠痒痒的时候会忍不住笑？",
+    "age": "3-5岁",
+    "layer1": {
+      "answer": "因为你的身体在说\"有人在碰我！\"然后笑是身体保护自己的方式。",
+      "image": "images/body/body-2074-layer1.webp"
+    },
+    "layer2": {
+      "answer": "身上有些地方特别敏感，比如脖子、肚皮、脚底。这些地方一被碰到，大脑就会发出\"警报\"，但因为你看到是熟悉的人在和你玩，大脑就把警报变成了笑。",
+      "image": "images/body/body-2074-layer2.webp"
+    },
+    "layer3": {
+      "answer": "被挠痒痒时笑是一种\"防御反应\"。敏感部位被触碰时大脑先紧张，但看到是家人朋友在玩，大脑判断\"没有危险\"，紧张就变成了笑。自己挠自己不笑，是因为大脑提前知道要碰哪里，取消了警报。",
+      "image": "images/body/body-2074-layer3.webp"
+    },
+    "science": "被挠痒时的笑是触觉刺激引发的非自主反应，涉及下丘脑的防御反射和社交信号处理。小脑在自挠时预判运动指令并抑制体感反应，所以自挠不产生痒笑感。这被称为\"感觉衰减\"现象。",
+    "scienceImage": "images/body/body-2074-science.webp",
+    "experiment": {
+      "name": "为什么挠痒痒的时候会忍不住笑？·小实验",
+      "steps": [
+        "先让孩子自己挠自己手心——不笑。再让妈妈突然挠孩子肚子——大笑。讨论\"为什么不一样？\""
+      ],
+      "materials": [
+        "无"
+      ],
+      "image": "images/body/body-2074-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "答答熊用大熊掌轻挠问问兔的肚皮，问问兔咯咯笑个不停。答答熊停下来，问\"你试试挠自己？\"问问兔挠自己，一脸困惑地发现不痒。",
+    "warmClosing": ""
+  },
+  {
+    "id": "body-2075",
+    "category": "body",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么转圈圈以后会头晕？",
+    "age": "3-5岁",
+    "layer1": {
+      "answer": "因为耳朵里有个小水池，你一转圈，水池里的水就晃来晃去，告诉大脑\"还在转\"，但眼睛说\"没转了\"，它们俩吵架了，你就晕了。",
+      "image": "images/body/body-2075-layer1.webp"
+    },
+    "layer2": {
+      "answer": "耳朵最深处有一个像小水平仪的东西，里面装着水。你转圈时水跟着转，停下来了水还在晃，大脑以为你还在转，可眼睛看到的是静止的，两种信号打架，头晕就来了。",
+      "image": "images/body/body-2075-layer2.webp"
+    },
+    "layer3": {
+      "answer": "耳朵里的前庭系统负责感知身体的旋转和平衡。它有三条半规管，里面充满液体。转圈时液体流动，停下来后液体因为惯性继续晃动，大脑收到\"还在转\"的错误信号，和眼睛的\"静止\"信号冲突，产生眩晕。",
+      "image": "images/body/body-2075-layer3.webp"
+    },
+    "science": "半规管内的内淋巴液在旋转时获得角动量，停止后惯性导致液体继续流动，推动壶腹嵴的毛细胞持续发送旋转信号。视觉和前庭信号的冲突是眩晕的核心原因。",
+    "scienceImage": "images/body/body-2075-science.webp",
+    "experiment": {
+      "name": "为什么转圈圈以后会头晕？·小实验",
+      "steps": [
+        "让孩子原地转3圈后停下，观察眼睛有没有快速左右抖动——这就是前庭还在\"转\"的证据。注意安全，转圈时旁边有大人保护。"
+      ],
+      "materials": [
+        "无（需大人保护）"
+      ],
+      "image": "images/body/body-2075-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "问问兔和答答熊在草地上比赛转圈。停下来后问问兔摇摇晃晃像喝醉了，答答熊扶住它说\"是你的耳朵里的小水手还在划船呢！\"",
+    "warmClosing": ""
   }
 ]
