@@ -2353,5 +2353,47 @@
     },
     "ipScene": "问问兔正在狼吞虎咽吃胡萝卜，突然\"啊\"一声捂住嘴——咬到舌头了。答答熊递过一杯凉水说\"慢慢吃，舌头上有千千万万个小哨兵，咬到它们比咬到手疼多了！\"",
     "warmClosing": ""
+  },
+  {
+    "id": "food-2075",
+    "category": "food",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么可乐倒在杯子里会冒泡泡？",
+    "age": "3-5岁",
+    "layer1": {
+      "answer": "可乐里住着好多二氧化碳小气泡，平时被关在瓶子里很乖，一倒进杯子它们就开心地往外跑啦。",
+      "image": "images/food/food-2075-layer1.webp"
+    },
+    "layer2": {
+      "answer": "可乐里被压进了很多二氧化碳气体，瓶盖盖着的时候气压高，气体被迫溶解在水里。一打开瓶盖，气压降低，气体就变成泡泡跑出来了。倒进杯子时晃动更厉害，泡泡跑得更快。",
+      "image": "images/food/food-2075-layer2.webp"
+    },
+    "layer3": {
+      "answer": "碳酸饮料在工厂里被高压注入二氧化碳，CO₂溶解在水中形成碳酸。开瓶后气压骤降，溶解的CO₂过饱和，开始在杯壁瑕疵处（成核点）形成气泡并逸出。摇晃和倒入杯子增加了气泡成核点，加速气泡释放。",
+      "image": "images/food/food-2075-layer3.webp"
+    },
+    "science": "亨利定律：气体在液体中的溶解度与液面上方该气体的分压成正比。瓶中CO₂分压约2-4atm，开瓶后降至大气压（0.0004atm CO₂分压），溶解度急剧下降，CO₂过饱和逸出。",
+    "scienceImage": "images/food/food-2075-science.webp",
+    "experiment": {
+      "name": "为什么可乐倒在杯子里会冒泡泡？·小实验",
+      "steps": [
+        "倒两杯可乐，一杯加一勺盐，一杯不加。观察加盐的那杯泡泡冒得更猛——因为盐粒提供了更多气泡成核点。"
+      ],
+      "materials": [
+        "可乐",
+        "杯子",
+        "盐",
+        "勺子"
+      ],
+      "image": "images/food/food-2075-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "问问兔倒可乐时泡泡\"嘶嘶\"冒出来，吓得往后退。\"可乐生气了吗？\"答答熊笑着说\"是可乐里的小气泡被关了太久，一打开盖子就迫不及待地要出来跳舞啦！\"",
+    "warmClosing": ""
   }
 ]
