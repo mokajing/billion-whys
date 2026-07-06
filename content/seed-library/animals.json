@@ -2274,5 +2274,44 @@
     },
     "ipScene": "问问兔蹲在路边看乌龟慢悠悠地爬，急得跺脚\"你快点呀！\"答答熊说\"乌龟不着急，它背着防弹衣走路，谁也伤不了它。慢是它的超能力，不是缺点。\"",
     "warmClosing": ""
+  },
+  {
+    "id": "animals-2073",
+    "category": "animals",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么鱼在水里不会淹死？",
+    "age": "3-5岁",
+    "layer1": {
+      "answer": "因为鱼用鳃呼吸，能把水里的空气吸出来用。就像你用鼻子吸空气，鱼用鳃吸水里的空气。",
+      "image": "images/animals/animals-2073-layer1.webp"
+    },
+    "layer2": {
+      "answer": "鱼的头部两侧有鳃，鳃里面有好多细细的血管。水从鱼嘴巴流进去，经过鳃的时候，鳃就把水里溶解的氧气\"抓\"出来送进血液里，然后把水从鳃盖排出去。",
+      "image": "images/animals/animals-2073-layer2.webp"
+    },
+    "layer3": {
+      "answer": "鱼鳃由鳃丝和鳃小片组成，表面积巨大，布满毛细血管。水流经鳃时，水中溶解氧通过扩散进入血液，CO₂则反向排出。鳃丝在水中展开，离开水后粘连塌陷，失去气体交换功能，鱼窒息而死。",
+      "image": "images/animals/animals-2073-layer3.webp"
+    },
+    "science": "鳃的对流交换机制：水流方向与鳃毛细血管血流方向相反（逆流交换），使氧气提取效率高达80%以上（哺乳动物肺约25%）。水中溶解氧含量约5-10mg/L，远低于空气的210mg/L，鳃的高效结构是对此的适应。",
+    "scienceImage": "images/animals/animals-2073-science.webp",
+    "experiment": {
+      "name": "为什么鱼在水里不会淹死？·小实验",
+      "steps": [
+        "观察鱼缸里的鱼——看它嘴巴和鳃盖一张一合交替开合，理解\"张嘴吸水→闭嘴→鳃盖打开排水\"的呼吸节奏。"
+      ],
+      "materials": [
+        "鱼缸（或视频）"
+      ],
+      "image": "images/animals/animals-2073-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "问问兔看着鱼缸里的金鱼担心地问\"它一直泡在水里不会淹死吗？\"答答熊说\"鱼才不怕水呢！水是它的空气，它用鳃把水里的氧气捞出来，就像你用鼻子从空气里捞氧气一样。\"",
+    "warmClosing": ""
   }
 ]
