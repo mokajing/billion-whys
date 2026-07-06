@@ -2161,5 +2161,45 @@
     "scienceImage": "images/society/society-045-experiment.webp",
     "warmClosing": "在电梯里乖乖站好，它就会安全地带你到想去的楼层！",
     "locale": "zh-CN"
+  },
+  {
+    "id": "society-2071",
+    "category": "society",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么小区门口要有保安叔叔？",
+    "age": "3-5岁",
+    "layer1": {
+      "answer": "保安叔叔像小区的\"守护熊\"，帮我们看着门口，不让坏人进来，保护大家的安全。",
+      "image": "images/society/society-2071-layer1.webp"
+    },
+    "layer2": {
+      "answer": "保安叔叔的工作是认识小区里的人，帮大家开门、收快递、注意有没有陌生人。他们就像小区的\"大管家\"，让住在里面的人安心生活。这是一种保护大家的工作。",
+      "image": "images/society/society-2071-layer2.webp"
+    },
+    "layer3": {
+      "answer": "社区保安是社会分工的体现。一个小区有很多家庭，需要一个专门的人来负责公共安全。保安帮助管理进出人员、防止偷盗、协助紧急情况。穿制服是为了让别人一眼就能认出\"我是这里的工作人员\"。",
+      "image": "images/society/society-2071-layer3.webp"
+    },
+    "science": "社区安保是现代社会劳动分工的产物。制服具有符号功能——传达身份、权威和可信赖感。安保人员的存在形成\"公地管理\"机制，是社区安全感的来源之一。",
+    "scienceImage": "images/society/society-2071-science.webp",
+    "experiment": {
+      "name": "为什么小区门口要有保安叔叔？·小实验",
+      "steps": [
+        "带孩子认识小区里的\"社区工作者\"——保安、清洁工、物业管家。让孩子画一张\"小区守护者\"感谢卡，了解每个职业的作用。"
+      ],
+      "materials": [
+        "纸",
+        "画笔"
+      ],
+      "image": "images/society/society-2071-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "问问兔每次经过小区门口都跟保安叔叔挥手，问\"为什么这里总有人站着？\"答答熊说\"保安叔叔是我们小区的守护者，就像每个蜂巢门口都有守卫的蜜蜂，保护大家安安全全地生活。\"",
+    "warmClosing": ""
   }
 ]
