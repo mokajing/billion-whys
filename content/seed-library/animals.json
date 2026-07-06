@@ -2356,5 +2356,45 @@
     },
     "ipScene": "问问兔看到两只狗互相闻屁股，捂着嘴笑\"它们在干嘛？\"答答熊说\"这是狗狗的握手礼仪！它们的屁股上有味道名片，一闻就知道对方是谁、今天吃了什么，比我们交换名片还快呢。\"",
     "warmClosing": ""
+  },
+  {
+    "id": "animals-2075",
+    "category": "animals",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么蜻蜓会点水？",
+    "age": "3-5岁",
+    "layer1": {
+      "answer": "蜻蜓在水面上点来点去，是在把宝宝放进水里。蜻蜓宝宝要在水里才能长大。",
+      "image": "images/animals/animals-2075-layer1.webp"
+    },
+    "layer2": {
+      "answer": "蜻蜓妈妈在水面上飞，用尾巴尖轻轻点水，每次点水都在水里产下一颗卵。等卵孵化出来，蜻蜓宝宝就在水里生活，吃水里的蚊子幼虫，长大了再爬出来变成会飞的蜻蜓。",
+      "image": "images/animals/animals-2075-layer2.webp"
+    },
+    "layer3": {
+      "answer": "蜻蜓点水是雌蜻蜓的产卵行为。卵产在水中或水生植物上，孵化出的幼虫叫水虿，在水中生活数月至数年，用直肠鳃呼吸，捕食孑孓等。成熟后爬出水面蜕皮，羽化为成虫。",
+      "image": "images/animals/animals-2075-layer3.webp"
+    },
+    "science": "蜻蜓为半变态昆虫，一生经历卵→稚虫（水虿）→成虫三个阶段。水虿用可伸缩的下唇（脸盖）捕捉猎物，直肠鳃兼具呼吸和喷射推进功能。点水产卵方式分散了后代，降低被天敌一网打尽的风险。",
+    "scienceImage": "images/animals/animals-2075-science.webp",
+    "experiment": {
+      "name": "为什么蜻蜓会点水？·小实验",
+      "steps": [
+        "夏天去池塘边观察蜻蜓点水，记录它一分钟点了几次水。回家画一幅\"蜻蜓的一生\"四格画：卵→水虿→爬出水面→蜻蜓。"
+      ],
+      "materials": [
+        "纸",
+        "画笔"
+      ],
+      "image": "images/animals/animals-2075-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "问问兔指着池塘上飞来飞去的蜻蜓问\"它为什么一直用尾巴碰水？\"答答熊说\"那是蜻蜓妈妈在生宝宝！它把宝宝放进水里，宝宝在水里长大，会游泳，会抓蚊子，长大了才爬出水面变成蜻蜓。\"",
+    "warmClosing": ""
   }
 ]
