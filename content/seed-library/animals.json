@@ -2194,5 +2194,85 @@
     "warmClosing": "下次看到天上大雁排队飞过，你可以告诉大人：它们在玩接力赛，轮流当领队呢！",
     "locale": "zh-CN",
     "safetyLevel": "A"
+  },
+  {
+    "id": "animals-2071",
+    "category": "animals",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么猫从高处跳下来总能稳稳落地？",
+    "age": "3-5岁",
+    "layer1": {
+      "answer": "猫咪的身体像弹簧一样灵活，它会用尾巴当方向盘，在空中扭来扭去，让自己四脚朝下稳稳落地。",
+      "image": "images/animals/animals-2071-layer1.webp"
+    },
+    "layer2": {
+      "answer": "猫有一种天生的本领叫\"翻正反射\"。它从高处掉下来时，会先转动头看地面，然后身体跟着扭，短短半秒内就把身体翻正。它的脊柱特别灵活，像一串可以自由转动的珠子。",
+      "image": "images/animals/animals-2071-layer2.webp"
+    },
+    "layer3": {
+      "answer": "猫的翻正反射是本能行为，不需学习。过程：内耳前庭检测身体方向→头先转正→前肢收拢→后半身扭转跟进→四肢伸展准备着陆。猫的锁骨退化、脊柱异常灵活（50\\+块椎骨），让它可以像体操运动员一样在空中翻转。",
+      "image": "images/animals/animals-2071-layer3.webp"
+    },
+    "science": "猫翻正反射：角动量守恒下的身体分段扭转。猫先收前肢减小前半身转动惯量快速转正，再伸前肢增大惯量，利用反作用力扭转后半身。整个过程约0.3秒，从约30cm以上高度即可完成。",
+    "scienceImage": "images/animals/animals-2071-science.webp",
+    "experiment": {
+      "name": "为什么猫从高处跳下来总能稳稳落地？·小实验",
+      "steps": [
+        "用一个小的毛绒玩具模拟\"猫翻转\"——让孩子从不同方向扔玩具到沙发上，看它落地时的姿势，讨论为什么猫能做到而玩具不行。"
+      ],
+      "materials": [
+        "猫形毛绒玩具",
+        "沙发"
+      ],
+      "image": "images/animals/animals-2071-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "问问兔在树上看到一只猫从围墙跳下来，四脚稳稳落地。\"猫是不是有弹簧脚？\"答答熊说\"猫的脊椎像一串灵活的珠子，它能在空中翻跟斗，把自己调到最安全的姿势落地！\"",
+    "warmClosing": ""
+  },
+  {
+    "id": "animals-2072",
+    "category": "animals",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么乌龟走得那么慢？",
+    "age": "3-5岁",
+    "layer1": {
+      "answer": "因为乌龟背着大大的房子，太重了，所以走得慢。但它不需要快，遇到危险缩进壳里就好了。",
+      "image": "images/animals/animals-2072-layer1.webp"
+    },
+    "layer2": {
+      "answer": "乌龟有四条短短的腿，背上还扛着沉重的壳。它的腿不像兔子那样适合跳，也不像马那样适合跑。而且乌龟的新陈代谢很慢，身体不需要急着找食物，慢慢走就够了。",
+      "image": "images/animals/animals-2072-layer2.webp"
+    },
+    "layer3": {
+      "answer": "陆龟四肢短粗呈柱状，适合支撑沉重壳体但不适合快速移动。龟类代谢率极低，是变温动物，节省能量是生存策略。它们以植物为食，不需要捕猎，乌龟壳提供了强大防御，不需要速度来逃命。",
+      "image": "images/animals/animals-2072-layer3.webp"
+    },
+    "science": "龟类的基础代谢率仅为同体重哺乳动物的10-20%。四肢结构（柱状短肢、趾骨短粗）牺牲速度换取负重和稳定性。龟壳占体重30%以上，但提供了无与伦比的抗捕食保护。",
+    "scienceImage": "images/animals/animals-2072-science.webp",
+    "experiment": {
+      "name": "为什么乌龟走得那么慢？·小实验",
+      "steps": [
+        "让孩子背一个装满书的书包（模拟乌龟壳的重量），在房间里走一圈，感受\"背着房子走路\"有多累。"
+      ],
+      "materials": [
+        "书包",
+        "书"
+      ],
+      "image": "images/animals/animals-2072-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "问问兔蹲在路边看乌龟慢悠悠地爬，急得跺脚\"你快点呀！\"答答熊说\"乌龟不着急，它背着防弹衣走路，谁也伤不了它。慢是它的超能力，不是缺点。\"",
+    "warmClosing": ""
   }
 ]
