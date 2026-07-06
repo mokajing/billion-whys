@@ -2485,5 +2485,45 @@
     },
     "ipScene": "问问兔躺在草地上看云，突然担心\"云会不会掉下来砸到我？\"答答熊哈哈大笑\"云是最轻的棉花糖，空气用看不见的手一直托着它们。等它们喝水喝太胖了，才会变成雨掉下来。\"",
     "warmClosing": ""
+  },
+  {
+    "id": "nature-2075",
+    "category": "nature",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么有时候能看到彩虹，有时候看不到？",
+    "age": "3-6岁",
+    "layer1": {
+      "answer": "彩虹需要同时有太阳和下雨才能出现。太阳光穿过雨滴，就像穿过一个水晶球，变出了七种颜色。",
+      "image": "images/nature/nature-2075-layer1.webp"
+    },
+    "layer2": {
+      "answer": "下过雨后空中还有小水滴，太阳从你背后照过来，光穿过水滴就被分成了红橙黄绿青蓝紫七种颜色。没有太阳或者没有雨，彩虹就不会出现。",
+      "image": "images/nature/nature-2075-layer2.webp"
+    },
+    "layer3": {
+      "answer": "彩虹形成需要三个条件：太阳在你背后低角度照射、前方有雨滴、光经过两次折射\\+一次反射从水滴中射出。每个水滴只反射一种颜色到你的眼睛，无数水滴组合成完整的彩虹弧。",
+      "image": "images/nature/nature-2075-layer3.webp"
+    },
+    "science": "主虹：阳光进入水滴→折射→内表面一次全反射→折射出射。不同波长的光折射率不同（色散），红光偏转角约42°，紫光约40°，形成42°半径的彩色圆弧。观察者必须背对太阳，太阳高度角需\\<42°。",
+    "scienceImage": "images/nature/nature-2075-science.webp",
+    "experiment": {
+      "name": "为什么有时候能看到彩虹，有时候看不到？·小实验",
+      "steps": [
+        "晴天用喷水壶背对太阳喷水雾，在水雾中寻找彩虹。调整喷水角度和站立位置，直到看到小彩虹出现。"
+      ],
+      "materials": [
+        "喷水壶",
+        "水"
+      ],
+      "image": "images/nature/nature-2075-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "雨后初晴，问问兔指着天空尖叫\"彩虹！彩虹！\"答答熊说\"太阳公公和雨滴宝宝在合作画画，太阳负责打光，雨滴负责分颜色，他们画完就收工了，所以彩虹不会一直有哦。\"",
+    "warmClosing": ""
   }
 ]
