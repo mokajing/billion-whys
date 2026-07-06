@@ -2200,5 +2200,44 @@
     },
     "ipScene": "问问兔拿起遥控器对着天花板按，电视没反应。答答熊说\"遥控器和电视在说悄悄话，你要让它们面对面才行！\"然后教问问兔用手机相机看到遥控器的\"秘密光\"。",
     "warmClosing": ""
+  },
+  {
+    "id": "home-2072",
+    "category": "home",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么冰箱里的灯会自己亮，关了门灯又灭了？",
+    "age": "3-5岁",
+    "layer1": {
+      "answer": "冰箱门边上有个小按钮，开门的时候按钮弹起来灯就亮了，关门的时候按钮被按下去灯就灭了。",
+      "image": "images/home/home-2072-layer1.webp"
+    },
+    "layer2": {
+      "answer": "冰箱门框上有一个凸起的小开关。门打开时开关弹出来，电路接通，灯就亮了；门关上时开关被压进去，电路断开，灯就灭了。和房间的灯开关是一个道理。",
+      "image": "images/home/home-2072-layer2.webp"
+    },
+    "layer3": {
+      "answer": "冰箱灯是一个简单的电路：电源→开关→灯泡→回路。门框上的触点开关在门打开时闭合电路，灯亮；关门时断开电路，灯灭。这种设计不需要人手动开关，省电又方便。",
+      "image": "images/home/home-2072-layer3.webp"
+    },
+    "science": "冰箱使用门控触点开关（常开型微动开关），开门时弹簧复位触点闭合，关门时门体压迫开关触点断开。这是最简单的机械-电路联动装置。",
+    "scienceImage": "images/home/home-2072-science.webp",
+    "experiment": {
+      "name": "为什么冰箱里的灯会自己亮，关了门灯又灭了？·小实验",
+      "steps": [
+        "打开冰箱门，找到门框上的小按钮（通常在铰链附近），用手指按下去——灯灭了！松开——灯亮了。多按几次体验开关原理。"
+      ],
+      "materials": [
+        "冰箱"
+      ],
+      "image": "images/home/home-2072-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "问问兔偷偷打开冰箱，灯亮了吓一跳。\"灯怎么知道我在偷看？\"答答熊指着门边的小按钮说\"这是冰箱的小鼻子，你一开门它就醒了，一关门它就睡觉。\"",
+    "warmClosing": ""
   }
 ]
