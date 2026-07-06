@@ -2323,5 +2323,47 @@
     "ipScene": "问问兔问：\"天为什么会黑？\"答答熊转着皮球说：\"我们住的大球在转圈，转到背光那面就天黑啦！\"",
     "warmClosing": "今晚天黑的时候，告诉大人：我们转到背对太阳那面啦，明天转回来就又天亮！",
     "scienceImage": "images/nature/nature-048-science.png"
+  },
+  {
+    "id": "nature-2071",
+    "category": "nature",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么有时候下雨前天空会变黄？",
+    "age": "4-6岁",
+    "layer1": {
+      "answer": "因为厚厚的云层像一块黄色的大幕布，把太阳光染成了黄色。",
+      "image": "images/nature/nature-2071-layer1.webp"
+    },
+    "layer2": {
+      "answer": "下雨前天空有很多又厚又密的云，云里的水滴把阳光中的蓝色光散射掉了，剩下的黄色和红色光照到地面上，天空就看起来黄黄的。",
+      "image": "images/nature/nature-2071-layer2.webp"
+    },
+    "layer3": {
+      "answer": "太阳光是七色混合的。晴天时大气分子散射蓝光最多，天是蓝色。暴雨前积雨云又厚又密，云中水滴把蓝光几乎全散射/吸收了，只有波长较长的黄光和红光能穿透，天空就呈现黄色甚至橙色。",
+      "image": "images/nature/nature-2071-layer3.webp"
+    },
+    "science": "米氏散射：云滴直径（10-50μm）远大于可见光波长，对所有波长散射相近，但长距离穿透后短波蓝光被优先衰减，剩余长波光（黄/橙/红）使厚云层下方呈现黄色调。暴雨前低云层含大量水汽和尘埃，增强此效应。",
+    "scienceImage": "images/nature/nature-2071-science.webp",
+    "experiment": {
+      "name": "为什么有时候下雨前天空会变黄？·小实验",
+      "steps": [
+        "用手电筒照一杯清水，光是白的。往水里加几滴牛奶搅匀，再照——光变成了黄色。牛奶水滴模拟了云层的散射效果。"
+      ],
+      "materials": [
+        "手电筒",
+        "透明玻璃杯",
+        "牛奶",
+        "水"
+      ],
+      "image": "images/nature/nature-2071-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "问问兔趴在窗边看天空\"天空怎么变成黄油色了？\"答答熊说\"云宝宝喝饱了水，把太阳光里的蓝色都藏起来了，只剩下黄色光偷偷溜出来告诉我们——快下雨啦！\"",
+    "warmClosing": ""
   }
 ]
