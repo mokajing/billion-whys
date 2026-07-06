@@ -2193,5 +2193,46 @@
     "locale": "zh-CN",
     "scienceImage": "images/food/food-045-experiment.webp",
     "warmClosing": "牛奶要住在冰箱的冷房间里才安全，好细菌和坏细菌可大不一样哦！"
+  },
+  {
+    "id": "food-2071",
+    "category": "food",
+    "tags": [],
+    "safetyLevel": "A",
+    "locale": "zh-CN",
+    "question": "为什么牛奶放久了会变酸？",
+    "age": "3-5岁",
+    "layer1": {
+      "answer": "牛奶里住着好多看不见的小小虫，它们饿了就吃牛奶里的糖，吃完以后放出酸酸的东西，牛奶就变酸了。",
+      "image": "images/food/food-2071-layer1.webp"
+    },
+    "layer2": {
+      "answer": "空气中有很多微小的细菌，落到牛奶里就开始吃奶里的乳糖。细菌吃饱后排出乳酸，乳酸让牛奶变酸、变稠。这就是为什么酸奶也是酸的——是好细菌帮我们做的。",
+      "image": "images/food/food-2071-layer2.webp"
+    },
+    "layer3": {
+      "answer": "牛奶变酸是乳酸菌发酵的过程。乳酸菌利用乳糖产生乳酸，降低pH值，使牛奶中的蛋白质（酪蛋白）凝固。冰箱低温让细菌繁殖变慢，所以牛奶能多放几天。做酸奶就是故意加入好细菌在温暖环境下发酵。",
+      "image": "images/food/food-2071-layer3.webp"
+    },
+    "science": "乳酸发酵：乳酸菌（Lactobacillus等）通过糖酵解途径将乳糖转化为乳酸，pH降至4.6左右时酪蛋白胶束失稳凝集。温度每降低10℃，细菌代谢速率约减半（Q10≈2）。",
+    "scienceImage": "images/food/food-2071-science.webp",
+    "experiment": {
+      "name": "为什么牛奶放久了会变酸？·小实验",
+      "steps": [
+        "对比实验：倒两杯牛奶，一杯放冰箱，一杯放室温。第二天闻一闻、看一看，比较两杯的区别。"
+      ],
+      "materials": [
+        "牛奶",
+        "两个杯子",
+        "冰箱"
+      ],
+      "image": "images/food/food-2071-experiment.webp",
+      "sayToChild": "",
+      "duration": "约5分钟",
+      "safetyNote": "需家长全程陪同",
+      "experimentType": "观察"
+    },
+    "ipScene": "问问兔喝了一口放太久的牛奶，皱起眉头\"好酸！\"答答熊说\"是空气里的小细菌先你一步喝了牛奶，还留下了酸酸的礼物。不过别担心，好细菌做的酸奶可是美味！\"",
+    "warmClosing": ""
   }
 ]
