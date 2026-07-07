@@ -46,6 +46,15 @@ Page({
     ageText: '',
     prevAria: '',
     nextAria: '',
+    // V8.75 Sprint 74 第139轮：纯文字模式（家长设置中可关闭插画，全职妈妈小美+苏体验）
+    textOnly: false,
+    // V8.75 Sprint 74 第139轮：插画图片数据（三层 + 实验）
+    layer1ThumbImage: '',
+    layer1PreviewImage: '',
+    layer2ThumbImage: '',
+    layer2PreviewImage: '',
+    layer3ThumbImage: '',
+    layer3PreviewImage: '',
   },
 
   onLoad(options) {
@@ -274,6 +283,40 @@ Page({
     return {
       title: q ? q.question : '十亿个什么与为什么',
       query: q ? ('id=' + q.id) : '',
+    }
+  },
+
+  // V8.75 Sprint 74 第139轮：纯文字模式切换
+  onToggleTextOnly() {
+    this.setData({ textOnly: !this.data.textOnly })
+    // 持久化到 storage
+    try {
+      wx.setStorageSync('bw_text_only', this.data.textOnly)
+    } catch (e) {
+      // 静默忽略
+    }
+  },
+
+  // V8.75 Sprint 74 第139轮：初始化纯文字模式设置
+  initTextOnly() {
+    try {
+      const val = wx.getStorageSync('bw_text_only')
+      if (typeof val === 'boolean') {
+        this.setData({ textOnly: val })
+      }
+    } catch (e) {
+      // 静默忽略
+    }
+  },
+
+  // V8.75 Sprint 74 第139轮：获取插画来源（thumb/preview/full）
+  getIllustrationSources(baseUrl) {
+    if (!baseUrl) return { thumb: '', preview: '', full: '' }
+    // 假设 CDN 支持 ?size= 参数
+    return {
+      thumb: baseUrl + '?size=200',
+      preview: baseUrl + '?size=600',
+      full: baseUrl + '?size=1024',
     }
   },
 })
