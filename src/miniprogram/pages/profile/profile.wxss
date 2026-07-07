@@ -361,3 +361,39 @@
   border-radius: 6rpx;
   transition: width 0.3s ease;
 }
+
+/* V8.73 第137轮：年龄偏好切换卡片（周教授+叶用户+苏体验+前端小凡） */
+.mp-age-card {
+  margin: 0 24rpx 20rpx;
+  padding: 24rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+}
+.mp-age-label {
+  font-size: 28rpx;
+  color: #767676;
+  margin-bottom: 16rpx;
+}
+.mp-age-options {
+  display: flex;
+  gap: 12rpx;
+}
+.mp-age-option {
+  flex: 1;
+  padding: 16rpx 0;
+  text-align: center;
+  border-radius: 12rpx;
+  background: #f5f5f5;
+  font-size: 28rpx;
+  color: #767676;
+  transition: all 0.2s;
+}
+.mp-age-option:active {
+  transform: scale(0.97);
+}
+.mp-age-selected {
+  background: #1A5C3A;
+  color: #fff;
+  font-weight: 600;
+}
