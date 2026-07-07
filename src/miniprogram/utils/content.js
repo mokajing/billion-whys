@@ -1,14 +1,100 @@
-const questions = require('../data/questions-data')
+// V8.60 BUG-0006 修复：主包瘦身——启动时只加载 index (42KB)，全量数据异步加载
+// 旧方案：const questions = require('../data/questions-data')  // 670KB 同步阻塞
+// 新方案：先加载 index，异步加载全量数据；首屏渲染用 index 数据
+// V8.61 Sprint 69：分包异步加载失败降级策略——弱网/分包加载失败时展示 index 数据 + 提示
+const questionsIndex = require('../data/questions-index-data')
+const { safeLoadSubpackage, safeToast } = require('./safe-wx')
 const storage = require('./storage')
-const { safeToast, safeNavigateTo, safePageScrollTo, safeLoadSubpackage } = require('./safe-wx')
 const analytics = require('./analytics')
 
-// P1-3 分包懒加载：6 个分类分包数据按需加载
-// Why: 审核报告 P1-3 — 主包 questions.json 652KB，结构上拆为 6 个分包便于未来完全迁移
-// 当前阶段：主包仍保留 questions.json 作为同步源（API 兼容），分包作为并行结构 + 异步预加载入口
-// 后续阶段：调用方迁移到 getByIdAsync 后可移除主包 questions.json
+let questions = questionsIndex  // 启动时使用 index 数据（轻量，42KB）
+let _fullDataLoaded = false
+let _fullDataPromise = null
+let _loadErrorCount = 0  // V8.61：分包加载失败计数
+
+// P1-3 分包类别（也用于异步加载全量数据）
 const SUBPACKAGE_CATEGORIES = ['body', 'animals', 'food', 'home', 'nature', 'society']
 const _subpackageLoaded = {}  // {cat: true} 标记已加载完成的分包
+
+// V8.61 Sprint 69：降级提示——分包加载失败时提醒用户网络不佳
+function _showDegradedNotice() {
+  safeToast({
+    title: '网络不佳，部分内容加载中',
+    icon: 'none',
+    duration: 3000,
+  })
+}
+
+// 异步加载全量数据：从分包加载所有分类数据
+async function _loadFullDataAsync() {
+  if (_fullDataLoaded) return
+  if (_fullDataPromise) return _fullDataPromise
+
+  _fullDataPromise = (async () => {
+    try {
+      const allData = []
+      const cats = SUBPACKAGE_CATEGORIES
+      let loadedCount = 0
+      for (const cat of cats) {
+        try {
+          const ok = await safeLoadSubpackage(cat)
+          if (ok) {
+            const subData = require('../../subpackages/' + cat + '/data')
+            if (Array.isArray(subData)) allData.push(...subData)
+            loadedCount++
+          }
+        } catch (_e) {
+          // 分包加载失败，跳过该分类
+          console.warn('[BillionWhys] Failed to load subpackage:', cat, _e)
+        }
+      }
+      if (allData.length > 0) {
+        questions = allData
+        // 重建 questionMap
+        _rebuildQuestionMap()
+        _fullDataLoaded = true
+        console.log('[BillionWhys] Full data loaded:', allData.length, 'questions')
+        // V8.61：部分分包加载失败时提示用户
+        if (loadedCount < cats.length) {
+          _showDegradedNotice()
+        }
+      } else {
+        // V8.61：全部分包加载失败，降级使用 index 数据
+        _loadErrorCount++
+        console.warn('[BillionWhys] All subpackages failed, using index data only')
+        _showDegradedNotice()
+      }
+    } catch (_e) {
+      _loadErrorCount++
+      console.error('[BillionWhys] Failed to load full data:', _e)
+      _showDegradedNotice()
+    }
+    return _fullDataLoaded
+  })()
+
+  return _fullDataPromise
+}
+
+function _rebuildQuestionMap() {
+  questionMap.clear()
+  for (const q of questions) questionMap.set(q.id, q)
+}
+
+function isFullDataLoaded() {
+  return _fullDataLoaded
+}
+
+// V8.61 Sprint 69：获取分包加载失败计数，供性能监控使用
+function getLoadErrorCount() {
+  return _loadErrorCount
+}
+
+function initAsync() {
+  return _loadFullDataAsync()
+}
+
+// P1-3 分包懒加载：6 个分类分包数据按需加载
+// V8.60 BUG-0006 修复：SUBPACKAGE_CATEGORIES 和 _subpackageLoaded 已移至文件顶部
 
 const questionMap = new Map()
 for (const q of questions) questionMap.set(q.id, q)
@@ -28,7 +114,8 @@ try {
 } catch (_e) { /* dev tool only */ }
 
 function toWebP(path) {
-  if (!path) return ''
+  // V8.60 BUG-0007 修复：空 URL 请求守卫——path 为空或非字符串时返回空，避免 XHR 空 URL 请求
+  if (!path || typeof path !== 'string' || !path.trim()) return ''
   // 标准化路径：去掉前导斜杠，统一相对路径
   let p = path.startsWith('/') ? path.slice(1) : path
   // 转 .webp
@@ -45,7 +132,8 @@ function toWebP(path) {
 
 // 备用 CDN URL（当主 CDN 加载失败时，前端 image 标签 binderror 中可切换）
 function toWebPFallback(path) {
-  if (!path) return ''
+  // V8.60 BUG-0007 修复：空 URL 守卫
+  if (!path || typeof path !== 'string' || !path.trim()) return ''
   let p = path.startsWith('/') ? path.slice(1) : path
   if (!/\.webp$/i.test(p)) {
     p = p.replace(/\.(png|jpe?g)$/i, '.webp')
@@ -79,6 +167,58 @@ function dailyPick(date) {
   const d = date instanceof Date ? date : new Date()
   const dayKey = d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate()
   return questions[dayKey % questions.length]
+}
+
+// V8.63 第127轮：今日 3 问年龄分层（周教授适龄性红线 + CPO 产品一致性）
+// 从题库中按年龄标签筛选 3 题：3 岁 / 4-5 岁 / 5-6 岁各一题
+// 情绪安全过滤：排除含死/血/鬼/怪物/消失/黑暗/孤独关键词的问题（安全李姐 P0 红线）
+// 家庭结构多样性：排除含"爸爸说"/"妈妈带你去"等特定角色叙事的问题（社会学刘教授）
+function dailyPicks(date) {
+  if (!Array.isArray(questions) || questions.length === 0) return []
+  // 情绪安全关键词黑名单（安全李姐 V8.63 P0 红线）
+  const EMOTION_BLOCKLIST = ['死', '血', '鬼', '怪物', '消失', '黑暗', '孤独']
+  // 需人工安全审核的关键词（V8.66 第130轮：CEO 裁决——"疼"不阻止入选但标记 needsSafetyReview: true）
+  const HUMAN_REVIEW_KEYWORDS = ['疼']
+  // 家庭结构特定角色叙事过滤（社会学刘教授 V8.63 P1）
+  const FAMILY_ROLE_PATTERNS = ['爸爸说', '妈妈说', '妈妈带你去', '爸爸带你去', '妈妈告诉我', '爸爸告诉我']
+  const d = date instanceof Date ? date : new Date()
+  const dayKey = d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate()
+  const ageSlots = [
+    { agePattern: /^3[-\s]?4|^3岁|^3-|3~4|2-3|2~3/, label: '3-4岁', fallback: /^3|^4/ },
+    { agePattern: /^4[-\s]?5|^4岁|^4-|4~5|3-5/, label: '4-5岁', fallback: /^4|^5/ },
+    { agePattern: /^5[-\s]?6|^5岁|^5-|5~6|4-6/, label: '5-6岁', fallback: /^5|^6/ },
+  ]
+  const picked = []
+  const usedIds = new Set()
+  for (const slot of ageSlots) {
+    const seed = dayKey + picked.length * 31
+    let candidates = questions
+      .filter(q => q && q.id && !usedIds.has(q.id))
+      .filter(q => {
+        const age = (q.age || '').toLowerCase()
+        if (slot.agePattern.test(age)) return true
+        return slot.fallback.test(age)
+      })
+      .filter(q => {
+        const text = (q.question || '') + ' ' + (q.tags || []).join(' ')
+        return !EMOTION_BLOCKLIST.some(kw => text.includes(kw))
+      })
+      .filter(q => !FAMILY_ROLE_PATTERNS.some(p => (q.question || '').includes(p)))
+    if (candidates.length === 0) {
+      candidates = questions
+        .filter(q => q && q.id && !usedIds.has(q.id))
+        .filter(q => {
+          const text = (q.question || '') + ' ' + (q.tags || []).join(' ')
+          return !EMOTION_BLOCKLIST.some(kw => text.includes(kw))
+        })
+    }
+    if (candidates.length > 0) {
+      const pick = candidates[seed % candidates.length]
+      const safetyReview = HUMAN_REVIEW_KEYWORDS.some(kw => (pick.question || "").includes(kw)); picked.push({ ...pick, ageLabel: slot.label, needsSafetyReview: safetyReview || false })
+      usedIds.add(pick.id)
+    }
+  }
+  return picked
 }
 
 function getAll() {
@@ -354,6 +494,7 @@ module.exports = {
   search,
   hotQuestions,
   dailyPick,
+  dailyPicks,
   normalizeKeyword,
   suggestRelated,
   toWebP,
@@ -389,5 +530,9 @@ module.exports = {
   preloadCategoryAsync,
   isCategoryLoaded,
   getCategoryFromId,
+  // V8.61 Sprint 69：分包加载监控
+  isFullDataLoaded,
+  initAsync,
+  getLoadErrorCount,
   SUBPACKAGE_CATEGORIES,
 }
