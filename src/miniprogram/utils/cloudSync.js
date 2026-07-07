@@ -285,6 +285,21 @@ function buildServerHeaders(payload, meta) {
   return headers
 }
 
+// V8.56 第120轮 Sprint 65：sleep(ms) — 纯 promise-based 延迟函数（与 H5 src/h5/utils/cloudSync.js sleep 同构）
+// Why: 毒舌老王照妖镜 — flushReal/translateReal pseudocode 引用 await sleep(computeBackoffMs(attempt)) 但从未导出
+// CTO：纯函数零依赖；MP setTimeout 可用；默认参数防御 undefined
+// 法务张律：纯时间函数，零网络零身份字段，未触发一票否决
+function sleep(ms) {
+  const delay = Math.max(0, Number(ms) || 0)
+  return new Promise((resolve) => {
+    if (delay === 0) {
+      resolve()
+    } else {
+      setTimeout(resolve, delay)
+    }
+  })
+}
+
 // V8.22 Sprint 31：flushReal(payload) — 设计文档式 stub（仍零网络）
 // V8.24 Sprint 33：flag-gated — flag-off → reason:'feature-flag-off'；flag-on → reason:'v9-pending'（仍零网络）
 // V9 落地时函数体替换为基于 wx.request + computeBackoffMs + shouldRetry + isOnline 的真实实现
@@ -317,6 +332,97 @@ function _clearQueue() {
   }
 }
 
+// V8.56 第120轮 Sprint 65：dryRunFlushReal(payload, {responder, maxRetries, skipSleep}) — 本地闭环验证路径
+// Why: CTO+CEO 裁决 — flushReal 设计契约 pseudocode 引用 sleep/computeBackoffMs/shouldRetry 但从未闭环验证
+//       dryRun 用注入式 synthetic responder 在本地跑完 retry/backoff 全循环，零网络（法务张律红线守）
+// 法务张律：responder 本地函数非网络；导出名 dryRunFlushReal 不含 upload/send；仍受 isCloudSyncEnabled flag 闸
+// 安全李姐：responder 契约冻结为 {status, body}，防越权字段注入
+// 后端老稳：responder 语义与 SERVER_ENDPOINT_DESIGN Response 同构，V9 真实化时只换 responder 为 wx.request
+// 心理学家+社会学：默认 responder 返回 429 验证 max-retries-exceeded 兜底（弱网家庭优先）
+// 测试虫虫：skipSleep=true 让单测零延迟跑完重试链
+// 毒舌老王：flushReal pseudocode 的可执行镜像 — 与 H5 src/h5/utils/cloudSync.js dryRunFlushReal 同型同构
+function dryRunFlushReal(payload, options) {
+  options = options || {}
+  const maxRetries = Number.isFinite(options.maxRetries) ? options.maxRetries : MAX_RETRIES
+  const skipSleep = options.skipSleep === true
+  const responder = typeof options.responder === 'function'
+    ? options.responder
+    : () => ({ status: 429, body: { accepted: 0, deduped: 0 } })
+
+  if (!isCloudSyncEnabled()) {
+    return Promise.resolve({
+      flushed: false,
+      reason: 'feature-flag-off',
+      serverEndpoint: SERVER_ENDPOINT_DESIGN.path,
+      httpsOnly: HTTPS_ONLY,
+      count: 0,
+      attempts: 0,
+      dryRun: true,
+    })
+  }
+
+  // flag-on：本地闭环跑 retry/backoff（零网络）
+  const loop = async () => {
+    for (let attempt = 0; attempt < maxRetries; attempt++) {
+      try {
+        const res = responder(payload, attempt)
+        const status = Number(res && res.status) || 0
+        const body = (res && res.body) || {}
+        if (status >= 200 && status < 300) {
+          return {
+            flushed: true,
+            reason: 'ok',
+            serverEndpoint: SERVER_ENDPOINT_DESIGN.path,
+            httpsOnly: HTTPS_ONLY,
+            count: Number(body.accepted) || 0,
+            attempts: attempt + 1,
+            dryRun: true,
+          }
+        }
+        if (!shouldRetry(status)) {
+          return {
+            flushed: false,
+            reason: 'client-error-' + status,
+            serverEndpoint: SERVER_ENDPOINT_DESIGN.path,
+            httpsOnly: HTTPS_ONLY,
+            count: 0,
+            attempts: attempt + 1,
+            dryRun: true,
+          }
+        }
+        if (!skipSleep && attempt < maxRetries - 1) {
+          await sleep(computeBackoffMs(attempt))
+        }
+      } catch (e) {
+        if (!shouldRetry(0, true)) {
+          return {
+            flushed: false,
+            reason: 'network-error',
+            serverEndpoint: SERVER_ENDPOINT_DESIGN.path,
+            httpsOnly: HTTPS_ONLY,
+            count: 0,
+            attempts: attempt + 1,
+            dryRun: true,
+          }
+        }
+        if (!skipSleep && attempt < maxRetries - 1) {
+          await sleep(computeBackoffMs(attempt))
+        }
+      }
+    }
+    return {
+      flushed: false,
+      reason: 'max-retries-exceeded',
+      serverEndpoint: SERVER_ENDPOINT_DESIGN.path,
+      httpsOnly: HTTPS_ONLY,
+      count: 0,
+      attempts: maxRetries,
+      dryRun: true,
+    }
+  }
+  return Promise.resolve(loop())
+}
+
 module.exports = {
   CLOUD_SYNC_VERSION,
   QUEUE_MAX,
@@ -342,5 +448,7 @@ module.exports = {
   isOnline,
   flush,
   flushReal,
+  sleep,
+  dryRunFlushReal,
   _clearQueue,
 }
