@@ -6,5 +6,30 @@
   },
   "privacyContractName": "用户隐私保护指引",
   "privacyPolicyExternalUrl": "https://cdn.jsdelivr.net/gh/mokajing/billion-whys@main/docs/privacy-policy.html",
-  "privacyPolicyExternalUrlFallback": "https://raw.githubusercontent.com/mokajing/billion-whys/main/docs/privacy-policy.html"
+  "privacyPolicyExternalUrlFallback": "https://raw.githubusercontent.com/mokajing/billion-whys/main/docs/privacy-policy.html",
+  "dataCollection": {
+    "personalInfo": [],
+    "deviceStorage": [
+      {
+        "key": "bw_age_preference",
+        "purpose": "Age preference (localStorage only) — stores the user's selected age range (3-4/4-5/5-6) to adapt content presentation. Never uploaded to any server.",
+        "purposeZh": "年龄偏好（仅本地存储）—— 存储用户选择的年龄段（3-4/4-5/5-6），用于适配内容展示。不上传至任何服务器。"
+      },
+      {
+        "key": "bw_locale",
+        "purpose": "Language preference (localStorage only) — stores the user's preferred UI language. Never uploaded to any server.",
+        "purposeZh": "语言偏好（仅本地存储）—— 存储用户偏好的界面语言。不上传至任何服务器。"
+      },
+      {
+        "key": "bw_view_history",
+        "purpose": "Browsing history (localStorage only) — anonymous question IDs viewed, stored locally for 'continue exploring' feature. Never uploaded to any server.",
+        "purposeZh": "浏览历史（仅本地存储）—— 匿名浏览过的问题 ID，本地存储用于"继续探索"功能。不上传至任何服务器。"
+      },
+      {
+        "key": "bw_favorites",
+        "purpose": "Saved questions (localStorage only) — anonymous question IDs saved by user. Never uploaded to any server.",
+        "purposeZh": "收藏（仅本地存储）—— 匿名收藏的问题 ID。不上传至任何服务器。"
+      }
+    ]
+  }
 }
