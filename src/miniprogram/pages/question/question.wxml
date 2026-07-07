@@ -21,6 +21,19 @@
       </view>
     </view>
 
+    <!-- V8.75 Sprint 74 第139轮：插画展示组件（前端小凡+苏体验） -->
+    <illustration-image
+      wx:if="{{layer1Image}}"
+      src="{{layer1Image}}"
+      thumb-src="{{layer1ThumbImage}}"
+      preview-src="{{layer1PreviewImage}}"
+      alt="{{question.question}}"
+      category="{{question.category}}"
+      text-only="{{textOnly}}"
+      lazy="{{true}}"
+      show-border="{{true}}"
+    />
+
     <!-- Layer 1 -->
     <view class="knowledge-card layer1">
       <text class="card-badge badge-l1">{{t['qd.layer1Badge']}}</text>
