@@ -74,6 +74,13 @@ fs.writeFileSync(
   '// AUTO-GENERATED.\n"use strict";\nmodule.exports = ' +
   JSON.stringify({ version: pkg.version, releaseDate }) + ';\n'
 )
+// V8.61 Sprint 69：同步生成 version-data.cjs 避免版本三方不一致
+fs.writeFileSync(
+  path.join(outDir, 'version-data.cjs'),
+  'module.exports = ' +
+  JSON.stringify({ version: pkg.version, releaseDate }) + ';\n'
+)
+
 
 // Local package.json to force CommonJS for data/ folder
 fs.writeFileSync(path.join(outDir, 'package.json'), '{"type": "commonjs"}\n')
