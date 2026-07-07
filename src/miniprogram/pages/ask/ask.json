@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "问一问"
+  "navigationBarTitleText": "问一问",
+  "usingComponents": {
+    "ip-face": "/components/ip-face/ip-face"
+  }
 }
