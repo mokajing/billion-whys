@@ -41,7 +41,7 @@
       "image": "images/animals/animals-001-experiment.webp"
     },
     "ipScene": "问问兔趴在花丛里看蜜蜂忙来忙去，答答熊说：“蜜蜂是花的快递员，帮花送花粉呢！”",
-    "scienceImage": "images/animals/animals-001-science.png",
+    "scienceImage": "images/animals/animals-001-science.webp",
     "warmClosing": "下次看到花开了，你可以告诉大人：花在邀请蜜蜂来帮忙呢！",
     "locale": "zh-CN"
   },
@@ -87,7 +87,7 @@
       "image": "images/animals/animals-002-experiment.webp"
     },
     "ipScene": "问问兔看着一长排蚂蚁说：“它们在排队买东西吗？“答答熊说：“它们在跟着前面蚂蚁留下的隐形地图走呢！”",
-    "scienceImage": "images/animals/animals-002-science.png",
+    "scienceImage": "images/animals/animals-002-science.webp",
     "warmClosing": "下次看到蚂蚁排队，蹲下来看看它们的隐形地图吧！",
     "locale": "zh-CN"
   },
@@ -134,7 +134,7 @@
       "image": "images/animals/animals-003-experiment.webp"
     },
     "ipScene": "问问兔学小鸟扇胳膊跳来跳去，答答熊说：“你需要空心的骨头和一对大翅膀才行，我们还是走路吧！”",
-    "scienceImage": "images/animals/animals-003-science.png",
+    "scienceImage": "images/animals/animals-003-science.webp",
     "warmClosing": "下次看到小鸟飞过，和它打个招呼吧！",
     "locale": "zh-CN"
   },
@@ -182,7 +182,7 @@
       "image": "images/animals/animals-004-experiment.webp"
     },
     "ipScene": "问问兔接住一片飘落的黄叶问：“树叶为什么要离开大树？“答答熊说：“树叶在帮大树准备过冬呢，明年春天还会长出新的！”",
-    "scienceImage": "images/animals/animals-004-science.png",
+    "scienceImage": "images/animals/animals-004-science.webp",
     "warmClosing": "秋天捡一片落叶送给大人，告诉他们大树在准备过冬呢！",
     "locale": "zh-CN"
   },
@@ -228,7 +228,7 @@
       "image": "images/animals/animals-005-experiment.webp"
     },
     "ipScene": "问问兔见到小狗摇尾巴，也转着身子摇屁股，答答熊笑着说：“小狗在说'你好，我喜欢你'，你也在说嘛！”",
-    "scienceImage": "images/animals/animals-005-science.png",
+    "scienceImage": "images/animals/animals-005-science.webp",
     "warmClosing": "下次看到小狗摇尾巴，你可以对它笑笑说你好！",
     "locale": "zh-CN"
   },
@@ -275,7 +275,7 @@
       "image": "images/animals/animals-006-experiment.webp"
     },
     "ipScene": "问问兔把耳朵贴在猫咪肚子上听呼噜声，答答熊说：“它在告诉你——它觉得很舒服很安全呢！”",
-    "scienceImage": "images/animals/animals-006-science.png",
+    "scienceImage": "images/animals/animals-006-science.webp",
     "warmClosing": "如果你听到猫咪呼噜，那说明它觉得很安全很舒服呢！",
     "locale": "zh-CN"
   },
@@ -322,7 +322,7 @@
       "image": "images/animals/animals-007-experiment.webp"
     },
     "ipScene": "问问兔把头伸进水盆里憋气，冒出来后说太难了，答答熊说：“你又没有腮呀！鱼用腮呼吸水里的空气，就像你用鼻子呼吸空气一样容易！”",
-    "scienceImage": "images/animals/animals-007-science.png",
+    "scienceImage": "images/animals/animals-007-science.webp",
     "warmClosing": "下次看到鱼嘴巴一张一合，那是它在水里呼吸呢！",
     "locale": "zh-CN"
   },
@@ -369,7 +369,7 @@
       "image": "images/animals/animals-008-experiment.webp"
     },
     "ipScene": "问问兔看到毛毛虫吓得跳开，答答熊说：“别怕，它正在努力吃东西长大，以后会变成漂亮的蝴蝶呢！”",
-    "scienceImage": "images/animals/animals-008-science.png",
+    "scienceImage": "images/animals/animals-008-science.webp",
     "warmClosing": "每只蝴蝶都是毛毛虫变的，大自然的魔法真神奇！",
     "locale": "zh-CN"
   },
@@ -416,7 +416,7 @@
     },
     "ipScene": "问问兔竖起长耳朵左转右转说：“我听到远处有声音！“答答熊说：“你的长耳朵就像雷达一样厉害，能听到好远好远的声音呢！”",
     "locale": "zh-CN",
-    "scienceImage": "images/animals/animals-009-science.png",
+    "scienceImage": "images/animals/animals-009-science.webp",
     "warmClosing": "你也可以把手放在耳朵后面试试，听得更远哦！"
   },
   {
@@ -463,7 +463,7 @@
     },
     "ipScene": "问问兔看着大象的长鼻子说：“鼻子怎么那么长呀！“答答熊说：“大象的鼻子是它的万能工具，能抓东西、喝水、洗澡，还能跟朋友勾鼻子打招呼呢！”",
     "locale": "zh-CN",
-    "scienceImage": "images/animals/animals-010-science.png",
+    "scienceImage": "images/animals/animals-010-science.webp",
     "warmClosing": "大象的鼻子是它的超级手臂，下次在书上看到大象和它打个招呼吧！"
   },
   {
@@ -513,7 +513,7 @@
     },
     "ipScene": "问问兔在沙漠图片前说：“这么热的地方怎么还有植物？“答答熊指着仙人掌说：“仙人掌穿着蜡衣服、肚子里装满水、叶子变成刺，全身都是省水的好办法！”",
     "locale": "zh-CN",
-    "scienceImage": "images/animals/animals-011-science.png",
+    "scienceImage": "images/animals/animals-011-science.webp",
     "warmClosing": "仙人掌在沙漠里也能活，它可真是节约用水的小能手！"
   },
   {
@@ -560,7 +560,7 @@
     },
     "ipScene": "问问兔碰了含羞草，叶子哗地合上了。问问兔吓了一跳：“它生气了？“答答熊说：“没有，它在保护自己呢，一会儿就张开了！”",
     "locale": "zh-CN",
-    "scienceImage": "images/animals/animals-012-science.png",
+    "scienceImage": "images/animals/animals-012-science.webp",
     "warmClosing": "轻轻碰一下含羞草，看它害羞地合上叶子，好有趣呀！"
   },
   {
@@ -607,7 +607,7 @@
     },
     "ipScene": "问问兔在夏夜追萤火虫跑：“它们是飞着的小星星！“答答熊说：“萤火虫肚子里有小灯笼，一闪一闪是在找朋友呢！”",
     "locale": "zh-CN",
-    "scienceImage": "images/animals/animals-013-science.png",
+    "scienceImage": "images/animals/animals-013-science.webp",
     "warmClosing": "夏天的晚上看看有没有萤火虫，那是它们在用小灯笼找朋友呢！"
   },
   {
@@ -657,7 +657,7 @@
     },
     "ipScene": "问问兔看着池塘里蝌蚪说：“小黑点以后变成什么？“答答熊说：“它们会长出腿、缩掉尾巴，变成会呱呱叫的青蛙哦！”",
     "locale": "zh-CN",
-    "scienceImage": "images/animals/animals-014-science.png",
+    "scienceImage": "images/animals/animals-014-science.webp",
     "warmClosing": "春天去池塘边看看，说不定能看到蝌蚪变青蛙的过程哦！"
   },
   {
@@ -704,7 +704,7 @@
     },
     "ipScene": "问问兔一大早被公鸡叫醒，揉着眼睛说：“公鸡怎么知道天亮了？“答答熊说：“公鸡身体里有个小闹钟，每天天亮就响！”",
     "locale": "zh-CN",
-    "scienceImage": "images/animals/animals-015-science.png",
+    "scienceImage": "images/animals/animals-015-science.webp",
     "warmClosing": "明天不用闹钟试试看，你身体里也有小闹钟呢！"
   },
   {
@@ -752,7 +752,7 @@
     },
     "ipScene": "问问兔看蜗牛背着壳慢慢爬说：“它不累吗？“答答熊说：“壳是蜗牛的小房子，走到哪住到哪，遇到危险缩进去就安全啦！”",
     "locale": "zh-CN",
-    "scienceImage": "images/animals/animals-016-science.png",
+    "scienceImage": "images/animals/animals-016-science.webp",
     "warmClosing": "蜗牛的壳是它的小房子，走到哪都不怕下雨呢！"
   },
   {
@@ -800,7 +800,7 @@
     },
     "ipScene": "问问兔遇到一只和它长得不一样的小兔子，有点犹豫。答答熊温柔地说：“你们不一样才好呀，你会跳高它会挖洞，一起玩能发现更多好玩的事！”",
     "locale": "zh-CN",
-    "scienceImage": "images/animals/animals-017-science.png",
+    "scienceImage": "images/animals/animals-017-science.webp",
     "warmClosing": "每个人都不一样，这才让世界变得丰富多彩呀！"
   },
   {
@@ -848,7 +848,7 @@
       "image": "images/animals/animals-018-experiment.webp"
     },
     "ipScene": "问问兔在树上找变色龙怎么都找不到，答答熊指着一片“树叶“说：“它就在这里呢，它把自己变成了树叶的颜色！”",
-    "scienceImage": "images/animals/animals-018-science.png",
+    "scienceImage": "images/animals/animals-018-science.webp",
     "warmClosing": "变色龙是大自然的伪装大师，下次在书上看到它试试能不能找到！",
     "locale": "zh-CN"
   },
@@ -897,7 +897,7 @@
       "image": "images/animals/animals-019-experiment.webp"
     },
     "ipScene": "问问兔看企鹅站在冰上打了个哆嗦：“它们不冷吗？“答答熊说：“企鹅有超厚的羽绒服和脂肪，还会抱团取暖，南极的冷风也吹不透！”",
-    "scienceImage": "images/animals/animals-019-science.png",
+    "scienceImage": "images/animals/animals-019-science.webp",
     "warmClosing": "企鹅挤在一起轮流取暖，团结的力量真大呀！",
     "locale": "zh-CN"
   },
@@ -944,7 +944,7 @@
       "image": "images/animals/animals-020-experiment.webp"
     },
     "ipScene": "问问兔差点走进蜘蛛网，答答熊拉住它说：“这是蜘蛛的餐桌呀！它的丝比钢丝还结实，不要弄坏人家的饭碗！”",
-    "scienceImage": "images/animals/animals-020-science.png",
+    "scienceImage": "images/animals/animals-020-science.webp",
     "warmClosing": "蜘蛛是了不起的建筑师，它的网又美又结实！",
     "locale": "zh-CN"
   },
@@ -991,7 +991,7 @@
       "image": "images/animals/animals-021-experiment.webp"
     },
     "ipScene": "问问兔指着图片说：“北极熊和雪一个颜色！“答答熊说：“它的毛其实是透明的呢，像冰一样，好多根在一起就变白了，这样在雪地里别人看不见它！”",
-    "scienceImage": "images/animals/animals-021-science.png",
+    "scienceImage": "images/animals/animals-021-science.webp",
     "warmClosing": "北极熊看起来白、皮肤却是黑的，大自然的设计真奇妙！",
     "locale": "zh-CN"
   },
@@ -1038,7 +1038,7 @@
       "image": "images/animals/animals-022-experiment.webp"
     },
     "ipScene": "问问兔对鹦鹉说“你好”，鹦鹉也说“你好”，问问兔吓了一跳。答答熊说：“它在模仿你呢！鹦鹉的舌头很灵活，能学会好多声音！”",
-    "scienceImage": "images/animals/animals-022-science.png",
+    "scienceImage": "images/animals/animals-022-science.webp",
     "warmClosing": "你学说话也是从模仿开始的，和鹦鹉一样聪明呢！",
     "locale": "zh-CN"
   },
@@ -1085,7 +1085,7 @@
       "image": "images/animals/animals-023-experiment.webp"
     },
     "ipScene": "问问兔看到蜜蜂吓得要跑，答答熊拉住它说：“别跑别拍！你站着不动它就飞走了。蜜蜂蜇人是用生命保护家，不要去惹它们哦。”",
-    "scienceImage": "images/animals/animals-023-science.png",
+    "scienceImage": "images/animals/animals-023-science.webp",
     "warmClosing": "遇到蜜蜂不要慌，站着别动它就飞走了，你记住了真棒！",
     "locale": "zh-CN"
   },
@@ -1134,7 +1134,7 @@
       "image": "images/animals/animals-024-experiment.webp"
     },
     "ipScene": "问问兔仰着头看长颈鹿说：“它的脖子好长呀！“答答熊说：“长颈鹿的脖子和你一样只有七块骨头，不过每块都特别长，这样它就能吃到最高的树叶啦！”",
-    "scienceImage": "images/animals/animals-024-science.png",
+    "scienceImage": "images/animals/animals-024-science.webp",
     "warmClosing": "长颈鹿的脖子骨头和你一样多，只是每块都很长，大自然真有趣！",
     "locale": "zh-CN"
   },
@@ -1182,7 +1182,7 @@
       "image": "images/animals/animals-025-experiment.webp"
     },
     "ipScene": "问问兔半夜听到“咕咕“声有点害怕，答答熊小声说：“那是猫头鹰在巡逻呢，它在帮忙捉老鼠保护庄稼。”",
-    "scienceImage": "images/animals/animals-025-science.png",
+    "scienceImage": "images/animals/animals-025-science.webp",
     "warmClosing": "猫头鹰是夜晚的小卫士，帮农民捉老鼠呢！",
     "locale": "zh-CN"
   },
@@ -1230,7 +1230,7 @@
       "image": "images/animals/animals-026-experiment.webp"
     },
     "ipScene": "问问兔说金鱼只有七秒记忆好可怜，答答熊说：“那是谣言！科学家证明金鱼能记住好几个月的事呢。不能听到什么就信什么，要像科学家一样去验证！”",
-    "scienceImage": "images/animals/animals-026-science.png",
+    "scienceImage": "images/animals/animals-026-science.webp",
     "warmClosing": "金鱼的记忆力比大家以为的好多了，不要随便相信没验证的说法哦！",
     "locale": "zh-CN"
   },
@@ -1278,7 +1278,7 @@
       "image": "images/animals/animals-027-experiment.webp"
     },
     "ipScene": "问问兔看壁虎在天花板上跑：“它怎么不掉下来！“答答熊说：“壁虎脚底有几百万个小吸盘，牢牢吸住天花板，比蜘蛛侠还厉害！”",
-    "scienceImage": "images/animals/animals-027-science.png",
+    "scienceImage": "images/animals/animals-027-science.webp",
     "warmClosing": "壁虎是大自然的攀爬高手，科学家都在向它学习呢！",
     "locale": "zh-CN"
   },
@@ -1326,7 +1326,7 @@
       "image": "images/animals/animals-028-experiment.webp"
     },
     "ipScene": "问问兔看海豚表演问：“它们怎么这么厉害！“答答熊说：“海豚是最聪明的动物之一，它们会合作捉鱼、互相起名字，睡觉时还能睁着一只眼游泳呢！”",
-    "scienceImage": "images/animals/animals-028-science.png",
+    "scienceImage": "images/animals/animals-028-science.webp",
     "warmClosing": "海豚聪明又友善，它们在大海里也有自己的好朋友呢！",
     "locale": "zh-CN"
   },
@@ -1373,7 +1373,7 @@
       "image": "images/animals/animals-029-experiment.webp"
     },
     "ipScene": "问问兔看向日葵一整天转来转去说：“它在跳转圈圈舞吗？“答答熊说：“它在追太阳呢！太阳走到哪，向日葵就朝向哪。”",
-    "scienceImage": "images/animals/animals-029-science.png",
+    "scienceImage": "images/animals/animals-029-science.webp",
     "warmClosing": "向日葵追着太阳转，是不是很像你追着喜欢的东西跑呀！",
     "locale": "zh-CN"
   },
@@ -1420,7 +1420,7 @@
       "image": "images/animals/animals-030-experiment.webp"
     },
     "ipScene": "问问兔和乌龟比赛跑步赢了，得意地笑。答答熊说：“乌龟不需要跑得快，它有壳保护自己。而且乌龟能活一百多岁呢，慢慢来也很厉害！”",
-    "scienceImage": "images/animals/animals-030-science.png",
+    "scienceImage": "images/animals/animals-030-science.webp",
     "warmClosing": "乌龟虽然慢，但它能活一百多岁呢，慢慢来也是一种本领！",
     "locale": "zh-CN"
   },
@@ -1468,7 +1468,7 @@
       "image": "images/animals/animals-031-experiment.webp"
     },
     "ipScene": "问问兔仰头看一棵大树说：“这棵树比房子还高！“答答熊抱住树干说：“它每年都在长，这些年轮说明它已经长了好多好多年了！”",
-    "scienceImage": "images/animals/animals-031-science.png",
+    "scienceImage": "images/animals/animals-031-science.webp",
     "warmClosing": "一棵大树每年都在悄悄长高，就像你一样在慢慢长大呢！",
     "locale": "zh-CN"
   },
@@ -1515,7 +1515,7 @@
       "image": "images/animals/animals-032-experiment.webp"
     },
     "ipScene": "问问兔看到刺猬缩成一团不动说：“它怎么了？“答答熊小声说：“嘘，它在冬眠呢。天冷没东西吃，它就睡一个大长觉等春天来。”",
-    "scienceImage": "images/animals/animals-032-science.png",
+    "scienceImage": "images/animals/animals-032-science.webp",
     "warmClosing": "冬眠的动物在等春天，就像种子在土里等着发芽一样！",
     "locale": "zh-CN"
   },
@@ -1562,7 +1562,7 @@
       "image": "images/animals/animals-033-experiment.webp"
     },
     "ipScene": "问问兔看到鲸鱼喷出高高的水柱惊呼：“它在喷泉吗？“答答熊说：“那是鲸鱼在呼气呢！鲸鱼虽然住在水里，但和你一样用肺呼吸，要经常浮上来换气。”",
-    "scienceImage": "images/animals/animals-033-science.png",
+    "scienceImage": "images/animals/animals-033-science.webp",
     "warmClosing": "鲸鱼虽然住在水里却要浮上来呼吸，它是海洋里最大的哺乳动物呢！",
     "locale": "zh-CN"
   },
@@ -1612,7 +1612,7 @@
       "image": "images/animals/animals-034-experiment.webp"
     },
     "ipScene": "动物园里，问问兔看到公孔雀突然展开巨大的彩色尾巴，惊呆了：“哇！它变成一把超级大扇子了！”答答熊笑着说：“它在向母孔雀展示自己有多帅呢！你看那些像眼睛一样的花纹，越多越亮就说明它越健康。这可是孔雀家族的‘选美比赛’！”",
-    "scienceImage": "images/animals/animals-034-science.png",
+    "scienceImage": "images/animals/animals-034-science.webp",
     "warmClosing": "孔雀用最美丽的方式表达自己，大自然里每种动物都有独特的‘说话’方式呢！",
     "locale": "zh-CN"
   },
@@ -1659,7 +1659,7 @@
       "image": "images/animals/animals-035-experiment.webp"
     },
     "ipScene": "问问兔看到一只小瓢虫从树顶掉了下来，吓得赶紧伸手去接：“小心！”结果小瓢虫稳稳地落在地上，拍拍翅膀若无其事地走了。答答熊解释说：“别担心！小虫子太轻了，空气就像一个大大的棉花糖垫子，稳稳地接住它。就算从更高的地方掉下来也没事！”",
-    "scienceImage": "images/animals/animals-035-science.png",
+    "scienceImage": "images/animals/animals-035-science.webp",
     "warmClosing": "小小的虫子有大大的本领，大自然给了每种生物适合自己体型的保护方式！",
     "locale": "zh-CN"
   },
@@ -1707,7 +1707,7 @@
       "image": "images/animals/animals-036-experiment.webp"
     },
     "ipScene": "问问兔看到邻居家的猫咪坐在窗台上用爪子一下一下擦脸，好奇地问：“猫咪在干嘛？它爪子上有肥皂吗？”答答熊笑着说：“猫咪在洗脸呢！它先把爪子舔湿当毛巾，再擦擦脸。猫咪可是爱干净的小达人，每天要花好几个小时给自己洗澡呢！”",
-    "scienceImage": "images/animals/animals-036-science.png",
+    "scienceImage": "images/animals/animals-036-science.webp",
     "warmClosing": "猫咪用自己的方式保持干净，每种小动物都有属于自己的生活智慧呢！",
     "locale": "zh-CN"
   },
@@ -1756,7 +1756,7 @@
       "image": "images/animals/animals-037-experiment.webp"
     },
     "ipScene": "问问兔蹲在一个大树桩前数圈圈：“一、二、三……好多好多圈！这是谁画上去的？”答答熊弯下腰说：“这是大树自己画的‘生日蛋糕’！每过一年就多一圈。你数数有多少圈，就知道这棵大树活了多少年。看这里宽宽的圈，说明那年阳光雨水都很好，大树长得特别开心！”",
-    "scienceImage": "images/animals/animals-037-science.png",
+    "scienceImage": "images/animals/animals-037-science.webp",
     "warmClosing": "每棵大树都在用年轮记录自己的故事，大自然的日记本可真是太神奇了！",
     "locale": "zh-CN"
   },
@@ -1805,7 +1805,7 @@
       "image": "images/animals/animals-038-experiment.webp"
     },
     "ipScene": "问问兔裹着围巾冻得发抖：“好冷好冷！企鹅住在冰天雪地里怎么不冷啊？”答答熊拍拍圆滚滚的肚子说：“企鹅有三件宝贝：密密麻麻的防风羽毛、厚厚的脂肪‘保暖内衣’，还有大家挤在一起的‘企鹅暖气团’！它们的脚还有特殊的血管设计，踩在冰上也不会冻伤呢。”",
-    "scienceImage": "images/animals/animals-038-science.png",
+    "scienceImage": "images/animals/animals-038-science.webp",
     "warmClosing": "企鹅用智慧和团结打败了严寒，在最冷的地方也能快乐地生活！",
     "locale": "zh-CN"
   },
@@ -1853,7 +1853,7 @@
       "image": "images/animals/animals-039-experiment.webp"
     },
     "ipScene": "问问兔看见苍蝇落在桌上不停搓前脚，好奇地歪头看：“它怎么一直搓手？是在打什么坏主意吗？”答答熊哈哈大笑：“它在‘洗手’呢！苍蝇的脚上长着像舌头一样的味觉感应器，搓搓手把脏东西清掉才能尝出食物味道。你看，苍蝇也知道饭前要‘洗手’！”",
-    "scienceImage": "images/animals/animals-039-science.png",
+    "scienceImage": "images/animals/animals-039-science.webp",
     "warmClosing": "小小的苍蝇也有大大的生存智慧，仔细观察就能发现每种生物都在用自己的方式生活！",
     "locale": "zh-CN"
   },
@@ -1902,7 +1902,7 @@
       "image": "images/animals/animals-040-experiment.webp"
     },
     "ipScene": "问问兔仰着头看一面绿绿的墙：“这面墙怎么长满了叶子？植物怎么爬上去的？”答答熊轻轻翻起一片爬山虎的叶子，露出下面的小吸盘：“看！每片叶子下面都有小吸盘在抓着墙呢。它们想晒太阳，就一步一步吸着墙往上爬，比你爬楼梯还厉害！”",
-    "scienceImage": "images/animals/animals-040-science.png",
+    "scienceImage": "images/animals/animals-040-science.webp",
     "warmClosing": "植物虽然不能走路，但用聪明的方式找到阳光，大自然的智慧真了不起！",
     "locale": "zh-CN"
   },
@@ -1950,7 +1950,7 @@
       "image": "images/animals/animals-041-experiment.webp"
     },
     "ipScene": "问问兔骄傲地竖起自己的大耳朵说：“我能听到好远好远的声音哦！”答答熊在远处轻轻拍了一下手，问问兔立马转过耳朵指着那个方向：“是那边！”答答熊竖起大拇指：“没错！你的大耳朵就像两个小雷达，又能听声又能散热，是兔子家族最厉害的宝贝！”",
-    "scienceImage": "images/animals/animals-041-science.png",
+    "scienceImage": "images/animals/animals-041-science.webp",
     "warmClosing": "兔子的大耳朵是大自然送给它们的超级礼物，听声音、散热样样行！",
     "locale": "zh-CN"
   },
@@ -1998,7 +1998,7 @@
       "image": "images/animals/animals-042-experiment.webp"
     },
     "ipScene": "雨后的早晨，问问兔蹲在地上追着一条亮闪闪的线看：“谁在地上画了一条银色的路？”答答熊指着前面慢悠悠爬行的蜗牛说：“是蜗牛小画家！它走一步就铺一层滑滑的‘地毯’，既能保护肚子不受伤，又能粘住墙壁不掉下来。你看它爬得多从容！”",
-    "scienceImage": "images/animals/animals-042-science.png",
+    "scienceImage": "images/animals/animals-042-science.webp",
     "warmClosing": "蜗牛用神奇的黏液铺出自己的路，慢慢走也能到达想去的地方！",
     "locale": "zh-CN"
   },
@@ -2047,7 +2047,7 @@
       "image": "images/animals/animals-043-experiment.webp"
     },
     "ipScene": "问问兔看到鸵鸟拍打翅膀却飞不起来，替它着急：“加油加油！使劲拍！”答答熊摇摇头笑着说：“鸵鸟可不想飞，它觉得跑步比飞更酷！你看它两条大长腿，跑起来比汽车还快呢。翅膀嘛，留着转弯时当方向盘用啦！”",
-    "scienceImage": "images/animals/animals-043-science.png",
+    "scienceImage": "images/animals/animals-043-science.webp",
     "warmClosing": "鸵鸟虽然不能飞，却是跑步冠军，大自然给了每种动物最适合的本领！",
     "locale": "zh-CN"
   },
@@ -2095,7 +2095,7 @@
       "image": "images/animals/animals-044-experiment.webp"
     },
     "ipScene": "秋天的公园里，问问兔看见松鼠两颊鼓鼓地跑来跑去，一会儿在这棵树下刨坑埋东西，一会儿又跑到那边。问问兔数着：“一、二、三……它藏了好多！记得住吗？”答答熊笑着说：“松鼠在做冬天的‘外卖’储备呢！不过它总会忘掉一些，那些被忘记的坚果明年就长成小树苗啦——松鼠是不小心当上园丁的！”",
-    "scienceImage": "images/animals/animals-044-science.png",
+    "scienceImage": "images/animals/animals-044-science.webp",
     "warmClosing": "松鼠的小忘性成就了大森林，大自然就是这样奇妙地连接在一起！",
     "locale": "zh-CN"
   },
@@ -2143,7 +2143,7 @@
       "image": "images/animals/animals-045-experiment.webp"
     },
     "ipScene": "傍晚散步时，问问兔指着一朵紧闭的白花说：“这朵花是不是生病了？太阳下山了它还不开。”答答熊悄悄说：“嘘——它是‘夜猫子花’，等月亮出来才营业呢！专门招待飞蛾和蝙蝠客人。你闻闻，它正在散发超级浓的香味打广告——‘这边走这边走，花蜜管够！’”",
-    "scienceImage": "images/animals/animals-045-science.png",
+    "scienceImage": "images/animals/animals-045-science.webp",
     "warmClosing": "花儿选择在最合适的时间绽放，大自然的每一个安排都有它的道理！",
     "locale": "zh-CN"
   },
@@ -2158,20 +2158,20 @@
     "layer1": {
       "answer": "大雁排队飞，后面的大雁能借着前面大雁翅膀扇出的风，飞得不那么累。",
       "followUp": "那领头的大雁不累吗？",
-      "image": "images/animals/animals-046-layer1.png"
+      "image": "images/animals/animals-046-layer1.webp"
     },
     "layer2": {
       "answer": "前面大雁扇翅膀时，翅膀尖会留下一圈圈向上的小气流。后面的大雁稍微偏一点飞在这股气流上，就像坐上了向上抬的电梯，省力气。人字形能让每只大雁都借着前面的气流。",
       "followUp": "那它们怎么知道什么时候换领队呢？",
-      "image": "images/animals/animals-046-layer2.png"
+      "image": "images/animals/animals-046-layer2.webp"
     },
     "layer3": {
       "answer": "大雁排队飞是为了省力气。前面的大雁扇翅膀时，翅尖会制造一股向上的气流，叫\"翼尖涡流\"。后面的大雁只要稍微偏一点位置，飞在这股上升气流上，就能少用很多力气。人字形让每只大雁都能借到前面大雁的气流，飞得远还不累。领头的那只最累，所以大雁会轮流换班当领队。",
       "followUp": "其他动物也有这种合作的智慧吗？",
-      "image": "images/animals/animals-046-layer3.png"
+      "image": "images/animals/animals-046-layer3.webp"
     },
     "science": "大雁人字形编队飞行利用了翼尖涡流（wingtip vortex）。前鸟扇翅时翼尖产生升力诱导涡流，后鸟位于涡流上升区域可获得约20-30%的额外升力，显著降低诱导阻力（induced drag）和代谢能耗。人字形（V字形）夹角约110-130度时空气动力学收益最大，且保持视野畅通便于编队协调。领头鸟无法获益，因此长途迁徙中大雁会周期性轮换领飞位置以分担能耗。",
-    "scienceImage": "images/animals/animals-046-science.png",
+    "scienceImage": "images/animals/animals-046-science.webp",
     "ipScene": "问问兔抬头望着天空，一群大雁排成\"人\"字飞过，兔子的手指着领头雁；答答熊戴着飞行员小帽，一只手做扇翅膀的动作，旁边画着翅膀尖后面一圈圈上升的小箭头，后一只雁正好骑在箭头上。",
     "experiment": {
       "name": "大雁人字编队观察实验",
@@ -2189,7 +2189,7 @@
       "duration": "约10分钟",
       "safetyNote": "户外观察请大人陪同，注意交通安全；不要直视强太阳光",
       "experimentType": "observation",
-      "image": "images/animals/animals-046-experiment.png"
+      "image": "images/animals/animals-046-experiment.webp"
     },
     "warmClosing": "下次看到天上大雁排队飞过，你可以告诉大人：它们在玩接力赛，轮流当领队呢！",
     "locale": "zh-CN",
