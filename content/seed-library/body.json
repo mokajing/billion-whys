@@ -200,7 +200,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "你身体里有好多红色小河流叫血管，血在里面送营养。碰破皮“堤坝”破了洞，血就流出来了。",
+      "answer": "你身体里有好多红色小河流叫血管，血在里面送营养。碰破皮“堤坝”开了个小口子，血就流出来了。别担心，你身体里的小修理工马上就来帮忙了！",
       "image": "images/body/body-005-layer1.webp"
     },
     "layer2": {
@@ -236,7 +236,19 @@
     "ipScene": "问问兔不小心蹭破了膝盖，答答熊帮忙贴上创可贴说：“别怕，你的小修理工已经开始干活啦！”",
     "locale": "zh-CN",
     "scienceImage": "images/body/body-005-experiment.webp",
-    "warmClosing": "小伤口别怕，你身体里的小修理工已经在干活啦！"
+    "warmClosing": "小伤口别怕，你身体里的小修理工已经在干活啦！",
+    "emotionSafety": {
+      "status": "reviewed",
+      "reviewers": [
+        "安全李姐",
+        "周教授",
+        "王园长",
+        "陈博士"
+      ],
+      "reviewDate": "2026-07-07",
+      "reviewRound": 137,
+      "notes": "含blocklist关键词'血'，经联合评审通过。L1用词温和（'红色小河流''开了个小口子'），无血腥描述。L1末尾增加安抚语句'别担心，你身体里的小修理工马上就来帮忙了'。实验safetyNote已声明大人操作。教育语境放行。"
+    }
   },
   {
     "id": "body-006",
