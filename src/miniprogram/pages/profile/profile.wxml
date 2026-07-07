@@ -133,6 +133,26 @@
         <text wx:if="{{parentVerified}}">家长验证 ✓</text>
       </view>
     </view>
+
+    <!-- V8.73 第137轮：年龄偏好切换（周教授+叶用户+苏体验+前端小凡） -->
+    <!-- Why: 多孩家庭需要切换年龄段，确认提示保护认知安全 -->
+    <view class="mp-age-card" aria-label="宝贝年龄选择">
+      <view class="mp-age-label">宝贝年龄</view>
+      <view class="mp-age-options">
+        <view
+          wx:for="{{ageOptions}}"
+          wx:key="value"
+          class="mp-age-option {{agePreference === item.value ? 'mp-age-selected' : ''}}"
+          data-age="{{item.value}}"
+          bindtap="onAgeSwitch"
+          aria-role="button"
+          aria-label="{{item.label}}"
+        >
+          <text>{{item.label}}</text>
+        </view>
+      </view>
+    </view>
+
     <view class="menu-item" bindtap="onFeedback" aria-role="button" aria-label="{{t['profile.menuFeedbackAria']}}" aria-expanded="{{showFeedback}}">
       <text class="menu-icon">💬</text>
       <text class="menu-text">{{t['profile.menuFeedback']}}</text>
