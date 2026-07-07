@@ -1,5 +1,101 @@
 .discover-page { padding-bottom: 120rpx; }
-.discover-header { background: linear-gradient(135deg, #1A5C3A, #2E7D52); padding: 80rpx 48rpx 64rpx; border-radius: 0 0 48rpx 48rpx; }
+.discover-header { background: linear-gradient(135deg, #1A5C3A, #2E7D52); padding: 80rpx 48rpx 64rpx; border-radius: 0 0 48rpx 48rpx; position: relative; }
+
+/* V8.70 第134轮：年龄自适应引导 */
+.age-guide-mask {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 32rpx;
+}
+.age-guide-card {
+  background: #fff;
+  border-radius: 40rpx;
+  padding: 64rpx 48rpx 48rpx;
+  width: 100%;
+  max-width: 640rpx;
+  text-align: center;
+  box-shadow: 0 16rpx 64rpx rgba(0, 0, 0, 0.12);
+}
+.age-guide-rabbit { margin-bottom: 32rpx; }
+.age-guide-title {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 16rpx;
+}
+.age-guide-subtitle {
+  font-size: 28rpx;
+  color: #888;
+  margin-bottom: 48rpx;
+}
+.age-guide-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  margin-bottom: 48rpx;
+}
+.age-option-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28rpx 32rpx;
+  border: 4rpx solid #E8E8E8;
+  border-radius: 28rpx;
+  background: #FAFAFA;
+}
+.age-option-btn.selected {
+  border-color: #FF6B8A;
+  background: #FFF0F3;
+}
+.age-option-range {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #333;
+}
+.age-option-desc {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 8rpx;
+}
+.age-guide-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+.age-guide-confirm {
+  padding: 28rpx;
+  border: none;
+  border-radius: 28rpx;
+  background: linear-gradient(135deg, #FF6B8A, #FF8E53);
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+.age-guide-confirm[disabled] { opacity: 0.4; }
+.age-guide-dismiss {
+  padding: 20rpx;
+  border: none;
+  background: transparent;
+  color: #AAA;
+  font-size: 28rpx;
+}
+/* V8.64 Sprint 70 第128轮：渐变过渡带（16px 遮罩）- 彩虹姐+前端小凡 */
+/* Why: header 直接切到 category tabs 过于生硬，加渐变遮罩实现平滑过渡 */
+.discover-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 32rpx;
+  background: linear-gradient(to bottom, rgba(26, 92, 58, 0.15), rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
 .header-title { display: block; font-size: 44rpx; font-weight: 700; color: #fff; }
 .header-sub { display: block; font-size: 26rpx; color: rgba(255,255,255,0.8); margin-top: 8rpx; }
 
@@ -29,16 +125,31 @@
 
 .expand-btn { text-align: center; padding: 24rpx; margin-top: 16rpx; border: 2rpx dashed #ccc; border-radius: 24rpx; background: #fafafa; color: #666; font-size: 26rpx; }
 
-.loading-state { text-align: center; padding: 120rpx 48rpx; }
-.loading-icon { display: block; font-size: 96rpx; margin-bottom: 24rpx; }
-.loading-text { display: block; font-size: 28rpx; color: #767676; }
-.retry-btn { display: inline-block; margin-top: 24rpx; padding: 16rpx 48rpx; background: #1A5C3A; color: #fff; border-radius: 32rpx; font-size: 28rpx; }
+.loading-state { margin: 0; }
 
 .daily-pick { padding: 0 32rpx; margin-bottom: 24rpx; }
-.dp-card { display: flex; align-items: center; background: linear-gradient(135deg, #FFF9E6 0%, #FFE8C2 100%); border: 4rpx solid #FFD66B; border-radius: 32rpx; padding: 28rpx 32rpx; }
+.dp-card { display: flex; align-items: center; background: linear-gradient(135deg, #FFF9E6 0%, #FFE8C2 100%); border: 4rpx solid #FFD66B; border-radius: 32rpx; padding: 20rpx 28rpx; }
+/* V8.65 Sprint 70 第129轮：缩 padding 28rpx→20rpx 让 3 卡在小屏一屏内 */
+/* V8.66 第130轮：年龄色系区分（墨小暖+彩虹姐+前端小凡） */
+.dp-card.dp-age-pink { background: linear-gradient(135deg, #FFF0F3 0%, #FFD6E0 100%); border-color: #FFB3C6; }
+.dp-card.dp-age-orange { background: linear-gradient(135deg, #FFF4E6 0%, #FFE0B2 100%); border-color: #FFCC80; }
+.dp-card.dp-age-yellow { background: linear-gradient(135deg, #FFFDE7 0%, #FFF9C4 100%); border-color: #FFE082; }
 .dp-bubble { display: flex; align-items: center; gap: 24rpx; flex: 1; min-width: 0; }
 .dp-rabbit { font-size: 64rpx; line-height: 1; flex-shrink: 0; }
 .dp-bubble-text { min-width: 0; flex: 1; }
 .dp-tag { display: block; font-size: 22rpx; color: #B25E00; font-weight: 600; margin-bottom: 6rpx; }
+/* V8.65 Sprint 70 第129轮：引导文案 */
+.daily-picks-guide { display: block; font-size: 22rpx; color: #B25E00; margin: 0 0 20rpx 0; opacity: 0.75; line-height: 1.4; }
 .dp-question { display: block; font-size: 30rpx; color: #3A2A00; font-weight: 500; line-height: 1.4; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
 .dp-arrow { font-size: 48rpx; color: #B25E00; margin-left: 16rpx; flex-shrink: 0; }
+
+/* V8.70 第134轮：继续探索模块 */
+.continue-exploring { margin: 0 32rpx 24rpx; }
+.ce-header { display: flex; align-items: center; gap: 16rpx; margin-bottom: 16rpx; }
+.ce-icon { font-size: 36rpx; }
+.ce-title { font-size: 30rpx; font-weight: 600; color: #555; }
+.ce-grid { display: flex; flex-direction: column; gap: 12rpx; }
+.ce-card { display: flex; align-items: center; gap: 16rpx; padding: 20rpx 24rpx; background: #F8F9FA; border-radius: 16rpx; border: 2rpx solid #E8E8E8; }
+.ce-cat-icon { font-size: 40rpx; flex-shrink: 0; }
+.ce-question { font-size: 28rpx; color: #333; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ce-arrow { font-size: 40rpx; color: #CCC; flex-shrink: 0; }
