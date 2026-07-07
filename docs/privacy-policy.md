@@ -236,6 +236,10 @@
 | `content_filter_level` | 内容过滤等级 | 否 | 直至重置 |
 | `night_mode_disabled` | 是否关闭夜间禁用 | 否 | 直至重置 |
 | `last_read_topic` | 上次浏览的题目 | 否 | 当日 |
+| `bw_age_preference` | 年龄偏好（3-4/4-5/5-6） | 否 | 直至重置 |
+| `bw_locale` | 语言偏好（zh/en） | 否 | 直至重置 |
+| `bw_view_history` | 浏览历史（匿名问题 ID） | 否 | 直至重置 |
+| `bw_favorites` | 收藏（匿名问题 ID） | 否 | 直至重置 |
 | `report_history` | 举报历史 | 否 | 90 天 |
 
 ### 8.3 本地存储清除
