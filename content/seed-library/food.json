@@ -46,7 +46,7 @@
     },
     "ipScene": "问问兔看着一杯牛奶说：“这是奶牛的眼泪吗？“答答熊笑着说：“不是，这是奶牛给小牛准备的营养大餐！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-001-science.png",
+    "scienceImage": "images/food/food-001-science.webp",
     "warmClosing": "下次喝牛奶的时候，想想辛苦的奶牛，谢谢它的营养大餐！"
   },
   {
@@ -96,7 +96,7 @@
     },
     "ipScene": "问问兔在农场看到母鸡咯咯叫，好奇地问：“它在唱歌吗？“答答熊说：“它在告诉大家'我生了个蛋'呢！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-002-science.png",
+    "scienceImage": "images/food/food-002-science.webp",
     "warmClosing": "下次看到鸡蛋，你可以告诉大人它是母鸡努力生出来的！"
   },
   {
@@ -147,7 +147,7 @@
     },
     "ipScene": "问问兔看着变棕色的苹果吓了一跳：“苹果生病了吗？“答答熊说：“没有，它只是碰到空气害羞了，脸红了而已！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-003-science.png",
+    "scienceImage": "images/food/food-003-science.webp",
     "warmClosing": "下次切苹果可以试试滴点柠檬汁，看看能不能帮苹果不变色！"
   },
   {
@@ -195,7 +195,7 @@
     },
     "ipScene": "问问兔看着一碗白米饭问：“这些小白粒是从哪来的呀？“答答熊拿出一株稻穗说：“它们以前住在这里面呢！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-004-science.png",
+    "scienceImage": "images/food/food-004-science.webp",
     "warmClosing": "每一粒米都来之不易，吃饭的时候把碗里的米吃光光吧！"
   },
   {
@@ -244,7 +244,7 @@
     },
     "ipScene": "问问兔把糖放进水里急得团团转：“我的糖不见了！“答答熊让它喝一口：“在你嘴里呢！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-005-science.png",
+    "scienceImage": "images/food/food-005-science.webp",
     "warmClosing": "下次喝糖水的时候想想，糖没有消失，只是藏起来啦！"
   },
   {
@@ -295,7 +295,7 @@
     },
     "ipScene": "问问兔推开蔬菜盘子说不想吃，答答熊说：“不同颜色的蔬菜有不同的超能力，吃完你就是彩虹小超人！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-006-science.png",
+    "scienceImage": "images/food/food-006-science.webp",
     "warmClosing": "多吃不同颜色的蔬菜，你就是肚子里的彩虹小超人！"
   },
   {
@@ -343,7 +343,7 @@
     },
     "ipScene": "问问兔舔冰淇淋舔得太慢全化了，答答熊递上纸巾说：“下次要和暖空气赛跑，吃快一点哦！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-007-science.png",
+    "scienceImage": "images/food/food-007-science.webp",
     "warmClosing": "下次吃冰淇淋记得和暖空气赛跑，吃快一点哦！"
   },
   {
@@ -393,7 +393,7 @@
     },
     "ipScene": "问问兔看着面团越来越大吓了一跳：“面团在长胖！“答答熊说：“是酵母在里面吹泡泡呢！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-008-science.png",
+    "scienceImage": "images/food/food-008-science.webp",
     "warmClosing": "面包里的小洞洞都是酵母吹出来的泡泡，真有趣！"
   },
   {
@@ -441,7 +441,7 @@
     },
     "ipScene": "问问兔咬了一口青杏酸得直皱脸，答答熊递过一颗熟草莓说：“还没熟的水果故意酸酸的，在保护小种子呢！吃这个甜的吧！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-009-science.png",
+    "scienceImage": "images/food/food-009-science.webp",
     "warmClosing": "下次吃到酸的水果，你可以说：它在保护小种子呢！"
   },
   {
@@ -489,7 +489,7 @@
     },
     "ipScene": "问问兔看着煮好的鸡蛋问：“它怎么变硬了？“答答熊剥开蛋壳说：“热水把蛋里的小线球搅成一团了，就像毛线缠在一起解不开了！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-010-science.png",
+    "scienceImage": "images/food/food-010-science.webp",
     "warmClosing": "煮熟的鸡蛋变不回去了，这就是神奇的不可逆变化！"
   },
   {
@@ -535,7 +535,7 @@
     },
     "ipScene": "问问兔把棉花糖压扁又松开，棉花糖弹回来了。问问兔开心地说：“它会弹！“答答熊说：“因为里面有好多小气泡，像小弹簧一样把棉花糖撑起来的！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-011-science.png",
+    "scienceImage": "images/food/food-011-science.webp",
     "warmClosing": "棉花糖是装满小气泡的甜甜小枕头，真可爱！"
   },
   {
@@ -583,7 +583,7 @@
     },
     "ipScene": "问问兔吃了薄荷糖呼呼吹气说：“好凉好凉！“答答熊说：“其实一点也不冷，是薄荷偷偷打开了你嘴巴里的'冷'开关，骗你的大脑呢！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-012-science.png",
+    "scienceImage": "images/food/food-012-science.webp",
     "warmClosing": "薄荷是嘴巴里的小骗子，骗你说结冰了其实没有！"
   },
   {
@@ -631,7 +631,7 @@
     },
     "ipScene": "问问兔不小心咬了一口辣椒辣得直跳脚，答答熊赶紧递过一杯牛奶说：“快喝牛奶，牛奶能帮你灭火！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-013-science.png",
+    "scienceImage": "images/food/food-013-science.webp",
     "warmClosing": "吃了辣椒可以喝牛奶灭火，你学到了一个小妙招！"
   },
   {
@@ -680,7 +680,7 @@
     },
     "ipScene": "问问兔吐出西瓜籽问：“这些黑点点是什么呀？“答答熊接住籽说：“这是西瓜的宝宝，种下去就能长出新西瓜哦！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-014-science.png",
+    "scienceImage": "images/food/food-014-science.webp",
     "warmClosing": "试试种一颗西瓜籽，说不定能长出一棵小苗呢！"
   },
   {
@@ -728,7 +728,7 @@
     },
     "ipScene": "问问兔闻了一下昨天剩的饭捂住鼻子：“味道怪怪的！“答答熊把饭倒掉说：“细菌大军已经来过啦，不能吃了，下次要放冰箱！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-015-science.png",
+    "scienceImage": "images/food/food-015-science.webp",
     "warmClosing": "吃不完的饭菜记得放冰箱，不给细菌大军机会！"
   },
   {
@@ -777,7 +777,7 @@
     },
     "ipScene": "问问兔从井里打了一桶水惊讶地说：“好凉呀！太阳这么大水怎么是凉的？“答答熊擦擦汗说：“因为井水住在地底下，太阳晒不到它，就像我们躲在大树下乘凉一样！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-016-science.png",
+    "scienceImage": "images/food/food-016-science.webp",
     "warmClosing": "井水冬暖夏凉的秘密你知道了，真了不起！"
   },
   {
@@ -824,7 +824,7 @@
     },
     "ipScene": "问问兔听到微波炉里“砰砰砰“吓了一跳，答答熊笑着说：“别怕，那是小玉米在变身呢！水蒸气把它们的外衣撑破了，就变成白白的爆米花啦！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-017-science.png",
+    "scienceImage": "images/food/food-017-science.webp",
     "warmClosing": "每一粒爆米花都是一次小小的'爆炸'，大自然真有趣！"
   },
   {
@@ -872,7 +872,7 @@
     },
     "ipScene": "问问兔拿起一根黑黑的香蕉不敢吃，答答熊剥开皮说：“你看，里面还是好好的，而且更甜了呢！香蕉变黑不是坏了，是在变甜！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-018-science.png",
+    "scienceImage": "images/food/food-018-science.webp",
     "warmClosing": "香蕉皮变黑不一定是坏了，可能是在偷偷变甜呢！"
   },
   {
@@ -920,7 +920,7 @@
     },
     "ipScene": "问问兔玩完沙子就去抓饼干吃，答答熊赶紧拦住说：“等等！你的手上有好多看不见的小脏东西，先洗手再吃，不然小脏东西就跟着饼干跑进肚子啦！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-019-science.png",
+    "scienceImage": "images/food/food-019-science.webp",
     "warmClosing": "饭前洗手是保护自己的好习惯，记得用肥皂搓泡泡哦！"
   },
   {
@@ -968,7 +968,7 @@
     },
     "ipScene": "问问兔看到大人切洋葱哭了，吓了一跳问：“你怎么哭了？“答答熊解释说：“不是伤心，是洋葱放出了让眼睛痒痒的小东西，眼睛在用泪水冲走它呢！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-020-science.png",
+    "scienceImage": "images/food/food-020-science.webp",
     "warmClosing": "切洋葱流泪不是伤心，是眼睛在保护自己呢！"
   },
   {
@@ -1015,7 +1015,7 @@
     },
     "ipScene": "问问兔掰了一块饼干软软的不脆了，嘟着嘴说不好吃。答答熊说：“它吸了空气里的水变软了。下次吃不完要封好口，才能一直脆脆的！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-021-science.png",
+    "scienceImage": "images/food/food-021-science.webp",
     "warmClosing": "吃不完的饼干记得封好口，不然它会偷偷吸水变软哦！"
   },
   {
@@ -1063,7 +1063,7 @@
     },
     "ipScene": "问问兔打开可乐被气泡喷了一脸，答答熊赶紧递纸巾说：“可乐里的小气泡被关太久了，一开盖就迫不及待跑出来了！下次慢慢开哦！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-022-science.png",
+    "scienceImage": "images/food/food-022-science.webp",
     "warmClosing": "可乐里的小气泡就是被关住的二氧化碳，一开盖就想自由啦！"
   },
   {
@@ -1112,7 +1112,7 @@
     },
     "ipScene": "问问兔看着白白的豆腐问：“这是怎么做出来的呀？“答答熊说：“是黄豆变的！黄豆先变豆浆，再用魔法水让豆浆变成软软的豆腐。黄豆可是变身高手！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-023-science.png",
+    "scienceImage": "images/food/food-023-science.webp",
     "warmClosing": "小小的黄豆能变成豆浆、豆腐、豆干，真是变身高手！"
   },
   {
@@ -1160,7 +1160,7 @@
     },
     "ipScene": "问问兔想睡前再吃一颗糖，答答熊摇摇头说：“睡觉的时候口水变少了，小坏蛋细菌会趁机在你牙齿上挖洞。要是想吃糖，白天吃完记得刷牙哦！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-024-science.png",
+    "scienceImage": "images/food/food-024-science.webp",
     "warmClosing": "吃了糖记得刷牙，不给小坏蛋细菌搞破坏的机会！"
   },
   {
@@ -1210,7 +1210,7 @@
     },
     "ipScene": "问问兔往水杯里滴了一滴油，发现油浮在上面推不下去，着急地搅来搅去。答答熊说：“它们不喜欢在一起，要加洗洁精当翻译官才行！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-025-science.png",
+    "scienceImage": "images/food/food-025-science.webp",
     "warmClosing": "油和水不做朋友，但洗洁精能帮它们手拉手！"
   },
   {
@@ -1259,7 +1259,7 @@
     },
     "ipScene": "问问兔舔了一口蜂蜜眼睛一亮：“好甜呀！“答答熊说：“这可是蜜蜂辛辛苦苦从花朵里采来做的，一只蜜蜂一辈子只能做一小勺呢！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-026-science.png",
+    "scienceImage": "images/food/food-026-science.webp",
     "warmClosing": "每一口蜂蜜都是蜜蜂的辛苦劳动，真是大自然的甜蜜礼物！"
   },
   {
@@ -1306,7 +1306,7 @@
     },
     "ipScene": "问问兔掰了一根干面条“啪“断了两截，再去掰煮好的面条怎么弯都不断。问问兔惊奇地说：“它们明明是一样的面条呀！“答答熊说：“热水给了面条一个魔法——让它变软了！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-027-science.png",
+    "scienceImage": "images/food/food-027-science.webp",
     "warmClosing": "面条遇到热水就从硬变软，这就是水和热的魔法！"
   },
   {
@@ -1352,7 +1352,7 @@
     },
     "ipScene": "问问兔摘了一颗葡萄酸得直皱脸，答答熊递过上面的一颗说：“试试这颗，上面的晒了更多太阳更甜哦！“问问兔一吃果然甜甜的，高兴极了。",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-028-science.png",
+    "scienceImage": "images/food/food-028-science.webp",
     "warmClosing": "挑葡萄先尝最下面的，最下面的都甜那整串都超甜！"
   },
   {
@@ -1401,7 +1401,7 @@
     },
     "ipScene": "问问兔看着锅里的粥咕嘟咕嘟冒泡越来越多，大喊：“要溢出来了！“答答熊赶紧放下一根筷子在锅上，泡泡碰到筷子就破了。答答熊说：“筷子是泡泡的克星！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-029-science.png",
+    "scienceImage": "images/food/food-029-science.webp",
     "warmClosing": "煮粥的时候放根筷子，泡泡就不会爬出锅啦！"
   },
   {
@@ -1447,7 +1447,7 @@
     },
     "ipScene": "问问兔握着一块巧克力玩，打开手发现化了一手，答答熊递来纸巾笑着说：“巧克力怕热，你的手太暖了它就化了。巧克力想说：快吃我，别抓我！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-030-science.png",
+    "scienceImage": "images/food/food-030-science.webp",
     "warmClosing": "巧克力是可可豆变的，从热带树上一路旅行到你嘴里，真神奇！"
   },
   {
@@ -1494,7 +1494,7 @@
     },
     "ipScene": "问问兔把剩下的蛋糕放在桌上就去玩了，答答熊赶紧把蛋糕放进冰箱说：“快放冰箱！外面暖暖的，细菌会开派对把你的蛋糕吃光的！冰箱里冷冷的，细菌就不想动了。”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-031-science.png",
+    "scienceImage": "images/food/food-031-science.webp",
     "warmClosing": "吃不完的食物记得放冰箱，让细菌懒洋洋地不想动！"
   },
   {
@@ -1542,7 +1542,7 @@
     },
     "ipScene": "问问兔闻到街上烤红薯的香味走不动路了，答答熊买了一个说：“红薯烤了以后淀粉变成了糖，所以又甜又香。快趁热吃，小心烫！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-032-science.png",
+    "scienceImage": "images/food/food-032-science.webp",
     "warmClosing": "烤红薯的香甜藏着科学的秘密，淀粉变成了糖！"
   },
   {
@@ -1590,7 +1590,7 @@
     },
     "ipScene": "问问兔摘了一颗草莓就往嘴里塞，答答熊赶紧拦住说：“等等！草莓还没洗呢，上面可能有小虫子留下的脚印和泥巴。先洗一洗再吃，才是健康的小吃货！”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-033-science.png",
+    "scienceImage": "images/food/food-033-science.webp",
     "warmClosing": "水果先洗后吃，这是保护自己的好习惯！"
   },
   {
@@ -1638,7 +1638,7 @@
     },
     "ipScene": "问问兔看到好朋友不喝牛奶觉得奇怪，答答熊解释说：“每个人的肚子不一样，有的肚子里缺了消化牛奶的小工具。不喝牛奶也可以喝酸奶、吃豆腐，一样有营养！我们每个人都不一样，这很正常。”",
     "locale": "zh-CN",
-    "scienceImage": "images/food/food-034-science.png",
+    "scienceImage": "images/food/food-034-science.webp",
     "warmClosing": "每个人的身体都不一样，尊重不同就是尊重每一个人！"
   },
   {
