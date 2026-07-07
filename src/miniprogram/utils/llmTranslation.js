@@ -9,6 +9,15 @@
 // 毒舌老王：evaluateAccessChecklist 返回 {allPassed, blockers, ready} 三字段
 // 前端小凡：MP CommonJS 模块，与 cloudSync/i18n 同型；不引新依赖
 
+// V8.56 第120轮 Sprint 65：从 cloudSync 引入 retry/backoff 协议族 — dryRunTranslateReal 闭环验证用（毒舌老王：杀植入 bug）
+//   V9 真实化时 translateReal 函数体直接复用同一组 helper（后端老稳：接口即文档）
+const {
+  MAX_RETRIES: _CS_MAX_RETRIES,
+  computeBackoffMs: _CS_computeBackoffMs,
+  shouldRetry: _CS_shouldRetry,
+  sleep: _CS_sleep,
+} = require('./cloudSync.js')
+
 const LLM_TRANSLATION_VERSION = 1
 const TRANSLATION_REQUEST_TYPE = 'qa.layer.translation'
 
@@ -287,6 +296,100 @@ function translateReal(_request, _options) {
     cached: 0,
     layers: null,
   })
+}
+
+// V8.56 第120轮 Sprint 65：dryRunTranslateReal(request, {responder, maxRetries, skipSleep}) — 本地闭环验证路径
+// Why: CTO+CEO 裁决 — translateReal 设计契约 pseudocode 引用 sleep/computeBackoffMs/shouldRetry 但从未闭环验证
+//       dryRun 用注入式 synthetic responder 在本地跑完 retry/backoff 全循环，零网络（法务张律红线守）
+// AI 小智：responder 返回 {layers, cached} + layerContentHash 比对可在 dryRun 验证 — V9 重训时 hash 不变就不重译，省成本
+// 法务张律：responder 本地函数非网络；导出名 dryRunTranslateReal 不含 upload/send；仍受 isLLMTranslationEnabled flag 闸
+// 安全李姐：responder 契约冻结为 {status, body}；body.layers 仅结构化翻译输出
+// Global 何：responder 可按 sourceLocale/targetLocale 多对返回，验证 V9 出海 X-Bw-Region 占位链路
+// 毒舌老王：translateReal pseudocode 的可执行镜像 — 与 H5 src/h5/utils/llmTranslation.js dryRunTranslateReal 同型同构
+function dryRunTranslateReal(request, options) {
+  options = options || {}
+  const maxRetries = Number.isFinite(options.maxRetries) ? options.maxRetries : _CS_MAX_RETRIES
+  const skipSleep = options.skipSleep === true
+  const responder = typeof options.responder === 'function'
+    ? options.responder
+    : () => ({ status: 429, body: { layers: null, cached: 0 } })
+
+  if (!isLLMTranslationEnabled()) {
+    return Promise.resolve({
+      translated: false,
+      reason: 'feature-flag-off',
+      serverEndpoint: SERVER_ENDPOINT_DESIGN.path,
+      httpsOnly: HTTPS_ONLY,
+      cached: 0,
+      layers: null,
+      attempts: 0,
+      dryRun: true,
+    })
+  }
+
+  const loop = async () => {
+    for (let attempt = 0; attempt < maxRetries; attempt++) {
+      try {
+        const res = responder(request, attempt)
+        const status = Number(res && res.status) || 0
+        const body = (res && res.body) || {}
+        if (status >= 200 && status < 300) {
+          return {
+            translated: true,
+            reason: 'ok',
+            serverEndpoint: SERVER_ENDPOINT_DESIGN.path,
+            httpsOnly: HTTPS_ONLY,
+            cached: Number(body.cached) || 0,
+            layers: body.layers || null,
+            attempts: attempt + 1,
+            dryRun: true,
+          }
+        }
+        if (!_CS_shouldRetry(status)) {
+          return {
+            translated: false,
+            reason: 'client-error-' + status,
+            serverEndpoint: SERVER_ENDPOINT_DESIGN.path,
+            httpsOnly: HTTPS_ONLY,
+            cached: 0,
+            layers: null,
+            attempts: attempt + 1,
+            dryRun: true,
+          }
+        }
+        if (!skipSleep && attempt < maxRetries - 1) {
+          await _CS_sleep(_CS_computeBackoffMs(attempt))
+        }
+      } catch (e) {
+        if (!_CS_shouldRetry(0, true)) {
+          return {
+            translated: false,
+            reason: 'network-error',
+            serverEndpoint: SERVER_ENDPOINT_DESIGN.path,
+            httpsOnly: HTTPS_ONLY,
+            cached: 0,
+            layers: null,
+            attempts: attempt + 1,
+            dryRun: true,
+          }
+        }
+        if (!skipSleep && attempt < maxRetries - 1) {
+          await _CS_sleep(_CS_computeBackoffMs(attempt))
+        }
+      }
+    }
+    return {
+      translated: false,
+      reason: 'max-retries-exceeded',
+      serverEndpoint: SERVER_ENDPOINT_DESIGN.path,
+      httpsOnly: HTTPS_ONLY,
+      cached: 0,
+      layers: null,
+      attempts: maxRetries,
+      dryRun: true,
+    }
+  }
+  return Promise.resolve(loop())
 }
 
 // V8.27 第95轮 Sprint 36：LLM 翻译流水线成本评估草案（MP 端与 H5 同构）
@@ -883,6 +986,7 @@ module.exports = {
   buildServerHeaders,
   evaluateAccessChecklist,
   translateReal,
+  dryRunTranslateReal,
   TOKEN_RATIO,
   DEFAULT_PRICING_CNY,
   DEFAULT_PRICING_USD,
