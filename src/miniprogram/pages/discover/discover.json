@@ -1,1 +1,6 @@
-{}
+{
+  "usingComponents": {
+    "ip-face": "/components/ip-face/ip-face",
+    "skeleton": "/components/skeleton/skeleton"
+  }
+}
