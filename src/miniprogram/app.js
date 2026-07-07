@@ -11,6 +11,14 @@ const {
   compareSDKVersion,
 } = require('./utils/safe-wx')
 const minorProtection = require('./utils/minor-protection')
+// V8.60 BUG-0006 修复：延迟加载全量内容数据，避免启动时同步 require 670KB 阻塞
+let contentUtils = null
+function _getContentUtils() {
+  if (!contentUtils) {
+    try { contentUtils = require('./utils/content') } catch (_e) { /* dev mode */ }
+  }
+  return contentUtils
+}
 
 // 版本号单一源：build:mp-data 从 package.json 注入 data/version.json
 // Why: 避免三处硬编码 0.2.0 漂移；H5 已用 vite define __APP_VERSION__
@@ -34,6 +42,13 @@ App({
   },
 
   onLaunch() {
+    // V8.60 BUG-0006 修复：启动时异步预加载全量内容数据，不阻塞首屏渲染
+    // 首屏使用 index 数据（42KB），全量数据在后台异步加载
+    const content = _getContentUtils()
+    if (content && typeof content.initAsync === 'function') {
+      content.initAsync().catch(() => { /* 静默失败，index 数据已足够首屏 */ })
+    }
+
     // P1-1 基础库版本守卫：低于 2.10.4 弹窗引导升级
     // Why: project.config.json 已声明 minimumLibVersion=2.10.4；运行时二次校验兜底
     if (compareSDKVersion('2.10.4') < 0) {
