@@ -10,7 +10,12 @@
  * 注意：本小程序当前只在微信小程序环境运行，但守卫层仍保留，便于未来 H5 复用与故障兜底。
  */
 
-const isWx = typeof wx !== 'undefined' && typeof wx.getSystemInfoSync === 'function'
+// V8.60 BUG-0003 修复：getSystemInfoSync 已废弃，改用 getDeviceInfo 判断环境
+// 同时兼容旧版基础库（仍检查 getSystemInfoSync）
+const isWx = typeof wx !== 'undefined' && (
+  typeof wx.getDeviceInfo === 'function' ||
+  typeof wx.getSystemInfoSync === 'function'
+)
 
 function safeToast(opts) {
   if (!isWx || !wx.showToast) return
@@ -171,12 +176,22 @@ function safeOnNeedPrivacyAuthorization(cb) {
 
 /**
  * 安全获取 SDK 版本号字符串；不存在返回 '0.0.0'
+ * V8.60 BUG-0003 修复：wx.getSystemInfoSync 已废弃，改用 wx.getDeviceInfo
  */
 function safeGetSDKVersion() {
-  if (!isWx || typeof wx.getSystemInfoSync !== 'function') return '0.0.0'
+  if (!isWx) return '0.0.0'
   try {
-    const info = wx.getSystemInfoSync()
-    return (info && info.SDKVersion) || '0.0.0'
+    // 优先使用新版 API（基础库 3.7.0+）
+    if (typeof wx.getDeviceInfo === 'function') {
+      const info = wx.getDeviceInfo()
+      return (info && info.SDKVersion) || '0.0.0'
+    }
+    // 降级：旧版基础库仍用 getSystemInfoSync
+    if (typeof wx.getSystemInfoSync === 'function') {
+      const info = wx.getSystemInfoSync()
+      return (info && info.SDKVersion) || '0.0.0'
+    }
+    return '0.0.0'
   } catch (_e) { return '0.0.0' }
 }
 
