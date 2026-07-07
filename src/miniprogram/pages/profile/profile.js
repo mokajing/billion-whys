@@ -59,18 +59,28 @@ Page({
     dailyUsedMin: 0,
     usagePct: 0,
     parentVerified: false,
+    // V8.73 第137轮：年龄偏好切换（周教授+叶用户+苏体验+前端小凡）
+    agePreference: '',
+    ageOptions: [
+      { value: '3-4', label: '3-4岁' },
+      { value: '4-5', label: '4-5岁' },
+      { value: '5-6', label: '5-6岁' },
+    ],
   },
 
   onLoad() {
     try {
       const locale = i18n.getLocale()
       const version = (getApp() && getApp().globalData && getApp().globalData.version) || 'unknown'
+      // V8.73 第137轮：加载年龄偏好
+      const agePref = this._loadAgePreference()
       this.setData({
         locale,
         t: i18n.dict(locale),
         version,
         totalQuestions: content.getAll().length,
         versionFooterText: i18n.t('profile.versionFooter', { v: version }, locale),
+        agePreference: agePref,
       })
       analytics.pageView('profile')
     } catch (_e) {
@@ -351,5 +361,62 @@ Page({
     return {
       title: '和宝宝一起探索十亿个为什么',
     }
+  },
+
+  // V8.73 第137轮：哥哥姐姐确认提示（周教授+叶用户+苏体验+前端小凡）
+  // Why: 切换年龄段时弹出确认提示，保护孩子认知安全
+  onAgeSwitch(e) {
+    const age = e.currentTarget.dataset.age
+    if (!age) return
+
+    const currentAge = this.data.agePreference
+    // 首次选择，直接确认
+    if (!currentAge) {
+      this._saveAgePreference(age)
+      this.setData({ agePreference: age })
+      safeToast({ title: '已切换为 ' + this._getAgeLabel(age), icon: 'success' })
+      return
+    }
+    // 同一年龄，无需切换
+    if (age === currentAge) return
+
+    // 不同年龄，弹出确认提示
+    const locale = this.data.locale || 'zh'
+    const t = i18n.dict(locale)
+    safeModal({
+      title: '',
+      content: t['discover.siblingConfirmText'].replace('{age}', this._getAgeLabel(age)),
+      cancelText: t['discover.siblingConfirmCancel'],
+      confirmText: t['discover.siblingConfirmOk'],
+      success: (res) => {
+        if (res.confirm) {
+          this._saveAgePreference(age)
+          this.setData({ agePreference: age })
+          safeToast({ title: '已切换为 ' + this._getAgeLabel(age), icon: 'success' })
+        }
+      },
+    })
+  },
+
+  _loadAgePreference() {
+    try {
+      const val = wx.getStorageSync('bw_age_preference')
+      return val || ''
+    } catch {
+      return ''
+    }
+  },
+
+  _saveAgePreference(age) {
+    try {
+      wx.setStorageSync('bw_age_preference', age)
+    } catch {
+      // silently ignore
+    }
+  },
+
+  _getAgeLabel(age) {
+    const opt = this.data.ageOptions.find(o => o.value === age)
+    return opt ? opt.label : age
   },
 })
