@@ -225,9 +225,66 @@ def process_category(cat: str):
                     time.sleep(15)
 
     if changed:
-        with open(json_path, "w", encoding="utf-8") as f:
-            json.dump(questions, f, ensure_ascii=False, indent=2)
-        print(f"\n[SAVED] {json_path}")
+        # Sprint 63 第118轮 P0 修复（CTO 陈架构 + 后端老稳 + 毒舌老王 + 法务张律）：
+        # 写入 staging 而非 live，前置治理门防 prematurity 复发。
+        # 背景：Sprint 62 已修 read-modify-write 竞态（merge-write 保 baselineEpoch），但写入目标仍是 live
+        # json_path → image_gen_supervisor.sh 自重启拉起本脚本时，未插画的新起草题会被直接 merge 进 live，
+        # 绕过 red line #35 merge bar，触发 sprint62 canonical 红灯（live 274→304，baseline 271→301）。
+        # 毒舌老王："把治理门放在一个会自己重启的守护进程后面，等于没门。"
+        # 修法：① 写入 content/seed-library-staging/{cat}.json，live 永不被本脚本触碰；
+        #       ② 删除"内存有 fresh 无 → 追加到 fresh"分支（rogue 题回流通道），fresh 无的题一律丢弃，
+        #          新题起草必须走 governed 流程显式 append + 标 baselineEpoch + 过 merge bar；
+        #       ③ merge 后统计 unillustrated（5 slot 任一空），staging 允许持有但显式打印，live 永不接收。
+        # 法务张律：零身份字段零网络；live 零写入 → #33 baseline 813 文本 hash 集不动，#35 merge bar 守住。
+        IMAGE_FIELDS = [
+            ("layer1", "image"), ("layer2", "image"), ("layer3", "image"),
+            ("experiment", "image"), ("scienceImage", None),
+        ]
+        with open(json_path, "r", encoding="utf-8") as f:
+            fresh = json.load(f)
+        fresh_by_id = {q.get("id"): q for q in fresh}
+        merged_count = 0
+        dropped_in_memory_only = 0
+        for q in questions:
+            qid = q.get("id")
+            fq = fresh_by_id.get(qid)
+            if fq is None:
+                # Sprint 63：内存有但 live fresh 无 → 一律丢弃，不追加。
+                # 新题起草须走 governed 流程显式入 fresh + 标 baselineEpoch + 插画 + 审计 + merge bar。
+                dropped_in_memory_only += 1
+                continue
+            for slot, sub in IMAGE_FIELDS:
+                if sub is None:
+                    new_val = q.get(slot)
+                    if new_val:
+                        fq[slot] = new_val
+                        merged_count += 1
+                else:
+                    if isinstance(q.get(slot), dict) and isinstance(fq.get(slot), dict):
+                        new_img = q[slot].get(sub)
+                        if new_img:
+                            fq[slot][sub] = new_img
+                            merged_count += 1
+        # unillustrated 统计（staging 允许持有，live 永不接收）
+        def _is_unillustrated(item):
+            for slot, sub in IMAGE_FIELDS:
+                if sub is None:
+                    if not item.get(slot):
+                        return True
+                else:
+                    if isinstance(item.get(slot), dict) and not item[slot].get(sub):
+                        return True
+            return False
+        unill = sum(1 for item in fresh if _is_unillustrated(item))
+        # 写入 staging，不触碰 live
+        staging_dir = os.path.join(BASE_DIR, "content", "seed-library-staging")
+        os.makedirs(staging_dir, exist_ok=True)
+        staging_path = os.path.join(staging_dir, f"{cat}.json")
+        with open(staging_path, "w", encoding="utf-8") as f:
+            json.dump(fresh, f, ensure_ascii=False, indent=2)
+        print(f"\n[SAVED STAGING] {staging_path} (merge-write: {merged_count} image 字段合并; "
+              f"unillustrated={unill} 允许持有; dropped in-memory-only={dropped_in_memory_only} 不追加)")
+        print(f"[LIVE UNTOUCHED] {json_path} — governed merge 流程另起，过 #35 merge bar 后才 promote")
 
 
 def main():
