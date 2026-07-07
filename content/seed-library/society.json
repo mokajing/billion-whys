@@ -46,7 +46,7 @@
       "image": "images/society/society-001-experiment.webp"
     },
     "ipScene": "问问兔骑在玩具车上蹬腿说：“车怎么不走呀？“答答熊笑着说：“这辆车需要发动机，不是兔腿哦！”",
-    "scienceImage": "images/society/society-001-science.png",
+    "scienceImage": "images/society/society-001-science.webp",
     "warmClosing": "下次坐车的时候想想，是发动机的力气在带你走呢！",
     "locale": "zh-CN"
   },
@@ -93,7 +93,7 @@
       "image": "images/society/society-002-experiment.webp"
     },
     "ipScene": "问问兔一看到绿灯就想冲过去，答答熊拉住它说：“先左右看看有没有车，再牵着手一起走！”",
-    "scienceImage": "images/society/society-002-science.png",
+    "scienceImage": "images/society/society-002-science.webp",
     "warmClosing": "记住红灯停绿灯行，过马路一定要牵着大人的手哦！",
     "locale": "zh-CN"
   },
@@ -142,7 +142,7 @@
       "image": "images/society/society-003-experiment.webp"
     },
     "ipScene": "问问兔拿着一片树叶去“买“胡萝卜，答答熊说：“树叶不是钱哦，钱是大家都同意用来交换东西的特殊卡片！”",
-    "scienceImage": "images/society/society-003-science.png",
+    "scienceImage": "images/society/society-003-science.webp",
     "warmClosing": "每一分钱都是大人辛苦赚来的，要珍惜不浪费哦！",
     "locale": "zh-CN"
   },
@@ -189,7 +189,7 @@
       "image": "images/society/society-004-experiment.webp"
     },
     "ipScene": "问问兔在滑梯前想插队，答答熊轻轻拉住它说：“排队等一等，每个人都能玩到，这样大家都开心！”",
-    "scienceImage": "images/society/society-004-science.png",
+    "scienceImage": "images/society/society-004-science.webp",
     "warmClosing": "排好队耐心等，每个人都能轮到，你排队的样子真棒！",
     "locale": "zh-CN"
   },
@@ -236,7 +236,7 @@
       "image": "images/society/society-005-experiment.webp"
     },
     "ipScene": "问问兔在机场看着大飞机起飞惊叹：“这么大的东西怎么飞起来的！“答答熊说：“是空气把它的翅膀往上推的，空气的力气可大了！”",
-    "scienceImage": "images/society/society-005-science.png",
+    "scienceImage": "images/society/society-005-science.webp",
     "warmClosing": "下次坐飞机的时候，你可以告诉大人：是空气在托着翅膀飞呢！",
     "locale": "zh-CN"
   },
@@ -284,7 +284,7 @@
       "image": "images/society/society-006-experiment.webp"
     },
     "ipScene": "问问兔问：“太阳公公是不是累了要去睡觉？“答答熊转了一个圈说：“不是它去睡觉，是我们跟着地球转到了背面！”",
-    "scienceImage": "images/society/society-006-science.png",
+    "scienceImage": "images/society/society-006-science.webp",
     "warmClosing": "我们这边是黑夜时，地球另一边的小朋友正在白天呢，好神奇！",
     "locale": "zh-CN"
   },
@@ -330,7 +330,7 @@
       "image": "images/society/society-007-experiment.webp"
     },
     "ipScene": "问问兔第一天去幼儿园有点害怕，答答熊牵着它的手说：“里面有好多新朋友等着认识你呢，我放学来接你！”",
-    "scienceImage": "images/society/society-007-science.png",
+    "scienceImage": "images/society/society-007-science.webp",
     "warmClosing": "幼儿园有好多新朋友等着认识你呢，你会越来越喜欢的！",
     "locale": "zh-CN"
   },
@@ -377,7 +377,7 @@
       "image": "images/society/society-008-experiment.webp"
     },
     "ipScene": "问问兔在公园里走丢了有点害怕，看到穿制服的警察叔叔，答答熊鼓励它说：“去问警察叔叔吧，他们是专门帮助小朋友的！”",
-    "scienceImage": "images/society/society-008-science.png",
+    "scienceImage": "images/society/society-008-science.webp",
     "warmClosing": "记住遇到困难可以找警察帮忙，他们是保护大家的人！",
     "locale": "zh-CN"
   },
@@ -423,7 +423,7 @@
       "image": "images/society/society-009-experiment.webp"
     },
     "ipScene": "问问兔遇到一只说话听不懂的小鸟，急得团团转。答答熊教它用微笑和挥手打招呼，小鸟开心地也挥了挥翅膀。答答熊说：“就算语言不通，友善的心意大家都懂！”",
-    "scienceImage": "images/society/society-009-science.png",
+    "scienceImage": "images/society/society-009-science.webp",
     "warmClosing": "不管说什么语言，友善的微笑大家都懂！",
     "locale": "zh-CN"
   },
@@ -469,7 +469,7 @@
       "image": "images/society/society-010-experiment.webp"
     },
     "ipScene": "今天是问问兔的生日，答答熊捧着蛋糕说：“今天是你来到这个世界的日子！许个愿吧！“问问兔闭上眼睛许愿后用力吹灭蜡烛，开心地说：“我又长大一岁啦！”",
-    "scienceImage": "images/society/society-010-science.png",
+    "scienceImage": "images/society/society-010-science.webp",
     "warmClosing": "每过一次生日就长大一岁，你学会了好多新本领呢！",
     "locale": "zh-CN"
   },
@@ -517,7 +517,7 @@
       "image": "images/society/society-011-experiment.webp"
     },
     "ipScene": "问问兔看到消防员穿着厚厚的衣服问：“夏天穿这么多不热吗？“答答熊说：“消防员的衣服能挡住火的热量保护身体，虽然很重很辛苦，但能安全地冲进去救人！”",
-    "scienceImage": "images/society/society-011-science.png",
+    "scienceImage": "images/society/society-011-science.webp",
     "warmClosing": "消防员穿着厚厚的装备保护大家，他们真勇敢！",
     "locale": "zh-CN"
   },
@@ -565,7 +565,7 @@
       "image": "images/society/society-012-experiment.webp"
     },
     "ipScene": "问问兔写了一封信想寄给远方的朋友，答答熊帮它贴好邮票说：“投进邮筒吧，邮递员会帮你送到的！“问问兔踮起脚把信投进去，开心地说：“信要去旅行啦！”",
-    "scienceImage": "images/society/society-012-science.png",
+    "scienceImage": "images/society/society-012-science.webp",
     "warmClosing": "试试给大人写一封信，手写的信特别温暖哦！",
     "locale": "zh-CN"
   },
@@ -613,7 +613,7 @@
       "image": "images/society/society-013-experiment.webp"
     },
     "ipScene": "问问兔拉着答答熊的手说：“你别去上班，陪我玩嘛！”答答熊蹲下来说：“我也想陪你呀，但今天有小朋友等我去教他们画画呢。”问问兔想了想说：“那你快去快回！”",
-    "scienceImage": "images/society/society-013-science.png",
+    "scienceImage": "images/society/society-013-science.webp",
     "warmClosing": "大人上班的时候也在想你呢，下班后一定会赶紧回来陪你的！",
     "locale": "zh-CN"
   },
@@ -660,7 +660,7 @@
       "image": "images/society/society-014-experiment.webp"
     },
     "ipScene": "问问兔的积木被碰倒了，气得举起小拳头。答答熊轻轻握住它的手说：“我知道你很生气，先深呼吸三下好不好？“问问兔吸了三口气，小声说：“我没那么气了。”",
-    "scienceImage": "images/society/society-014-science.png",
+    "scienceImage": "images/society/society-014-science.webp",
     "warmClosing": "生气的时候深呼吸三下，你会发现心里没那么难受了！",
     "locale": "zh-CN"
   },
@@ -709,7 +709,7 @@
       "image": "images/society/society-015-experiment.webp"
     },
     "ipScene": "答答熊帮问问兔够到了高处的苹果，问问兔开心地说了声“谢谢你！“答答熊笑了：“你说谢谢的时候，我心里像吃了蜜一样甜！”",
-    "scienceImage": "images/society/society-015-science.png",
+    "scienceImage": "images/society/society-015-science.webp",
     "warmClosing": "试试今天对帮助你的人说一声谢谢，你会让他们很开心！",
     "locale": "zh-CN"
   },
@@ -755,7 +755,7 @@
       "image": "images/society/society-016-experiment.webp"
     },
     "ipScene": "问问兔看到一只小蚂蚁搬不动食物，轻轻帮它推了一下。答答熊竖起大拇指说：“每个人都有需要帮忙的时候，你伸出手的样子真棒！”",
-    "scienceImage": "images/society/society-016-science.png",
+    "scienceImage": "images/society/society-016-science.webp",
     "warmClosing": "一个小小的善意就能让别人的一天不一样，你真棒！",
     "locale": "zh-CN"
   },
@@ -802,7 +802,7 @@
       "image": "images/society/society-017-experiment.webp"
     },
     "ipScene": "问问兔不小心踩到了答答熊的尾巴，答答熊“哎呦“了一声。问问兔赶紧说：“对不起对不起！疼不疼？我帮你揉揉！“答答熊笑了：“你说对不起的样子让我觉得好温暖，已经不疼了。”",
-    "scienceImage": "images/society/society-017-science.png",
+    "scienceImage": "images/society/society-017-science.webp",
     "warmClosing": "说对不起不是因为你坏，是因为你在乎别人的感受！",
     "locale": "zh-CN"
   },
@@ -849,7 +849,7 @@
       "image": "images/society/society-018-experiment.webp"
     },
     "ipScene": "问问兔去看医生有点害怕，答答熊说：“医生只是用听诊器听听你心跳的声音，一点也不疼，就像把耳朵贴在我胸口上听一样！”",
-    "scienceImage": "images/society/society-018-science.png",
+    "scienceImage": "images/society/society-018-science.webp",
     "warmClosing": "看医生不用害怕，医生是帮你的身体检查的好朋友！",
     "locale": "zh-CN"
   },
@@ -898,7 +898,7 @@
       "image": "images/society/society-019-experiment.webp"
     },
     "ipScene": "问问兔在超市里好奇地问：“这些苹果是从树上直接飞到超市的吗？“答答熊说：“不是飞来的，是农民摘下来后坐大卡车一路运来的，走了好远好远的路呢！”",
-    "scienceImage": "images/society/society-019-science.png",
+    "scienceImage": "images/society/society-019-science.webp",
     "warmClosing": "超市里的每样东西都走了很长的路，好多人帮忙才到你手里，要珍惜哦！",
     "locale": "zh-CN"
   },
@@ -947,7 +947,7 @@
       "image": "images/society/society-020-experiment.webp"
     },
     "ipScene": "问问兔把香蕉皮扔在路上，答答熊捡起来说：“垃圾要扔进垃圾桶，而且不同的垃圾要分类扔哦！香蕉皮是厨余垃圾，放绿色桶！”",
-    "scienceImage": "images/society/society-020-science.png",
+    "scienceImage": "images/society/society-020-science.webp",
     "warmClosing": "把垃圾分好类扔进垃圾桶，你就是保护地球的小卫士！",
     "locale": "zh-CN"
   },
@@ -995,7 +995,7 @@
       "image": "images/society/society-021-experiment.webp"
     },
     "ipScene": "问问兔走进图书馆惊呆了：“哇，这么多书！“答答熊小声说：“嘘，图书馆要安静哦。你可以挑几本喜欢的借回家看！”",
-    "scienceImage": "images/society/society-021-science.png",
+    "scienceImage": "images/society/society-021-science.webp",
     "warmClosing": "图书馆里有无数故事等着你，去借一本你喜欢的书吧！",
     "locale": "zh-CN"
   },
@@ -1042,7 +1042,7 @@
       "image": "images/society/society-022-experiment.webp"
     },
     "ipScene": "问问兔问：“为什么要上学呀，在家玩多好！“答答熊说：“上学能学到好多新本领，还能交到好朋友。你学会认字就能自己看故事书了，那多棒！”",
-    "scienceImage": "images/society/society-022-science.png",
+    "scienceImage": "images/society/society-022-science.webp",
     "warmClosing": "每天学一点新本领，长大以后你就能做任何想做的事情！",
     "locale": "zh-CN"
   },
@@ -1090,7 +1090,7 @@
       "image": "images/society/society-023-experiment.webp"
     },
     "ipScene": "问问兔看到意大利面说：“这个面条怎么长得不一样？“答答熊说：“这是意大利人做的面条，和我们中国的面条不一样但一样好吃！世界上每个地方都有自己的美食呢。”",
-    "scienceImage": "images/society/society-023-science.png",
+    "scienceImage": "images/society/society-023-science.webp",
     "warmClosing": "世界上有好多不同的美食等你尝，每种都是一个地方的文化！",
     "locale": "zh-CN"
   },
@@ -1137,7 +1137,7 @@
       "image": "images/society/society-024-experiment.webp"
     },
     "ipScene": "问问兔玩游戏想改规则让自己赢，答答熊说：“如果每个人都改规则那就没法玩了。大家都遵守规则，游戏才好玩，输了也开心！”",
-    "scienceImage": "images/society/society-024-science.png",
+    "scienceImage": "images/society/society-024-science.webp",
     "warmClosing": "规则让大家都公平都安全，遵守规则的你真了不起！",
     "locale": "zh-CN"
   },
@@ -1185,7 +1185,7 @@
       "image": "images/society/society-025-experiment.webp"
     },
     "ipScene": "问问兔搬了新家不认识任何人，答答熊带着它去敲邻居的门说：“你好，我们是新搬来的！“邻居笑着请他们吃了水果。答答熊说：“看，交一个新邻居好朋友就这么简单！”",
-    "scienceImage": "images/society/society-025-science.png",
+    "scienceImage": "images/society/society-025-science.webp",
     "warmClosing": "对邻居笑着说你好，你住的地方就会变得更温暖！",
     "locale": "zh-CN"
   },
@@ -1232,7 +1232,7 @@
       "image": "images/society/society-026-experiment.webp"
     },
     "ipScene": "问问兔抱着一堆胡萝卜不想给别人，答答熊说：“你吃一根开心一次，分给朋友大家一起吃，就开心好多次！“问问兔想了想，递了一根给答答熊，两个好朋友一起嘎嘣嘎嘣吃起来。",
-    "scienceImage": "images/society/society-026-science.png",
+    "scienceImage": "images/society/society-026-science.webp",
     "warmClosing": "分享让一份快乐变成很多份快乐，你愿意分享的样子真棒！",
     "locale": "zh-CN"
   },
@@ -1279,7 +1279,7 @@
       "image": "images/society/society-027-experiment.webp"
     },
     "ipScene": "问问兔想学跳舞但不好意思说，答答熊鼓励它：“跳舞不分男女，喜欢就去学！做自己喜欢的事情最帅了。“问问兔开心地跳起来。",
-    "scienceImage": "images/society/society-027-science.png",
+    "scienceImage": "images/society/society-027-science.webp",
     "warmClosing": "男孩女孩都一样棒，做自己喜欢的事情最重要！",
     "locale": "zh-CN"
   },
@@ -1329,7 +1329,7 @@
       "image": "images/society/society-028-experiment.webp"
     },
     "ipScene": "问问兔看到小狗说想养一只，答答熊认真地说：“养宠物很开心，但也要每天喂它、遛它、给它洗澡。你准备好每天都照顾它了吗？“问问兔认真点头说：“我准备好了！”",
-    "scienceImage": "images/society/society-028-science.png",
+    "scienceImage": "images/society/society-028-science.webp",
     "warmClosing": "照顾小生命让你学会了负责任，你是有爱心的好孩子！",
     "locale": "zh-CN"
   },
@@ -1378,7 +1378,7 @@
       "image": "images/society/society-029-experiment.webp"
     },
     "ipScene": "过年了，问问兔穿着新衣服问：“为什么大家都这么开心？“答答熊说：“因为新的一年开始了，全家人一起吃团圆饭、说祝福的话，多幸福呀！”",
-    "scienceImage": "images/society/society-029-science.png",
+    "scienceImage": "images/society/society-029-science.webp",
     "warmClosing": "过年是全家团圆的幸福时刻，祝你新年快乐！",
     "locale": "zh-CN"
   },
@@ -1427,7 +1427,7 @@
       "image": "images/society/society-030-experiment.webp"
     },
     "ipScene": "问问兔在森林里迷路了，答答熊拿出地图说：“看，我们在这里，家在那里，沿着这条路就能回去了！“问问兔说：“地图好神奇，整个森林都画在一张纸上了！”",
-    "scienceImage": "images/society/society-030-science.png",
+    "scienceImage": "images/society/society-030-science.webp",
     "warmClosing": "学会看地图你就不会迷路了，整个世界都在你手里！",
     "locale": "zh-CN"
   },
@@ -1476,7 +1476,7 @@
       "image": "images/society/society-031-experiment.webp"
     },
     "ipScene": "问问兔玩完泥巴就要吃胡萝卜，答答熊赶紧拦住它：“先洗手！手上有看不见的小细菌，吃进去会肚子疼的。“问问兔乖乖去洗手，搓了好多泡泡。",
-    "scienceImage": "images/society/society-031-science.png",
+    "scienceImage": "images/society/society-031-science.webp",
     "warmClosing": "饭前洗手是保护肚子的好习惯，你能做到真棒！",
     "locale": "zh-CN"
   },
@@ -1524,7 +1524,7 @@
       "image": "images/society/society-032-experiment.webp"
     },
     "ipScene": "问问兔和小伙伴都想玩秋千，答答熊拿出沙漏说：“每人荡到沙漏漏完就换人，这样大家都能荡到。“问问兔数着沙漏说：“快到我了快到我了！”",
-    "scienceImage": "images/society/society-032-science.png",
+    "scienceImage": "images/society/society-032-science.webp",
     "warmClosing": "学会轮流是一种很厉害的本领，你等待的样子特别了不起！",
     "locale": "zh-CN"
   },
@@ -1572,7 +1572,7 @@
       "image": "images/society/society-033-experiment.webp"
     },
     "ipScene": "问问兔遇到一只棕色的小兔子，好奇地问：“你为什么和我颜色不一样？“答答熊说：“就像花有红的黄的白的，每种颜色都漂亮。兔子也一样，你们都是可爱的小兔子！”",
-    "scienceImage": "images/society/society-033-science.png",
+    "scienceImage": "images/society/society-033-science.webp",
     "warmClosing": "每个人都是独特的，不同的肤色让世界更加丰富多彩！",
     "locale": "zh-CN"
   },
@@ -1619,7 +1619,7 @@
       "image": "images/society/society-034-experiment.webp"
     },
     "ipScene": "问问兔听到“呜哇呜哇“的声音捂住耳朵，答答熊拉着它站到路边说：“快让开，救护车要赶着去救人呢！给它让路就是在帮忙！”",
-    "scienceImage": "images/society/society-034-science.png",
+    "scienceImage": "images/society/society-034-science.webp",
     "warmClosing": "听到救护车叫要赶紧让路，给它让路就是在帮忙救人！",
     "locale": "zh-CN"
   },
@@ -1666,7 +1666,7 @@
       "image": "images/society/society-035-experiment.webp"
     },
     "ipScene": "问问兔打碎了花瓶想说是风吹的，答答熊轻轻说：“说真话可能会被批评一下，但说谎心里会一直不舒服。做错了说对不起，这才是最勇敢的。“问问兔低下头说了实话，大人虽然有点不高兴但表扬了它的诚实。",
-    "scienceImage": "images/society/society-035-science.png",
+    "scienceImage": "images/society/society-035-science.webp",
     "warmClosing": "说真话需要勇气，能诚实的你特别了不起！",
     "locale": "zh-CN"
   },
