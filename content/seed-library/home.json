@@ -42,7 +42,7 @@
     },
     "ipScene": "问问兔在黑黑的房间里找不到开关，答答熊打开手电筒说：“看，电宝宝来帮忙啦！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-001-science.png",
+    "scienceImage": "images/home/home-001-science.webp",
     "warmClosing": "记住用电要安全哦，不能用手去碰插座！"
   },
   {
@@ -90,7 +90,7 @@
     },
     "ipScene": "问问兔试图把水往天上泼，水全落到自己头上了，答答熊哈哈大笑说：“水可不会飞哦！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-002-science.png",
+    "scienceImage": "images/home/home-002-science.webp",
     "warmClosing": "下次倒水的时候想想，是地球在拉着水往下流呢！"
   },
   {
@@ -136,7 +136,7 @@
     },
     "ipScene": "问问兔打开冰箱凉快，答答熊赶紧关上说：“冰箱是给食物降温的，不是给小兔子吹空调的！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-003-science.png",
+    "scienceImage": "images/home/home-003-science.webp",
     "warmClosing": "回家摸摸冰箱后面是不是热热的，那是它在把热搬到外面！"
   },
   {
@@ -183,7 +183,7 @@
     },
     "ipScene": "问问兔对着镜子说话，以为里面还有一只兔子，答答熊笑着说：“那是你的光影双胞胎呀！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-004-science.png",
+    "scienceImage": "images/home/home-004-science.webp",
     "warmClosing": "对着镜子举举手，看看镜子里的你是不是反着的！"
   },
   {
@@ -232,7 +232,7 @@
     },
     "ipScene": "问问兔洗手的时候玩泡泡玩得停不下来，答答熊说：“泡泡带走了脏东西，你的手变干净啦！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-005-science.png",
+    "scienceImage": "images/home/home-005-science.webp",
     "warmClosing": "洗手的时候仔细搓泡泡，泡泡会帮你带走脏东西哦！"
   },
   {
@@ -280,7 +280,7 @@
     },
     "ipScene": "问问兔用正方形的框吹泡泡，等了半天还是圆的，答答熊说：“泡泡可不听框框的话，它只听自然的话！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-006-science.png",
+    "scienceImage": "images/home/home-006-science.webp",
     "warmClosing": "下次吹泡泡的时候，试试用方形的框，看看泡泡是什么形状！"
   },
   {
@@ -329,7 +329,7 @@
     },
     "ipScene": "问问兔接了一杯水问：“这个水是从小河游过来的吗？“答答熊说：“没错，它走了好远的路才到你的杯子里呢！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-007-science.png",
+    "scienceImage": "images/home/home-007-science.webp",
     "warmClosing": "水走了好远才到你的杯子里，要珍惜每一滴水哦！"
   },
   {
@@ -377,7 +377,7 @@
     },
     "ipScene": "问问兔看到热水冒白气吓了一跳：“着火了！“答答熊赶紧安慰说：“别怕，那是水蒸气在变小云朵呢！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-008-science.png",
+    "scienceImage": "images/home/home-008-science.webp",
     "warmClosing": "下次看到热水冒白气，你可以说：我家厨房在造小云朵！"
   },
   {
@@ -424,7 +424,7 @@
     },
     "ipScene": "问问兔趴在电视前面找门想钻进去，答答熊拉住它说：“里面没有门啦，那些人是小彩灯拼出来的画呀！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-009-science.png",
+    "scienceImage": "images/home/home-009-science.webp",
     "warmClosing": "下次看电视的时候用放大镜看看，屏幕上全是小彩灯呢！"
   },
   {
@@ -471,7 +471,7 @@
     },
     "ipScene": "问问兔站在风扇前面吹得耳朵飘起来说：“好凉快！“答答熊说：“风扇没有制冷哦，它只是帮你把热气吹走了！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-010-science.png",
+    "scienceImage": "images/home/home-010-science.webp",
     "warmClosing": "风扇只是帮你吹走热气，温度其实没变哦，你知道了真聪明！"
   },
   {
@@ -520,7 +520,7 @@
     },
     "ipScene": "问问兔看着微波炉里的牛奶转圈圈问：“里面有小火吗？“答答熊说：“没有火，是看不见的小波浪在让牛奶里的水宝宝跳舞，跳热了！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-011-science.png",
+    "scienceImage": "images/home/home-011-science.webp",
     "warmClosing": "记住微波炉里不能放金属的东西哦，你已经是安全小达人了！"
   },
   {
@@ -567,7 +567,7 @@
     },
     "ipScene": "问问兔把湿衣服放在桌子底下等了半天还没干，答答熊把衣服挂到阳台上说：“要请太阳和风来帮忙呀！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-012-science.png",
+    "scienceImage": "images/home/home-012-science.webp",
     "warmClosing": "晾衣服要找有太阳有风的地方，让太阳和风来帮忙！"
   },
   {
@@ -615,7 +615,7 @@
     },
     "ipScene": "问问兔看到空调在滴水大喊：“空调哭了！“答答熊摸摸空调说：“它没有哭，是空气里的小水珠被冷风变出来啦！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-013-science.png",
+    "scienceImage": "images/home/home-013-science.webp",
     "warmClosing": "冷饮杯上的小水珠也是这个道理，你可以观察一下哦！"
   },
   {
@@ -662,7 +662,7 @@
     },
     "ipScene": "问问兔拿着一大串钥匙一把一把试，答答熊指着钥匙上的锯齿说：“看，每把钥匙的牙齿不一样，只有对的那把才能咬住锁里的小机关！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-014-science.png",
+    "scienceImage": "images/home/home-014-science.webp",
     "warmClosing": "你家的钥匙和锁是独一无二的配对，就像好朋友一样！"
   },
   {
@@ -708,7 +708,7 @@
     },
     "ipScene": "问问兔被闹钟吵醒捂着耳朵说：“谁在敲鼓呀！“答答熊关掉闹钟说：“是闹钟里的小锤子在叫你起床呢！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-015-science.png",
+    "scienceImage": "images/home/home-015-science.webp",
     "warmClosing": "听听闹钟的滴答声，那是时间在一步一步走路呢！"
   },
   {
@@ -755,7 +755,7 @@
     },
     "ipScene": "问问兔的书包拉链卡住了拉不上，答答熊帮忙对齐牙齿说：“两排小牙齿没对好，要让它们一个一个握手才行！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-016-science.png",
+    "scienceImage": "images/home/home-016-science.webp",
     "warmClosing": "下次拉拉链的时候，看看小牙齿是怎么一颗颗咬在一起的！"
   },
   {
@@ -806,7 +806,7 @@
     },
     "ipScene": "问问兔趴在玻璃窗上看外面说：“为什么能看穿窗户呢？“答答熊说：“因为玻璃的小颗粒排得整整齐齐，给光让出了一条路，光就穿过去了！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-017-science.png",
+    "scienceImage": "images/home/home-017-science.webp",
     "warmClosing": "玻璃是沙子变的，大自然的变身术真厉害！"
   },
   {
@@ -854,7 +854,7 @@
     },
     "ipScene": "问问兔盯着马桶冲水看了好久说：“水在跳圆圈舞！“答答熊说：“是出水孔故意让水斜着喷出来的，转着圈力量更大，才能把脏东西全冲走！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-018-science.png",
+    "scienceImage": "images/home/home-018-science.webp",
     "warmClosing": "马桶冲水的转圈圈是聪明的设计，你发现了真厉害！"
   },
   {
@@ -903,7 +903,7 @@
     },
     "ipScene": "问问兔画错了用橡皮擦，铅笔线消失了好开心。又去擦圆珠笔线擦不掉，急得搓红了纸。答答熊说：“圆珠笔墨水钻到纸里面去了，橡皮抓不住它呀！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-019-science.png",
+    "scienceImage": "images/home/home-019-science.webp",
     "warmClosing": "橡皮是铅笔的好搭档，它能帮你改正错误重新来！"
   },
   {
@@ -951,7 +951,7 @@
     },
     "ipScene": "问问兔用保温杯喝水惊讶地说：“早上倒的水现在还是热的！“答答熊说：“保温杯里面有真空和镜面，把热气锁得死死的，不让它偷偷跑掉！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-020-science.png",
+    "scienceImage": "images/home/home-020-science.webp",
     "warmClosing": "保温杯用真空和镜面锁住热量，真是聪明的发明！"
   },
   {
@@ -997,7 +997,7 @@
     },
     "ipScene": "问问兔拿着磁铁到处吸，吸住了冰箱好开心，又去吸木头凳子吸不住很困惑。答答熊说：“磁铁有自己的喜好，它只喜欢铁做的东西！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-021-science.png",
+    "scienceImage": "images/home/home-021-science.webp",
     "warmClosing": "用磁铁当小侦探，看看家里哪些东西是铁做的吧！"
   },
   {
@@ -1046,7 +1046,7 @@
     },
     "ipScene": "问问兔看着洗衣机里衣服转来转去说：“衣服在坐旋转木马！“答答熊说：“它们在洗澡呢！转来转去加上泡泡的帮忙，脏东西就全被甩掉啦！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-022-science.png",
+    "scienceImage": "images/home/home-022-science.webp",
     "warmClosing": "洗衣机帮我们省了好多力气，别忘了感谢它哦！"
   },
   {
@@ -1094,7 +1094,7 @@
     },
     "ipScene": "问问兔捏着鼻子说：“下水道好臭！“答答熊往下水道冲了一杯水说：“管子里的水封干了，臭味就跑上来了。冲点水就好了，水是天然的臭味塞子！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-023-science.png",
+    "scienceImage": "images/home/home-023-science.webp",
     "warmClosing": "下水道的S弯水封是很聪明的设计，帮我们挡住了臭味！"
   },
   {
@@ -1141,7 +1141,7 @@
     },
     "ipScene": "问问兔对着遥控器按按钮什么都看不到很困惑。答答熊拿出手机说：“你用手机摄像头看——看到了吗？遥控器在闪看不见的光呢！电视能看到这种光就知道你要换台啦！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-024-science.png",
+    "scienceImage": "images/home/home-024-science.webp",
     "warmClosing": "用手机摄像头就能看到遥控器的秘密之光，你也试试吧！"
   },
   {
@@ -1188,7 +1188,7 @@
     },
     "ipScene": "问问兔不小心把碗摔碎了吓了一跳，答答熊赶紧安慰说：“没关系，瓷碗很脆摔了就会碎。碎片不要碰，让大人来收拾。下次两只手捧着碗慢慢走就好了。”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-025-science.png",
+    "scienceImage": "images/home/home-025-science.webp",
     "warmClosing": "瓷碗虽然好看但很脆，两只手慢慢端就不容易摔碎啦！"
   },
   {
@@ -1236,7 +1236,7 @@
     },
     "ipScene": "问问兔在电梯里按了按钮觉得肚子里有蝴蝶在飞，答答熊说：“那是电梯启动的时候你的身体还没跟上呢。电梯上面有粗粗的绳子拉着，可安全了！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-026-science.png",
+    "scienceImage": "images/home/home-026-science.webp",
     "warmClosing": "电梯用绳子和电动机带你上上下下，进出的时候不要蹦跳哦！"
   },
   {
@@ -1283,7 +1283,7 @@
     },
     "ipScene": "问问兔摸到正在充电的充电器说：“它热热的，是不是发烧了？“答答熊说：“没有发烧，它在努力把大电变成小电给手机喝，干活累了就热了。温温的是正常的哦！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-027-science.png",
+    "scienceImage": "images/home/home-027-science.webp",
     "warmClosing": "充电器工作会发热是正常的，但不要盖住它，让它能散散热！"
   },
   {
@@ -1329,7 +1329,7 @@
     },
     "ipScene": "问问兔半夜醒来看到夜灯亮着不害怕了，答答熊说：“夜灯是你的小守护者，天黑了它就自动亮起来陪你，天亮了它就安静地休息。”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-028-science.png",
+    "scienceImage": "images/home/home-028-science.webp",
     "warmClosing": "小夜灯是你的小守护者，天黑了就自动陪着你！"
   },
   {
@@ -1377,7 +1377,7 @@
     },
     "ipScene": "问问兔开门的时候门“吱——“叫了一声，吓了一跳。答答熊拿来润滑油滴了几滴说：“门的关节干了在喊渴呢，喝了油就舒服了，不再叫了。”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-029-science.png",
+    "scienceImage": "images/home/home-029-science.webp",
     "warmClosing": "门吱吱响是在说'我渴了'，给合页滴几滴油就好了！"
   },
   {
@@ -1424,7 +1424,7 @@
     },
     "ipScene": "问问兔碰门把手“啪“被电了一下，手缩回来叫了一声。答答熊教它先摸摸墙说：“先让静电慢慢跑掉，就不会被'啪'一下了。冬天穿毛衣最容易有静电！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-030-science.png",
+    "scienceImage": "images/home/home-030-science.webp",
     "warmClosing": "碰门把手之前先摸摸墙壁，让静电偷偷溜走就不会被电啦！"
   },
   {
@@ -1470,7 +1470,7 @@
     },
     "ipScene": "问问兔看到自己的影子追着它跑吓了一跳，答答熊笑着说：“那是你自己呀！你挡住了光，光照不到的地方就变暗了，那就是你的影子。它永远跟着你！”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-031-science.png",
+    "scienceImage": "images/home/home-031-science.webp",
     "warmClosing": "影子是你的忠实伙伴，光在哪里它就在你的对面！"
   },
   {
@@ -1517,7 +1517,7 @@
     },
     "ipScene": "问问兔关水龙头的时候管子“咚咚“响了两声，吓了一跳说：“管子里有怪物！“答答熊说：“不是怪物，是水跑得太快突然被关住了，撞到管子发出的声音。下次慢慢关就不响了。”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-032-science.png",
+    "scienceImage": "images/home/home-032-science.webp",
     "warmClosing": "关水龙头要慢慢关，水才不会撞管子咚咚响哦！"
   },
   {
@@ -1565,7 +1565,7 @@
     },
     "ipScene": "问问兔用吸管吸果汁吸得呼噜呼噜响，答答熊说：“你知道吗？不是你的嘴巴在拉水，是外面的空气在推水上来呢！你只是把管子里的空气吸走了，空气就帮你把水推上来了。”",
     "locale": "zh-CN",
-    "scienceImage": "images/home/home-033-science.png",
+    "scienceImage": "images/home/home-033-science.webp",
     "warmClosing": "吸管喝水其实是空气在帮忙，看不见的力量真神奇！"
   },
   {
