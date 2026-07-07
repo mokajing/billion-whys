@@ -1,0 +1,251 @@
+/* skeleton.wxss — 小程序骨架屏样式（与 H5 SkeletonLoader.vue 同构） */
+/* V8.62 第126轮：墨小暖修正耳朵角度 -12°，王园长修正 error 抖动 1 次 */
+
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  padding: 32px 16px;
+  background: linear-gradient(180deg, #FFF8E7 0%, #FFFFFF 100%);
+}
+
+.skeleton--error {
+  background: linear-gradient(180deg, #FFF0F0 0%, #FFFFFF 100%);
+}
+
+.skeleton-rabbit {
+  margin-bottom: 16px;
+  width: 64px;
+  height: 64px;
+  position: relative;
+}
+
+/* === 问问兔 SVG 纯 CSS 绘制 === */
+.rabbit-svg {
+  width: 64px;
+  height: 64px;
+  position: relative;
+}
+
+/* 脸 */
+.rabbit-face {
+  position: absolute;
+  top: 14px;
+  left: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #FFFFFF;
+}
+
+/* 耳朵 */
+.ear {
+  position: absolute;
+  width: 8px;
+  height: 19px;
+  background: #FFFFFF;
+  border-radius: 4px 4px 0 0;
+  transform-origin: 4px 20px;
+}
+
+.ear-left {
+  top: 0;
+  left: 10px;
+}
+
+.ear-right {
+  top: 0;
+  left: 28px;
+}
+
+.ear-inner {
+  position: absolute;
+  width: 4px;
+  height: 12px;
+  background: #F5B7C8;
+  border-radius: 2px 2px 0 0;
+  transform-origin: 2px 14px;
+}
+
+.ear-inner-left {
+  top: 3px;
+  left: 12px;
+}
+
+.ear-inner-right {
+  top: 3px;
+  left: 30px;
+}
+
+/* 眼睛 */
+.eye {
+  position: absolute;
+  top: 27px;
+  width: 3.6px;
+  height: 3.6px;
+  border-radius: 50%;
+  background: #2B2B2B;
+}
+
+.eye-left {
+  left: 19px;
+}
+
+.eye-right {
+  left: 29px;
+}
+
+/* 鼻子 */
+.rabbit-nose {
+  position: absolute;
+  top: 32px;
+  left: 23px;
+  width: 0;
+  height: 0;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-top: 3px solid #E89AAB;
+}
+
+/* === 耳朵动画状态 === */
+
+/* loading: 耳朵下垂 15° → 竖起前倾 12° 循环，1.5s 周期 */
+.rabbit--loading .ear {
+  animation: ear-loading-cycle 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+
+.rabbit--loading .ear-inner {
+  animation: ear-loading-cycle 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+
+/* 每 3 个循环（4.5s）后眨眼一次 */
+.rabbit--loading .eye {
+  animation: rabbit-blink 4.5s ease-in-out infinite;
+}
+
+/* ready: 耳朵前倾 12°（好奇姿态，墨小暖修正） */
+.rabbit--ready .ear {
+  transform: rotate(-12deg);
+  transform-origin: 4px 0px;
+}
+
+.rabbit--ready .ear-inner {
+  transform: rotate(-12deg);
+  transform-origin: 2px 0px;
+}
+
+/* error: 耳朵耷拉 25°，温和抖动 1 次（王园长修正） */
+.rabbit--error .ear {
+  transform: rotate(25deg);
+  transform-origin: 4px 0px;
+  animation: ear-error-shake 0.3s ease-in-out 1;
+}
+
+.rabbit--error .ear-inner {
+  transform: rotate(25deg);
+  transform-origin: 2px 0px;
+  animation: ear-error-shake 0.3s ease-in-out 1;
+}
+
+@keyframes ear-loading-cycle {
+  0% { transform: rotate(15deg); }
+  40% { transform: rotate(-12deg); }
+  70% { transform: rotate(-12deg); }
+  100% { transform: rotate(15deg); }
+}
+
+@keyframes rabbit-blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  93% { transform: scaleY(0.1); }
+  97% { transform: scaleY(1); }
+}
+
+@keyframes ear-error-shake {
+  0%, 100% { transform: rotate(25deg); }
+  25% { transform: rotate(26deg); }
+  75% { transform: rotate(24deg); }
+}
+
+/* === 文字样式 === */
+.skeleton-text {
+  text-align: center;
+}
+
+.skeleton-message {
+  font-size: 16px;
+  color: #8B6914;
+  font-weight: 500;
+}
+
+.skeleton-hint {
+  font-size: 13px;
+  color: #B8A080;
+  margin-top: 12px;
+}
+
+.skeleton-retry-hint {
+  font-size: 14px;
+  color: #E06060;
+  margin-top: 12px;
+  text-decoration: underline;
+}
+
+.skeleton-offline-hint {
+  font-size: 12px;
+  color: #B8A080;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* V8.65 Sprint 70 第129轮：离线模式 CTA 按钮（可点击跳转 Archive） */
+/* Why: 毒舌老王——"这不是离线模式，这是离线公告"；苏体验+小美+前端小凡 */
+.skeleton-offline-cta {
+  display: inline-block;
+  font-size: 13px;
+  color: #1A5C3A;
+  margin-top: 8px;
+  padding: 6px 16px;
+  border: 2rpx solid #1A5C3A;
+  border-radius: 24rpx;
+  font-weight: 500;
+  background: rgba(26, 92, 58, 0.05);
+}
+
+/* === 进度条 === */
+.skeleton-progress {
+  width: 120px;
+  height: 3px;
+  background: #F0E8D8;
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 8px auto 0;
+}
+
+.progress-bar {
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(90deg, #FF9A56, #FFD93D);
+  border-radius: 2px;
+  animation: progress-indeterminate 1.5s ease-in-out infinite;
+}
+
+@keyframes progress-indeterminate {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(430%); }
+}
+
+/* === 无障碍：减少动效 === */
+@media (prefers-reduced-motion: reduce) {
+  .rabbit--loading .ear,
+  .rabbit--loading .ear-inner,
+  .rabbit--loading .eye,
+  .rabbit--error .ear,
+  .rabbit--error .ear-inner,
+  .progress-bar {
+    animation: none;
+  }
+  .rabbit--loading .ear { transform: rotate(-10deg); }
+  .rabbit--error .ear { transform: rotate(25deg); }
+}
