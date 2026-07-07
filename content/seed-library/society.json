@@ -2285,43 +2285,43 @@
     "warmClosing": ""
   },
   {
-    "id": "society-2075",
+    "id": "society-2074",
     "category": "society",
     "tags": [],
     "safetyLevel": "A",
     "locale": "zh-CN",
-    "question": "为什么小朋友要上幼儿园？",
+    "question": "为什么医生要穿白大褂？",
     "age": "3-5岁",
     "layer1": {
-      "answer": "幼儿园是有好多小朋友一起玩的地方，还有老师带你们唱歌、画画、做游戏，比一个人在家好玩多了！",
-      "image": "images/society/society-2075-layer1.webp"
+      "answer": "白大褂是医生的\"工作衣服\"，穿上它大家就知道\"这是医生，可以帮我看病\"。白色代表干净，医生的工作需要很干净。",
+      "image": "images/society/society-2074-layer1.webp"
     },
     "layer2": {
-      "answer": "幼儿园不只是玩的地方，还是学习怎么和别人相处的地方。在这里你学会了排队、分享、等别人说完再说话。爸爸妈妈去上班的时候，幼儿园就是小朋友的\"工作单位\"。",
-      "image": "images/society/society-2075-layer2.webp"
+      "answer": "白色最容易看出脏了，所以医生穿白大褂可以随时发现衣服上有没有脏东西，及时换洗。白色也让人感觉干净、安全、值得信任。很久以前医生开始穿白大褂，慢慢就成了医生的标志。",
+      "image": "images/society/society-2074-layer2.webp"
     },
     "layer3": {
-      "answer": "幼儿园是孩子从家庭走向社会的第一步。在这里你学会和同龄人相处、遵守集体规则、表达自己的需求、解决小冲突。这些能力叫\"社会性发展\"，是长大以后交朋友、上学、工作都需要的本领。",
-      "image": "images/society/society-2075-layer3.webp"
+      "answer": "白大褂的历史可追溯到19世纪末，当时医学界认识到细菌导致感染，白色象征无菌和洁净。同时白色易于发现污渍，方便及时清洗消毒。手术室用蓝绿色是因为长时间看红色血液后，白色上会产生绿色残影（视觉疲劳），蓝绿色能中和这种效应。",
+      "image": "images/society/society-2074-layer3.webp"
     },
-    "science": "3-6岁是社会性发展的关键期。幼儿园提供结构化社交环境，促进同伴交往、规则内化、情绪调节和认知发展。维果茨基\"最近发展区\"理论指出，同伴互动和教师引导是认知发展的核心驱动力。",
-    "scienceImage": "images/society/society-2075-science.webp",
+    "science": "白大褂的象征意义来源于19世纪末Joseph Lister的消毒外科学说。色彩心理学上白色传递洁净、专业、权威信号。手术室蓝/绿色是补色原理的应用——白大褂上的红色后像（绿色）会造成视觉干扰。",
+    "scienceImage": "images/society/society-2074-science.webp",
     "experiment": {
-      "name": "为什么小朋友要上幼儿园？·小实验",
+      "name": "为什么医生要穿白大褂？·小实验",
       "steps": [
-        "让孩子画\"幼儿园里我最喜欢的三件事\"，然后讲给爸爸妈妈听。引导孩子表达在幼儿园的正面体验，增强归属感。"
+        "让孩子盯着一张红色纸看30秒，然后立刻看白纸——会看到一个绿色的影子。这就是\"视觉后像\"，解释为什么手术室不穿白色。"
       ],
       "materials": [
-        "纸",
-        "画笔"
+        "红色纸",
+        "白纸"
       ],
-      "image": "images/society/society-2075-experiment.webp",
+      "image": "images/society/society-2074-experiment.webp",
       "sayToChild": "",
       "duration": "约5分钟",
       "safetyNote": "需家长全程陪同",
       "experimentType": "观察"
     },
-    "ipScene": "问问兔第一天去幼儿园，有点紧张地问\"为什么不能在家跟妈妈玩？\"答答熊说\"幼儿园是个神奇的地方——这里有好多跟你一样大的小朋友，你们可以一起搭积木、一起唱歌、一起学新本领。妈妈去上班，你来幼儿园，晚上回家再交换今天的故事！\"",
+    "ipScene": "问问兔去医院体检，看到穿白大褂的医生有点紧张。答答熊说\"别怕，白大褂是医生的超级英雄制服！白色代表干净，就像你画画前要铺白纸一样，医生在干净的环境里才能更好地帮我们检查身体。\"",
     "warmClosing": ""
   }
 ]
