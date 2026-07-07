@@ -42,6 +42,28 @@ const TTS_LANG = 'zh-CN'
 // 旧注释：V7.7 H5 已用 RabbitFace SVG，MP 待对齐 — V7.8 已完成对齐。
 const RABBIT_FACE_NOTE = 'V7.8: MP ip-face 自定义组件已落地，与 H5 RabbitFace/BearFace 视觉一致'
 
+// V8.69 第133轮：年龄色系统一化（彩虹姐+前端小凡）
+// Why: 年龄颜色散落在多个文件中，统一到 content/constants.json 作为唯一真源
+// MP 通过 require 同步引用 JSON
+const ageColorConfig = require('../../../content/constants.json')
+const AGE_COLORS = ageColorConfig.ageColors
+const AGE_LABEL_MAP = ageColorConfig.ageLabelMap
+const DEFAULT_AGE = ageColorConfig.defaultAge
+const AGE_STORAGE_KEY = ageColorConfig.ageStorageKey
+
+/**
+ * 获取年龄段的 CSS class 名（用于今日 3 问卡片颜色区分）
+ * @param {string} ageLabel - 如 "3~4"、"4~5"、"5~6"
+ * @returns {string} CSS class 名
+ */
+function ageColorClass(ageLabel) {
+  if (!ageLabel) return ''
+  for (const [key, val] of Object.entries(AGE_COLORS)) {
+    if (ageLabel.includes(key.split('-')[0]) || ageLabel.includes(key)) return val.cssClass
+  }
+  return ''
+}
+
 // V8.7 第75轮 Sprint 16：本地日期键（YYYY-MM-DD），用于反馈趋势/明细的日期标签
 // Why: toISOString().slice(0,10) 会把本地午夜转成 UTC，在 UTC+8 显示成昨天
 // 反 V8.5 回归 bug：北极星漏斗"可追溯"依赖日期标签与本地日期一致
@@ -63,4 +85,9 @@ module.exports = {
   TTS_LANG,
   RABBIT_FACE_NOTE,
   localDateKey,
+  AGE_COLORS,
+  AGE_LABEL_MAP,
+  DEFAULT_AGE,
+  AGE_STORAGE_KEY,
+  ageColorClass,
 }
