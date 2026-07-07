@@ -43,7 +43,7 @@
       "image": "images/nature/nature-001-experiment.webp"
     },
     "ipScene": "问问兔看到下雨说：“天空在哭吗？“答答熊撑开伞说：“不是哭，是云朵装不下水了，在给大地洗澡呢！”",
-    "scienceImage": "images/nature/nature-001-science.png",
+    "scienceImage": "images/nature/nature-001-science.webp",
     "warmClosing": "下次下雨的时候，你可以告诉大人：云朵装不下水了在给大地洗澡呢！",
     "locale": "zh-CN"
   },
@@ -91,7 +91,7 @@
       "image": "images/nature/nature-002-experiment.webp"
     },
     "ipScene": "问问兔傍晚追着太阳跑喊“别走”，答答熊拉住它说：“太阳没走，是我们脚下的地球在转圈圈呢！”",
-    "scienceImage": "images/nature/nature-002-science.png",
+    "scienceImage": "images/nature/nature-002-science.webp",
     "warmClosing": "太阳没有走哦，是我们脚下的地球在转圈圈呢！",
     "locale": "zh-CN"
   },
@@ -137,7 +137,7 @@
       "image": "images/nature/nature-003-experiment.webp"
     },
     "ipScene": "问问兔看到自己的影子吓了一跳：“有人跟着我！“答答熊指着影子说：“那是你自己呀，光被你挡住了才出现的！”",
-    "scienceImage": "images/nature/nature-003-science.png",
+    "scienceImage": "images/nature/nature-003-science.webp",
     "warmClosing": "下次天晴的时候去玩影子游戏，看看你的影子能变成什么形状！",
     "locale": "zh-CN"
   },
@@ -186,7 +186,7 @@
       "image": "images/nature/nature-004-experiment.webp"
     },
     "ipScene": "问问兔追着风跑想抓住它，答答熊说：“风是空气在跑步呢，你抓不住它，但你能感受到它！”",
-    "scienceImage": "images/nature/nature-004-science.png",
+    "scienceImage": "images/nature/nature-004-science.webp",
     "warmClosing": "下次感受到风的时候，你可以说：空气在赶路呢！",
     "locale": "zh-CN"
   },
@@ -233,7 +233,7 @@
       "image": "images/nature/nature-005-experiment.webp"
     },
     "ipScene": "问问兔想爬到彩虹上面去滑滑梯，答答熊说：“彩虹是光和水滴变出来的魔法，只能看不能摸呢！”",
-    "scienceImage": "images/nature/nature-005-science.png",
+    "scienceImage": "images/nature/nature-005-science.webp",
     "warmClosing": "下次雨停了找找彩虹，那是太阳和水滴一起变的魔法！",
     "locale": "zh-CN"
   },
@@ -282,7 +282,7 @@
       "image": "images/nature/nature-006-experiment.webp"
     },
     "ipScene": "问问兔仰着头问：“谁把天空刷成蓝色的？“答答熊说：“是太阳光和空气一起变的魔法，蓝色的光最调皮到处跑！”",
-    "scienceImage": "images/nature/nature-006-science.png",
+    "scienceImage": "images/nature/nature-006-science.webp",
     "warmClosing": "天空蓝蓝的是因为蓝色的光最调皮到处跑，你记住了真棒！",
     "locale": "zh-CN"
   },
@@ -329,7 +329,7 @@
       "image": "images/nature/nature-007-experiment.webp"
     },
     "ipScene": "问问兔问：“月亮是不是被谁咬了一口才变弯的？“答答熊笑着说：“没有，月亮一直是圆的，只是你看到亮的那部分不一样而已！”",
-    "scienceImage": "images/nature/nature-007-science.png",
+    "scienceImage": "images/nature/nature-007-science.webp",
     "warmClosing": "晚上和大人一起看看月亮，记录一下它今天是什么形状吧！",
     "locale": "zh-CN"
   },
@@ -377,7 +377,7 @@
       "image": "images/nature/nature-008-experiment.webp"
     },
     "ipScene": "问问兔想跳上云朵当蹦蹦床，答答熊说：“云看着软绵绵的，其实它是小水滴做的，你跳上去就掉下来啦！”",
-    "scienceImage": "images/nature/nature-008-science.png",
+    "scienceImage": "images/nature/nature-008-science.webp",
     "warmClosing": "下次看到白云，你可以说：那是好多小水滴聚在一起的棉花糖！",
     "locale": "zh-CN"
   },
@@ -426,7 +426,7 @@
       "image": "images/nature/nature-009-experiment.webp"
     },
     "ipScene": "问问兔在海边喝了一口海水赶紧吐出来：“好咸呀！“答答熊说：“大海攒了几十亿年的盐呢，当然咸啦！”",
-    "scienceImage": "images/nature/nature-009-science.png",
+    "scienceImage": "images/nature/nature-009-science.webp",
     "warmClosing": "大海的咸味是几十亿年攒出来的，大自然真有耐心！",
     "locale": "zh-CN"
   },
@@ -472,7 +472,7 @@
       "image": "images/nature/nature-010-experiment.webp"
     },
     "ipScene": "问问兔被一声雷吓得躲到答答熊身后。答答熊抱住它说：“别怕，雷是云里的小冰块撞出来的电，像天上放了个大鞭炮，响一下就没事了！”",
-    "scienceImage": "images/nature/nature-010-science.png",
+    "scienceImage": "images/nature/nature-010-science.webp",
     "warmClosing": "打雷只是云里的冰块撞出来的声音，不用害怕哦！",
     "locale": "zh-CN"
   },
@@ -519,7 +519,7 @@
       "image": "images/nature/nature-011-experiment.webp"
     },
     "ipScene": "问问兔在沙滩上捧起一把沙子说：“这些小颗粒是从哪来的？“答答熊说：“它们以前是大石头呢！被风和水磨了几百万年才变这么细！”",
-    "scienceImage": "images/nature/nature-011-science.png",
+    "scienceImage": "images/nature/nature-011-science.webp",
     "warmClosing": "下次去沙滩，每一粒沙都是大石头磨了很久变成的呢！",
     "locale": "zh-CN"
   },
@@ -567,7 +567,7 @@
       "image": "images/nature/nature-012-experiment.webp"
     },
     "ipScene": "问问兔伸手接雪花说：“天上掉糖了！“答答熊笑着说：“那是云里的小水滴冷得变成冰花飘下来啦，每片都不一样！”",
-    "scienceImage": "images/nature/nature-012-science.png",
+    "scienceImage": "images/nature/nature-012-science.webp",
     "warmClosing": "下次下雪接一片雪花看看，每片都有六个角而且都不一样！",
     "locale": "zh-CN"
   },
@@ -617,7 +617,7 @@
       "image": "images/nature/nature-013-experiment.webp"
     },
     "ipScene": "问问兔看到火山喷发的图片说：“山怎么在吐火呀！“答答熊说：“地球肚子里有滚烫的石头汤，攒多了就从山顶冒出来了，就像可乐摇一摇会喷出来一样！”",
-    "scienceImage": "images/nature/nature-013-science.png",
+    "scienceImage": "images/nature/nature-013-science.webp",
     "warmClosing": "地球肚子里热热的岩浆就像可乐里的气泡，大自然的力量真大！",
     "locale": "zh-CN"
   },
@@ -665,7 +665,7 @@
       "image": "images/nature/nature-014-experiment.webp"
     },
     "ipScene": "问问兔使劲踩石头说：“怎么踩不碎呀！“答答熊说：“石头里面的小颗粒手拉手抱得可紧了，比你的力气大多了！”",
-    "scienceImage": "images/nature/nature-014-science.png",
+    "scienceImage": "images/nature/nature-014-science.webp",
     "warmClosing": "下次捡到石头，试试比比哪块更硬，你就是小小地质学家！",
     "locale": "zh-CN"
   },
@@ -713,7 +713,7 @@
       "image": "images/nature/nature-015-experiment.webp"
     },
     "ipScene": "问问兔拿着磁铁到处吸，回形针飞过来了，积木不动。答答熊说：“磁铁有隐形的手，只能拉住铁做的东西哦！”",
-    "scienceImage": "images/nature/nature-015-science.png",
+    "scienceImage": "images/nature/nature-015-science.webp",
     "warmClosing": "拿磁铁到处试试看，发现哪些东西能被吸住吧！",
     "locale": "zh-CN"
   },
@@ -762,7 +762,7 @@
       "image": "images/nature/nature-016-experiment.webp"
     },
     "ipScene": "问问兔觉得地面在晃说：“地球打喷嚏了吗？“答答熊拉着它躲到桌下说：“是地壳板块互相挤了一下，我们先躲好！”",
-    "scienceImage": "images/nature/nature-016-science.png",
+    "scienceImage": "images/nature/nature-016-science.webp",
     "warmClosing": "记住地震来了蹲下护头躲桌下，你已经学会保护自己了！",
     "locale": "zh-CN"
   },
@@ -813,7 +813,7 @@
       "image": "images/nature/nature-017-experiment.webp"
     },
     "ipScene": "问问兔踩在田埂上看水田说：“为什么田里像小池塘？“答答熊说：“因为水稻特别爱喝水，有水它才能长大变成米饭呢！”",
-    "scienceImage": "images/nature/nature-017-science.png",
+    "scienceImage": "images/nature/nature-017-science.webp",
     "warmClosing": "一碗米饭需要好多水才能种出来，要珍惜粮食哦！",
     "locale": "zh-CN"
   },
@@ -861,7 +861,7 @@
       "image": "images/nature/nature-018-experiment.webp"
     },
     "ipScene": "问问兔早起看到草上亮晶晶的说：“草叶在流汗吗？“答答熊说：“不是流汗，是空气里的水蒸气碰到凉凉的草叶变成小水珠了，叫露水！”",
-    "scienceImage": "images/nature/nature-018-science.png",
+    "scienceImage": "images/nature/nature-018-science.webp",
     "warmClosing": "明天早起看看草叶上的露水，那是大自然送给早起小朋友的礼物！",
     "locale": "zh-CN"
   },
@@ -911,7 +911,7 @@
       "image": "images/nature/nature-019-experiment.webp"
     },
     "ipScene": "问问兔在雾里走来走去说：“我是不是钻进云里了？“答答熊说：“没错！雾就是飘在地面上的云，你现在就在云里面呢！”",
-    "scienceImage": "images/nature/nature-019-science.png",
+    "scienceImage": "images/nature/nature-019-science.webp",
     "warmClosing": "下次看到雾，你可以说：我在云里面走路呢！",
     "locale": "zh-CN"
   },
@@ -960,7 +960,7 @@
       "image": "images/nature/nature-020-experiment.webp"
     },
     "ipScene": "问问兔问：“为什么夏天热冬天冷呀？“答答熊拿着地球仪说：“因为地球是歪着绕太阳转的，歪向太阳那边就热，歪开就冷！”",
-    "scienceImage": "images/nature/nature-020-science.png",
+    "scienceImage": "images/nature/nature-020-science.webp",
     "warmClosing": "四季变化是因为地球歪着绕太阳转，大自然的设计真巧妙！",
     "locale": "zh-CN"
   },
@@ -1009,7 +1009,7 @@
       "image": "images/nature/nature-021-experiment.webp"
     },
     "ipScene": "问问兔唱着：“一闪一闪亮晶晶，星星为什么眨眼睛？“答答熊说：“星星没有眨眼，是空气在晃它的光呢！”",
-    "scienceImage": "images/nature/nature-021-science.png",
+    "scienceImage": "images/nature/nature-021-science.webp",
     "warmClosing": "下次看到星星闪，你可以告诉大人：是空气在晃星星的光呢！",
     "locale": "zh-CN"
   },
@@ -1056,7 +1056,7 @@
       "image": "images/nature/nature-022-experiment.webp"
     },
     "ipScene": "问问兔看到流星赶紧许愿，答答熊说：“流星是太空的小石头飞太快烧起来了，不过许愿也很开心呢！”",
-    "scienceImage": "images/nature/nature-022-science.png",
+    "scienceImage": "images/nature/nature-022-science.webp",
     "warmClosing": "流星是太空小石头飞太快摩擦发光的，下次看到可以许个愿！",
     "locale": "zh-CN"
   },
@@ -1104,7 +1104,7 @@
       "image": "images/nature/nature-023-experiment.webp"
     },
     "ipScene": "问问兔在石头上看到一个贝壳的印子说：“贝壳钻进石头里了？“答答熊说：“这是化石！很久以前的贝壳被泥沙埋住慢慢变成石头里的印记了。”",
-    "scienceImage": "images/nature/nature-023-science.png",
+    "scienceImage": "images/nature/nature-023-science.webp",
     "warmClosing": "化石是大自然写的历史书，每一块都藏着几百万年前的故事！",
     "locale": "zh-CN"
   },
@@ -1154,7 +1154,7 @@
       "image": "images/nature/nature-024-experiment.webp"
     },
     "ipScene": "问问兔趴在草地上说：\"露珠好圆呀，像一颗颗小玻璃球！\"答答熊说：\"因为水滴的表面有一层看不见的皮，会把水拉成圆球呢！\"",
-    "scienceImage": "images/nature/nature-024-science.png",
+    "scienceImage": "images/nature/nature-024-science.webp",
     "warmClosing": "一颗小露珠里藏着表面张力的大秘密，下次看到露珠可以仔细观察它圆圆的样子哦！",
     "locale": "zh-CN"
   },
@@ -1201,7 +1201,7 @@
       "image": "images/nature/nature-025-experiment.webp"
     },
     "ipScene": "问问兔碰了一下含羞草，叶子马上合上了。问问兔吓了一跳：“它生气了吗？“答答熊说：“没有生气，它是在保护自己呢，过一会儿就又打开了！”",
-    "scienceImage": "images/nature/nature-025-science.png",
+    "scienceImage": "images/nature/nature-025-science.webp",
     "warmClosing": "含羞草用合起叶子保护自己，植物也有自己的小聪明呢！",
     "locale": "zh-CN"
   },
@@ -1248,7 +1248,7 @@
       "image": "images/nature/nature-026-experiment.webp"
     },
     "ipScene": "问问兔抱着一棵大树问：“你几岁呀？“答答熊指着旁边的树桩说：“数数树桩上的圈圈就知道了，一圈就是一岁！”",
-    "scienceImage": "images/nature/nature-026-science.png",
+    "scienceImage": "images/nature/nature-026-science.webp",
     "warmClosing": "下次看到树桩，数数年轮就知道这棵树活了多少年，你就是小小植物学家！",
     "locale": "zh-CN"
   },
@@ -1297,7 +1297,7 @@
       "image": "images/nature/nature-027-experiment.webp"
     },
     "ipScene": "问问兔在海边说：“早上水在这里，下午水跑到那里了！“答答熊说：“是月亮在拉海水呢，月亮走到哪边，海水就跟到哪边！”",
-    "scienceImage": "images/nature/nature-027-science.png",
+    "scienceImage": "images/nature/nature-027-science.webp",
     "warmClosing": "涨潮退潮是月亮在拉海水，大自然的力量真神奇！",
     "locale": "zh-CN"
   },
@@ -1346,7 +1346,7 @@
       "image": "images/nature/nature-028-experiment.webp"
     },
     "ipScene": "问问兔听到轰隆隆的声音跑过去看，发现是瀑布。问问兔说：“这么多水从哪来的？“答答熊说：“是山上的河水流到悬崖边跳下来了，好壮观！”",
-    "scienceImage": "images/nature/nature-028-science.png",
+    "scienceImage": "images/nature/nature-028-science.webp",
     "warmClosing": "瀑布就是河水从高处跳下来的，大自然的跳水真壮观！",
     "locale": "zh-CN"
   },
@@ -1393,7 +1393,7 @@
       "image": "images/nature/nature-029-experiment.webp"
     },
     "ipScene": "问问兔对着山谷喊：“你好——“过了一会儿听到“你好——“它吓了一跳：“谁在学我说话？“答答熊说：“那是你自己的回声，声音撞到山壁弹回来了！”",
-    "scienceImage": "images/nature/nature-029-science.png",
+    "scienceImage": "images/nature/nature-029-science.webp",
     "warmClosing": "下次到空旷的地方喊一声试试，听听你的声音弹回来的回声！",
     "locale": "zh-CN"
   },
@@ -1441,7 +1441,7 @@
       "image": "images/nature/nature-030-experiment.webp"
     },
     "ipScene": "问问兔看到太阳少了一块吓了一跳：“谁咬了太阳一口？“答答熊说：“是月亮跑到太阳前面挡住了，不是被咬了！过一会儿就恢复了。”",
-    "scienceImage": "images/nature/nature-030-science.png",
+    "scienceImage": "images/nature/nature-030-science.webp",
     "warmClosing": "日食是月亮挡住了太阳，不是被吃掉了，大自然的巧合真奇妙！",
     "locale": "zh-CN"
   },
@@ -1489,7 +1489,7 @@
       "image": "images/nature/nature-031-experiment.webp"
     },
     "ipScene": "问问兔发现窗台上的植物都歪向窗户说：“它们想出去玩吗？“答答熊说：“它们在追阳光呢！哪边有光就往哪边弯，植物也爱晒太阳！”",
-    "scienceImage": "images/nature/nature-031-science.png",
+    "scienceImage": "images/nature/nature-031-science.webp",
     "warmClosing": "植物追着阳光长，就像你追着喜欢的东西跑一样，生命真奇妙！",
     "locale": "zh-CN"
   },
@@ -1537,7 +1537,7 @@
       "image": "images/nature/nature-032-experiment.webp"
     },
     "ipScene": "问问兔捡起一片黄叶子说：“叶子生病了变黄了吗？“答答熊说：“没有生病，是绿色素消失了黄色素就露出来了。树在准备过冬呢，春天会长新叶子的！”",
-    "scienceImage": "images/nature/nature-032-science.png",
+    "scienceImage": "images/nature/nature-032-science.webp",
     "warmClosing": "秋天落叶是树在准备过冬，春天又会长出新叶子，大自然一直在轮回！",
     "locale": "zh-CN"
   },
@@ -1587,7 +1587,7 @@
       "image": "images/nature/nature-033-experiment.webp"
     },
     "ipScene": "问问兔泡在温泉里说：“这水怎么自己就是热的？“答答熊说：“地球肚子里是热的，地下的水碰到热石头就被烧热了冒出来，就像大自然给我们烧的热水澡！”",
-    "scienceImage": "images/nature/nature-033-science.png",
+    "scienceImage": "images/nature/nature-033-science.webp",
     "warmClosing": "温泉是地球送给我们的天然热水澡，地球肚子里的热量真了不起！",
     "locale": "zh-CN"
   },
@@ -2226,7 +2226,7 @@
     },
     "ipScene": "问问兔拿着一块冰说：\"它怎么在滴水？\"答答熊说：\"它暖和了，正在脱掉硬硬的外套变回水呢！\"",
     "warmClosing": "下次吃冰棍的时候，你可以告诉大人：冰棍在嘴里暖和了，正在化成水呢！",
-    "scienceImage": "images/nature/nature-046-science.png"
+    "scienceImage": "images/nature/nature-046-science.webp"
   },
   {
     "id": "nature-047",
@@ -2274,7 +2274,7 @@
     },
     "ipScene": "问问兔晒着太阳说：\"太阳在抱我吗？\"答答熊说：\"是太阳把热送过太空飞过来抱你啦！\"",
     "warmClosing": "下次晒太阳暖暖的时候，记得那是太阳飞了八分钟送来的拥抱！",
-    "scienceImage": "images/nature/nature-047-science.png"
+    "scienceImage": "images/nature/nature-047-science.webp"
   },
   {
     "id": "nature-048",
@@ -2322,7 +2322,7 @@
     },
     "ipScene": "问问兔问：\"天为什么会黑？\"答答熊转着皮球说：\"我们住的大球在转圈，转到背光那面就天黑啦！\"",
     "warmClosing": "今晚天黑的时候，告诉大人：我们转到背对太阳那面啦，明天转回来就又天亮！",
-    "scienceImage": "images/nature/nature-048-science.png"
+    "scienceImage": "images/nature/nature-048-science.webp"
   },
   {
     "id": "nature-2071",
