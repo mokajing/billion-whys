@@ -14,29 +14,81 @@
     </view>
   </scroll-view>
 
-  <view wx:if="{{dailyPick && activeCategory === 'all'}}" class="daily-pick" aria-role="region" aria-label="{{t['discover.dailyTag']}}">
-    <view class="dp-card" bindtap="onDailyPickTap" aria-role="button" aria-label="{{dailyPickAria}}">
-      <view class="dp-bubble">
-        <view class="dp-rabbit"><ip-face role="rabbit" size="32" /></view>
-        <view class="dp-bubble-text">
-          <text class="dp-tag">{{t['discover.dailyTag']}}</text>
-          <text class="dp-question">{{dailyPick.question}}</text>
+  <!-- V8.70 第134轮：年龄自适应引导（叶用户+苏体验+前端小凡） -->
+  <view wx:if="{{showAgeGuide}}" class="age-guide-mask" catchtap="onDismissAge">
+    <view class="age-guide-card" catchtap="">
+      <view class="age-guide-rabbit">
+        <ip-face role="rabbit" size="{{48}}" />
+      </view>
+      <text class="age-guide-title">{{t['discover.ageGuideTitle']}}</text>
+      <text class="age-guide-subtitle">{{t['discover.ageGuideSubtitle']}}</text>
+      <view class="age-guide-options">
+        <view wx:for="{{ageOptions}}" wx:key="value"
+          class="age-option-btn {{agePreference === item.value ? 'selected' : ''}}"
+          data-value="{{item.value}}" bindtap="onSelectAge">
+          <text class="age-option-range">{{item.label}}</text>
+          <text class="age-option-desc">{{item.desc}}</text>
         </view>
       </view>
-      <text class="dp-arrow">›</text>
+      <view class="age-guide-actions">
+        <button class="age-guide-confirm" disabled="{{!agePreference}}" bindtap="onConfirmAge">
+          {{t['discover.ageGuideConfirm']}}
+        </button>
+        <button class="age-guide-dismiss" bindtap="onDismissAge">
+          {{t['discover.ageGuideDismiss']}}
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <!-- V8.63 第127轮：今日 3 问年龄分层（周教授红线 + CPO 产品一致性） -->
+  <view wx:if="{{dailyPicks.length > 0 && activeCategory === 'all'}}" class="daily-picks" aria-role="region" aria-label="{{t['discover.dailyTag']}}">
+    <view class="daily-picks-header">
+      <text class="daily-picks-icon">✨</text>
+      <text class="daily-picks-title">{{t['discover.dailyTag']}}</text>
+    </view>
+    <!-- V8.65 Sprint 70 第129轮：引导文案 -->
+    <text class="daily-picks-guide">{{t['discover.dailyGuide']}}</text>
+    <view class="daily-picks-grid">
+      <view wx:for="{{dailyPicks}}" wx:key="id"
+        class="dp-card dp-age-{{item.ageColor}}" data-id="{{item.id}}" bindtap="onDailyPickTap"
+        aria-role="button" aria-label="{{item.question}}">
+        <view class="dp-bubble">
+          <view class="dp-rabbit"><ip-face role="rabbit" size="{{index === 0 ? 32 : 24}}" /></view>
+          <view class="dp-bubble-text">
+            <text class="dp-age-label">{{item.ageLabel}}</text>
+            <text class="dp-question">{{item.question}}</text>
+          </view>
+        </view>
+        <text class="dp-arrow">›</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- V8.70 第134轮：继续探索（最近 3 个浏览问题）—— 小美+苏体验+前端小凡 -->
+  <view wx:if="{{recentViewed.length > 0 && activeCategory === 'all'}}" class="continue-exploring" aria-role="region" aria-label="{{t['discover.continueAria']}}">
+    <view class="ce-header">
+      <text class="ce-icon">🕐</text>
+      <text class="ce-title">{{t['discover.continueTitle']}}</text>
+    </view>
+    <view class="ce-grid">
+      <view wx:for="{{recentViewed}}" wx:key="ce-{{item.id}}"
+        class="ce-card" data-id="{{item.id}}" bindtap="onQuestionTap"
+        aria-role="button" aria-label="{{item.question}}">
+        <text class="ce-cat-icon">{{categoryIcons[item.category] || '❓'}}</text>
+        <text class="ce-question">{{item.question}}</text>
+        <text class="ce-arrow">›</text>
+      </view>
     </view>
   </view>
 
   <view class="question-list">
     <view wx:if="{{!totalCount && !loadError}}" class="loading-state" aria-live="polite">
-      <view class="loading-icon"><ip-face role="rabbit" size="32" /></view>
-      <text class="loading-text">{{t['discover.loading']}}</text>
+      <skeleton state="loading" message="{{t['discover.loading']}}" />
     </view>
 
     <view wx:elif="{{loadError}}" class="loading-state" aria-live="polite">
-      <text class="loading-icon">😿</text>
-      <text class="loading-text">{{t['discover.loadError']}}</text>
-      <view class="retry-btn" bindtap="onRetry" aria-role="button" aria-label="{{t['discover.retry']}}">{{t['discover.retry']}}</view>
+      <skeleton state="error" message="{{t['discover.loadError']}}" bindretry="onRetry" />
     </view>
 
     <block wx:else>
