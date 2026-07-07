@@ -1,3 +1,7 @@
 {
-  "navigationBarTitleText": "问题详情"
+  "navigationBarTitleText": "问题详情",
+  "usingComponents": {
+    "ip-face": "/components/ip-face/ip-face",
+    "illustration-image": "/components/illustration-image/illustration-image"
+  }
 }
