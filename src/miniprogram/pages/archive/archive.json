@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "好奇档案"
+  "navigationBarTitleText": "好奇档案",
+  "usingComponents": {
+    "ip-face": "/components/ip-face/ip-face"
+  }
 }
