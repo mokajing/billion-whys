@@ -11,7 +11,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "牛奶是奶牛身上来的！奶牛吃了好多草，身体把草变成白白的牛奶，从肚子下面挤出来。",
-      "image": "images/food/food-001-layer1.webp"
+      "image": "images/food/food-001-layer1.webp",
+      "interactionHint": "一起看看牛奶盒，摸摸凉凉的，喝一小口暖暖的！"
     },
     "layer2": {
       "followUp": "奶牛为什么会产牛奶呢？",
@@ -47,7 +48,12 @@
     "ipScene": "问问兔看着一杯牛奶说：“这是奶牛的眼泪吗？“答答熊笑着说：“不是，这是奶牛给小牛准备的营养大餐！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-001-science.webp",
-    "warmClosing": "下次喝牛奶的时候，想想辛苦的奶牛，谢谢它的营养大餐！"
+    "warmClosing": "下次喝牛奶的时候，想想辛苦的奶牛，谢谢它的营养大餐！",
+    "comfortCategory": "B",
+    "parentGuide": "牛奶是营养丰富的食物，让孩子了解食物来源培养感恩心。",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "interactionType": "观察类"
   },
   {
     "id": "food-002",
@@ -61,7 +67,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "鸡蛋是母鸡的肚子里生出来的！蛋壳像小房子，里面装着蛋黄和蛋白。",
-      "image": "images/food/food-002-layer1.webp"
+      "image": "images/food/food-002-layer1.webp",
+      "interactionHint": "和大人一起，在地图上找找食物从哪里来"
     },
     "layer2": {
       "followUp": "那鸡蛋里面会孵出小鸡吗？",
@@ -97,7 +104,12 @@
     "ipScene": "问问兔在农场看到母鸡咯咯叫，好奇地问：“它在唱歌吗？“答答熊说：“它在告诉大家'我生了个蛋'呢！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-002-science.webp",
-    "warmClosing": "下次看到鸡蛋，你可以告诉大人它是母鸡努力生出来的！"
+    "warmClosing": "下次看到鸡蛋，你可以告诉大人它是母鸡努力生出来的！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "wise",
+    "comfortCategory": "C",
+    "interactionType": "观察类",
+    "parentGuide": "用地图或地球仪指出食物产地，帮助孩子建立空间概念。"
   },
   {
     "id": "food-003",
@@ -111,7 +123,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "苹果里面有种东西，平时被皮保护着。切开后碰到空气里的氧气，就像铁生锈一样变棕了。",
-      "image": "images/food/food-003-layer1.webp"
+      "image": "images/food/food-003-layer1.webp",
+      "interactionHint": "和大人一起，观察食物在煮的时候颜色的变化，你很会发现哦！"
     },
     "layer2": {
       "followUp": "为什么碰到空气就会变色？",
@@ -148,7 +161,12 @@
     "ipScene": "问问兔看着变棕色的苹果吓了一跳：“苹果生病了吗？“答答熊说：“没有，它只是碰到空气害羞了，脸红了而已！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-003-science.webp",
-    "warmClosing": "下次切苹果可以试试滴点柠檬汁，看看能不能帮苹果不变色！"
+    "warmClosing": "下次切苹果可以试试滴点柠檬汁，看看能不能帮苹果不变色！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "B",
+    "interactionType": "动作类",
+    "parentGuide": "和孩子一起观察食物在烹饪过程中的颜色变化，用手机拍照记录前后对比。"
   },
   {
     "id": "food-004",
@@ -162,7 +180,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "米饭是大米煮出来的。大米来自“水稻”，农民在水田里种稻苗，稻穗里就藏着一粒粒大米。",
-      "image": "images/food/food-004-layer1.webp"
+      "image": "images/food/food-004-layer1.webp",
+      "interactionHint": "和大人一起，看看食物是怎么做出来的"
     },
     "layer2": {
       "followUp": "稻子怎么变成白白的大米的？",
@@ -196,7 +215,12 @@
     "ipScene": "问问兔看着一碗白米饭问：“这些小白粒是从哪来的呀？“答答熊拿出一株稻穗说：“它们以前住在这里面呢！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-004-science.webp",
-    "warmClosing": "每一粒米都来之不易，吃饭的时候把碗里的米吃光光吧！"
+    "warmClosing": "每一粒米都来之不易，吃饭的时候把碗里的米吃光光吧！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "wise",
+    "comfortCategory": "C",
+    "interactionType": "动作类",
+    "parentGuide": "可以带孩子参观面包房或厨房，亲眼看看食物制作过程。"
   },
   {
     "id": "food-005",
@@ -209,8 +233,9 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "糖没有真的不见，它变得特别特别小藏在水里了！尝一口水，甜甜的——糖在里面呢！",
-      "image": "images/food/food-005-layer1.webp"
+      "answer": "糖没有真的不见，它变得特别特别小化在水里了！尝一口水，甜甜的——糖在里面呢！",
+      "image": "images/food/food-005-layer1.webp",
+      "interactionHint": "把糖放进水里，一起数到5，看看糖去哪了？"
     },
     "layer2": {
       "followUp": "糖怎么变那么小的？",
@@ -245,7 +270,12 @@
     "ipScene": "问问兔把糖放进水里急得团团转：“我的糖不见了！“答答熊让它喝一口：“在你嘴里呢！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-005-science.webp",
-    "warmClosing": "下次喝糖水的时候想想，糖没有消失，只是藏起来啦！"
+    "warmClosing": "下次喝糖水的时候想想，糖没有消失，只是藏起来啦！",
+    "comfortCategory": "B",
+    "parentGuide": "引导孩子观察溶解现象，理解\"看不见≠不存在\"的认知概念。",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "interactionType": "观察类"
   },
   {
     "id": "food-006",
@@ -259,7 +289,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "蔬菜里住着好多“营养小精灵”，能帮身体变强壮。吃蔬菜就像给身体吃超级能量丸！",
-      "image": "images/food/food-006-layer1.webp"
+      "image": "images/food/food-006-layer1.webp",
+      "interactionHint": "和大人一起，探索食物的小秘密"
     },
     "layer2": {
       "followUp": "不吃蔬菜会怎么样？",
@@ -296,7 +327,12 @@
     "ipScene": "问问兔推开蔬菜盘子说不想吃，答答熊说：“不同颜色的蔬菜有不同的超能力，吃完你就是彩虹小超人！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-006-science.webp",
-    "warmClosing": "多吃不同颜色的蔬菜，你就是肚子里的彩虹小超人！"
+    "warmClosing": "多吃不同颜色的蔬菜，你就是肚子里的彩虹小超人！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "B",
+    "interactionType": "观察类",
+    "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。"
   },
   {
     "id": "food-007",
@@ -310,7 +346,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "冰淇淋是冰冰的，外面空气暖暖的。暖空气像大暖炉一直给它加热，它就慢慢化成水啦！",
-      "image": "images/food/food-007-layer1.webp"
+      "image": "images/food/food-007-layer1.webp",
+      "interactionHint": "暖暖的第一！和大人一起，一起慢慢探索这个食物的小秘密"
     },
     "layer2": {
       "followUp": "热气是怎么让冰淇淋化的？",
@@ -344,7 +381,12 @@
     "ipScene": "问问兔舔冰淇淋舔得太慢全化了，答答熊递上纸巾说：“下次要和暖空气赛跑，吃快一点哦！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-007-science.webp",
-    "warmClosing": "下次吃冰淇淋记得和暖空气赛跑，吃快一点哦！"
+    "warmClosing": "下次吃冰淇淋记得和暖空气赛跑，吃快一点哦！",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "comfortCategory": "A",
+    "interactionType": "触觉类",
+    "parentGuide": "请在大人陪同下进行探索，注意安全。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "food-008",
@@ -358,7 +400,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "面包用面粉、水和“酵母”做的。揉成面团放进烤箱烤，就变成香香软软的面包！",
-      "image": "images/food/food-008-layer1.webp"
+      "image": "images/food/food-008-layer1.webp",
+      "interactionHint": "和大人一起，探索食物的小秘密"
     },
     "layer2": {
       "followUp": "面包为什么软软的有好多小洞洞？",
@@ -394,7 +437,12 @@
     "ipScene": "问问兔看着面团越来越大吓了一跳：“面团在长胖！“答答熊说：“是酵母在里面吹泡泡呢！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-008-science.webp",
-    "warmClosing": "面包里的小洞洞都是酵母吹出来的泡泡，真有趣！"
+    "warmClosing": "面包里的小洞洞都是酵母吹出来的泡泡，真有趣！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "B",
+    "interactionType": "触觉类",
+    "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。"
   },
   {
     "id": "food-009",
@@ -408,7 +456,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为水果里面藏着一种叫“果酸“的东西，舌头碰到它就觉得酸。",
-      "image": "images/food/food-009-layer1.webp"
+      "image": "images/food/food-009-layer1.webp",
+      "interactionHint": "安全第一！和大人一起，一起看看冰箱里的食物有没有变坏"
     },
     "layer2": {
       "followUp": "为什么熟了就不那么酸了？",
@@ -442,7 +491,12 @@
     "ipScene": "问问兔咬了一口青杏酸得直皱脸，答答熊递过一颗熟草莓说：“还没熟的水果故意酸酸的，在保护小种子呢！吃这个甜的吧！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-009-science.webp",
-    "warmClosing": "下次吃到酸的水果，你可以说：它在保护小种子呢！"
+    "warmClosing": "下次吃到酸的水果，你可以说：它在保护小种子呢！",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "comfortCategory": "A",
+    "interactionType": "感知类",
+    "parentGuide": "教孩子用「看颜色+闻气味」判断食物是否变质，过期食物不要食用。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "food-010",
@@ -456,7 +510,8 @@
     "safetyLevel": "B",
     "layer1": {
       "answer": "生鸡蛋软软的，煮了以后蛋白和蛋黄都变硬了。",
-      "image": "images/food/food-010-layer1.webp"
+      "image": "images/food/food-010-layer1.webp",
+      "interactionHint": "和大人一起，观察食物在煮的时候颜色的变化，你很会发现哦！"
     },
     "layer2": {
       "followUp": "热水怎么让鸡蛋变硬的？",
@@ -490,7 +545,12 @@
     "ipScene": "问问兔看着煮好的鸡蛋问：“它怎么变硬了？“答答熊剥开蛋壳说：“热水把蛋里的小线球搅成一团了，就像毛线缠在一起解不开了！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-010-science.webp",
-    "warmClosing": "煮熟的鸡蛋变不回去了，这就是神奇的不可逆变化！"
+    "warmClosing": "煮熟的鸡蛋变不回去了，这就是神奇的不可逆变化！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "B",
+    "interactionType": "触觉类",
+    "parentGuide": "和孩子一起观察食物在烹饪过程中的颜色变化，用手机拍照记录前后对比。"
   },
   {
     "id": "food-011",
@@ -504,7 +564,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "棉花糖里面藏着好多好多小小的空气泡泡，所以软软的。",
-      "image": "images/food/food-011-layer1.webp"
+      "image": "images/food/food-011-layer1.webp",
+      "interactionHint": "安全第一！和大人一起，吃完甜的，一起去刷刷牙"
     },
     "layer2": {
       "followUp": "空气怎么跑到糖里面的？",
@@ -536,7 +597,12 @@
     "ipScene": "问问兔把棉花糖压扁又松开，棉花糖弹回来了。问问兔开心地说：“它会弹！“答答熊说：“因为里面有好多小气泡，像小弹簧一样把棉花糖撑起来的！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-011-science.webp",
-    "warmClosing": "棉花糖是装满小气泡的甜甜小枕头，真可爱！"
+    "warmClosing": "棉花糖是装满小气泡的甜甜小枕头，真可爱！",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "comfortCategory": "A",
+    "interactionType": "触觉类",
+    "parentGuide": "吃完甜食后建议漱口或刷牙，3岁以下用米粒大小含氟牙膏。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "food-012",
@@ -550,7 +616,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "薄荷糖里有薄荷的成分，骗你的嘴巴说“好凉呀”。",
-      "image": "images/food/food-012-layer1.webp"
+      "image": "images/food/food-012-layer1.webp",
+      "interactionHint": "安全第一！和大人一起，吃完甜的，一起去刷刷牙"
     },
     "layer2": {
       "followUp": "嘴巴里明明没有冰，为什么觉得凉？",
@@ -584,7 +651,12 @@
     "ipScene": "问问兔吃了薄荷糖呼呼吹气说：“好凉好凉！“答答熊说：“其实一点也不冷，是薄荷偷偷打开了你嘴巴里的'冷'开关，骗你的大脑呢！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-012-science.webp",
-    "warmClosing": "薄荷是嘴巴里的小骗子，骗你说结冰了其实没有！"
+    "warmClosing": "薄荷是嘴巴里的小骗子，骗你说结冰了其实没有！",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "comfortCategory": "A",
+    "interactionType": "感知类",
+    "parentGuide": "吃完甜食后建议漱口或刷牙，3岁以下用米粒大小含氟牙膏。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "food-013",
@@ -598,7 +670,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "辣椒里有“辣椒素”，骗你的嘴巴说着火了，其实没有。",
-      "image": "images/food/food-013-layer1.webp"
+      "image": "images/food/food-013-layer1.webp",
+      "interactionHint": "和大人一起，探索食物的小秘密"
     },
     "layer2": {
       "followUp": "为什么辣的时候喝水没用？",
@@ -632,7 +705,12 @@
     "ipScene": "问问兔不小心咬了一口辣椒辣得直跳脚，答答熊赶紧递过一杯牛奶说：“快喝牛奶，牛奶能帮你灭火！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-013-science.webp",
-    "warmClosing": "吃了辣椒可以喝牛奶灭火，你学到了一个小妙招！"
+    "warmClosing": "吃了辣椒可以喝牛奶灭火，你学到了一个小妙招！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "B",
+    "interactionType": "感知类",
+    "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。"
   },
   {
     "id": "food-014",
@@ -646,7 +724,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "西瓜籽是西瓜的宝宝，种到土里就能长出新西瓜。",
-      "image": "images/food/food-014-layer1.webp"
+      "image": "images/food/food-014-layer1.webp",
+      "interactionHint": "和大人一起，探索这个食物的有趣故事"
     },
     "layer2": {
       "followUp": "那无籽西瓜为什么没有籽？",
@@ -681,7 +760,12 @@
     "ipScene": "问问兔吐出西瓜籽问：“这些黑点点是什么呀？“答答熊接住籽说：“这是西瓜的宝宝，种下去就能长出新西瓜哦！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-014-science.webp",
-    "warmClosing": "试试种一颗西瓜籽，说不定能长出一棵小苗呢！"
+    "warmClosing": "试试种一颗西瓜籽，说不定能长出一棵小苗呢！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "wise",
+    "comfortCategory": "C",
+    "interactionType": "观察类",
+    "parentGuide": "这是培养孩子科学兴趣的好机会，可以一起查绘本了解更多。"
   },
   {
     "id": "food-015",
@@ -695,7 +779,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "空气里看不见的细菌爱吃饭菜，放久了就弄臭弄黏。",
-      "image": "images/food/food-015-layer1.webp"
+      "image": "images/food/food-015-layer1.webp",
+      "interactionHint": "安全第一！和大人一起，一起慢慢探索这个食物的小秘密"
     },
     "layer2": {
       "followUp": "细菌是什么样的？",
@@ -729,7 +814,12 @@
     "ipScene": "问问兔闻了一下昨天剩的饭捂住鼻子：“味道怪怪的！“答答熊把饭倒掉说：“细菌大军已经来过啦，不能吃了，下次要放冰箱！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-015-science.webp",
-    "warmClosing": "吃不完的饭菜记得放冰箱，不给细菌大军机会！"
+    "warmClosing": "吃不完的饭菜记得放冰箱，不给细菌大军机会！",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "comfortCategory": "A",
+    "interactionType": "触觉类",
+    "parentGuide": "请在大人陪同下进行探索，注意安全。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "food-016",
@@ -743,7 +833,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "井水在地底下太阳晒不到，像躲在阴凉下所以凉凉的。",
-      "image": "images/food/food-016-layer1.webp"
+      "image": "images/food/food-016-layer1.webp",
+      "interactionHint": "和大人一起，探索食物的小秘密"
     },
     "layer2": {
       "followUp": "冬天井水也是凉的吗？",
@@ -778,7 +869,12 @@
     "ipScene": "问问兔从井里打了一桶水惊讶地说：“好凉呀！太阳这么大水怎么是凉的？“答答熊擦擦汗说：“因为井水住在地底下，太阳晒不到它，就像我们躲在大树下乘凉一样！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-016-science.webp",
-    "warmClosing": "井水冬暖夏凉的秘密你知道了，真了不起！"
+    "warmClosing": "井水冬暖夏凉的秘密你知道了，真了不起！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "B",
+    "interactionType": "观察类",
+    "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。"
   },
   {
     "id": "food-017",
@@ -792,7 +888,8 @@
     "safetyLevel": "B",
     "layer1": {
       "answer": "因为玉米粒里面藏着一点点水，加热以后水变成蒸气，把玉米粒从里面撑炸开了！",
-      "image": "images/food/food-017-layer1.webp"
+      "image": "images/food/food-017-layer1.webp",
+      "interactionHint": "安全第一！和大人一起，一起慢慢探索这个食物的小秘密"
     },
     "layer2": {
       "followUp": "水怎么能把玉米撑开？",
@@ -825,7 +922,12 @@
     "ipScene": "问问兔听到微波炉里“砰砰砰“吓了一跳，答答熊笑着说：“别怕，那是小玉米在变身呢！水蒸气把它们的外衣撑破了，就变成白白的爆米花啦！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-017-science.webp",
-    "warmClosing": "每一粒爆米花都是一次小小的'爆炸'，大自然真有趣！"
+    "warmClosing": "每一粒爆米花都是一次小小的'爆炸'，大自然真有趣！",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "comfortCategory": "A",
+    "interactionType": "触觉类",
+    "parentGuide": "请在大人陪同下进行探索，注意安全。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "food-018",
@@ -839,7 +941,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为香蕉的皮一直在慢慢变老，就像树叶会变黄一样，香蕉皮会变黑。",
-      "image": "images/food/food-018-layer1.webp"
+      "image": "images/food/food-018-layer1.webp",
+      "interactionHint": "和大人一起，观察食物在煮的时候颜色的变化，你很会发现哦！"
     },
     "layer2": {
       "followUp": "变黑的香蕉还能吃吗？",
@@ -873,7 +976,12 @@
     "ipScene": "问问兔拿起一根黑黑的香蕉不敢吃，答答熊剥开皮说：“你看，里面还是好好的，而且更甜了呢！香蕉变黑不是坏了，是在变甜！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-018-science.webp",
-    "warmClosing": "香蕉皮变黑不一定是坏了，可能是在偷偷变甜呢！"
+    "warmClosing": "香蕉皮变黑不一定是坏了，可能是在偷偷变甜呢！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "B",
+    "interactionType": "观察类",
+    "parentGuide": "和孩子一起观察食物在烹饪过程中的颜色变化，用手机拍照记录前后对比。"
   },
   {
     "id": "food-019",
@@ -887,7 +995,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为你的手上有好多看不见的小脏东西，洗手就是把它们冲走，不让它们跟着食物跑进肚子里。",
-      "image": "images/food/food-019-layer1.webp"
+      "image": "images/food/food-019-layer1.webp",
+      "interactionHint": "安全第一！和大人一起，一起慢慢探索这个食物的小秘密"
     },
     "layer2": {
       "followUp": "手上的脏东西是什么？",
@@ -921,7 +1030,12 @@
     "ipScene": "问问兔玩完沙子就去抓饼干吃，答答熊赶紧拦住说：“等等！你的手上有好多看不见的小脏东西，先洗手再吃，不然小脏东西就跟着饼干跑进肚子啦！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-019-science.webp",
-    "warmClosing": "饭前洗手是保护自己的好习惯，记得用肥皂搓泡泡哦！"
+    "warmClosing": "饭前洗手是保护自己的好习惯，记得用肥皂搓泡泡哦！",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "comfortCategory": "A",
+    "interactionType": "观察类",
+    "parentGuide": "请在大人陪同下进行探索，注意安全。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "food-020",
@@ -935,7 +1049,8 @@
     "safetyLevel": "B",
     "layer1": {
       "answer": "因为洋葱被切开的时候会放出一种让眼睛不舒服的东西，眼睛就流泪把它冲掉。",
-      "image": "images/food/food-020-layer1.webp"
+      "image": "images/food/food-020-layer1.webp",
+      "interactionHint": "和大人一起，探索食物的小秘密"
     },
     "layer2": {
       "followUp": "洋葱放出的是什么东西？",
@@ -969,7 +1084,12 @@
     "ipScene": "问问兔看到大人切洋葱哭了，吓了一跳问：“你怎么哭了？“答答熊解释说：“不是伤心，是洋葱放出了让眼睛痒痒的小东西，眼睛在用泪水冲走它呢！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-020-science.webp",
-    "warmClosing": "切洋葱流泪不是伤心，是眼睛在保护自己呢！"
+    "warmClosing": "切洋葱流泪不是伤心，是眼睛在保护自己呢！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "B",
+    "interactionType": "动作类",
+    "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。"
   },
   {
     "id": "food-021",
@@ -983,7 +1103,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为饼干里面的水被烤箱烤干了，变得干干的就脆啦！就像树叶干了踩上去也会碎。",
-      "image": "images/food/food-021-layer1.webp"
+      "image": "images/food/food-021-layer1.webp",
+      "interactionHint": "和大人一起，摸一摸不同食物的软硬，比比看，你很会发现哦！"
     },
     "layer2": {
       "followUp": "为什么放久了饼干就不脆了？",
@@ -1016,7 +1137,12 @@
     "ipScene": "问问兔掰了一块饼干软软的不脆了，嘟着嘴说不好吃。答答熊说：“它吸了空气里的水变软了。下次吃不完要封好口，才能一直脆脆的！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-021-science.webp",
-    "warmClosing": "吃不完的饼干记得封好口，不然它会偷偷吸水变软哦！"
+    "warmClosing": "吃不完的饼干记得封好口，不然它会偷偷吸水变软哦！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "B",
+    "interactionType": "观察类",
+    "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。"
   },
   {
     "id": "food-022",
@@ -1030,7 +1156,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为可乐里面藏了好多好多小气泡，打开盖子它们就迫不及待地跑出来了！",
-      "image": "images/food/food-022-layer1.webp"
+      "image": "images/food/food-022-layer1.webp",
+      "interactionHint": "和大人一起，探索食物的小秘密"
     },
     "layer2": {
       "followUp": "气泡是怎么进去的？",
@@ -1064,7 +1191,12 @@
     "ipScene": "问问兔打开可乐被气泡喷了一脸，答答熊赶紧递纸巾说：“可乐里的小气泡被关太久了，一开盖就迫不及待跑出来了！下次慢慢开哦！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-022-science.webp",
-    "warmClosing": "可乐里的小气泡就是被关住的二氧化碳，一开盖就想自由啦！"
+    "warmClosing": "可乐里的小气泡就是被关住的二氧化碳，一开盖就想自由啦！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "B",
+    "interactionType": "观察类",
+    "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。"
   },
   {
     "id": "food-023",
@@ -1078,7 +1210,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "豆腐是用黄豆做的！黄豆磨成豆浆，再用魔法把豆浆变成软软的豆腐。",
-      "image": "images/food/food-023-layer1.webp"
+      "image": "images/food/food-023-layer1.webp",
+      "interactionHint": "和大人一起，摸一摸不同食物的软硬，比比看，你很会发现哦！"
     },
     "layer2": {
       "followUp": "豆浆是怎么变成豆腐的？",
@@ -1113,7 +1246,12 @@
     "ipScene": "问问兔看着白白的豆腐问：“这是怎么做出来的呀？“答答熊说：“是黄豆变的！黄豆先变豆浆，再用魔法水让豆浆变成软软的豆腐。黄豆可是变身高手！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-023-science.webp",
-    "warmClosing": "小小的黄豆能变成豆浆、豆腐、豆干，真是变身高手！"
+    "warmClosing": "小小的黄豆能变成豆浆、豆腐、豆干，真是变身高手！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "B",
+    "interactionType": "触觉类",
+    "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。"
   },
   {
     "id": "food-024",
@@ -1126,8 +1264,9 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "因为你嘴巴里的小坏蛋细菌也爱吃糖，它们吃了糖以后吐出酸酸的东西，把牙齿咬出洞洞。",
-      "image": "images/food/food-024-layer1.webp"
+      "answer": "小细菌也爱吃糖，吃了糖吐出酸酸的东西，牙齿就受伤了。要刷牙保护牙齿哦！轻轻地，没关系。",
+      "image": "images/food/food-024-layer1.webp",
+      "interactionHint": "保护第一！和大人一起，吃完甜的，一起去刷刷牙"
     },
     "layer2": {
       "followUp": "细菌怎么把牙齿弄出洞的？",
@@ -1161,7 +1300,12 @@
     "ipScene": "问问兔想睡前再吃一颗糖，答答熊摇摇头说：“睡觉的时候口水变少了，小坏蛋细菌会趁机在你牙齿上挖洞。要是想吃糖，白天吃完记得刷牙哦！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-024-science.webp",
-    "warmClosing": "吃了糖记得刷牙，不给小坏蛋细菌搞破坏的机会！"
+    "warmClosing": "吃了糖记得刷牙，不给小坏蛋细菌搞破坏的机会！",
+    "comfortCategory": "A",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "parentGuide": "吃完甜食后建议漱口或刷牙，3岁以下用米粒大小含氟牙膏。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+    "interactionType": "观察类"
   },
   {
     "id": "food-025",
@@ -1175,7 +1319,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为油和水不喜欢在一起，就像不同队的小朋友各玩各的，怎么搅都分开。",
-      "image": "images/food/food-025-layer1.webp"
+      "image": "images/food/food-025-layer1.webp",
+      "interactionHint": "和大人一起，探索这个食物的有趣故事"
     },
     "layer2": {
       "followUp": "为什么油总是浮在水上面？",
@@ -1211,7 +1356,12 @@
     "ipScene": "问问兔往水杯里滴了一滴油，发现油浮在上面推不下去，着急地搅来搅去。答答熊说：“它们不喜欢在一起，要加洗洁精当翻译官才行！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-025-science.webp",
-    "warmClosing": "油和水不做朋友，但洗洁精能帮它们手拉手！"
+    "warmClosing": "油和水不做朋友，但洗洁精能帮它们手拉手！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "wise",
+    "comfortCategory": "C",
+    "interactionType": "观察类",
+    "parentGuide": "这是培养孩子科学兴趣的好机会，可以一起查绘本了解更多。"
   },
   {
     "id": "food-026",
@@ -1225,7 +1375,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为蜂蜜是小蜜蜂从花朵里采来的甜甜的花蜜做成的！",
-      "image": "images/food/food-026-layer1.webp"
+      "image": "images/food/food-026-layer1.webp",
+      "interactionHint": "和大人一起，尝一尝不同食物的甜味，说说哪个最甜"
     },
     "layer2": {
       "followUp": "蜜蜂怎么把花蜜变成蜂蜜的？",
@@ -1260,7 +1411,12 @@
     "ipScene": "问问兔舔了一口蜂蜜眼睛一亮：“好甜呀！“答答熊说：“这可是蜜蜂辛辛苦苦从花朵里采来做的，一只蜜蜂一辈子只能做一小勺呢！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-026-science.webp",
-    "warmClosing": "每一口蜂蜜都是蜜蜂的辛苦劳动，真是大自然的甜蜜礼物！"
+    "warmClosing": "每一口蜂蜜都是蜜蜂的辛苦劳动，真是大自然的甜蜜礼物！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "B",
+    "interactionType": "动作类",
+    "parentGuide": "准备2-3种不同味道的食物让孩子对比品尝，鼓励用语言描述感受。"
   },
   {
     "id": "food-027",
@@ -1274,7 +1430,8 @@
     "safetyLevel": "B",
     "layer1": {
       "answer": "因为面条泡在热水里吸了好多水，就像海绵吸水会变软一样。",
-      "image": "images/food/food-027-layer1.webp"
+      "image": "images/food/food-027-layer1.webp",
+      "interactionHint": "安全第一！和大人一起，一起慢慢探索这个食物的小秘密"
     },
     "layer2": {
       "followUp": "面条是怎么吸水变软的？",
@@ -1307,7 +1464,12 @@
     "ipScene": "问问兔掰了一根干面条“啪“断了两截，再去掰煮好的面条怎么弯都不断。问问兔惊奇地说：“它们明明是一样的面条呀！“答答熊说：“热水给了面条一个魔法——让它变软了！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-027-science.webp",
-    "warmClosing": "面条遇到热水就从硬变软，这就是水和热的魔法！"
+    "warmClosing": "面条遇到热水就从硬变软，这就是水和热的魔法！",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "comfortCategory": "A",
+    "interactionType": "触觉类",
+    "parentGuide": "请在大人陪同下进行探索，注意安全。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "food-028",
@@ -1321,7 +1483,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为每种葡萄不一样，就像每个小朋友性格不同一样，有的葡萄天生甜，有的天生酸。",
-      "image": "images/food/food-028-layer1.webp"
+      "image": "images/food/food-028-layer1.webp",
+      "interactionHint": "安全第一！和大人一起，一起看看冰箱里的食物有没有变坏"
     },
     "layer2": {
       "followUp": "同一串上的葡萄为什么也有甜有酸？",
@@ -1353,7 +1516,12 @@
     "ipScene": "问问兔摘了一颗葡萄酸得直皱脸，答答熊递过上面的一颗说：“试试这颗，上面的晒了更多太阳更甜哦！“问问兔一吃果然甜甜的，高兴极了。",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-028-science.webp",
-    "warmClosing": "挑葡萄先尝最下面的，最下面的都甜那整串都超甜！"
+    "warmClosing": "挑葡萄先尝最下面的，最下面的都甜那整串都超甜！",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "comfortCategory": "A",
+    "interactionType": "观察类",
+    "parentGuide": "教孩子用「看颜色+闻气味」判断食物是否变质，过期食物不要食用。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "food-029",
@@ -1367,7 +1535,8 @@
     "safetyLevel": "B",
     "layer1": {
       "answer": "因为粥里的淀粉让泡泡变得不容易破，泡泡越来越多就从锅里爬出来了。",
-      "image": "images/food/food-029-layer1.webp"
+      "image": "images/food/food-029-layer1.webp",
+      "interactionHint": "和大人一起，探索食物的小秘密"
     },
     "layer2": {
       "followUp": "为什么煮水不扑锅煮粥会？",
@@ -1402,7 +1571,12 @@
     "ipScene": "问问兔看着锅里的粥咕嘟咕嘟冒泡越来越多，大喊：“要溢出来了！“答答熊赶紧放下一根筷子在锅上，泡泡碰到筷子就破了。答答熊说：“筷子是泡泡的克星！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-029-science.webp",
-    "warmClosing": "煮粥的时候放根筷子，泡泡就不会爬出锅啦！"
+    "warmClosing": "煮粥的时候放根筷子，泡泡就不会爬出锅啦！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "B",
+    "interactionType": "动作类",
+    "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。"
   },
   {
     "id": "food-030",
@@ -1416,7 +1590,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "巧克力是用一种叫“可可豆“的种子做的，可可豆长在热带的可可树上。",
-      "image": "images/food/food-030-layer1.webp"
+      "image": "images/food/food-030-layer1.webp",
+      "interactionHint": "安全第一！和大人一起，一起慢慢探索这个食物的小秘密"
     },
     "layer2": {
       "followUp": "可可豆怎么变成巧克力的？",
@@ -1448,7 +1623,12 @@
     "ipScene": "问问兔握着一块巧克力玩，打开手发现化了一手，答答熊递来纸巾笑着说：“巧克力怕热，你的手太暖了它就化了。巧克力想说：快吃我，别抓我！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-030-science.webp",
-    "warmClosing": "巧克力是可可豆变的，从热带树上一路旅行到你嘴里，真神奇！"
+    "warmClosing": "巧克力是可可豆变的，从热带树上一路旅行到你嘴里，真神奇！",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "comfortCategory": "A",
+    "interactionType": "触觉类",
+    "parentGuide": "请在大人陪同下进行探索，注意安全。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "food-031",
@@ -1462,7 +1642,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为冰箱里冷冷的，让食物上的坏蛋细菌变得懒洋洋的不想动，食物就不容易坏了。",
-      "image": "images/food/food-031-layer1.webp"
+      "image": "images/food/food-031-layer1.webp",
+      "interactionHint": "安全第一！和大人一起，一起慢慢探索这个食物的小秘密"
     },
     "layer2": {
       "followUp": "细菌为什么怕冷？",
@@ -1495,7 +1676,12 @@
     "ipScene": "问问兔把剩下的蛋糕放在桌上就去玩了，答答熊赶紧把蛋糕放进冰箱说：“快放冰箱！外面暖暖的，细菌会开派对把你的蛋糕吃光的！冰箱里冷冷的，细菌就不想动了。”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-031-science.webp",
-    "warmClosing": "吃不完的食物记得放冰箱，让细菌懒洋洋地不想动！"
+    "warmClosing": "吃不完的食物记得放冰箱，让细菌懒洋洋地不想动！",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "comfortCategory": "A",
+    "interactionType": "触觉类",
+    "parentGuide": "请在大人陪同下进行探索，注意安全。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "food-032",
@@ -1509,7 +1695,8 @@
     "safetyLevel": "B",
     "layer1": {
       "answer": "因为红薯在火上烤的时候，里面的东西变成了香甜的味道飘出来了！",
-      "image": "images/food/food-032-layer1.webp"
+      "image": "images/food/food-032-layer1.webp",
+      "interactionHint": "和大人一起，探索食物的小秘密"
     },
     "layer2": {
       "followUp": "烤了为什么比生的甜？",
@@ -1543,7 +1730,12 @@
     "ipScene": "问问兔闻到街上烤红薯的香味走不动路了，答答熊买了一个说：“红薯烤了以后淀粉变成了糖，所以又甜又香。快趁热吃，小心烫！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-032-science.webp",
-    "warmClosing": "烤红薯的香甜藏着科学的秘密，淀粉变成了糖！"
+    "warmClosing": "烤红薯的香甜藏着科学的秘密，淀粉变成了糖！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "B",
+    "interactionType": "观察类",
+    "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。"
   },
   {
     "id": "food-033",
@@ -1557,7 +1749,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为水果表面可能沾了脏东西，洗一洗才干净，吃了才不会不舒服。",
-      "image": "images/food/food-033-layer1.webp"
+      "image": "images/food/food-033-layer1.webp",
+      "interactionHint": "安全第一！和大人一起，一起慢慢探索这个食物的小秘密"
     },
     "layer2": {
       "followUp": "水果上面有什么脏东西？",
@@ -1591,7 +1784,12 @@
     "ipScene": "问问兔摘了一颗草莓就往嘴里塞，答答熊赶紧拦住说：“等等！草莓还没洗呢，上面可能有小虫子留下的脚印和泥巴。先洗一洗再吃，才是健康的小吃货！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-033-science.webp",
-    "warmClosing": "水果先洗后吃，这是保护自己的好习惯！"
+    "warmClosing": "水果先洗后吃，这是保护自己的好习惯！",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "comfortCategory": "A",
+    "interactionType": "感知类",
+    "parentGuide": "请在大人陪同下进行探索，注意安全。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "food-034",
@@ -1605,7 +1803,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为每个人的肚子不一样，有些人的肚子消化不了牛奶里的某种东西。",
-      "image": "images/food/food-034-layer1.webp"
+      "image": "images/food/food-034-layer1.webp",
+      "interactionHint": "和大人一起，探索这个食物的有趣故事"
     },
     "layer2": {
       "followUp": "牛奶里什么东西消化不了？",
@@ -1639,7 +1838,12 @@
     "ipScene": "问问兔看到好朋友不喝牛奶觉得奇怪，答答熊解释说：“每个人的肚子不一样，有的肚子里缺了消化牛奶的小工具。不喝牛奶也可以喝酸奶、吃豆腐，一样有营养！我们每个人都不一样，这很正常。”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-034-science.webp",
-    "warmClosing": "每个人的身体都不一样，尊重不同就是尊重每一个人！"
+    "warmClosing": "每个人的身体都不一样，尊重不同就是尊重每一个人！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "wise",
+    "comfortCategory": "C",
+    "interactionType": "感知类",
+    "parentGuide": "这是培养孩子科学兴趣的好机会，可以一起查绘本了解更多。"
   },
   {
     "id": "food-035",
@@ -1654,7 +1858,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "生米硬硬的牙齿咬不动，煮熟了才变软好吃。而且加热能把坏细菌都消灭掉！",
-      "image": "images/food/food-035-layer1.webp"
+      "image": "images/food/food-035-layer1.webp",
+      "interactionHint": "安全第一！和大人一起，一起慢慢探索这个食物的小秘密"
     },
     "layer2": {
       "followUp": "什么是坏细菌？为什么加热能消灭它们？",
@@ -1689,7 +1894,12 @@
     "ipScene": "问问兔对着电饭锅问：为什么不能直接吃米粒呀？试着咬了一颗生米嘎嘣差点崩到牙。答答熊掀开锅盖，热气腾腾的白米饭香味飘出来：你看，加热魔法让硬米变成软饭，还把坏细菌全赶跑了！",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-035-experiment.webp",
-    "warmClosing": "食物煮熟了才安全又好吃，热气腾腾的饭菜里藏着大人的爱和科学的力量！"
+    "warmClosing": "食物煮熟了才安全又好吃，热气腾腾的饭菜里藏着大人的爱和科学的力量！",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "comfortCategory": "A",
+    "interactionType": "触觉类",
+    "parentGuide": "请在大人陪同下进行探索，注意安全。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "food-036",
@@ -1704,7 +1914,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "薄荷里有种凉凉魔法粉，它骗了你嘴巴里的温度感应器，让你觉得凉凉的！",
-      "image": "images/food/food-036-layer1.webp"
+      "image": "images/food/food-036-layer1.webp",
+      "interactionHint": "安全第一！和大人一起，吃完甜的，一起去刷刷牙"
     },
     "layer2": {
       "followUp": "骗温度感应器是什么意思呀？",
@@ -1738,7 +1949,12 @@
     "ipScene": "问问兔含了一颗薄荷糖，呼出一口气：哈——好凉好凉！使劲扇着嘴巴，仿佛在吹空调。答答熊摸了摸问问兔的嘴巴温度计一样地说：其实你嘴巴没变冷哦，是薄荷在骗你的感觉小哨兵呢！",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-036-experiment.webp",
-    "warmClosing": "嘴巴里的感觉小哨兵真有趣，下次吃薄荷糖时想想它们是怎么被骗的吧！"
+    "warmClosing": "嘴巴里的感觉小哨兵真有趣，下次吃薄荷糖时想想它们是怎么被骗的吧！",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "comfortCategory": "A",
+    "interactionType": "感知类",
+    "parentGuide": "吃完甜食后建议漱口或刷牙，3岁以下用米粒大小含氟牙膏。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "food-037",
@@ -1752,8 +1968,9 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "奶酪里住着小细菌，它们吃奶酪时会放屁——那些小屁变成了圆圆的洞！",
-      "image": "images/food/food-037-layer1.webp"
+      "answer": "奶酪里的小细菌在工作，它们吹出小气泡，气泡变成圆圆的洞！",
+      "image": "images/food/food-037-layer1.webp",
+      "interactionHint": "切一片奶酪，看看洞洞从哪里来，数数有几个洞"
     },
     "layer2": {
       "followUp": "哈哈细菌会放屁？真的吗？",
@@ -1789,7 +2006,12 @@
     "ipScene": "问问兔举起一片满是洞的奶酪片，透过洞洞看答答熊，哈哈大笑：你脸上怎么有这么多圈圈！答答熊凑过来闻闻奶酪说：这是小细菌在里面吹泡泡留下的，每个洞都是一个小气球的印记呢！",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-037-experiment.webp",
-    "warmClosing": "小细菌虽然看不见，但它们在食物里做的事情可真奇妙呢！"
+    "warmClosing": "小细菌虽然看不见，但它们在食物里做的事情可真奇妙呢！",
+    "comfortCategory": "A",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "parentGuide": "请在大人陪同下用安全刀具切奶酪，注意小手安全。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+    "interactionType": "观察类"
   },
   {
     "id": "food-038",
@@ -1804,7 +2026,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "虾壳里本来就藏着红色颜料，活着时被盖住了看不见，煮熟后盖子打开红色就跑出来啦！",
-      "image": "images/food/food-038-layer1.webp"
+      "image": "images/food/food-038-layer1.webp",
+      "interactionHint": "和大人一起，观察食物在煮的时候颜色的变化，你很会发现哦！"
     },
     "layer2": {
       "followUp": "什么盖子把红色盖住了呀？",
@@ -1839,7 +2062,12 @@
     "ipScene": "问问兔指着碗里红彤彤的大虾惊讶地说：它们刚才在水里还是灰灰的呀，怎么变红了？是害羞了吗？答答熊夹起一只虾笑着说：不是害羞啦，是它的蛋白质外套被热水脱掉了，露出了里面红色的真面目！",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-038-experiment.webp",
-    "warmClosing": "大自然的颜色变化好神奇，虾壳里居然藏着这么美丽的秘密！"
+    "warmClosing": "大自然的颜色变化好神奇，虾壳里居然藏着这么美丽的秘密！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "B",
+    "interactionType": "动作类",
+    "parentGuide": "和孩子一起观察食物在烹饪过程中的颜色变化，用手机拍照记录前后对比。"
   },
   {
     "id": "food-039",
@@ -1853,11 +2081,12 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "面团里住着酵母小精灵，它们使劲吹气泡，把面团吹成了大大软软的馒头！",
-      "image": "images/food/food-039-layer1.webp"
+      "answer": "面团里住着酵母小帮手，它们使劲吹气泡，把面团吹成了大大软软的馒头！",
+      "image": "images/food/food-039-layer1.webp",
+      "interactionHint": "和大人一起，摸摸蒸好的馒头，感受它又软又弹的手感"
     },
     "layer2": {
-      "followUp": "酵母小精灵是什么呀？它怎么吹气泡的？",
+      "followUp": "酵母小帮手是什么呀？它怎么吹气泡的？",
       "answer": "酵母是一种比芝麻还小很多很多倍的小生物。把它和面粉水放在一起，它就开心地吃面粉里的糖，边吃边放出二氧化碳气泡。面团像个大气球被从里面吹，就越来越胖啦！这就是发面。",
       "image": "images/food/food-039-layer2.webp"
     },
@@ -1887,10 +2116,15 @@
       "experimentType": "hands-on",
       "image": "images/food/food-039-experiment.webp"
     },
-    "ipScene": "问问兔趴在桌边看发面盆里的面团，惊呼：它在长大！面团自己在长大！答答熊掀开纱布笑着说：那是酵母宝宝在里面开吹气大赛呢，每个吹出的气泡都让面团胖一点！",
+    "ipScene": "问问兔趴在桌边看大碗里的面团，惊呼：它在长大！面团自己在长大！答答熊掀开纱布笑着说：那是酵母宝宝在里面开吹气大赛呢，每个吹出的气泡都让面团胖一点！",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-039-experiment.webp",
-    "warmClosing": "小小的酵母看不见摸不着，却能让面团变成又大又软的馒头，微生物真厉害！"
+    "warmClosing": "小小的酵母看不见摸不着，却能让面团变成又大又软的馒头，微生物真厉害！",
+    "comfortCategory": "A",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "parentGuide": "蒸馒头时注意热气烫手，让孩子在安全距离观察。动手前先洗手哦！以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+    "interactionType": "触觉类"
   },
   {
     "id": "food-040",
@@ -1905,7 +2139,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "油和醋是合不来的朋友，不管怎么搅，它们都想分开住——油在上面醋在下面！",
-      "image": "images/food/food-040-layer1.webp"
+      "image": "images/food/food-040-layer1.webp",
+      "interactionHint": "和大人一起，探索这个食物的有趣故事"
     },
     "layer2": {
       "followUp": "为什么它们合不来呢？",
@@ -1941,7 +2176,12 @@
     "ipScene": "问问兔把油和醋倒进碗里使劲搅搅搅，转过身一看它们又分开了，气得跺脚：为什么你们不肯做好朋友！答答熊拿出一个鸡蛋笑着说：别急，我请一个和事佬来帮忙，蛋黄大侠出场就能让它们握手言和！",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-040-experiment.webp",
-    "warmClosing": "油和水虽然合不来，但蛋黄大侠能让它们和好，大自然总有办法解决问题！"
+    "warmClosing": "油和水虽然合不来，但蛋黄大侠能让它们和好，大自然总有办法解决问题！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "wise",
+    "comfortCategory": "C",
+    "interactionType": "动作类",
+    "parentGuide": "这是培养孩子科学兴趣的好机会，可以一起查绘本了解更多。"
   },
   {
     "id": "food-041",
@@ -1956,7 +2196,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "洋葱被切开后会放出一种催泪烟雾弹，飘到眼睛里就让你忍不住流泪！",
-      "image": "images/food/food-041-layer1.webp"
+      "image": "images/food/food-041-layer1.webp",
+      "interactionHint": "和大人一起，探索食物的小秘密"
     },
     "layer2": {
       "followUp": "洋葱为什么要放催泪烟雾弹呢？",
@@ -1992,7 +2233,12 @@
     "ipScene": "问问兔站在厨房里看妈妈切洋葱，突然眼泪啪嗒啪嗒掉下来，捂着眼睛跑开了：洋葱欺负我！答答熊递来一副迷你游泳镜笑着说：戴上这个再去看，洋葱的催泪弹就打不到你的眼睛啦！",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-041-experiment.webp",
-    "warmClosing": "洋葱用催泪弹保护自己，植物的智慧可真不简单呢！"
+    "warmClosing": "洋葱用催泪弹保护自己，植物的智慧可真不简单呢！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "B",
+    "interactionType": "动作类",
+    "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。"
   },
   {
     "id": "food-042",
@@ -2006,8 +2252,9 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "辣椒里有种火焰战士叫辣椒素，它碰到嘴巴就按下好烫的按钮，让你觉得火辣辣！",
-      "image": "images/food/food-042-layer1.webp"
+      "answer": "辣椒里有种特别的小东西叫辣椒素，它碰到嘴巴会让嘴巴觉得热热的、刺刺的，别担心，喝口牛奶就不辣了！",
+      "image": "images/food/food-042-layer1.webp",
+      "interactionHint": "给宝宝一小块面包，说\"嘴巴辣的时候吃这个\"，再喝口凉水。"
     },
     "layer2": {
       "followUp": "可是辣椒又不是热的呀，为什么觉得烫？",
@@ -2041,7 +2288,12 @@
     "ipScene": "问问兔不小心碰到了一根红辣椒又舔了舔手指，立刻哇——嘴巴像喷火龙一样伸舌头扇风。答答熊赶紧递上一杯牛奶：快喝牛奶！水没用的，牛奶才是辣椒的克星！",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-042-experiment.webp",
-    "warmClosing": "辣椒用火辣辣的方式保护自己不被吃掉，但小鸟却一点也不怕辣，大自然真奇妙！"
+    "warmClosing": "辣椒用火辣辣的方式保护自己不被吃掉，但小鸟却一点也不怕辣，大自然真奇妙！",
+    "comfortCategory": "A",
+    "parentGuide": "辣椒素不溶于水，牛奶解辣最有效。本内容仅供亲子互动参考，涉及安全操作请在家长全程监护下进行。如发生意外，请立即就医。",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "interactionType": "感知类"
   },
   {
     "id": "food-043",
@@ -2056,7 +2308,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "棉花糖其实就是糖被甩成了超细超细的丝，很多丝缠在一起中间夹了好多空气，就蓬松像云朵啦！",
-      "image": "images/food/food-043-layer1.webp"
+      "image": "images/food/food-043-layer1.webp",
+      "interactionHint": "安全第一！和大人一起，吃完甜的，一起去刷刷牙"
     },
     "layer2": {
       "followUp": "糖怎么变成丝的呀？",
@@ -2090,7 +2343,12 @@
     "ipScene": "问问兔举着一大团粉色棉花糖，开心得转圈圈：我抓到一朵云！我抓到一朵云！答答熊揪下一小团放嘴里说：这朵云是糖丝加空气做的哦，甜甜的云朵快趁新鲜吃，不然它会缩小消失的！",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-043-experiment.webp",
-    "warmClosing": "棉花糖就是糖丝加空气变成的甜蜜云朵，赶紧趁新鲜享受它吧！"
+    "warmClosing": "棉花糖就是糖丝加空气变成的甜蜜云朵，赶紧趁新鲜享受它吧！",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "comfortCategory": "A",
+    "interactionType": "观察类",
+    "parentGuide": "吃完甜食后建议漱口或刷牙，3岁以下用米粒大小含氟牙膏。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "food-044",
@@ -2105,7 +2363,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "绿豆口渴了在喝水呀！它喝了好多水把肚子撑得圆滚滚的，就变胖变大啦！",
-      "image": "images/food/food-044-layer1.webp"
+      "image": "images/food/food-044-layer1.webp",
+      "interactionHint": "和大人一起，观察食物在煮的时候颜色的变化，你很会发现哦！"
     },
     "layer2": {
       "followUp": "绿豆真的会喝水吗？它又没有嘴巴。",
@@ -2142,7 +2401,12 @@
     "ipScene": "问问兔早上往杯子里放了一把绿豆，下午回来一看惊呆了：它们都胖了一圈！杯子都快装不下了！答答熊蹲下来指着一颗裂开缝的大绿豆说：看，它喝饱水撑开皮了，再等两天它就会长出小芽芽，变成你爱吃的豆芽菜呢！",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-044-experiment.webp",
-    "warmClosing": "小小一颗绿豆喝饱水就能发芽长大，种子里藏着生命的力量真了不起！"
+    "warmClosing": "小小一颗绿豆喝饱水就能发芽长大，种子里藏着生命的力量真了不起！",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "B",
+    "interactionType": "观察类",
+    "parentGuide": "和孩子一起观察食物在烹饪过程中的颜色变化，用手机拍照记录前后对比。"
   },
   {
     "id": "food-045",
@@ -2156,8 +2420,9 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "牛奶里偷偷混进了小细菌，它们吃牛奶里的糖然后拉出酸酸的东西，牛奶就变酸变臭啦！",
-      "image": "images/food/food-045-layer1.webp"
+      "answer": "牛奶放久了，空气里的小细菌跑进去，它们吃牛奶里的糖然后放出酸酸的东西，牛奶就变酸变臭啦！",
+      "image": "images/food/food-045-layer1.webp",
+      "interactionHint": "和大人一起打开冰箱，看看牛奶有没有变味道，闻一闻就知道啦！"
     },
     "layer2": {
       "followUp": "细菌怎么跑到牛奶里的？",
@@ -2192,7 +2457,12 @@
     "ipScene": "问问兔从桌上拿起放了两天的牛奶杯，刚凑近鼻子就哇——好臭！使劲摆手跑开。答答熊把牛奶倒掉，严肃地指指冰箱说：牛奶宝宝必须住冰箱的冷房间，不然坏细菌就会来捣乱把它变成臭臭的怪味奶！",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-045-experiment.webp",
-    "warmClosing": "牛奶要住在冰箱的冷房间里才安全，好细菌和坏细菌可大不一样哦！"
+    "warmClosing": "牛奶要住在冰箱的冷房间里才安全，好细菌和坏细菌可大不一样哦！",
+    "comfortCategory": "A",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "parentGuide": "教孩子用\"看颜色+闻气味\"判断食物是否变质，过期食物不要食用。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+    "interactionType": "动作类"
   },
   {
     "id": "food-2071",
@@ -2245,7 +2515,8 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "薯片被炸过，里面的水都跑掉了，变得干干的就很脆；面包里面有很多小气孔，像海绵一样软软的。",
-      "image": "images/food/food-2072-layer1.webp"
+      "image": "images/food/food-2072-layer1.webp",
+      "interactionHint": "和大人一起，摸一摸不同食物的软硬，比比看，你很会发现哦！"
     },
     "layer2": {
       "answer": "脆和软的区别在于食物里有多少水。薯片在油炸时水分几乎全被炸干了，只剩下脆脆的淀粉架子。面包在烤的时候酵母产生气泡，形成了软软的蜂窝结构，而且面包里还保留了一些水分。",
@@ -2273,7 +2544,12 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔左手拿着薯片\"咔嚓\"，右手捏着面包\"软乎乎\"，困惑地问\"它们都是吃的，为什么一个像树枝一个像云朵？\"答答熊说\"薯片把水都送走了，面包把水留在了肚子里！\"",
-    "warmClosing": ""
+    "warmClosing": "",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "B",
+    "interactionType": "触觉类",
+    "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。"
   },
   {
     "id": "food-2073",
@@ -2285,7 +2561,8 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "巧克力是用一种叫可可脂的油做的，这种油刚好在嘴巴的温度下就会化，所以含在嘴里就变成巧克力酱啦。",
-      "image": "images/food/food-2073-layer1.webp"
+      "image": "images/food/food-2073-layer1.webp",
+      "interactionHint": "和大人一起，探索食物的小秘密"
     },
     "layer2": {
       "answer": "巧克力里的可可脂有一个神奇的\"开关温度\"——大约34°C。你的嘴巴正好也是这个温度，所以巧克力一进嘴就化了。如果放在冰箱里，它就保持硬硬的，因为它喜欢冷。",
@@ -2313,7 +2590,12 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔含着巧克力，惊喜地发现它慢慢变成了液体。\"巧克力在玩变魔术！\"答答熊说\"可可脂是个聪明的小家伙，它刚好在你嘴巴的温度下就变身——在冰箱里装硬汉，在嘴里变软妹子。\"",
-    "warmClosing": ""
+    "warmClosing": "",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "B",
+    "interactionType": "动作类",
+    "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。"
   },
   {
     "id": "food-2074",
@@ -2325,7 +2607,8 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "因为舌头上有好多好多感觉小兵，比身体其他地方都多，所以咬到舌头特别疼。",
-      "image": "images/food/food-2074-layer1.webp"
+      "image": "images/food/food-2074-layer1.webp",
+      "interactionHint": "安全第一！和大人一起，一起慢慢探索这个食物的小秘密"
     },
     "layer2": {
       "answer": "舌头是身体上感觉最灵敏的地方之一，比手指尖还灵敏。它上面密密麻麻挤满了感觉神经，吃饭时不小心咬到，这些神经一起大喊\"疼！\"，你就觉得特别疼。",
@@ -2352,7 +2635,12 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔正在狼吞虎咽吃胡萝卜，突然\"啊\"一声捂住嘴——咬到舌头了。答答熊递过一杯凉水说\"慢慢吃，舌头上有千千万万个小哨兵，咬到它们比咬到手疼多了！\"",
-    "warmClosing": ""
+    "warmClosing": "",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "comfortCategory": "A",
+    "interactionType": "观察类",
+    "parentGuide": "请在大人陪同下进行探索，注意安全。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "food-2075",
@@ -2364,7 +2652,8 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "可乐里住着好多二氧化碳小气泡，平时被关在瓶子里很乖，一倒进杯子它们就开心地往外跑啦。",
-      "image": "images/food/food-2075-layer1.webp"
+      "image": "images/food/food-2075-layer1.webp",
+      "interactionHint": "和大人一起，探索食物的小秘密"
     },
     "layer2": {
       "answer": "可乐里被压进了很多二氧化碳气体，瓶盖盖着的时候气压高，气体被迫溶解在水里。一打开瓶盖，气压降低，气体就变成泡泡跑出来了。倒进杯子时晃动更厉害，泡泡跑得更快。",
@@ -2394,6 +2683,11 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔倒可乐时泡泡\"嘶嘶\"冒出来，吓得往后退。\"可乐生气了吗？\"答答熊笑着说\"是可乐里的小气泡被关了太久，一打开盖子就迫不及待地要出来跳舞啦！\"",
-    "warmClosing": ""
+    "warmClosing": "",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "B",
+    "interactionType": "动作类",
+    "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。"
   }
 ]
