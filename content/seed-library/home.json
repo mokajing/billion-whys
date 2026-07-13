@@ -2375,10 +2375,7 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔偷偷打开冰箱，灯亮了吓一跳。\"灯怎么知道我在偷看？\"答答熊指着门边的小按钮说\"这是冰箱的小鼻子，你一开门它就醒了，一关门它就睡觉。\"",
-    "warmClosing": "",
-    "comfortCategory": "C",
-    "rabbitEmotion": "curious",
-    "bearEmotion": "wise"
+    "warmClosing": ""
   },
   {
     "id": "home-2073",
