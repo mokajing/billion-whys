@@ -2357,9 +2357,8 @@
     "question": "为什么狗见面要互相闻屁股？",
     "age": "4-6岁",
     "layer1": {
-      "answer": "没关系，狗狗闻屁股是它们打招呼的方式！就像我们见面说你好，狗狗用鼻子互相认识对方。",
-      "image": "images/animals/animals-2074-layer1.webp",
-      "interactionHint": "和宝宝握握手，说\"你好\"，学狗狗打招呼~"
+      "answer": "狗用鼻子代替眼睛了解对方——闻一闻就知道对方是谁、吃了什么饭、开不开心。屁股是狗狗的\"名片\"。",
+      "image": "images/animals/animals-2074-layer1.webp"
     },
     "layer2": {
       "answer": "狗屁股附近有特殊的腺体，会分泌一种带味道的液体，每只狗的味道都不一样。这就像狗狗的\"身份证\"，别的狗闻一下就知道\"你是谁、你是男是女、你今天心情好不好\"。",
@@ -2390,12 +2389,7 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔看到两只狗互相闻屁股，捂着嘴笑\"它们在干嘛？\"答答熊说\"这是狗狗的握手礼仪！它们的屁股上有味道名片，一闻就知道对方是谁、今天吃了什么，比我们交换名片还快呢。\"",
-    "warmClosing": "",
-    "parentGuide": "教宝宝用握手打招呼，告诉宝宝狗狗用鼻子认识朋友——远远观察就好，不熟悉的狗不要靠近。",
-    "comfortCategory": "A",
-    "rabbitEmotion": "brave",
-    "bearEmotion": "protective",
-    "interactionType": "动作类"
+    "warmClosing": ""
   },
   {
     "id": "animals-2075",
