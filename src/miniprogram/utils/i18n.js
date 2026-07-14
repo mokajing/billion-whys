@@ -30,9 +30,29 @@ const DICT = {
     'discover.loadError': '加载失败了，请重试',
     'discover.retry': '重新加载',
     'discover.dailyTag': '✨ 今天的为什么',
+    'discover.dailyGuide': '小宝的和哥哥姐姐的都有——点开看看～',
     'discover.expand': '展开更多（共 {n} 条）',
     'discover.collapse': '收起',
     'discover.empty': '这个分类的问题正在准备中',
+
+    // --- Discover age guide + continue (V8.71 Sprint 72 第135轮) ---
+    'discover.continueTitle': '🕐 继续探索',
+    'discover.continueAria': '最近浏览的问题',
+    'discover.ageGuideTitle': '你的宝贝几岁了？',
+    'discover.ageGuideSubtitle': '选一个年龄段，让我给你推荐更合适的问题',
+    'discover.ageOption34': '3-4岁',
+    'discover.ageOption34Desc': '小宝宝',
+    'discover.ageOption45': '4-5岁',
+    'discover.ageOption45Desc': '好奇宝宝',
+    'discover.ageOption56': '5-6岁',
+    'discover.ageOption56Desc': '小探索家',
+    'discover.ageGuideConfirm': '好的，我知道了！',
+    'discover.ageGuideDismiss': '以后再说',
+
+    // V8.73 第137轮：哥哥姐姐确认提示（周教授+叶用户+苏体验+前端小凡）
+    'discover.siblingConfirmText': '这是给{age}宝贝看的内容，回答会不太一样～确定要切换吗？',
+    'discover.siblingConfirmCancel': '再看看',
+    'discover.siblingConfirmOk': '确定切换',
 
     // --- Ask (V8.17 Sprint 26) ---
     'ask.title': '问一问',
@@ -222,6 +242,24 @@ const DICT = {
     'locale.switcher.aria': '语言切换',
     'locale.switcher.zh': '中',
     'locale.switcher.en': 'EN',
+
+    // --- Illustration toggle (V8.82 Sprint 76 第146轮) ---
+    // Why: 第146轮 P0-3 MP i18n 补全 illustration 开关 6 个 key，与 H5 en.json 同构
+    // CCO文若水+全职妈妈小美+CEO裁决：用户端用"配图"而非"插画"
+    'illustration.loading': '配图加载中...',
+    'illustration.error': '配图加载失败',
+    'illustration.retryHint': '点击重试',
+    'illustration.retry': '重试',
+    'illustration.retryAria': '重新加载配图',
+    'illustration.networkHint': '请切换网络后重试',
+    'illustration.toggleLabel': '自动显示配图',
+    'illustration.toggleHintOn': '打开每个问题时会自动显示配图',
+    'illustration.toggleHintOff': '配图已关闭，点击可查看',
+    'illustration.toggleAria': '切换配图自动显示',
+    'illustration.toggleOnAria': '配图已开启，点击关闭',
+    'illustration.toggleOffAria': '配图已关闭，点击开启',
+    'illustration.fallbackHint': '点击查看配图',
+    'illustration.localOnlyHint': '配图偏好仅保存在本设备上，清理缓存后需重新设置',
   },
   en: {
     // --- Profile summary (V8.14) ---
@@ -239,9 +277,29 @@ const DICT = {
     'discover.loadError': 'Failed to load, please retry',
     'discover.retry': 'Retry',
     'discover.dailyTag': "✨ Today's Why",
+    'discover.dailyGuide': 'Little questions for little minds — pick one and explore!',
     'discover.expand': 'Show more ({n} in total)',
     'discover.collapse': 'Collapse',
     'discover.empty': 'Questions in this category are coming soon',
+
+    // --- Discover age guide + continue (V8.71 Sprint 72 第135轮) ---
+    'discover.continueTitle': '🕐 Continue exploring',
+    'discover.continueAria': 'Recently viewed questions',
+    'discover.ageGuideTitle': 'How old is your child?',
+    'discover.ageGuideSubtitle': 'Pick an age range to get better questions',
+    'discover.ageOption34': '3-4 yrs',
+    'discover.ageOption34Desc': 'Toddler',
+    'discover.ageOption45': '4-5 yrs',
+    'discover.ageOption45Desc': 'Curious kid',
+    'discover.ageOption56': '5-6 yrs',
+    'discover.ageOption56Desc': 'Young explorer',
+    'discover.ageGuideConfirm': 'Got it!',
+    'discover.ageGuideDismiss': 'Maybe later',
+
+    // V8.73 Round 137: Sibling mode confirm prompt
+    'discover.siblingConfirmText': 'These are for {age} kids — answers will be a bit different. Switch anyway?',
+    'discover.siblingConfirmCancel': 'Not now',
+    'discover.siblingConfirmOk': 'Yes, switch',
 
     // --- Ask (V8.17 Sprint 26) ---
     'ask.title': 'Ask',
@@ -428,6 +486,23 @@ const DICT = {
     'locale.switcher.aria': 'Language switch',
     'locale.switcher.zh': '中',
     'locale.switcher.en': 'EN',
+
+    // --- Illustration toggle (V8.82 Sprint 76 第146轮) — same as H5 en.json ---
+    // V8.85 第148轮：en 文案统一用 "pictures"（Global何+CCO 裁决）
+    'illustration.loading': 'Picture loading...',
+    'illustration.error': 'Failed to load picture',
+    'illustration.retryHint': 'Tap to retry',
+    'illustration.retry': 'Retry',
+    'illustration.retryAria': 'Retry loading picture',
+    'illustration.networkHint': 'Please switch to a better network and try again',
+    'illustration.toggleLabel': 'Auto-show pictures',
+    'illustration.toggleHintOn': 'Pictures will appear automatically with each question',
+    'illustration.toggleHintOff': 'Pictures are hidden. Tap a placeholder to view individually',
+    'illustration.toggleAria': 'Toggle picture auto-display',
+    'illustration.toggleOnAria': 'Pictures are enabled. Tap to disable',
+    'illustration.toggleOffAria': 'Pictures are disabled. Tap to enable',
+    'illustration.fallbackHint': 'Tap to view picture',
+    'illustration.localOnlyHint': 'Picture preferences are saved only on this device. You will need to reconfigure after clearing your cache.',
   },
   // V8.21 Sprint 30: en-GB 子分支 hook 占位（与 H5 同构；V9 出海文案专项时直接注入 spelling 分叉）
   'en-GB': {},
