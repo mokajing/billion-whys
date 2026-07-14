@@ -38,6 +38,8 @@ Page({
     // V8.14 Sprint 23：i18n 出海前置（locale 仅内部切换，UI 不暴露）
     locale: 'zh',
     t: i18n.dict('zh'),
+    // V8.81 Sprint 76 第145轮：插画显示偏好（统一键名 bw_illustration_disabled）
+    illustrationDisabled: false,
     summaryAriaLabel: '累计反馈参与度汇总',
     summaryTotalText: '',
     summaryDepthText: '',
@@ -74,6 +76,8 @@ Page({
       const version = (getApp() && getApp().globalData && getApp().globalData.version) || 'unknown'
       // V8.73 第137轮：加载年龄偏好
       const agePref = this._loadAgePreference()
+      // V8.81 第145轮：加载插画显示偏好（统一键名 bw_illustration_disabled）
+      const illustrationDisabled = this._loadIllustrationPreference()
       this.setData({
         locale,
         t: i18n.dict(locale),
@@ -81,6 +85,7 @@ Page({
         totalQuestions: content.getAll().length,
         versionFooterText: i18n.t('profile.versionFooter', { v: version }, locale),
         agePreference: agePref,
+        illustrationDisabled,
       })
       analytics.pageView('profile')
     } catch (_e) {
@@ -396,6 +401,36 @@ Page({
         }
       },
     })
+  },
+
+  // V8.81 Sprint 76 第145轮：关闭插画开关切换（前端小凡+CTO）
+  // 统一键名 bw_illustration_disabled，与 H5 端 Pinia store 对齐
+  onToggleIllustration(e) {
+    const disabled = !e.detail.value  // switch checked=true 表示启用插画，disabled 是反向
+    this.setData({ illustrationDisabled: disabled })
+    this._saveIllustrationPreference(disabled)
+    // 同步到 app.globalData 供其他页面使用
+    const app = getApp()
+    if (app && app.globalData) {
+      app.globalData.illustrationDisabled = disabled
+    }
+  },
+
+  _loadIllustrationPreference() {
+    try {
+      const val = wx.getStorageSync('bw_illustration_disabled')
+      return val === true || val === 'true'
+    } catch {
+      return false
+    }
+  },
+
+  _saveIllustrationPreference(disabled) {
+    try {
+      wx.setStorageSync('bw_illustration_disabled', disabled)
+    } catch {
+      // silently ignore
+    }
   },
 
   _loadAgePreference() {
