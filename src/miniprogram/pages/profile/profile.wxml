@@ -120,6 +120,26 @@
   </view>
 
   <view class="menu-list" aria-role="list">
+    <!-- V8.81 Sprint 76 第145轮：关闭插画开关（前端小凡+苏体验+全职妈妈小美） -->
+    <!-- Why: 第144轮 P0，家长设置中可关闭插画；统一键名 bw_illustration_disabled -->
+    <view class="menu-item illustration-toggle" aria-role="switch" aria-checked="{{!illustrationDisabled}}" aria-label="{{t['illustration.toggleAria']}}">
+      <view class="toggle-left">
+        <text class="toggle-icon">🎨</text>
+        <view class="toggle-info">
+          <text class="toggle-label">{{t['illustration.toggleLabel']}}</text>
+          <text class="toggle-hint">{{illustrationDisabled ? t['illustration.toggleHintOff'] : t['illustration.toggleHintOn']}}</text>
+        </view>
+      </view>
+      <switch
+        checked="{{!illustrationDisabled}}"
+        color="#4CAF50"
+        bindchange="onToggleIllustration"
+        aria-label="{{illustrationDisabled ? t['illustration.toggleOffAria'] : t['illustration.toggleOnAria']}}"
+      />
+    </view>
+    <!-- V8.83 第147轮：仅存设备端提示（苏体验+前端小凡+张律） -->
+    <text class="toggle-local-hint">配图偏好仅保存在本设备上，清理缓存后需重新设置</text>
+
     <view class="mp-usage-card" aria-label="今日使用时长">
       <view class="mp-usage-row">
         <text class="mp-usage-label">今日剩余使用时间</text>
