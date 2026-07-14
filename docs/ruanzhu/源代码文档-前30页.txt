@@ -1,0 +1,1524 @@
+十亿个什么与为什么儿童科学启蒙软件 V1.0 - 源代码文档（前30页）
+
+
+// ===== 文件: app.js =====
+const {
+  safeSwitchTab,
+  safeRedirectTo,
+  safeToast,
+  safeSetStorageSync,
+  safeGetStorageSync,
+  safeRemoveStorageSync,
+  safeGetUpdateManager,
+  safeShowModal,
+  safeOnNeedPrivacyAuthorization,
+  compareSDKVersion,
+} = require('./utils/safe-wx')
+const minorProtection = require('./utils/minor-protection')
+// V8.60 BUG-0006 修复：延迟加载全量内容数据，避免启动时同步 require 670KB 阻塞
+let contentUtils = null
+function _getContentUtils() {
+  if (!contentUtils) {
+    try { contentUtils = require('./utils/content') } catch (_e) { /* dev mode */ }
+  }
+  return contentUtils
+}
+
+// 版本号单一源：build:mp-data 从 package.json 注入 data/version.json
+// Why: 避免三处硬编码 0.2.0 漂移；H5 已用 vite define __APP_VERSION__
+let version = '0.0.0'
+let releaseDate = ''
+try {
+  const v = require('./data/version-data')
+  version = v.version || version
+  releaseDate = v.releaseDate || ''
+} catch (_e) { /* 开发期未构建时降级 */ }
+
+// P1-7 隐私弹窗拒绝次数计数（本地存储键；超过 3 次触发家长教育 modal）
+const PRIVACY_REJECT_COUNT_KEY = 'bw_privacy_reject_count'
+const PRIVACY_REJECT_THRESHOLD = 3
+
+App({
+  globalData: {
+    appName: '十亿个什么与为什么',
+    version,
+    releaseDate,
+    // V8.81 Sprint 76 第145轮：插画显示偏好（全局共享，与 H5 端 Pinia store 对齐）
+    // 键名统一：bw_illustration_disabled，布尔值，true=关闭插画
+    illustrationDisabled: false,
+  },
+
+  onLaunch() {
+    // V8.60 BUG-0006 修复：启动时异步预加载全量内容数据，不阻塞首屏渲染
+    // 首屏使用 index 数据（42KB），全量数据在后台异步加载
+    const content = _getContentUtils()
+    if (content && typeof content.initAsync === 'function') {
+      content.initAsync().catch(() => { /* 静默失败，index 数据已足够首屏 */ })
+    }
+
+    // P1-1 基础库版本守卫：低于 2.10.4 弹窗引导升级
+    // Why: project.config.json 已声明 minimumLibVersion=2.10.4；运行时二次校验兜底
+    if (compareSDKVersion('2.10.4') < 0) {
+      safeShowModal({
+        title: '基础库版本过低',
+        content: '当前微信版本较旧，部分功能可能无法使用。请升级微信至最新版本后重试。',
+        showCancel: false,
+        confirmText: '我知道了',
+      })
+    }
+
+    // 未成年人保护：首次启动家长验证
+    // Why: docs/minor-protection.md §1.1，未验证则跳转家长验证页
+    if (!minorProtection.verifyParent()) {
+      safeRedirectTo('/pages/parent-verify/parent-verify')
+    } else {
+      // 已验证：检查是否处于不可用时段
+      const dis = minorProtection.isDisabled()
+      if (dis.disabled) {
+        safeToast({ title: dis.message, icon: 'none', duration: 4000 })
+      }
+    }
+
+    // 启动会话计时起点
+    safeSetStorageSync('mp_session_start', Date.now())
+
+    // P1-2 整改：所有 wx.* 调用统一走 safe-wx 守卫
+    const updateManager = safeGetUpdateManager()
+    if (updateManager) {
+      updateManager.onCheckForUpdate((res) => {
+        if (!res.hasUpdate) return
+        updateManager.onUpdateReady(() => {
+          safeShowModal({
+            title: '发现新版本',
+            content: '新版本已准备好，是否重启应用？',
+          }).then((modalRes) => {
+            if (modalRes.confirm) {
+              try { updateManager.applyUpdate() } catch (_e) { /* swallow */ }
+            }
+          })
+        })
+        updateManager.onUpdateFailed(() => {
+          safeShowModal({
+            title: '更新提示',
+            content: '新版本下载失败，请删除小程序后重新搜索打开',
+            showCancel: false,
+          })
+        })
+      })
+    }
+
+    // 隐私合规：注册隐私授权回调（合规要求 __usePrivacyCheck__=true 时必须）
+    // P1-7 拒绝 3 次后触发家长教育 modal，引导用户了解为何需要隐私同意
+    safeOnNeedPrivacyAuthorization((resolve) => {
+      safeShowModal({
+        title: '隐私保护提示',
+        content: '为了保护您和孩子，请先阅读并同意《用户隐私保护指引》。',
+        confirmText: '同意',
+        cancelText: '拒绝',
+      }).then((res) => {
+        if (res.confirm) {
+          // 同意：清零拒绝计数
+          safeSetStorageSync(PRIVACY_REJECT_COUNT_KEY, 0)
+          resolve({ event: 'agree' })
+          return
+        }
+        // 拒绝：累计计数；超过阈值展示家长教育 modal
+        const cnt = (safeGetStorageSync(PRIVACY_REJECT_COUNT_KEY, 0) || 0) + 1
+        safeSetStorageSync(PRIVACY_REJECT_COUNT_KEY, cnt)
+        if (cnt >= PRIVACY_REJECT_THRESHOLD) {
+          safeShowModal({
+            title: '需要您的同意',
+            content: '本小程序为 2-6 岁儿童家长提供好奇心问答服务，需阅读并同意《用户隐私保护指引》后方可使用。我们承诺仅收集最小必要信息（详见指引），可随时在"我的-隐私设置"撤回同意。',
+            showCancel: false,
+            confirmText: '我知道了',
+          }).then(() => resolve({ event: 'disagree' }))
+        } else {
+          resolve({ event: 'disagree' })
+        }
+      })
+    })
+
+    // P2-8 内存警告监听：level 10+ (TRIM_MEMORY_BACKGROUND 及以上) 时清空 eventLog/feedbackLog 防 OOM
+    // Why: 审核报告 P2-8 — 低端安卓机长跑可能 OOM；本地日志为可重建数据，优先释放
+    if (typeof wx !== 'undefined' && typeof wx.onMemoryWarning === 'function') {
+      try {
+        wx.onMemoryWarning((res) => {
+          console.warn('[BillionWhys] memory warning level:', res && res.level)
+          if (!res || typeof res.level !== 'number' || res.level < 10) return
+          // 10 = TRIM_MEMORY_BACKGROUND；15 = TRIM_MEMORY_RUNNING_LOW；20 = TRIM_MEMORY_RUNNING_CRITICAL
+          // 仅在 level >= 15 (RUNNING_LOW) 时清理日志，避免后台抖动频繁触发
+          if (res.level < 15) return
+          safeRemoveStorageSync('bw_event_log')
+          safeRemoveStorageSync('bw_feedback_log')
+        })
+      } catch (_e) { /* swallow */ }
+    }
+  },
+
+  onShow() {
+    // 未成年人保护：每次进入检查时间限制
+    if (minorProtection.verifyParent()) {
+      const t = minorProtection.checkTimeLimit()
+      if (!t.allowed) {
+        safeToast({ title: t.message, icon: 'none', duration: 4000 })
+      } else {
+        // 重置 session 计时起点（每次回到前台重新计时）
+        safeSetStorageSync('mp_session_start', Date.now())
+      }
+    }
+  },
+
+  onHide() {
+    // 离开小程序时记录使用时长
+    if (minorProtection.verifyParent()) {
+      minorProtection.recordUsage()
+    }
+  },
+
+  onPageNotFound() {
+    safeSwitchTab('/pages/discover/discover')
+  },
+
+  onError(msg) {
+    console.error('[BillionWhys] global error:', msg)
+  },
+})
+
+// ===== 文件: pages/discover/discover.js =====
+const content = require('../../utils/content')
+const { categories, categoryIcons } = require('../../utils/constants')
+const { safeToast, safePageScrollTo } = require('../../utils/safe-wx')
+const analytics = require('../../utils/analytics')
+const i18n = require('../../utils/i18n')
+
+const DEFAULT_SHOW = 8
+
+// V8.70 第134轮：年龄偏好存储（localStorage 等效，纯设备端）
+const AGE_PREF_KEY = 'bw_age_preference'
+const AGE_DISMISS_KEY = 'bw_age_dismiss_ts'
+const AGE_DISMISS_COOLDOWN_MS = 3 * 24 * 60 * 60 * 1000 // V8.71 第135轮：3天冷却期
+const AGE_OPTIONS = ['3-4', '4-5', '5-6']
+
+function loadAgePreference() {
+  try {
+    const val = wx.getStorageSync(AGE_PREF_KEY)
+    return val && AGE_OPTIONS.indexOf(val) !== -1 ? val : ''
+  } catch (_e) {
+    return ''
+  }
+}
+
+function saveAgePreference(age) {
+  try {
+    wx.setStorageSync(AGE_PREF_KEY, age)
+  } catch (_e) {
+    // storage full — silently ignore
+  }
+}
+
+// V8.71 第135轮：年龄引导"以后再说"3天冷却期
+function loadAgeDismissTs() {
+  try {
+    const val = wx.getStorageSync(AGE_DISMISS_KEY)
+    const ts = val ? parseInt(val, 10) : 0
+    return ts && !isNaN(ts) ? ts : 0
+  } catch (_e) {
+    return 0
+  }
+}
+
+function saveAgeDismissTs(ts) {
+  try {
+    wx.setStorageSync(AGE_DISMISS_KEY, String(ts))
+  } catch (_e) {
+    // silently ignore
+  }
+}
+
+function shouldShowAgeGuide() {
+  if (loadAgePreference()) return false
+  const dismissTs = loadAgeDismissTs()
+  if (!dismissTs) return true
+  return Date.now() - dismissTs >= AGE_DISMISS_COOLDOWN_MS
+}
+
+function ageFilter(questions, agePreference) {
+  if (!agePreference) return questions
+  const parts = agePreference.split('-')
+  const min = parseInt(parts[0], 10)
+  const max = parseInt(parts[1], 10)
+  return questions.filter(function (q) {
+    if (!q.age) return true
+    var match = q.age.match(/(\d+)\s*[-~]\s*(\d+)/)
+    if (!match) return true
+    var qMin = parseInt(match[1], 10)
+    var qMax = parseInt(match[2], 10)
+    return qMin <= max && qMax >= min
+  })
+}
+
+Page({
+  data: {
+    categories: categories.map(c => ({ ...c, count: 0 })),
+    activeCategory: 'all',
+    displayQuestions: [],
+    totalCount: 0,
+    totalFiltered: 0,
+    expanded: false,
+    hasMore: false,
+    categoryIcons,
+    loadError: false,
+    dailyPick: null,
+    locale: i18n.getLocale(),
+    t: i18n.dict(),
+    // V8.70 第134轮：年龄自适应
+    showAgeGuide: false,
+    agePreference: '',
+    ageOptions: [],
+  },
+
+  onLoad() {
+    try {
+      // V8.70 第134轮：年龄偏好加载
+      const agePref = loadAgePreference()
+      const ageOptions = [
+        { value: '3-4', label: i18n.t('discover.ageOption34'), desc: i18n.t('discover.ageOption34Desc') },
+        { value: '4-5', label: i18n.t('discover.ageOption45'), desc: i18n.t('discover.ageOption45Desc') },
+        { value: '5-6', label: i18n.t('discover.ageOption56'), desc: i18n.t('discover.ageOption56Desc') },
+      ]
+
+      const all = content.getAll()
+      const counts = {}
+      all.forEach(q => { counts[q.category] = (counts[q.category] || 0) + 1 })
+      const cats = this.data.categories.map(c => ({
+        ...c,
+        count: c.key === 'all' ? all.length : (counts[c.key] || 0),
+      }))
+      const pick = content.dailyPick()
+      const dailyPick = pick ? {
+        id: pick.id,
+        question: pick.question,
+        category: pick.category,
+        categoryIcon: categoryIcons[pick.category] || '❓',
+      } : null
+      // V8.63 第127轮：今日 3 问年龄分层
+      let picks = content.dailyPicks()
+      // V8.70 第134轮：年龄偏好过滤
+      if (agePref) {
+        picks = ageFilter(picks, agePref)
+      }
+      // V8.66 第130轮：年龄色系映射（墨小暖+彩虹姐）
+      function ageColor(label) {
+        if (!label) return ''
+        if (label.includes('3-4') || label.includes('3~4')) return 'pink'
+        if (label.includes('4-5') || label.includes('4~5')) return 'orange'
+        if (label.includes('5-6') || label.includes('5~6')) return 'yellow'
+        return ''
+      }
+      const dailyPicks = picks.map(p => ({
+        id: p.id,
+        question: p.question,
+        category: p.category,
+        categoryIcon: categoryIcons[p.category] || '❓',
+        ageLabel: p.ageLabel || '',
+        ageColor: ageColor(p.ageLabel),
+      }))
+      this.setData({
+        categories: cats,
+        totalCount: all.length,
+        loadError: false,
+        dailyPick,
+        dailyPicks,
+        subtitleText: i18n.t('discover.subtitle', { n: all.length }),
+        dailyPickAria: dailyPick ? (i18n.t('discover.dailyTag') + ' ' + dailyPick.question) : '',
+        agePreference: agePref,
+        ageOptions,
+        // V8.71 第135轮：3天冷却期检查
+        showAgeGuide: shouldShowAgeGuide(),
+      })
+      this.refreshList()
+      analytics.pageView('discover')
+      // V8.62 第126轮：异步加载分包全量数据（主包瘦身，不阻塞首屏渲染）
+      content.initAsync().catch(() => {})
+    } catch (_e) {
+      this.setData({ totalCount: 0, displayQuestions: [], loadError: true })
+      safeToast({ title: i18n.t('discover.loadError'), icon: 'none' })
+    }
+  },
+
+  refreshList() {
+    const cat = this.data.activeCategory
+    const filtered = content.getByCategory(cat)
+    const expanded = this.data.expanded
+    const items = expanded ? filtered : filtered.slice(0, DEFAULT_SHOW)
+    const display = items.map(q => ({
+      id: q.id,
+      question: q.question,
+      age: q.age,
+      category: q.category,
+      tags: (q.tags || []).join(' · '),
+      thumbImage: content.toWebP(q.layer1 && q.layer1.image ? q.layer1.image : ''),
+    }))
+
+    // V8.70 第134轮：继续探索（最近 3 个浏览问题）
+    let recentViewed = []
+    try {
+      const history = wx.getStorageSync('bw_view_history')
+      const arr = history ? JSON.parse(history) : []
+      const seen = {}
+      const recent = []
+      for (var i = arr.length - 1; i >= 0; i--) {
+        const entry = arr[i]
+        if (!entry || !entry.id) continue
+        if (seen[entry.id]) continue
+        seen[entry.id] = true
+        const q = content.getById(entry.id)
+        if (q) recent.push(q)
+        if (recent.length >= 3) break
+      }
+      recentViewed = recent.map(function (q) {
+        return {
+          id: q.id,
+          question: q.question,
+          category: q.category,
+        }
+      })
+    } catch (_e) {
+      recentViewed = []
+    }
+
+    this.setData({
+      displayQuestions: display,
+      totalFiltered: filtered.length,
+      hasMore: filtered.length > DEFAULT_SHOW && !expanded,
+      expandMoreText: i18n.t('discover.expand', { n: filtered.length }),
+      collapseText: i18n.t('discover.collapse'),
+      recentViewed: recentViewed,
+    })
+  },
+
+  onCategoryTap(e) {
+    const key = e.currentTarget.dataset.key
+    this.setData({ activeCategory: key, expanded: false }, () => this.refreshList())
+    safePageScrollTo(0)
+    analytics.tabSwitch(key)
+  },
+
+  onRetry() {
+    this.onLoad()
+  },
+
+  onQuestionTap(e) {
+    content.safeNavigateTo('/pages/question/question?id=' + e.currentTarget.dataset.id)
+  },
+
+  onDailyPickTap(e) {
+    const id = e.currentTarget.dataset.id
+    if (!id) return
+    content.safeNavigateTo('/pages/question/question?id=' + id)
+  },
+
+  // V8.70 第134轮：年龄偏好事件
+  onSelectAge(e) {
+    const age = e.currentTarget.dataset.value
+    if (AGE_OPTIONS.indexOf(age) === -1) return
+    this.setData({ agePreference: age })
+  },
+
+  onConfirmAge() {
+    if (!this.data.agePreference) return
+    saveAgePreference(this.data.agePreference)
+    this.setData({ showAgeGuide: false })
+    // 重新加载今日3问（带年龄过滤）
+    this.onLoad()
+  },
+
+  onDismissAge() {
+    // V8.71 第135轮：记录"以后再说"时间戳，3天冷却后再次弹出
+    saveAgeDismissTs(Date.now())
+    this.setData({ showAgeGuide: false })
+  },
+
+  onToggleExpand() {
+    const wasExpanded = this.data.expanded
+    this.setData({ expanded: !wasExpanded })
+    this.refreshList()
+    if (wasExpanded) safePageScrollTo(0)
+  },
+
+  onThumbError(e) {
+    const idx = e.currentTarget.dataset.index
+    this.setData({ ['displayQuestions[' + idx + '].thumbImage']: '' })
+  },
+
+  onShareAppMessage() {
+    analytics.share('/pages/discover/discover')
+    return {
+      title: '十亿个什么与为什么 — 好奇心是最厉害的超能力',
+      path: '/pages/discover/discover',
+    }
+  },
+
+  onShareTimeline() {
+    return {
+      title: '十亿个什么与为什么 — 2-6岁好奇心即时响应',
+    }
+  },
+})
+
+// ===== 文件: pages/ask/ask.js =====
+const content = require('../../utils/content')
+const storage = require('../../utils/storage')
+const { safeToast } = require('../../utils/safe-wx')
+const analytics = require('../../utils/analytics')
+const i18n = require('../../utils/i18n')
+
+Page({
+  data: {
+    keyword: '',
+    results: [],
+    suggestions: [],
+    hotQuestions: [],
+    hints: [],
+    hasSearched: false,
+    recentSearches: [],
+    resultsTitle: '',
+    locale: i18n.getLocale(),
+    t: i18n.dict(),
+  },
+
+  onLoad() {
+    this._searchTimer = null
+    try {
+      const hot = content.hotQuestions()
+      const hotProjected = hot.map(q => ({ id: q.id, question: q.question }))
+      const all = content.getAll()
+      const shuffled = all.slice()
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = shuffled[i]; shuffled[i] = shuffled[j]; shuffled[j] = tmp
+      }
+      this.setData({
+        hotQuestions: hotProjected,
+        hints: shuffled.slice(0, 5).map(q => q.question),
+        recentSearches: storage.getSearchHistory(),
+      })
+      analytics.pageView('ask')
+    } catch (_e) {
+      safeToast({ title: i18n.t('discover.loadError'), icon: 'none' })
+    }
+  },
+
+  onInput(e) {
+    const keyword = e.detail.value
+    this.setData({ keyword })
+    clearTimeout(this._searchTimer)
+    if (!keyword.trim()) {
+      this.setData({ results: [], suggestions: [], hasSearched: false })
+      return
+    }
+    this._searchTimer = setTimeout(() => this.doSearch(), 300)
+  },
+
+  doSearch() {
+    const kw = this.data.keyword.trim()
+    if (!kw) return
+    const raw = content.search(kw)
+    const results = raw.map(q => ({ id: q.id, question: q.question, tagsText: (q.tags || []).join(' · ') }))
+    const rawSug = raw.length === 0 ? content.suggestRelated(kw) : []
+    const suggestions = rawSug.map(q => ({ id: q.id, question: q.question, tagsText: (q.tags || []).join(' · ') }))
+    storage.pushSearchHistory(kw)
+    this.setData({
+      results,
+      suggestions,
+      hasSearched: true,
+      recentSearches: storage.getSearchHistory(),
+      resultsTitle: i18n.t('ask.resultsFound', { n: results.length }),
+    })
+    analytics.search(kw, results.length)
+  },
+
+  onClear() {
+    clearTimeout(this._searchTimer)
+    this.setData({ keyword: '', results: [], suggestions: [], hasSearched: false })
+  },
+
+  onRecentTap(e) {
+    const term = e.currentTarget.dataset.term
+    if (!term) return
+    this.setData({ keyword: term })
+    this.doSearch()
+  },
+
+  onClearHistory() {
+    storage.clearSearchHistory()
+    this.setData({ recentSearches: [] })
+  },
+
+  onHintTap(e) {
+    const hint = e.currentTarget.dataset.hint
+    this.setData({ keyword: hint })
+    this.doSearch()
+  },
+
+  onUnload() {
+    clearTimeout(this._searchTimer)
+  },
+
+  onResultTap(e) {
+    content.safeNavigateTo('/pages/question/question?id=' + e.currentTarget.dataset.id)
+  },
+
+  onShareAppMessage() {
+    return {
+      title: '和宝宝一起探索十亿个为什么',
+      path: '/pages/discover/discover',
+    }
+  },
+  onShareTimeline() {
+    return {
+      title: '和宝宝一起探索十亿个为什么',
+    }
+  },
+})
+
+// ===== 文件: pages/question/question.js =====
+const content = require('../../utils/content')
+const { categoryLabels, categoryIcons, expTypeLabels, getInteractionEmoji, FALLBACK_INTERACTION_HINT, getEmotionConfig, getComfortCategoryEmoji } = require('../../utils/constants')
+const { safeToast, safeSwitchTab, safeRedirectTo, safeNavigateBack, safeCreateSelectorQuery, safePageScrollTo } = require('../../utils/safe-wx')
+const analytics = require('../../utils/analytics')
+const storage = require('../../utils/storage')
+const i18n = require('../../utils/i18n')
+
+// V8.16 第84轮 Sprint 25：照护者自我效能 A/B 实验键（与 H5 stores/ab.js 同键）
+const AB_EXPERIMENT_KEY = 'caregiver_affirmation_v1'
+
+Page({
+  data: {
+    question: null,
+    hasExperiment: false,
+    categoryLabel: '',
+    showParent: false,
+    isExpObj: false,
+    expTypeLabel: '',
+    expName: '',
+    expSteps: [],
+    expSayToChild: '',
+    expLegacyText: '',
+    expMaterials: '',
+    expDuration: '',
+    expImage: '',
+    warmClosingText: '',
+    safetyNotice: '',
+    layer1Image: '',
+    layer2Image: '',
+    layer3Image: '',
+    scienceImage: '',
+    prevQuestion: null,
+    nextQuestion: null,
+    ipDialogues: [],
+    showDeeper: false,
+    isFavorite: false,
+    relatedQuestions: [],
+    categoryIcon: '❓',
+    currentFeedback: null,
+    hasExperiment: false,
+    // V8.16 第84轮 Sprint 25：A/B affirmation 文案
+    affirmationText: '',
+    // V8.17 第85轮 Sprint 26：i18n 注入
+    locale: i18n.getLocale(),
+    t: i18n.dict(),
+    ageText: '',
+    prevAria: '',
+    nextAria: '',
+    // V8.81 Sprint 76 第145轮：纯文字模式从 app.globalData 读取（前端小凡+CTO）
+    // Why: 第144轮使用独立键名 bw_text_only 且无全局共享 -> 第145轮统一键名 bw_illustration_disabled
+    // 与 H5 端 Pinia store 对齐，通过 app.globalData.illustrationDisabled 全局共享
+    textOnly: false,
+    // V8.75 Sprint 74 第139轮：插画图片数据（三层 + 实验）
+    layer1ThumbImage: '',
+    layer1PreviewImage: '',
+    layer2ThumbImage: '',
+    layer2PreviewImage: '',
+    layer3ThumbImage: '',
+    layer3PreviewImage: '',
+    // V8.94 第157轮：interactionHint 互动引导字段（前端小凡 P0#2）
+    interactionHint: '',
+    interactionHintEmoji: '🤲',
+    interactionType: '',
+    // V9.03 第165轮：parentGuide 家长指导渲染（前端小凡+王园长 P0#2）
+    // 代码路径: src/miniprogram/pages/question/question.js:63-64
+    parentGuide: '',
+    // V9.11 第173轮：P0#7 前端空字段友好 fallback（苏体验+前端小凡）
+    // 与 H5 utils/constants.js 的 FALLBACK_INTERACTION_HINT 保持同步
+    fallbackHint: FALLBACK_INTERACTION_HINT,
+    // V9.16 第178轮：emotion 标签渲染（墨小暖+前端小凡 P0 LEG-005）
+    // 与 H5 KnowledgeCard.vue 对齐，数据层 emotion 已注入但前端不渲染=无效工作
+    rabbitEmotion: '',
+    bearEmotion: '',
+    rabbitEmotionConfig: { label: '', color: '', bg: '', icon: '' },
+    bearEmotionConfig: { label: '', color: '', bg: '', icon: '' },
+
+  onLoad(options) {
+    try {
+      const id = options.id
+      if (!id) { safeSwitchTab('/pages/discover/discover'); return }
+      // P1-3 分包懒加载：按 id 推断 category 异步预加载对应分包（不阻塞当前渲染）
+      const cat = content.getCategoryFromId(id)
+      if (cat) content.preloadCategoryAsync(cat)
+      const q = content.getById(id)
+      if (!q) { safeSwitchTab('/pages/discover/discover'); return }
+      const isExpObj = typeof q.experiment === 'object' && q.experiment !== null
+      const expType = (q.experiment && q.experiment.experimentType) || (typeof q.experiment === 'string' ? 'discussion' : 'hands-on')
+      const safetyNotice = (q.experiment && q.experiment.safetyNote)
+        ? '⚠️ ' + q.experiment.safetyNote
+        : expType === 'discussion' ? '' : expType === 'observation' ? '👀 观察时请注意安全哦' : '🤝 这个实验需要大人一起参与哦'
+      const materials = q.experiment && q.experiment.materials
+      const expMaterials = Array.isArray(materials) ? materials.join('、') : (materials || '')
+      const expDuration = (q.experiment && q.experiment.duration) || ''
+      const expImage = content.toWebP((q.experiment && q.experiment.image) || '')
+      const catQuestions = content.getByCategory(q.category)
+      let idx = -1
+      for (let i = 0; i < catQuestions.length; i++) {
+        if (catQuestions[i].id === id) { idx = i; break }
+      }
+      const related = content.suggestRelated(q.question)
+        .filter(r => r.id !== id).slice(0, 3)
+        .map(r => ({ id: r.id, question: r.question }))
+      const prevQuestion = idx > 0 ? { id: catQuestions[idx - 1].id, question: catQuestions[idx - 1].question } : null
+      const nextQuestion = idx < catQuestions.length - 1 ? { id: catQuestions[idx + 1].id, question: catQuestions[idx + 1].question } : null
+      this.setData({
+        question: {
+          id: q.id,
+          question: q.question,
+          age: q.age,
+          category: q.category,
+          tags: q.tags,
+          layer1: q.layer1 ? { answer: q.layer1.answer, image: q.layer1.image, interactionHint: q.layer1.interactionHint } : null,
+          layer2: q.layer2 ? { answer: q.layer2.answer, followUp: q.layer2.followUp, image: q.layer2.image } : null,
+          layer3: q.layer3 ? { answer: q.layer3.answer, followUp: q.layer3.followUp, image: q.layer3.image } : null,
+          science: q.science || '',
+          // V8.94 第157轮：interactionHint 互动引导（前端小凡 P0#2）
+          interactionHint: (q.layer1 && q.layer1.interactionHint) || '',
+          interactionType: q.interactionType || '',
+        },
+        hasExperiment: !!q.experiment,
+        categoryLabel: categoryLabels[q.category] || '',
+        categoryIcon: categoryIcons[q.category] || '❓',
+        expTypeLabel: (q.experiment && expTypeLabels[q.experiment.experimentType]) || '',
+        isExpObj,
+        expName: isExpObj ? ((q.experiment && q.experiment.name) || '') : '',
+        expSteps: isExpObj ? ((q.experiment && q.experiment.steps) || []) : [],
+        expSayToChild: isExpObj ? ((q.experiment && q.experiment.sayToChild) || '') : '',
+        expLegacyText: !isExpObj && typeof q.experiment === 'string' ? q.experiment : '',
+        expMaterials,
+        expDuration,
+        expImage,
+        warmClosingText: q.warmClosing || '哇，你问了一个连科学家都还在研究的问题呢！等长大一点，我们一起去找更多答案好不好？',
+        safetyNotice,
+        layer1Image: content.toWebP((q.layer1 && q.layer1.image) || ''),
+        layer2Image: content.toWebP((q.layer2 && q.layer2.image) || ''),
+        layer3Image: content.toWebP((q.layer3 && q.layer3.image) || ''),
+        scienceImage: content.toWebP(q.scienceImage || ''),
+        ipDialogues: content.parseIpScene(q.ipScene || ''),
+        prevQuestion,
+        nextQuestion,
+        isFavorite: content.isFavorite(id),
+        relatedQuestions: related,
+        currentFeedback: content.getAnswerFeedback(id),
+        hasExperiment: !!(q.experiment && (q.experiment.name || q.experiment.steps || q.experiment.experimentType)),
+        ageText: i18n.t('qd.age', { age: q.age }),
+        prevAria: prevQuestion ? i18n.t('qd.prevAria', { q: prevQuestion.question }) : '',
+        nextAria: nextQuestion ? i18n.t('qd.nextAria', { q: nextQuestion.question }) : '',
+        // V8.94 第157轮：interactionHint 互动引导（前端小凡 P0#2）
+        interactionHint: (q.layer1 && q.layer1.interactionHint) || '',
+        interactionHintEmoji: getInteractionEmoji(q.interactionType),
+        interactionType: q.interactionType || '',
+        // V9.21 第183轮：comfortCategory 图标前缀（苏体验+彩虹姐 P2#15）
+        comfortCategoryEmoji: getComfortCategoryEmoji(q.comfortCategory || ''),
+        comfortCategory: q.comfortCategory || '',
+        // V9.03 第165轮：parentGuide 家长指导（前端小凡+王园长 P0#2）
+        // 代码路径: src/miniprogram/pages/question/question.js:141-142
+        parentGuide: q.parentGuide || '',
+        // V9.16 第178轮：emotion 标签渲染（墨小暖+前端小凡 P0 LEG-005）
+        rabbitEmotion: q.rabbitEmotion || '',
+        bearEmotion: q.bearEmotion || '',
+        rabbitEmotionConfig: getEmotionConfig(q.rabbitEmotion || ''),
+        bearEmotionConfig: getEmotionConfig(q.bearEmotion || ''),
+      })
+      content.markViewed(id, q.category)
+      // V8.16 第84轮 Sprint 25：A/B 分桶 + 曝光埋点（幂等，同 experiment 只发一次）
+      // CTO+法务张律：纯 Math.random coin-flip，不读身份字段；走 storage.emitABExpose eventLog 单一通道
+      const abVariant = storage.getABVariant(AB_EXPERIMENT_KEY)
+      const affirmationText = storage.getABCopy(AB_EXPERIMENT_KEY)
+      storage.emitABExpose(AB_EXPERIMENT_KEY, abVariant)
+      this.setData({ affirmationText })
+    } catch (err) {
+      console.error('[BillionWhys] question onLoad error:', err)
+      safeToast({ title: '加载失败，正在返回', icon: 'none' })
+      this._redirectTimer = setTimeout(() => safeSwitchTab('/pages/discover/discover'), 1500)
+    }
+  },
+
+  onUnload() {
+    clearTimeout(this._redirectTimer)
+  },
+
+  onImgError(e) {
+    const field = e.currentTarget.dataset.field
+    if (!field) return
+    // P0-3 CDN fallback：主 CDN 加载失败时尝试备用 raw.githubusercontent.com，仍失败则清空
+    const current = this.data[field]
+    if (current && current.indexOf('cdn.jsdelivr.net') !== -1) {
+      // 切换到备用 CDN（raw.githubusercontent.com）
+      const fallback = content.toWebPFallback
+        ? content.toWebPFallback(current.replace(content.CDN_BASE + '/', ''))
+        : ''
+      if (fallback) {
+        this.setData({ [field]: fallback })
+        return
+      }
+    }
+    this.setData({ [field]: '' })
+  },
+
+  onToggleFavorite() {
+    const id = this.data.question && this.data.question.id
+    if (!id) return
+    content.toggleFavorite(id)
+    this.setData({ isFavorite: content.isFavorite(id) })
+  },
+
+  onFeedbackUp() {
+    const id = this.data.question && this.data.question.id
+    if (!id) return
+    // V8.9 第77轮 Sprint 18：快照反馈时可见的最深 Layer（H5 QuestionDetail.vue onFeedback 同构）
+    const depth = this.computeFeedbackDepth()
+    content.setAnswerFeedback(id, 'up', depth)
+    this.setData({ currentFeedback: 'up' })
+    // V8.2 第71轮 Sprint 11：闭合 反馈→CTA→实验 增长漏斗（COO+AI小智+CCO）
+    analytics.feedbackUp(id)
+    // V8.16 第84轮 Sprint 25：A/B 目标转化埋点 — feedback_up 即 ab_convert goal=feedback_up
+    // 后端老稳：走 storage.emitABConvert eventLog 单一通道，detail=experiment:variant:goal
+    const abVariant = storage.getABVariant(AB_EXPERIMENT_KEY)
+    analytics.abConvert(AB_EXPERIMENT_KEY, abVariant, 'feedback_up')
+  },
+
+  onFeedbackDown() {
+    const id = this.data.question && this.data.question.id
+    if (!id) return
+    const depth = this.computeFeedbackDepth()
+    content.setAnswerFeedback(id, 'down', depth)
+    this.setData({ currentFeedback: 'down' })
+    analytics.feedbackDown(id)
+  },
+
+  // V8.3 第71轮 Sprint 12：重置反馈，让妈妈"再评一次"（COO反馈率北极星+UX苏体验后悔药）
+  onResetFeedback() {
+    const id = this.data.question && this.data.question.id
+    if (!id) return
+    const depth = this.computeFeedbackDepth()
+    content.clearAnswerFeedback(id, depth)
+    this.setData({ currentFeedback: '' })
+    // 埋点 feedback_reset — detail 仅 questionId，无儿童身份（法务张律放行）
+    analytics.feedbackReset(id)
+  },
+
+  // V8.9 第77轮 Sprint 18：根据 showDeeper + question.layer3 推导反馈深度（1/2/3）
+  // Why: 反馈深度归因；depth=3+👍 是深度学习信号，depth=3+👎 是内容质量强信号
+  computeFeedbackDepth() {
+    const q = this.data.question
+    if (!q || !this.data.showDeeper) return 1
+    if (q.layer3) return 3
+    if (q.layer2) return 2
+    return 1
+  },
+
+  // V8.1 第70轮 Sprint 10：试试互动实验 CTA — 引导妈妈滚动至ParentSection（CPO+COO增长杠杆）
+  onScrollToExperiment() {
+    // V8.2 第71轮 Sprint 11：埋点 cta_experiment
+    const id = this.data.question && this.data.question.id
+    if (id) analytics.ctaExperiment(id)
+    // P1-2 整改：wx.createSelectorQuery / wx.pageScrollTo 走 safe-wx 守卫
+    const query = safeCreateSelectorQuery(this)
+    if (!query) {
+      // 兜底：直接滚到底部，少数机型 boundingClientRect 不可用时仍能跳到实验区
+      safePageScrollTo(9999)
+      return
+    }
+    query.select('.parent-section').boundingClientRect((rect) => {
+      if (rect && typeof rect.top === 'number') {
+        const pages = (typeof getCurrentPages === 'function') ? getCurrentPages() : []
+        const lastPage = pages[pages.length - 1]
+        const baseTop = (lastPage && typeof lastPage.scrollTop === 'number') ? lastPage.scrollTop : 0
+        safePageScrollTo(rect.top + baseTop)
+      } else {
+        // Fallback: 不带偏移的滚动（少数机型 boundingClientRect 失败）
+        safePageScrollTo(9999)
+      }
+    }).exec()
+  },
+
+  onExpandDeeper() {
+    this.setData({ showDeeper: true })
+    // V8.2 第71轮 Sprint 11：埋点 layer_expand — 追踪 Layer2/3 展开动作
+    const id = this.data.question && this.data.question.id
+    if (id) analytics.layerExpand(id)
+  },
+
+  onRelatedTap(e) {
+    safeRedirectTo('/pages/question/question?id=' + e.currentTarget.dataset.id)
+  },
+
+  onToggleParent() {
+    this.setData({ showParent: !this.data.showParent })
+  },
+
+  onGoBack() {
+    const pages = (typeof getCurrentPages === 'function') ? getCurrentPages() : []
+    if (pages.length > 1) safeNavigateBack()
+    else safeSwitchTab('/pages/discover/discover')
+  },
+
+  onNavPrev() {
+    const prev = this.data.prevQuestion
+    if (prev) safeRedirectTo('/pages/question/question?id=' + prev.id)
+  },
+
+  onNavNext() {
+    const next = this.data.nextQuestion
+    if (next) safeRedirectTo('/pages/question/question?id=' + next.id)
+  },
+
+  onShareAppMessage() {
+    const q = this.data.question
+    return {
+      title: q ? q.question : '十亿个什么与为什么',
+      path: q ? ('/pages/question/question?id=' + q.id) : '/pages/discover/discover',
+    }
+  },
+
+  onShareTimeline() {
+    const q = this.data.question
+    return {
+      title: q ? q.question : '十亿个什么与为什么',
+      query: q ? ('id=' + q.id) : '',
+    }
+  },
+
+  // V8.81 Sprint 76 第145轮：纯文字模式切换（统一键名 bw_illustration_disabled）
+  // Why: 第144轮使用 bw_text_only 独立键名 -> 第145轮统一为 bw_illustration_disabled
+  onToggleTextOnly() {
+    const newVal = !this.data.textOnly
+    this.setData({ textOnly: newVal })
+    try {
+      wx.setStorageSync('bw_illustration_disabled', newVal)
+      const app = getApp()
+      if (app && app.globalData) {
+        app.globalData.illustrationDisabled = newVal
+      }
+    } catch (e) {
+      // 静默忽略
+    }
+  },
+
+  // V8.81 Sprint 76 第145轮：初始化纯文字模式（统一键名 bw_illustration_disabled）
+  initTextOnly() {
+    try {
+      // 先尝试新键名
+      const val = wx.getStorageSync('bw_illustration_disabled')
+      if (typeof val === 'boolean') {
+        this.setData({ textOnly: val })
+        return
+      }
+      // 兼容旧键名迁移
+      const oldVal = wx.getStorageSync('bw_text_only')
+      if (typeof oldVal === 'boolean') {
+        this.setData({ textOnly: oldVal })
+        wx.setStorageSync('bw_illustration_disabled', oldVal)
+        wx.removeStorageSync('bw_text_only')
+        return
+      }
+      // 回退到 globalData
+      const app = getApp()
+      if (app && app.globalData && typeof app.globalData.illustrationDisabled === 'boolean') {
+        this.setData({ textOnly: app.globalData.illustrationDisabled })
+      }
+    } catch (e) {
+      // 静默忽略
+    }
+  },
+
+  // V8.75 Sprint 74 第139轮：获取插画来源（thumb/preview/full）
+  getIllustrationSources(baseUrl) {
+    if (!baseUrl) return { thumb: '', preview: '', full: '' }
+    // 假设 CDN 支持 ?size= 参数
+    return {
+      thumb: baseUrl + '?size=200',
+      preview: baseUrl + '?size=600',
+      full: baseUrl + '?size=1024',
+    }
+  },
+})
+
+// ===== 文件: pages/archive/archive.js =====
+const content = require('../../utils/content')
+const { safeToast, safeSwitchTab, safeShowActionSheet } = require('../../utils/safe-wx')
+const i18n = require('../../utils/i18n')
+
+Page({
+  data: {
+    activeTab: 'history',
+    historyGroups: [],
+    streakDays: 0,
+    totalViewed: 0,
+    todayViewedCount: 0,
+    isEmpty: true,
+    favoriteList: [],
+    favoriteCount: 0,
+    // V8.18 Sprint 27：i18n 注入
+    locale: 'zh',
+    t: i18n.dict('zh'),
+    tabFavoritesText: '',
+    tabFavoritesAria: '',
+    statViewedAria: '',
+    statTodayAria: '',
+    statStreakAria: '',
+  },
+
+  onShow() {
+    const locale = i18n.getLocale()
+    const t = i18n.dict(locale)
+    this.setData({
+      locale,
+      t,
+      tabFavoritesText: i18n.t('archive.tabFavoritesText', { n: this.data.favoriteCount }, locale),
+      tabFavoritesAria: i18n.t('archive.tabFavoritesAria', { n: this.data.favoriteCount }, locale),
+      statViewedAria: i18n.t('archive.statViewed', undefined, locale),
+      statTodayAria: i18n.t('archive.statToday', undefined, locale),
+      statStreakAria: i18n.t('archive.statStreak', undefined, locale),
+    })
+    this.loadHistory()
+    this.loadFavorites()
+  },
+
+  onSwitchTab(e) {
+    this.setData({ activeTab: e.currentTarget.dataset.tab })
+  },
+
+  loadFavorites() {
+    try {
+      const favIds = content.getFavorites()
+      const list = favIds.map(id => content.getById(id)).filter(Boolean)
+        .map(q => ({
+          id: q.id,
+          question: q.question,
+          category: q.category,
+          age: q.age,
+          favAria: i18n.t('archive.favLongPressAria', { q: q.question }, this.data.locale),
+        }))
+      const count = list.length
+      this.setData({
+        favoriteList: list,
+        favoriteCount: count,
+        tabFavoritesText: i18n.t('archive.tabFavoritesText', { n: count }, this.data.locale),
+        tabFavoritesAria: i18n.t('archive.tabFavoritesAria', { n: count }, this.data.locale),
+      })
+    } catch (_e) {
+      this.setData({ favoriteList: [], favoriteCount: 0 })
+    }
+  },
+
+  loadHistory() {
+    try {
+      const history = content.getViewHistory()
+      if (history.length === 0) {
+        this.setData({ historyGroups: [], streakDays: 0, totalViewed: 0, todayViewedCount: 0, isEmpty: true })
+        return
+      }
+
+      const uniqueIds = new Set(history.map(v => v.id))
+      const streak = content.calcStreak(history)
+
+      const today = new Date().toDateString()
+      const todayViewed = new Set(
+        history.filter(v => new Date(v.timestamp).toDateString() === today).map(v => v.id)
+      ).size
+
+      const groups = {}
+      const sorted = history.slice().sort((a, b) => b.timestamp - a.timestamp)
+      const seen = new Set()
+      for (const entry of sorted) {
+        const date = new Date(entry.timestamp)
+        const dateKey = (date.getMonth() + 1) + '月' + date.getDate() + '日'
+        if (!groups[dateKey]) groups[dateKey] = []
+        const dedupKey = dateKey + ':' + entry.id
+        if (!seen.has(dedupKey)) {
+          seen.add(dedupKey)
+          const q = content.getById(entry.id)
+          if (q) groups[dateKey].push({ id: q.id, question: q.question, category: q.category, age: q.age })
+        }
+      }
+
+      const historyGroups = Object.keys(groups).map(date => ({ date, items: groups[date] }))
+
+      this.setData({
+        historyGroups,
+        streakDays: streak,
+        totalViewed: uniqueIds.size,
+        todayViewedCount: todayViewed,
+        isEmpty: false,
+      })
+    } catch (_e) {
+      this.setData({ historyGroups: [], streakDays: 0, totalViewed: 0, todayViewedCount: 0, isEmpty: true })
+      safeToast({ title: i18n.t('archive.loadErrorToast', undefined, this.data.locale), icon: 'none' })
+    }
+  },
+
+  onQuestionTap(e) {
+    content.safeNavigateTo('/pages/question/question?id=' + e.currentTarget.dataset.id)
+  },
+
+  onGoDiscover() {
+    safeSwitchTab('/pages/discover/discover')
+  },
+
+  onFavoriteLongPress(e) {
+    const id = e.currentTarget.dataset.id
+    const item = this.data.favoriteList.find(f => f.id === id)
+    const question = item ? item.question : ''
+    const locale = this.data.locale
+    safeShowActionSheet({
+      itemList: [i18n.t('archive.confirmOk', undefined, locale)],
+      itemColor: '#1A5C3A',
+    }).then((tapIndex) => {
+      if (tapIndex === 0) {
+        content.toggleFavorite(id)
+        this.loadFavorites()
+        safeToast({ title: i18n.t('archive.toastRemoved', undefined, locale), icon: 'success' })
+      }
+    })
+  },
+
+  onShareAppMessage() {
+    return {
+      title: '和宝宝一起探索十亿个为什么',
+      path: '/pages/discover/discover',
+    }
+  },
+  onShareTimeline() {
+    return {
+      title: '和宝宝一起探索十亿个为什么',
+    }
+  },
+})
+
+// ===== 文件: pages/profile/profile.js =====
+const content = require('../../utils/content')
+const storage = require('../../utils/storage')
+const { safeToast, safeModal, safeNavigateTo } = require('../../utils/safe-wx')
+const analytics = require('../../utils/analytics')
+const i18n = require('../../utils/i18n')
+const minorProtection = require('../../utils/minor-protection')
+
+// V8.5 Sprint 14：HH:MM 时间格式化
+function formatHm(ts) {
+  const d = new Date(ts)
+  const hh = String(d.getHours()).padStart(2, '0')
+  const mm = String(d.getMinutes()).padStart(2, '0')
+  return `${hh}:${mm}`
+}
+
+Page({
+  data: {
+    version: '',
+    totalQuestions: 0,
+    viewedCount: 0,
+    streakDays: 0,
+    favoriteCount: 0,
+    feedbackCount: 0,
+    streakMessage: '',
+    showFeedback: false,
+    feedbackTrend7d: [],
+    feedbackTrendTotal: 0,
+    // V8.5 Sprint 14：当日明细 accordion — 同时只展开 1 列（CEO 裁决避免移动端滚动地狱）
+    expandedDay: '',
+    detailList: [],
+    detailHeader: '',
+    // V8.11 Sprint 20：当日反馈深度分布可视化（L2+L3>0 才显示）
+    depthViz: { show: false, L1: 0, L2: 0, L3: 0, total: 0, l1Pct: 0, l2Pct: 0, l3Pct: 0, text: '', ariaLabel: '' },
+    // V8.13 Sprint 22：累计参与度汇总卡片（H5 feedbackSummary + preview/replay 计数同构）
+    summary: { total: 0, up: 0, down: 0, reset: 0, depthL2: 0, depthL3: 0, showDepth: false, depthTotal: 0 },
+    previewCount: 0,
+    replayCount: 0,
+    // V8.14 Sprint 23：i18n 出海前置（locale 仅内部切换，UI 不暴露）
+    locale: 'zh',
+    t: i18n.dict('zh'),
+    // V8.81 Sprint 76 第145轮：插画显示偏好（统一键名 bw_illustration_disabled）
+    illustrationDisabled: false,
+    summaryAriaLabel: '累计反馈参与度汇总',
+    summaryTotalText: '',
+    summaryDepthText: '',
+    summaryPreviewText: '',
+    summaryReplayText: '',
+    summaryEmptyText: '',
+    // V8.18 Sprint 27：UI chrome 预计算字段
+    statLibraryAria: '',
+    statViewedAria: '',
+    statStreakAria: '',
+    statFavAria: '',
+    statFeedbackAria: '',
+    trendTitleText: '',
+    trendBarAria: '',
+    dayDetailAria: '',
+    versionFooterText: '',
+    // 未成年人保护：今日剩余时间
+    remainingMin: 30,
+    dailyUsedMin: 0,
+    usagePct: 0,
+    parentVerified: false,
+    // V8.73 第137轮：年龄偏好切换（周教授+叶用户+苏体验+前端小凡）
+    agePreference: '',
+    ageOptions: [
+      { value: '3-4', label: '3-4岁' },
+      { value: '4-5', label: '4-5岁' },
+      { value: '5-6', label: '5-6岁' },
+    ],
+  },
+
+  onLoad() {
+    try {
+      const locale = i18n.getLocale()
+      const version = (getApp() && getApp().globalData && getApp().globalData.version) || 'unknown'
+      // V8.73 第137轮：加载年龄偏好
+      const agePref = this._loadAgePreference()
+      // V8.81 第145轮：加载插画显示偏好（统一键名 bw_illustration_disabled）
+      const illustrationDisabled = this._loadIllustrationPreference()
+      this.setData({
+        locale,
+        t: i18n.dict(locale),
+        version,
+        totalQuestions: content.getAll().length,
+        versionFooterText: i18n.t('profile.versionFooter', { v: version }, locale),
+        agePreference: agePref,
+        illustrationDisabled,
+      })
+      analytics.pageView('profile')
+    } catch (_e) {
+      safeToast({ title: i18n.t('profile.feedbackLoadToast', undefined, this.data.locale), icon: 'none' })
+    }
+  },
+
+  onShow() {
+    try {
+      const locale = i18n.getLocale()
+      const t = i18n.dict(locale)
+      const history = content.getViewHistory()
+      const viewedIds = new Set(history.map(v => v.id))
+      const streak = content.calcStreak(history)
+      const favCount = content.getFavorites().length
+      const fbCount = content.getAnswerFeedbackCount()
+      // V8.19 Sprint 28 i18n 第三批：streakMessage 6 条出海，en 用 "in a row" 口语
+      let msg = ''
+      if (streak === 0 && viewedIds.size > 0) msg = i18n.t('profile.streakMsg.returning', undefined, locale)
+      else if (streak === 0 && viewedIds.size === 0) msg = i18n.t('profile.streakMsg.firstTime', undefined, locale)
+      else if (streak >= 30) msg = i18n.t('profile.streakMsg.day30', undefined, locale)
+      else if (streak >= 7) msg = i18n.t('profile.streakMsg.day7', undefined, locale)
+      else if (streak >= 3) msg = i18n.t('profile.streakMsg.day3', undefined, locale)
+      else if (streak >= 1) msg = i18n.t('profile.streakMsg.day1', undefined, locale)
+      // V8.4 Sprint 13：7 天反馈趋势数据
+      const trend = content.getFeedbackTrend7d()
+      const maxCount = Math.max(1, ...trend.map(d => Math.max(d.up, d.down, d.reset)))
+      const trendWithBars = trend.map(d => {
+        const today = new Date()
+        today.setHours(0, 0, 0, 0)
+        const dDate = new Date(d.date + 'T00:00:00')
+        const diff = Math.round((today - dDate) / 86400000)
+        // V8.19 Sprint 28 i18n 第三批：bar label 单字（zh）/3 字母（en），与 H5 dayLabel() 对齐
+        let label
+        if (diff === 0) label = i18n.t('profile.dayLabel.today', undefined, locale)
+        else if (diff === 1) label = i18n.t('profile.dayLabel.yesterday', undefined, locale)
+        else label = i18n.t('profile.weekday.' + dDate.getDay(), undefined, locale)
+        const dayLabelStr = label
+        const ariaLabel = d.total === 0
+          ? i18n.t('profile.dayAria', { day: dayLabelStr, n: d.total }, locale)
+          : i18n.t('profile.dayAriaWithDetail', { day: dayLabelStr, n: d.total }, locale)
+        return Object.assign({}, d, {
+          upH: d.up ? Math.max(8, Math.round((d.up / maxCount) * 48)) : 0,
+          downH: d.down ? Math.max(8, Math.round((d.down / maxCount) * 48)) : 0,
+          resetH: d.reset ? Math.max(8, Math.round((d.reset / maxCount) * 48)) : 0,
+          label,
+          ariaLabel,
+        })
+      })
+      const trendTotal = trend.reduce((s, d) => s + d.total, 0)
+      // V8.13 Sprint 22：累计参与度汇总
+      const sum = content.getFeedbackSummary()
+      const depthTotal = sum.depthL2 + sum.depthL3
+      const summary = {
+        total: sum.total,
+        up: sum.up,
+        down: sum.down,
+        reset: sum.reset,
+        depthL2: sum.depthL2,
+        depthL3: sum.depthL3,
+        depthTotal,
+        showDepth: depthTotal > 0,
+      }
+      const previewCount = storage.getDetailActionCount('preview')
+      const replayCount = storage.getDetailActionCount('replay')
+      // 未成年人保护：使用时长统计
+      const stats = minorProtection.getUsageStats()
+      const usagePct = Math.min(100, Math.round((stats.dailyUsedMs / stats.dailyLimitMs) * 100))
+      // P2-4 整改：拆为 3 次 setData 降低单次 payload
+      // 1) 基础统计与 i18n locale（高频字段，立即渲染）
+      this.setData({
+        locale,
+        t,
+        viewedCount: viewedIds.size,
+        streakDays: streak,
+        favoriteCount: favCount,
+        feedbackCount: fbCount,
+        streakMessage: msg,
+        remainingMin: stats.dailyRemainingMin,
+        dailyUsedMin: stats.dailyUsedMin,
+        usagePct,
+        parentVerified: stats.parentVerified,
+      })
+      // 2) summary 与 aria 文案（依赖 summary/preview/replay 等计算结果）
+      this.setData({
+        summary,
+        previewCount,
+        replayCount,
+        summaryAriaLabel: i18n.t('profile.summary.aria', undefined, locale),
+        summaryTotalText: i18n.t('profile.summary.total', { n: summary.total }, locale),
+        summaryDepthText: i18n.t('profile.summary.depth', { n: summary.depthTotal, a: summary.depthL2, b: summary.depthL3 }, locale),
+        summaryPreviewText: i18n.t('profile.summary.preview', { n: previewCount }, locale),
+        summaryReplayText: i18n.t('profile.summary.replay', { n: replayCount }, locale),
+        summaryEmptyText: i18n.t('profile.summary.empty', undefined, locale),
+        statLibraryAria: i18n.t('profile.statLibrary', undefined, locale) + ' ' + content.getAll().length,
+        statViewedAria: i18n.t('profile.statViewed', undefined, locale) + ' ' + viewedIds.size,
+        statStreakAria: i18n.t('profile.statStreak', undefined, locale) + ' ' + streak,
+        statFavAria: i18n.t('profile.statFav', undefined, locale) + ' ' + favCount,
+        statFeedbackAria: i18n.t('profile.statFeedback', undefined, locale) + ' ' + fbCount,
+      })
+      // 3) 反馈趋势图（独立卡片；缓存计算结果避免 onShow 重渲染时重算）
+      this._trendCache = { trendWithBars, trendTotal, ts: Date.now() }
+      this.setData({
+        feedbackTrend7d: trendWithBars,
+        feedbackTrendTotal: trendTotal,
+        trendTitleText: i18n.t('profile.trendTitle', { n: trendTotal }, locale),
+        trendBarAria: i18n.t('profile.trendBarAria', { n: trendTotal }, locale),
+      })
+    } catch (_e) {
+      safeToast({ title: i18n.t('profile.dataLoadToast', undefined, this.data.locale), icon: 'none' })
+    }
+  },
+
+  onFeedback() {
+    this.setData({ showFeedback: !this.data.showFeedback })
+  },
+
+  // V8.5 Sprint 14：当日明细 accordion 切换；空列不展开（UX 苏体验：避免空状态抢镜）
+  onTapDay(e) {
+    const { date, total } = e.currentTarget.dataset
+    if (!total) return
+    const locale = this.data.locale
+    if (this.data.expandedDay === date) {
+      this.setData({
+        expandedDay: '', detailList: [], detailHeader: '', dayDetailAria: '',
+        depthViz: { show: false, L1: 0, L2: 0, L3: 0, total: 0, l1Pct: 0, l2Pct: 0, l3Pct: 0, text: '', ariaLabel: '' },
+      })
+      return
+    }
+    const list = content.getFeedbackDetailByDate(date)
+    const up = list.filter(x => x.action === 'up').length
+    const down = list.filter(x => x.action === 'down').length
+    const reset = list.filter(x => x.action === 'reset').length
+    // CCO 文若水：≤1 行中性文案；心理学家周教授：reset 用"再评一次"避免评判
+    const parts = []
+    if (up) parts.push(`👍${up}`)
+    if (down) parts.push(`👎${down}`)
+    if (reset) parts.push(i18n.t('profile.detailResetCount', { n: reset }, locale))
+    const d = new Date(date + 'T00:00:00')
+    const weekday = i18n.t('profile.weekday.' + d.getDay(), undefined, locale)
+    const month = i18n.t('profile.monthShort.' + d.getMonth(), undefined, locale)
+    const partsStr = parts.length ? parts.join(' · ') : i18n.t('profile.detailNoFeedback', undefined, locale)
+    const detailHeaderStr = i18n.t('profile.detailHeaderFormat', { month, date: d.getDate(), weekday, parts: partsStr }, locale)
+    const formatted = list.map(x => ({
+      action: x.action,
+      icon: x.action === 'up' ? '👍' : (x.action === 'down' ? '👎' : '↻'),
+      time: formatHm(x.ts),
+      title: x.title || '已反馈（记录已迁移）',
+      // V8.6 Sprint 15：携带 id 用于"再读一遍"跳转；老 entry 无 id 时为空字符串
+      id: x.id || '',
+      hasId: !!x.id,
+      // V8.9 Sprint 18：携带 depth 用于"读到第N层"徽章；depth>1 才显示（避免 depth=1 噪声）
+      depth: x.depth || 1,
+      showDepth: (x.depth || 1) > 1,
+      depthText: i18n.t('profile.depthText', { n: x.depth || 1 }, locale),
+      depthAria: i18n.t('profile.depthAria', { n: x.depth || 1 }, locale),
+      replayAria: x.id ? i18n.t('profile.replayAria', { title: x.title || '' }, locale) : '',
+    }))
+    // V8.11 第79轮 Sprint 20：当日反馈深度分布可视化（L2+L3>0 才显示）
+    // Why: V8.9 把 depth 写进 feedbackLog 但 Profile 不可见——"埋了数据没界面"
+    // CCO 文若水：文案用"读到第N层 X 次"，100% L1 不显示避免噪声
+    const dist = content.getFeedbackDepthByDate(date)
+    const L1 = dist.L1 || 0, L2 = dist.L2 || 0, L3 = dist.L3 || 0, totalDist = dist.total || 0
+    const showDepthViz = (L2 + L3) > 0 && totalDist > 0
+    const pct = (n) => totalDist > 0 ? Math.round((n / totalDist) * 100) : 0
+    const depthParts = []
+    if (L2) depthParts.push(i18n.t('profile.depthText', { n: 2 }, locale) + ' ' + L2 + ' 次')
+    if (L3) depthParts.push(i18n.t('profile.depthText', { n: 3 }, locale) + ' ' + L3 + ' 次')
+    this.setData({
+      expandedDay: date,
+      detailList: formatted,
+      detailHeader: detailHeaderStr,
+      dayDetailAria: i18n.t('profile.dayDetailAria', { day: date }, locale),
+      depthViz: {
+        show: showDepthViz,
+        L1, L2, L3, total: totalDist,
+        l1Pct: pct(L1),
+        l2Pct: pct(L2),
+        l3Pct: pct(L3),
+        text: depthParts.join(' · '),
+        ariaLabel: `今日反馈深度分布：第1层 ${L1} 次，第2层 ${L2} 次，第3层 ${L3} 次，共 ${totalDist} 次`,
+      },
+    })
+  },
+
+  onAbout() {
+    const locale = this.data.locale
+    safeModal({
+      title: i18n.t('profile.aboutTitle', undefined, locale),
+      content: i18n.t('profile.aboutContent', undefined, locale),
+      showCancel: false,
+    })
+  },
+
+  // V8.6 Sprint 15：当日明细列表项"再读一遍"→跳转 QuestionDetail
+  // Why: 北极星漏斗最后1步闭环（CEO周远见）；UX 苏体验：跳转不收起 accordion，回来还在原位
+  onTapDetailItem(e) {
+    const { id } = e.currentTarget.dataset
+    if (!id) return // 老 entry 无 id 不跳转（UX 苏体验：避免误导）
+    analytics.feedbackDetailReplay(id)
+    storage.incrementDetailActionCount('replay')
+    safeNavigateTo('/pages/question/question?id=' + id)
+  },
+
+  // V8.12 第80轮 Sprint 21：当日明细列表项长按预览（UX 苏体验 + 毒舌老王"看完就回来"）
+  // Why: V8.6 跳转-回来太重，妈妈长按可速览 layer1 答案；预览后再决定是否"再读一遍"
+  // 法务张律放行：仅本地 questionMap 查表 + wx.showModal，无新数据收集；埋点 detail 仅 questionId 非儿童身份
+  onPreviewDetail(e) {
+    const { id } = e.currentTarget.dataset
+    if (!id) return
+    const locale = this.data.locale
+    const preview = content.previewAnswerForId(id)
+    analytics.feedbackDetailPreview(id)
+    storage.incrementDetailActionCount('preview')
+    if (!preview || !preview.snippet) {
+      safeModal({
+        title: preview && preview.title ? preview.title : i18n.t('profile.aboutTitle', undefined, locale),
+        content: i18n.t('profile.previewEmpty', undefined, locale),
+        showCancel: false,
+        confirmText: i18n.t('profile.previewClose', undefined, locale),
+      })
+      return
+    }
+    safeModal({
+      title: preview.title,
+      content: preview.snippet,
+      confirmText: i18n.t('profile.previewReplay', undefined, locale),
+      cancelText: i18n.t('profile.previewClose', undefined, locale),
+    }).then((confirm) => {
+      if (confirm) {
+        analytics.feedbackDetailReplay(id)
+        storage.incrementDetailActionCount('replay')
+        safeNavigateTo('/pages/question/question?id=' + id)
+      }
+    })
+  },
+
+  onPrivacy() {
+    safeNavigateTo('/pages/privacy/privacy')
+  },
+
+  // 举报不当内容 → 跳转举报页
+  onReport() {
+    safeNavigateTo('/pages/report/report')
+  },
+
+  // 家长控制面板：展示使用统计
+  onParentControl() {
+    const stats = minorProtection.getUsageStats()
+    const verifiedText = stats.parentVerified ? '已验证 ✓' : '未验证'
+    const lastTs = stats.lastVerifiedAt
+      ? new Date(stats.lastVerifiedAt).toLocaleDateString('zh-CN')
+      : '无'
+    const content =
+      `家长验证状态：${verifiedText}
+` +
+      `上次验证日期：${lastTs}
+` +
+      `今日已使用：${stats.dailyUsedMin} 分钟 / 30 分钟
+` +
+      `本次会话已使用：${stats.sessionUsedMin} 分钟 / 15 分钟
+
+` +
+      `保护机制：
+` +
+      `· 单次会话 ≤ 15 分钟
+` +
+      `· 每日累计 ≤ 30 分钟
+` +
+      `· 22:00 - 6:00 不可用`
+    safeModal({
+      title: '家长控制面板',
+      content,
+      showCancel: false,
+      confirmText: '我知道了',
+    })
+  },
+
+  onShareAppMessage() {
+    return {
+      title: '和宝宝一起探索十亿个为什么',
+      path: '/pages/discover/discover',
+    }
+  },
+  onShareTimeline() {
+    return {
+      title: '和宝宝一起探索十亿个为什么',
+    }
+  },
+
+  // V8.73 第137轮：哥哥姐姐确认提示（周教授+叶用户+苏体验+前端小凡）
+  // Why: 切换年龄段时弹出确认提示，保护孩子认知安全
+  onAgeSwitch(e) {
+    const age = e.currentTarget.dataset.age
+    if (!age) return
+
+    const currentAge = this.data.agePreference
+    // 首次选择，直接确认
+    if (!currentAge) {
+      this._saveAgePreference(age)
+      this.setData({ agePreference: age })
+      safeToast({ title: '已切换为 ' + this._getAgeLabel(age), icon: 'success' })
+      return
+    }
+    // 同一年龄，无需切换
+    if (age === currentAge) return
+
+    // 不同年龄，弹出确认提示
+    const locale = this.data.locale || 'zh'
+    const t = i18n.dict(locale)
+    safeModal({
+      title: '',
+      content: t['discover.siblingConfirmText'].replace('{age}', this._getAgeLabel(age)),
+      cancelText: t['discover.siblingConfirmCancel'],
+      confirmText: t['discover.siblingConfirmOk'],
+      success: (res) => {
+        if (res.confirm) {
+          this._saveAgePreference(age)
+
+// ===== 源代码文档前30页结束（共 1500 行）=====
