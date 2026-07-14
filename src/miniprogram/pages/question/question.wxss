@@ -37,6 +37,34 @@
 
 .answer-text { display: block; margin: 24rpx 32rpx 0; font-size: 30rpx; line-height: 1.9; color: #333; }
 
+/* V9.16 第178轮：emotion 标签行样式（墨小暖+彩虹姐+前端小凡 P0 LEG-005）
+   与 H5 KnowledgeCard.vue emotion-row 对齐：单行 mini 布局，IP 情绪标签
+   苏体验：不干扰阅读流，但提供情感温度感知 */
+.emotion-row {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin: 16rpx 32rpx 0;
+  flex-wrap: wrap;
+}
+.emotion-tag {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  padding: 6rpx 20rpx;
+  border-radius: 40rpx;
+  font-size: 22rpx;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.emotion-avatar {
+  font-size: 28rpx;
+  line-height: 1;
+}
+.emotion-label {
+  white-space: nowrap;
+}
+
 .child-bubble { margin: 24rpx 32rpx 0; display: flex; align-items: flex-start; gap: 16rpx; }
 .bubble-avatar { width: 64rpx; height: 64rpx; border-radius: 50%; background: linear-gradient(135deg, #ffecd2, #fcb69f); text-align: center; line-height: 64rpx; font-size: 32rpx; flex-shrink: 0; }
 .bubble-text { padding: 16rpx 28rpx; border-radius: 0 32rpx 32rpx 32rpx; font-size: 26rpx; font-weight: 600; color: #2c3e50; }
@@ -200,4 +228,66 @@
   font-size: 22rpx;
   margin-left: 12rpx;
   font-weight: 500;
+}
+
+/* V8.94 第157轮：interactionHint 互动引导区块（前端小凡 P0#2，与 H5 KnowledgeCard.vue 对齐） */
+.interaction-guide {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  margin: 20rpx 32rpx 0;
+  padding: 20rpx 24rpx;
+  background: rgba(255, 213, 79, 0.15);
+  border-radius: 16rpx;
+  border-left: 6rpx solid #FFD54F;
+}
+.interaction-guide .guide-icon {
+  font-size: 32rpx;
+  flex-shrink: 0;
+}
+.interaction-guide .guide-text {
+  font-size: 26rpx;
+  color: #5D4037;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* V9.11 第173轮：P0#7 空字段 fallback 视觉降级 */
+.interaction-guide--fallback {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border-left-color: #BDBDBD !important;
+}
+.interaction-guide--fallback .guide-text {
+  color: #9E9E9E;
+  font-style: italic;
+}
+
+/* V9.03 第165轮：parentGuide 家长指导渲染（前端小凡+彩虹姐 P0#2）
+   暖色系，柔和调性，与H5 KnowledgeCard.vue parent-guide 对齐 */
+.parent-guide {
+  display: flex;
+  align-items: flex-start;
+  gap: 10rpx;
+  margin: 16rpx 32rpx 0;
+  padding: 20rpx 24rpx;
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border-radius: 16rpx;
+  border-left: 6rpx solid #FFCC80;
+  flex-wrap: wrap;
+}
+.parent-guide .guide-icon {
+  font-size: 28rpx;
+  flex-shrink: 0;
+}
+.parent-guide .guide-label {
+  font-size: 24rpx;
+  font-weight: 600;
+  color: #8D6E63;
+  white-space: nowrap;
+}
+.parent-guide .guide-text {
+  font-size: 26rpx;
+  color: #6D4C41;
+  font-weight: 500;
+  line-height: 1.5;
 }
