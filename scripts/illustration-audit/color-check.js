@@ -27,6 +27,13 @@ const IP_REFERENCE_COLORS = {
 const AUTO_PASS_DELTA_E = 10   // <= 10 自动通过
 const WARN_DELTA_E = 15        // <= 15 告警，触发人工审核；> 15 拒绝
 
+// V8.81 Sprint 76 第145轮：饱和度检查阈值（安全李姐 + 墨小暖）
+// 插画饱和度（HSL S 值）应在 30%-70% 之间
+// 低于 30% 过于灰暗（对 2-3 岁孩子视觉刺激不足）
+// 高于 70% 过于鲜艳（对视网膜刺激过强）
+const SATURATION_MIN = 30      // 最低饱和度（%）
+const SATURATION_MAX = 70      // 最高饱和度（%）
+
 /**
  * 将 hex 颜色转换为 RGB
  * @param {string} hex - 如 '#FF9966'
@@ -144,6 +151,90 @@ function checkColor(imagePath) {
   }
 }
 
+/**
+ * V8.81 Sprint 76 第145轮：饱和度检查（安全李姐 + 墨小暖 + AI小智）
+ * 检查插画的 HSL 饱和度是否在安全范围内
+ *
+ * 标准：S 值应在 30%-70% 之间
+ * - 低于 30%：过于灰暗，对 2-3 岁孩子视觉刺激不足
+ * - 高于 70%：过于鲜艳，对视网膜刺激过强
+ *
+ * @param {Array<{r: number, g: number, b: number}>} pixels - 图片像素数组（采样）
+ * @returns {object} 饱和度检查报告
+ */
+function checkSaturation(pixels) {
+  if (!pixels || pixels.length === 0) {
+    return {
+      sampleSize: 0,
+      minSaturation: 0,
+      maxSaturation: 0,
+      avgSaturation: 0,
+      belowMinCount: 0,
+      aboveMaxCount: 0,
+      belowMinPct: 0,
+      aboveMaxPct: 0,
+      verdict: 'SKIP',
+      message: '无像素数据，跳过饱和度检查',
+      thresholds: { min: SATURATION_MIN, max: SATURATION_MAX },
+    }
+  }
+
+  const saturations = pixels.map(p => {
+    // RGB 转 HSL 中的 S 值
+    const r = p.r / 255
+    const g = p.g / 255
+    const b = p.b / 255
+    const max = Math.max(r, g, b)
+    const min = Math.min(r, g, b)
+    const delta = max - min
+    const lightness = (max + min) / 2
+
+    if (delta === 0) return 0  // 灰色，饱和度为 0
+    const s = lightness <= 0.5
+      ? (delta / (max + min)) * 100
+      : (delta / (2 - max - min)) * 100
+    return Math.round(s * 100) / 100
+  })
+
+  const minS = Math.min(...saturations)
+  const maxS = Math.max(...saturations)
+  const avgS = Math.round(saturations.reduce((a, b) => a + b, 0) / saturations.length * 100) / 100
+
+  const belowMinCount = saturations.filter(s => s < SATURATION_MIN).length
+  const aboveMaxCount = saturations.filter(s => s > SATURATION_MAX).length
+  const belowMinPct = Math.round((belowMinCount / saturations.length) * 100)
+  const aboveMaxPct = Math.round((aboveMaxCount / saturations.length) * 100)
+
+  // 判定：低于最低的像素占比 >= 20% 或高于最高的像素占比 >= 20% 则告警
+  let verdict = 'PASS'
+  let message = '饱和度在安全范围内（30%-70%）'
+  if (belowMinPct >= 20) {
+    verdict = 'WARN'
+    message = `饱和度偏低：${belowMinPct}% 像素 S 值 < ${SATURATION_MIN}%（视觉刺激不足）`
+  } else if (aboveMaxPct >= 20) {
+    verdict = 'WARN'
+    message = `饱和度偏高：${aboveMaxPct}% 像素 S 值 > ${SATURATION_MAX}%（视网膜刺激过强）`
+  }
+  if (belowMinPct >= 20 && aboveMaxPct >= 20) {
+    verdict = 'FAIL'
+    message = `饱和度异常：${belowMinPct}% 偏低 + ${aboveMaxPct}% 偏高，图像质量不合格`
+  }
+
+  return {
+    sampleSize: saturations.length,
+    minSaturation: minS,
+    maxSaturation: maxS,
+    avgSaturation: avgS,
+    belowMinCount,
+    aboveMaxCount,
+    belowMinPct,
+    aboveMaxPct,
+    verdict,
+    message,
+    thresholds: { min: SATURATION_MIN, max: SATURATION_MAX },
+  }
+}
+
 // CLI 入口
 if (require.main === module) {
   const imagePath = process.argv[2]
@@ -168,4 +259,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = { checkColor, deltaE, hexToRgb, IP_REFERENCE_COLORS, AUTO_PASS_DELTA_E, WARN_DELTA_E }
+module.exports = { checkColor, deltaE, hexToRgb, checkSaturation, IP_REFERENCE_COLORS, AUTO_PASS_DELTA_E, WARN_DELTA_E, SATURATION_MIN, SATURATION_MAX }
