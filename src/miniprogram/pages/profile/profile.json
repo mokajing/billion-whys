@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "ip-face": "/components/ip-face/ip-face"
+  },
   "navigationBarTitleText": "我的"
 }
