@@ -1,0 +1,561 @@
+{
+  "version": "1.0",
+  "round": 179,
+  "generated_at": "2026-07-13T03:12:01.306184",
+  "pipeline": "规则型分类 + 人工抽查 20%",
+  "classify_rules": {
+    "A": {
+      "keywords": [
+        "烫",
+        "热",
+        "噎",
+        "卡",
+        "鱼刺",
+        "过敏",
+        "细菌",
+        "臭",
+        "酸",
+        "蛀牙",
+        "糖",
+        "危险",
+        "毒",
+        "发霉",
+        "变质",
+        "洗手",
+        "洗了才能吃",
+        "疼",
+        "咬到"
+      ],
+      "description": "安全警告类——涉及烫伤/窒息/过敏/食物中毒/蛀牙/卫生/意外伤害风险",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective"
+    },
+    "B": {
+      "keywords": [
+        "甜",
+        "酸",
+        "苦",
+        "咸",
+        "辣",
+        "味道",
+        "颜色",
+        "变",
+        "脆",
+        "软",
+        "硬",
+        "黏",
+        "滑",
+        "气泡",
+        "融化",
+        "洞",
+        "圆",
+        "形状",
+        "声音",
+        "香",
+        "闻",
+        "尝",
+        "摸",
+        "口感",
+        "质地",
+        "凉",
+        "眼泪",
+        "井水"
+      ],
+      "description": "感官探索类——涉及味觉/视觉/触觉/嗅觉/听觉的探索",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle"
+    },
+    "C": {
+      "keywords": [
+        "做",
+        "怎么",
+        "哪里",
+        "来",
+        "营养",
+        "健康",
+        "为什么有",
+        "是怎么",
+        "从哪里",
+        "怎么做",
+        "制作",
+        "原料",
+        "工厂",
+        "机器",
+        "配方",
+        "科学",
+        "原理"
+      ],
+      "description": "知识事实类——涉及食物制作/来源/营养/科学原理",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "wise"
+    }
+  },
+  "total_items": 50,
+  "classified": 42,
+  "existing": 8,
+  "unclassified": 0,
+  "items": [
+    {
+      "id": "food-001",
+      "question": "牛奶是从哪来的？",
+      "comfortCategory": "B",
+      "reason": "已有分类",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "skip"
+    },
+    {
+      "id": "food-002",
+      "question": "鸡蛋是从哪来的？",
+      "comfortCategory": "C",
+      "reason": "匹配关键词: 来",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "wise",
+      "action": "apply"
+    },
+    {
+      "id": "food-003",
+      "question": "苹果切开为什么会变黑？",
+      "comfortCategory": "B",
+      "reason": "匹配关键词: 变",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "apply"
+    },
+    {
+      "id": "food-004",
+      "question": "米饭是怎么来的？",
+      "comfortCategory": "C",
+      "reason": "匹配关键词: 怎么",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "wise",
+      "action": "apply"
+    },
+    {
+      "id": "food-005",
+      "question": "糖放进水里为什么不见了？",
+      "comfortCategory": "B",
+      "reason": "已有分类",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "skip"
+    },
+    {
+      "id": "food-006",
+      "question": "为什么要吃蔬菜？",
+      "comfortCategory": "B",
+      "reason": "匹配关键词: 变",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "apply"
+    },
+    {
+      "id": "food-007",
+      "question": "冰淇淋为什么会化掉？",
+      "comfortCategory": "A",
+      "reason": "匹配关键词: 热",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "apply"
+    },
+    {
+      "id": "food-008",
+      "question": "面包是怎么做出来的？",
+      "comfortCategory": "B",
+      "reason": "匹配关键词: 变",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "apply"
+    },
+    {
+      "id": "food-009",
+      "question": "为什么有的水果是酸的？",
+      "comfortCategory": "A",
+      "reason": "匹配关键词: 酸",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "apply"
+    },
+    {
+      "id": "food-010",
+      "question": "为什么煮鸡蛋会变硬？",
+      "comfortCategory": "B",
+      "reason": "匹配关键词: 变",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "apply"
+    },
+    {
+      "id": "food-011",
+      "question": "为什么棉花糖是软软的？",
+      "comfortCategory": "A",
+      "reason": "匹配关键词: 糖",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "apply"
+    },
+    {
+      "id": "food-012",
+      "question": "为什么薄荷糖吃起来凉凉的？",
+      "comfortCategory": "A",
+      "reason": "匹配关键词: 糖",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "apply"
+    },
+    {
+      "id": "food-013",
+      "question": "为什么辣椒很辣？",
+      "comfortCategory": "B",
+      "reason": "匹配关键词: 辣",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "apply"
+    },
+    {
+      "id": "food-014",
+      "question": "西瓜为什么有籽？",
+      "comfortCategory": "C",
+      "reason": "匹配关键词: 为什么有",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "wise",
+      "action": "apply"
+    },
+    {
+      "id": "food-015",
+      "question": "为什么饭菜放久了会坏？",
+      "comfortCategory": "A",
+      "reason": "匹配关键词: 细菌",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "apply"
+    },
+    {
+      "id": "food-016",
+      "question": "为什么井水是凉的？",
+      "comfortCategory": "B",
+      "reason": "匹配关键词: 凉",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "apply"
+    },
+    {
+      "id": "food-017",
+      "question": "为什么爆米花会“砰“地炸开？",
+      "comfortCategory": "A",
+      "reason": "匹配关键词: 热",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "apply"
+    },
+    {
+      "id": "food-018",
+      "question": "为什么香蕉会变黑？",
+      "comfortCategory": "B",
+      "reason": "匹配关键词: 变",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "apply"
+    },
+    {
+      "id": "food-019",
+      "question": "为什么要洗手才能吃东西？",
+      "comfortCategory": "A",
+      "reason": "匹配关键词: 洗手",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "apply"
+    },
+    {
+      "id": "food-020",
+      "question": "为什么切洋葱会流眼泪？",
+      "comfortCategory": "B",
+      "reason": "匹配关键词: 眼泪",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "apply"
+    },
+    {
+      "id": "food-021",
+      "question": "为什么饼干是脆的？",
+      "comfortCategory": "B",
+      "reason": "匹配关键词: 变",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "apply"
+    },
+    {
+      "id": "food-022",
+      "question": "为什么可乐会冒泡泡？",
+      "comfortCategory": "B",
+      "reason": "匹配关键词: 气泡",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "apply"
+    },
+    {
+      "id": "food-023",
+      "question": "为什么豆腐是白白软软的？",
+      "comfortCategory": "B",
+      "reason": "匹配关键词: 变",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "apply"
+    },
+    {
+      "id": "food-024",
+      "question": "为什么吃糖多了会蛀牙？",
+      "comfortCategory": "A",
+      "reason": "已有分类",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "skip"
+    },
+    {
+      "id": "food-025",
+      "question": "为什么油和水不能混在一起？",
+      "comfortCategory": "C",
+      "reason": "匹配关键词: 怎么",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "wise",
+      "action": "apply"
+    },
+    {
+      "id": "food-026",
+      "question": "为什么蜂蜜是甜的？",
+      "comfortCategory": "B",
+      "reason": "匹配关键词: 甜",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "apply"
+    },
+    {
+      "id": "food-027",
+      "question": "为什么面条煮了会变软？",
+      "comfortCategory": "A",
+      "reason": "匹配关键词: 热",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "apply"
+    },
+    {
+      "id": "food-028",
+      "question": "为什么葡萄有的甜有的酸？",
+      "comfortCategory": "A",
+      "reason": "匹配关键词: 酸",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "apply"
+    },
+    {
+      "id": "food-029",
+      "question": "为什么煮粥的时候会扑锅？",
+      "comfortCategory": "B",
+      "reason": "匹配关键词: 变",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "apply"
+    },
+    {
+      "id": "food-030",
+      "question": "巧克力是怎么来的？",
+      "comfortCategory": "A",
+      "reason": "匹配关键词: 热",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "apply"
+    },
+    {
+      "id": "food-031",
+      "question": "为什么冰箱能让食物保鲜？",
+      "comfortCategory": "A",
+      "reason": "匹配关键词: 细菌",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "apply"
+    },
+    {
+      "id": "food-032",
+      "question": "为什么烤红薯那么香？",
+      "comfortCategory": "B",
+      "reason": "匹配关键词: 甜",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "apply"
+    },
+    {
+      "id": "food-033",
+      "question": "为什么水果要洗了才能吃？",
+      "comfortCategory": "A",
+      "reason": "匹配关键词: 洗了才能吃",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "apply"
+    },
+    {
+      "id": "food-034",
+      "question": "为什么有些人不能喝牛奶？",
+      "comfortCategory": "C",
+      "reason": "匹配关键词: 为什么有",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "wise",
+      "action": "apply"
+    },
+    {
+      "id": "food-035",
+      "question": "为什么饭要煮熟了才好吃才安全？",
+      "comfortCategory": "A",
+      "reason": "匹配关键词: 热",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "apply"
+    },
+    {
+      "id": "food-036",
+      "question": "为什么薄荷糖吃了嘴巴凉凉的？",
+      "comfortCategory": "A",
+      "reason": "匹配关键词: 糖",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "apply"
+    },
+    {
+      "id": "food-037",
+      "question": "为什么奶酪上有圆圆的洞？",
+      "comfortCategory": "A",
+      "reason": "已有分类",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "skip"
+    },
+    {
+      "id": "food-038",
+      "question": "为什么虾煮熟了会变红？",
+      "comfortCategory": "B",
+      "reason": "匹配关键词: 变",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "apply"
+    },
+    {
+      "id": "food-039",
+      "question": "为什么馒头蒸出来又大又松软？",
+      "comfortCategory": "A",
+      "reason": "已有分类",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "skip"
+    },
+    {
+      "id": "food-040",
+      "question": "为什么拌沙拉的油和醋倒在一起会分开？",
+      "comfortCategory": "C",
+      "reason": "匹配关键词: 怎么",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "wise",
+      "action": "apply"
+    },
+    {
+      "id": "food-041",
+      "question": "为什么切洋葱会流眼泪？（拓展版）",
+      "comfortCategory": "B",
+      "reason": "匹配关键词: 眼泪",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "apply"
+    },
+    {
+      "id": "food-042",
+      "question": "为什么辣椒吃了嘴巴会火辣辣的？",
+      "comfortCategory": "A",
+      "reason": "已有分类",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "skip"
+    },
+    {
+      "id": "food-043",
+      "question": "为什么棉花糖蓬蓬松松像云朵？",
+      "comfortCategory": "A",
+      "reason": "匹配关键词: 糖",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "apply"
+    },
+    {
+      "id": "food-044",
+      "question": "为什么绿豆泡水后会变胖变大？",
+      "comfortCategory": "B",
+      "reason": "匹配关键词: 变",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "apply"
+    },
+    {
+      "id": "food-045",
+      "question": "为什么牛奶放久了会变酸变臭？",
+      "comfortCategory": "A",
+      "reason": "已有分类",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "skip"
+    },
+    {
+      "id": "food-2071",
+      "question": "为什么牛奶放久了会变酸？",
+      "comfortCategory": "A",
+      "reason": "已有分类",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "skip"
+    },
+    {
+      "id": "food-2072",
+      "question": "为什么薯片是脆的，面包是软的？",
+      "comfortCategory": "B",
+      "reason": "匹配关键词: 变",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "apply"
+    },
+    {
+      "id": "food-2073",
+      "question": "为什么巧克力含在嘴里会化掉？",
+      "comfortCategory": "B",
+      "reason": "匹配关键词: 变",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "apply"
+    },
+    {
+      "id": "food-2074",
+      "question": "为什么吃东西的时候咬到舌头会很疼？",
+      "comfortCategory": "A",
+      "reason": "匹配关键词: 疼",
+      "rabbitEmotion": "brave",
+      "bearEmotion": "protective",
+      "action": "apply"
+    },
+    {
+      "id": "food-2075",
+      "question": "为什么可乐倒在杯子里会冒泡泡？",
+      "comfortCategory": "B",
+      "reason": "匹配关键词: 气泡",
+      "rabbitEmotion": "curious",
+      "bearEmotion": "gentle",
+      "action": "apply"
+    }
+  ],
+  "manual_review": [],
+  "review_instructions": {
+    "reviewers": "文若水 (CCO) + 周教授 (心理学家)",
+    "sample_size": "抽查 20%（约 9 条）",
+    "criteria": [
+      "A 类：确认是否涉及真实安全风险（非家长过度担忧）",
+      "B 类：确认感官探索属性是否准确",
+      "C 类：确认知识事实属性是否准确",
+      "无分类条目：需人工判断并标注分类理由"
+    ],
+    "how_to_review": "将 items[].review 设为 {status: approved/rejected, reviewer: 姓名, notes: 意见}"
+  }
+}
