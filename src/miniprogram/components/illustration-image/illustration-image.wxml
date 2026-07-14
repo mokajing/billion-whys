@@ -1,0 +1,54 @@
+<!--
+  V8.75 Sprint 74 第139轮：插画展示组件（微信小程序端）
+  负责：前端小凡+苏体验+彩虹姐
+  V8.77 第141轮：textOnly 改为 hidden + CSS transition 替代 wx:if 移除；新增重试上限 3 次 + 骨架屏 2 秒超时
+  V8.78 第142轮：新增 fallbackCircleColor 属性——超过重试上限时用圈层色系显示纯色占位
+  V8.88 第151轮：textOnly 模式新增心跳动画（苏体验+前端小凡）
+-->
+<!-- V8.88 第151轮：textOnly 心跳动画指示器 -->
+<view wx:if="{{textOnly && !loading && !error}}" class="textonly-heartbeat">
+  <view class="heartbeat-icon">🐰</view>
+</view>
+<view wx:else class="illustration-wrapper illustration--{{category}} {{textOnly ? 'illustration--text-only' : ''}}">
+  <!-- 加载中：骨架占位 -->
+  <view wx:if="{{loading && !error && !textOnly && !skeletonTimedOut}}" class="illustration-placeholder">
+    <view class="placeholder-shimmer"></view>
+  </view>
+
+  <!-- 骨架屏超时后：淡色静态占位 -->
+  <view wx:elif="{{loading && !error && !textOnly && skeletonTimedOut}}" class="illustration-placeholder illustration-placeholder--dimmed">
+    <view class="placeholder-dot"></view>
+  </view>
+
+  <!-- 加载失败（未超重试上限）：占位 + 重试按钮 -->
+  <view wx:elif="{{error && !textOnly && retryCount < 3}}" class="illustration-error" catchtap="onCatchTap">
+    <view class="error-icon">🐰</view>
+    <text class="error-text">图片加载失败</text>
+    <button class="retry-btn" bindtap="onRetry" catchtap="onRetryTap">重试</button>
+  </view>
+
+  <!-- 超过重试上限 + fallbackCircleColor：圈层色系纯色占位（V8.78 第142轮） -->
+  <view wx:elif="{{error && !textOnly && retryCount >= 3 && fallbackCircleColor}}" class="illustration-error illustration-error--fallback" style="background:{{fallbackBgGradient}};border:2px solid {{fallbackBorderColor}};border-radius:16px;">
+    <view class="fallback-icon">🐰</view>
+    <text class="fallback-text">配图加载中</text>
+  </view>
+
+  <!-- 超过重试上限（无fallbackCircleColor）：提示切换网络 -->
+  <view wx:elif="{{error && !textOnly && retryCount >= 3 && !fallbackCircleColor}}" class="illustration-error illustration-error--final" catchtap="onCatchTap">
+    <view class="error-icon">🐰</view>
+    <text class="error-text">请切换网络后重试</text>
+    <button class="retry-btn" bindtap="resetAndRetry" catchtap="onRetryTap">重试</button>
+  </view>
+
+  <!-- 加载成功 -->
+  <image
+    wx:elif="{{!textOnly}}"
+    src="{{currentSrc}}"
+    mode="widthFix"
+    class="illustration-img illustration--fade-in"
+    lazy-load="{{lazy}}"
+    bindload="onImageLoad"
+    binderror="onImageError"
+    catchtap="onCatchTap"
+  />
+</view>
