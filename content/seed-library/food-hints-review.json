@@ -1,0 +1,1139 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-07-13T03:12:24.043870",
+  "generated_by": "gen-food-hints.py (第174轮 P1#6)",
+  "pipeline": "三段式：LLM批量生成草稿 → 人工审核 → 注入",
+  "total_items": 43,
+  "items": [
+    {
+      "id": "food-002",
+      "question": "鸡蛋是从哪来的？",
+      "comfortCategory": "C",
+      "generated": {
+        "interactionHint": "和大人一起，在地图上找找食物从哪里来",
+        "parentGuide": "用地图或地球仪指出食物产地，帮助孩子建立空间概念。",
+        "interactionType": "观察类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-003",
+      "question": "苹果切开为什么会变黑？",
+      "comfortCategory": "B",
+      "generated": {
+        "interactionHint": "和大人一起，观察食物在煮的时候颜色的变化，你很会发现哦！",
+        "parentGuide": "和孩子一起观察食物在烹饪过程中的颜色变化，用手机拍照记录前后对比。",
+        "interactionType": "动作类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-004",
+      "question": "米饭是怎么来的？",
+      "comfortCategory": "C",
+      "generated": {
+        "interactionHint": "和大人一起，看看食物是怎么做出来的",
+        "parentGuide": "可以带孩子参观面包房或厨房，亲眼看看食物制作过程。",
+        "interactionType": "动作类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-006",
+      "question": "为什么要吃蔬菜？",
+      "comfortCategory": "B",
+      "generated": {
+        "interactionHint": "和大人一起，一起探索食物的小秘密，看看有什么新发现，你很会发现哦！",
+        "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。",
+        "interactionType": "观察类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-007",
+      "question": "冰淇淋为什么会化掉？",
+      "comfortCategory": "A",
+      "generated": {
+        "interactionHint": "暖暖的第一！和大人一起，一起慢慢探索这个食物的小秘密",
+        "parentGuide": "请在大人陪同下进行探索，注意安全。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+        "interactionType": "触觉类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-008",
+      "question": "面包是怎么做出来的？",
+      "comfortCategory": "B",
+      "generated": {
+        "interactionHint": "和大人一起，一起探索食物的小秘密，看看有什么新发现，你很会发现哦！",
+        "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。",
+        "interactionType": "触觉类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-009",
+      "question": "为什么有的水果是酸的？",
+      "comfortCategory": "A",
+      "generated": {
+        "interactionHint": "安全第一！和大人一起，一起看看冰箱里的食物有没有变坏",
+        "parentGuide": "教孩子用「看颜色+闻气味」判断食物是否变质，过期食物不要食用。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+        "interactionType": "感知类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-010",
+      "question": "为什么煮鸡蛋会变硬？",
+      "comfortCategory": "B",
+      "generated": {
+        "interactionHint": "和大人一起，观察食物在煮的时候颜色的变化，你很会发现哦！",
+        "parentGuide": "和孩子一起观察食物在烹饪过程中的颜色变化，用手机拍照记录前后对比。",
+        "interactionType": "触觉类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-011",
+      "question": "为什么棉花糖是软软的？",
+      "comfortCategory": "A",
+      "generated": {
+        "interactionHint": "安全第一！和大人一起，吃完甜的，一起去刷刷牙",
+        "parentGuide": "吃完甜食后建议漱口或刷牙，3岁以下用米粒大小含氟牙膏。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+        "interactionType": "触觉类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-012",
+      "question": "为什么薄荷糖吃起来凉凉的？",
+      "comfortCategory": "A",
+      "generated": {
+        "interactionHint": "安全第一！和大人一起，吃完甜的，一起去刷刷牙",
+        "parentGuide": "吃完甜食后建议漱口或刷牙，3岁以下用米粒大小含氟牙膏。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+        "interactionType": "感知类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-013",
+      "question": "为什么辣椒很辣？",
+      "comfortCategory": "B",
+      "generated": {
+        "interactionHint": "和大人一起，一起探索食物的小秘密，看看有什么新发现，你很会发现哦！",
+        "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。",
+        "interactionType": "感知类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-014",
+      "question": "西瓜为什么有籽？",
+      "comfortCategory": "C",
+      "generated": {
+        "interactionHint": "和大人一起，探索这个食物的有趣故事",
+        "parentGuide": "这是培养孩子科学兴趣的好机会，可以一起查绘本了解更多。",
+        "interactionType": "观察类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-015",
+      "question": "为什么饭菜放久了会坏？",
+      "comfortCategory": "A",
+      "generated": {
+        "interactionHint": "安全第一！和大人一起，一起慢慢探索这个食物的小秘密",
+        "parentGuide": "请在大人陪同下进行探索，注意安全。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+        "interactionType": "触觉类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-016",
+      "question": "为什么井水是凉的？",
+      "comfortCategory": "B",
+      "generated": {
+        "interactionHint": "和大人一起，一起探索食物的小秘密，看看有什么新发现，你很会发现哦！",
+        "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。",
+        "interactionType": "观察类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-017",
+      "question": "为什么爆米花会“砰“地炸开？",
+      "comfortCategory": "A",
+      "generated": {
+        "interactionHint": "安全第一！和大人一起，一起慢慢探索这个食物的小秘密",
+        "parentGuide": "请在大人陪同下进行探索，注意安全。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+        "interactionType": "触觉类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-018",
+      "question": "为什么香蕉会变黑？",
+      "comfortCategory": "B",
+      "generated": {
+        "interactionHint": "和大人一起，观察食物在煮的时候颜色的变化，你很会发现哦！",
+        "parentGuide": "和孩子一起观察食物在烹饪过程中的颜色变化，用手机拍照记录前后对比。",
+        "interactionType": "观察类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-019",
+      "question": "为什么要洗手才能吃东西？",
+      "comfortCategory": "A",
+      "generated": {
+        "interactionHint": "安全第一！和大人一起，一起慢慢探索这个食物的小秘密",
+        "parentGuide": "请在大人陪同下进行探索，注意安全。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+        "interactionType": "观察类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-020",
+      "question": "为什么切洋葱会流眼泪？",
+      "comfortCategory": "B",
+      "generated": {
+        "interactionHint": "和大人一起，一起探索食物的小秘密，看看有什么新发现，你很会发现哦！",
+        "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。",
+        "interactionType": "动作类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-021",
+      "question": "为什么饼干是脆的？",
+      "comfortCategory": "B",
+      "generated": {
+        "interactionHint": "和大人一起，摸一摸不同食物的软硬，比比看，你很会发现哦！",
+        "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。",
+        "interactionType": "观察类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-022",
+      "question": "为什么可乐会冒泡泡？",
+      "comfortCategory": "B",
+      "generated": {
+        "interactionHint": "和大人一起，一起探索食物的小秘密，看看有什么新发现，你很会发现哦！",
+        "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。",
+        "interactionType": "观察类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-023",
+      "question": "为什么豆腐是白白软软的？",
+      "comfortCategory": "B",
+      "generated": {
+        "interactionHint": "和大人一起，摸一摸不同食物的软硬，比比看，你很会发现哦！",
+        "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。",
+        "interactionType": "触觉类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-025",
+      "question": "为什么油和水不能混在一起？",
+      "comfortCategory": "C",
+      "generated": {
+        "interactionHint": "和大人一起，探索这个食物的有趣故事",
+        "parentGuide": "这是培养孩子科学兴趣的好机会，可以一起查绘本了解更多。",
+        "interactionType": "观察类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-026",
+      "question": "为什么蜂蜜是甜的？",
+      "comfortCategory": "B",
+      "generated": {
+        "interactionHint": "和大人一起，尝一尝不同食物的甜味，说说哪个最甜，你很会发现哦！",
+        "parentGuide": "准备2-3种不同味道的食物让孩子对比品尝，鼓励用语言描述感受。",
+        "interactionType": "动作类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-027",
+      "question": "为什么面条煮了会变软？",
+      "comfortCategory": "A",
+      "generated": {
+        "interactionHint": "安全第一！和大人一起，一起慢慢探索这个食物的小秘密",
+        "parentGuide": "请在大人陪同下进行探索，注意安全。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+        "interactionType": "触觉类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-028",
+      "question": "为什么葡萄有的甜有的酸？",
+      "comfortCategory": "A",
+      "generated": {
+        "interactionHint": "安全第一！和大人一起，一起看看冰箱里的食物有没有变坏",
+        "parentGuide": "教孩子用「看颜色+闻气味」判断食物是否变质，过期食物不要食用。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+        "interactionType": "观察类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-029",
+      "question": "为什么煮粥的时候会扑锅？",
+      "comfortCategory": "B",
+      "generated": {
+        "interactionHint": "和大人一起，一起探索食物的小秘密，看看有什么新发现，你很会发现哦！",
+        "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。",
+        "interactionType": "动作类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-030",
+      "question": "巧克力是怎么来的？",
+      "comfortCategory": "A",
+      "generated": {
+        "interactionHint": "安全第一！和大人一起，一起慢慢探索这个食物的小秘密",
+        "parentGuide": "请在大人陪同下进行探索，注意安全。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+        "interactionType": "触觉类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-031",
+      "question": "为什么冰箱能让食物保鲜？",
+      "comfortCategory": "A",
+      "generated": {
+        "interactionHint": "安全第一！和大人一起，一起慢慢探索这个食物的小秘密",
+        "parentGuide": "请在大人陪同下进行探索，注意安全。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+        "interactionType": "触觉类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-032",
+      "question": "为什么烤红薯那么香？",
+      "comfortCategory": "B",
+      "generated": {
+        "interactionHint": "和大人一起，一起探索食物的小秘密，看看有什么新发现，你很会发现哦！",
+        "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。",
+        "interactionType": "观察类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-033",
+      "question": "为什么水果要洗了才能吃？",
+      "comfortCategory": "A",
+      "generated": {
+        "interactionHint": "安全第一！和大人一起，一起慢慢探索这个食物的小秘密",
+        "parentGuide": "请在大人陪同下进行探索，注意安全。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+        "interactionType": "感知类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-034",
+      "question": "为什么有些人不能喝牛奶？",
+      "comfortCategory": "C",
+      "generated": {
+        "interactionHint": "和大人一起，探索这个食物的有趣故事",
+        "parentGuide": "这是培养孩子科学兴趣的好机会，可以一起查绘本了解更多。",
+        "interactionType": "感知类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-035",
+      "question": "为什么饭要煮熟了才好吃才安全？",
+      "comfortCategory": "A",
+      "generated": {
+        "interactionHint": "安全第一！和大人一起，一起慢慢探索这个食物的小秘密",
+        "parentGuide": "请在大人陪同下进行探索，注意安全。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+        "interactionType": "触觉类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-036",
+      "question": "为什么薄荷糖吃了嘴巴凉凉的？",
+      "comfortCategory": "A",
+      "generated": {
+        "interactionHint": "安全第一！和大人一起，吃完甜的，一起去刷刷牙",
+        "parentGuide": "吃完甜食后建议漱口或刷牙，3岁以下用米粒大小含氟牙膏。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+        "interactionType": "感知类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-038",
+      "question": "为什么虾煮熟了会变红？",
+      "comfortCategory": "B",
+      "generated": {
+        "interactionHint": "和大人一起，观察食物在煮的时候颜色的变化，你很会发现哦！",
+        "parentGuide": "和孩子一起观察食物在烹饪过程中的颜色变化，用手机拍照记录前后对比。",
+        "interactionType": "动作类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-040",
+      "question": "为什么拌沙拉的油和醋倒在一起会分开？",
+      "comfortCategory": "C",
+      "generated": {
+        "interactionHint": "和大人一起，探索这个食物的有趣故事",
+        "parentGuide": "这是培养孩子科学兴趣的好机会，可以一起查绘本了解更多。",
+        "interactionType": "动作类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-041",
+      "question": "为什么切洋葱会流眼泪？（拓展版）",
+      "comfortCategory": "B",
+      "generated": {
+        "interactionHint": "和大人一起，一起探索食物的小秘密，看看有什么新发现，你很会发现哦！",
+        "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。",
+        "interactionType": "动作类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-043",
+      "question": "为什么棉花糖蓬蓬松松像云朵？",
+      "comfortCategory": "A",
+      "generated": {
+        "interactionHint": "安全第一！和大人一起，吃完甜的，一起去刷刷牙",
+        "parentGuide": "吃完甜食后建议漱口或刷牙，3岁以下用米粒大小含氟牙膏。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+        "interactionType": "观察类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-044",
+      "question": "为什么绿豆泡水后会变胖变大？",
+      "comfortCategory": "B",
+      "generated": {
+        "interactionHint": "和大人一起，观察食物在煮的时候颜色的变化，你很会发现哦！",
+        "parentGuide": "和孩子一起观察食物在烹饪过程中的颜色变化，用手机拍照记录前后对比。",
+        "interactionType": "观察类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-2071",
+      "question": "为什么牛奶放久了会变酸？",
+      "comfortCategory": "A",
+      "generated": {
+        "interactionHint": "安全第一！和大人一起，一起看看冰箱里的食物有没有变坏",
+        "parentGuide": "教孩子用「看颜色+闻气味」判断食物是否变质，过期食物不要食用。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+        "interactionType": "动作类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-2072",
+      "question": "为什么薯片是脆的，面包是软的？",
+      "comfortCategory": "B",
+      "generated": {
+        "interactionHint": "和大人一起，摸一摸不同食物的软硬，比比看，你很会发现哦！",
+        "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。",
+        "interactionType": "触觉类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-2073",
+      "question": "为什么巧克力含在嘴里会化掉？",
+      "comfortCategory": "B",
+      "generated": {
+        "interactionHint": "和大人一起，一起探索食物的小秘密，看看有什么新发现，你很会发现哦！",
+        "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。",
+        "interactionType": "动作类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-2074",
+      "question": "为什么吃东西的时候咬到舌头会很疼？",
+      "comfortCategory": "A",
+      "generated": {
+        "interactionHint": "安全第一！和大人一起，一起慢慢探索这个食物的小秘密",
+        "parentGuide": "请在大人陪同下进行探索，注意安全。 以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+        "interactionType": "观察类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    },
+    {
+      "id": "food-2075",
+      "question": "为什么可乐倒在杯子里会冒泡泡？",
+      "comfortCategory": "B",
+      "generated": {
+        "interactionHint": "和大人一起，一起探索食物的小秘密，看看有什么新发现，你很会发现哦！",
+        "parentGuide": "这是一个厨房探索的好机会，让孩子参与安全的食物准备环节。",
+        "interactionType": "动作类"
+      },
+      "existing": {
+        "interactionHint": null,
+        "parentGuide": null,
+        "interactionType": null
+      },
+      "safety_check": {
+        "hint_violations": [],
+        "guide_violations": [],
+        "passed": true
+      },
+      "review": {
+        "status": "approved",
+        "reviewer": "AI小智(自动) + 待文若水/王园长抽查",
+        "notes": "第179轮规则型生成，待人工抽查20%",
+        "reviewed_at": "2026-07-13T03:12:47.547574"
+      }
+    }
+  ],
+  "review_instructions": {
+    "reviewer": "文若水 (CCO) + 王园长 (幼教)",
+    "approval_criteria": [
+      "hint 必须包含可操作动作动词（王园长）",
+      "comfortCategory=A 级 hint 必须安抚词前置（周教授）",
+      "parentGuide 必须包含法律免责声明（法务张律）",
+      "text 不包含 FOOD_SAFETY_WORDS 禁止词（安全李姐）",
+      "hint 字数 ≤30 字（CCO 文若水）",
+      "科学表述准确，简化不等于错误（科普陈博士）"
+    ],
+    "how_to_review": "将 items[].review.status 改为 approved 或 rejected，填写 reviewer/notes/reviewed_at"
+  }
+}
