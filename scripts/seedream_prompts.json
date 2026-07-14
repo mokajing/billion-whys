@@ -1,0 +1,89 @@
+{
+  "_comment": "seedream prompt 模板配置文件 V8.64 Sprint 70 第128轮",
+  "_why": "AI 小智：将 prompt 从 Python 硬编码中解耦，支持独立修改和版本管理。前端小凡要求 JSON 格式便于 CI 管道消费。",
+  "_version": "1.0.0",
+  "_updated": "2026-07-06",
+
+  "ip_prefix": {
+    "style": "warm watercolor children's picture book illustration",
+    "colors": "soft pastel colors",
+    "shapes": "simple cute flat shapes",
+    "mood": "gentle cozy mood",
+    "background": "clean white background",
+    "audience": "for 2-6 year old kids",
+    "characters": {
+      "ask_bunny": {
+        "description": "a small white rabbit with soft pink inner ears tilted forward curiously",
+        "eyes": "round black dot eyes",
+        "style": "simple cartoon"
+      },
+      "buddy_bear": {
+        "description": "a small warm light-brown bear",
+        "face": "friendly round face",
+        "style": "simple cartoon"
+      }
+    }
+  },
+
+  "image_types": {
+    "layer1": {
+      "description": "简单场景图，适合 3 岁认知水平",
+      "complexity": "simple",
+      "characters": "Ask Bunny and Buddy Bear both present",
+      "default_resolution": {"width": 2048, "height": 2048}
+    },
+    "concept": {
+      "description": "详细概念图，复用给 layer2/layer3/experiment",
+      "complexity": "detailed",
+      "characters": "Ask Bunny and Buddy Bear both present",
+      "default_resolution": {"width": 2048, "height": 2048}
+    },
+    "science": {
+      "description": "科学原理图，儿童友好标注",
+      "complexity": "diagram",
+      "characters": "optional, may use abstract representation",
+      "default_resolution": {"width": 2048, "height": 2048}
+    }
+  },
+
+  "prompts": {
+    "baseline": {
+      "nature-046": {
+        "question": "冰为什么会融化？",
+        "layer1": "Ask Bunny holding a clear blue-white ice cube that is dripping water drops, Buddy Bear pointing at it warmly. A small puddle of water forming below. Very simple scene.",
+        "concept": "Two bowls side by side on a table, one bowl in cool shade holding a solid ice cube, the other bowl in warm sunlight holding an ice cube melting fast into a puddle of water. Warm sun rays shining on the sunlit bowl. Ask Bunny and Buddy Bear watching curiously. Cozy scene.",
+        "science": "Simple educational diagram for children: on the left, water molecules arranged in a neat ordered hexagonal lattice labeled as ice; on the right, the same molecules scattered freely labeled as liquid water. Soft blue circular molecules, warm pastel palette, clear and friendly."
+      },
+      "nature-047": {
+        "question": "太阳为什么是热的？",
+        "layer1": "Ask Bunny standing happily in warm bright yellow sunlight with eyes closed smiling, big warm sun shining rays from the top of the image, Buddy Bear standing beside also enjoying the warmth. Very simple scene.",
+        "concept": "A big warm glowing yellow sun in the upper sky sending visible warm orange rays traveling across dark space down to a small green Earth where Ask Bunny and Buddy Bear stand feeling the warmth. Cozy inviting scene.",
+        "science": "Simple educational diagram for children: the sun shown as a big glowing ball of fire and gas on the left, with labeled arrows showing light and heat traveling across space to a small Earth on the right. Warm palette, friendly labels, clear layout."
+      },
+      "nature-048": {
+        "question": "为什么会有白天和黑夜？",
+        "layer1": "A sky split in two halves: left half bright blue with a yellow sun, right half dark navy with a crescent moon and stars. Ask Bunny looking up at the sky, Buddy Bear holding a small ball. Very simple scene.",
+        "concept": "Earth shown as a blue and green ball gently rotating in space, a bright sun on the right side lighting up the facing half of Earth in warm daylight, the other half in dark blue night with a moon and stars. Ask Bunny and Buddy Bear watching from a corner. Cozy scene.",
+        "science": "Simple educational diagram for children: a flashlight shining warm light onto a round ball representing Earth; the lit side labeled day in bright colors, the dark side labeled night with a moon and stars. A curved arrow showing rotation. Soft pastel palette, clear friendly labels."
+      }
+    }
+  },
+
+  "quality_rules": {
+    "墨小暖_ip_consistency": "Ask Bunny ears always tilted forward curiously ~12°, not vertical; Buddy Bear always friendly round face",
+    "彩虹姐_color_safety": "No overly saturated colors; pastel palette only; no pure red or pure black",
+    "安全李姐_content_safety": "No scary elements, no fire larger than candle flame, no dark isolated scenes",
+    "文若水_science_accuracy": "简化为儿童可理解，但不可植入错误心智模型",
+    "法务张律_privacy": "Prompt 仅含场景描述，零身份字段；seedream 内置审核守内容安全"
+  },
+
+  "api_config": {
+    "provider": "aone",
+    "model": "seedream_v4_5",
+    "mcp_tool": "d.one::liblib_seedream_v4_5",
+    "status_tool": "d.one::liblib_get_generate_status",
+    "poll_interval_seconds": 6,
+    "max_poll_attempts": 30,
+    "timeout_seconds": 180
+  }
+}
