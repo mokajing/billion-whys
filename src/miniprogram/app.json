@@ -44,9 +44,6 @@
     { "root": "subpackages/society/", "name": "society", "pages": [] }
   ],
   "lazyCodeLoading": "requiredComponents",
-  "usingComponents": {
-    "ip-face": "/components/ip-face/ip-face"
-  },
   "networkTimeout": {
     "request": 10000,
     "downloadFile": 10000
