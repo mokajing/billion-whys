@@ -1,5 +1,5 @@
 const content = require('../../utils/content')
-const { categoryLabels, categoryIcons, expTypeLabels } = require('../../utils/constants')
+const { categoryLabels, categoryIcons, expTypeLabels, getInteractionEmoji, FALLBACK_INTERACTION_HINT, getEmotionConfig, getComfortCategoryEmoji } = require('../../utils/constants')
 const { safeToast, safeSwitchTab, safeRedirectTo, safeNavigateBack, safeCreateSelectorQuery, safePageScrollTo } = require('../../utils/safe-wx')
 const analytics = require('../../utils/analytics')
 const storage = require('../../utils/storage')
@@ -46,7 +46,9 @@ Page({
     ageText: '',
     prevAria: '',
     nextAria: '',
-    // V8.75 Sprint 74 第139轮：纯文字模式（家长设置中可关闭插画，全职妈妈小美+苏体验）
+    // V8.81 Sprint 76 第145轮：纯文字模式从 app.globalData 读取（前端小凡+CTO）
+    // Why: 第144轮使用独立键名 bw_text_only 且无全局共享 -> 第145轮统一键名 bw_illustration_disabled
+    // 与 H5 端 Pinia store 对齐，通过 app.globalData.illustrationDisabled 全局共享
     textOnly: false,
     // V8.75 Sprint 74 第139轮：插画图片数据（三层 + 实验）
     layer1ThumbImage: '',
@@ -55,7 +57,22 @@ Page({
     layer2PreviewImage: '',
     layer3ThumbImage: '',
     layer3PreviewImage: '',
-  },
+    // V8.94 第157轮：interactionHint 互动引导字段（前端小凡 P0#2）
+    interactionHint: '',
+    interactionHintEmoji: '🤲',
+    interactionType: '',
+    // V9.03 第165轮：parentGuide 家长指导渲染（前端小凡+王园长 P0#2）
+    // 代码路径: src/miniprogram/pages/question/question.js:63-64
+    parentGuide: '',
+    // V9.11 第173轮：P0#7 前端空字段友好 fallback（苏体验+前端小凡）
+    // 与 H5 utils/constants.js 的 FALLBACK_INTERACTION_HINT 保持同步
+    fallbackHint: FALLBACK_INTERACTION_HINT,
+    // V9.16 第178轮：emotion 标签渲染（墨小暖+前端小凡 P0 LEG-005）
+    // 与 H5 KnowledgeCard.vue 对齐，数据层 emotion 已注入但前端不渲染=无效工作
+    rabbitEmotion: '',
+    bearEmotion: '',
+    rabbitEmotionConfig: { label: '', color: '', bg: '', icon: '' },
+    bearEmotionConfig: { label: '', color: '', bg: '', icon: '' },
 
   onLoad(options) {
     try {
@@ -92,10 +109,13 @@ Page({
           age: q.age,
           category: q.category,
           tags: q.tags,
-          layer1: q.layer1 ? { answer: q.layer1.answer, image: q.layer1.image } : null,
+          layer1: q.layer1 ? { answer: q.layer1.answer, image: q.layer1.image, interactionHint: q.layer1.interactionHint } : null,
           layer2: q.layer2 ? { answer: q.layer2.answer, followUp: q.layer2.followUp, image: q.layer2.image } : null,
           layer3: q.layer3 ? { answer: q.layer3.answer, followUp: q.layer3.followUp, image: q.layer3.image } : null,
           science: q.science || '',
+          // V8.94 第157轮：interactionHint 互动引导（前端小凡 P0#2）
+          interactionHint: (q.layer1 && q.layer1.interactionHint) || '',
+          interactionType: q.interactionType || '',
         },
         hasExperiment: !!q.experiment,
         categoryLabel: categoryLabels[q.category] || '',
@@ -125,6 +145,21 @@ Page({
         ageText: i18n.t('qd.age', { age: q.age }),
         prevAria: prevQuestion ? i18n.t('qd.prevAria', { q: prevQuestion.question }) : '',
         nextAria: nextQuestion ? i18n.t('qd.nextAria', { q: nextQuestion.question }) : '',
+        // V8.94 第157轮：interactionHint 互动引导（前端小凡 P0#2）
+        interactionHint: (q.layer1 && q.layer1.interactionHint) || '',
+        interactionHintEmoji: getInteractionEmoji(q.interactionType),
+        interactionType: q.interactionType || '',
+        // V9.21 第183轮：comfortCategory 图标前缀（苏体验+彩虹姐 P2#15）
+        comfortCategoryEmoji: getComfortCategoryEmoji(q.comfortCategory || ''),
+        comfortCategory: q.comfortCategory || '',
+        // V9.03 第165轮：parentGuide 家长指导（前端小凡+王园长 P0#2）
+        // 代码路径: src/miniprogram/pages/question/question.js:141-142
+        parentGuide: q.parentGuide || '',
+        // V9.16 第178轮：emotion 标签渲染（墨小暖+前端小凡 P0 LEG-005）
+        rabbitEmotion: q.rabbitEmotion || '',
+        bearEmotion: q.bearEmotion || '',
+        rabbitEmotionConfig: getEmotionConfig(q.rabbitEmotion || ''),
+        bearEmotionConfig: getEmotionConfig(q.bearEmotion || ''),
       })
       content.markViewed(id, q.category)
       // V8.16 第84轮 Sprint 25：A/B 分桶 + 曝光埋点（幂等，同 experiment 只发一次）
@@ -286,23 +321,43 @@ Page({
     }
   },
 
-  // V8.75 Sprint 74 第139轮：纯文字模式切换
+  // V8.81 Sprint 76 第145轮：纯文字模式切换（统一键名 bw_illustration_disabled）
+  // Why: 第144轮使用 bw_text_only 独立键名 -> 第145轮统一为 bw_illustration_disabled
   onToggleTextOnly() {
-    this.setData({ textOnly: !this.data.textOnly })
-    // 持久化到 storage
+    const newVal = !this.data.textOnly
+    this.setData({ textOnly: newVal })
     try {
-      wx.setStorageSync('bw_text_only', this.data.textOnly)
+      wx.setStorageSync('bw_illustration_disabled', newVal)
+      const app = getApp()
+      if (app && app.globalData) {
+        app.globalData.illustrationDisabled = newVal
+      }
     } catch (e) {
       // 静默忽略
     }
   },
 
-  // V8.75 Sprint 74 第139轮：初始化纯文字模式设置
+  // V8.81 Sprint 76 第145轮：初始化纯文字模式（统一键名 bw_illustration_disabled）
   initTextOnly() {
     try {
-      const val = wx.getStorageSync('bw_text_only')
+      // 先尝试新键名
+      const val = wx.getStorageSync('bw_illustration_disabled')
       if (typeof val === 'boolean') {
         this.setData({ textOnly: val })
+        return
+      }
+      // 兼容旧键名迁移
+      const oldVal = wx.getStorageSync('bw_text_only')
+      if (typeof oldVal === 'boolean') {
+        this.setData({ textOnly: oldVal })
+        wx.setStorageSync('bw_illustration_disabled', oldVal)
+        wx.removeStorageSync('bw_text_only')
+        return
+      }
+      // 回退到 globalData
+      const app = getApp()
+      if (app && app.globalData && typeof app.globalData.illustrationDisabled === 'boolean') {
+        this.setData({ textOnly: app.globalData.illustrationDisabled })
       }
     } catch (e) {
       // 静默忽略
