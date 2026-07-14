@@ -11,7 +11,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "太阳把水晒成水蒸气飘到天上变成云，云里的小水滴越来越多越来越重，就掉下来变成雨啦！",
-      "image": "images/nature/nature-001-layer1.webp"
+      "image": "images/nature/nature-001-layer1.webp",
+      "interactionHint": "下雨天打开窗户，让宝宝伸手接几滴雨，问：雨滴是凉凉的还是暖暖的？"
     },
     "layer2": {
       "followUp": "那云为什么装不住水了？",
@@ -45,7 +46,12 @@
     "ipScene": "问问兔看到下雨说：“天空在哭吗？“答答熊撑开伞说：“不是哭，是云朵装不下水了，在给大地洗澡呢！”",
     "scienceImage": "images/nature/nature-001-science.webp",
     "warmClosing": "下次下雨的时候，你可以告诉大人：云朵装不下水了在给大地洗澡呢！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "触觉体验帮孩子理解天气现象，比单纯讲解更有效。雨后还可以一起踩水坑哦。",
+    "interactionType": "感知类"
   },
   {
     "id": "nature-002",
@@ -59,7 +65,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "太阳没有走，一直在天上呢！是地球在转圈圈。转到背对太阳那边，天就黑了。",
-      "image": "images/nature/nature-002-layer1.webp"
+      "image": "images/nature/nature-002-layer1.webp",
+      "interactionHint": "傍晚和宝宝一起看日落，指着天边说：太阳公公去叫地球另一边的小朋友起床啦！"
     },
     "layer2": {
       "followUp": "地球为什么要转圈圈呢？",
@@ -93,7 +100,12 @@
     "ipScene": "问问兔傍晚追着太阳跑喊“别走”，答答熊拉住它说：“太阳没走，是我们脚下的地球在转圈圈呢！”",
     "scienceImage": "images/nature/nature-002-science.webp",
     "warmClosing": "太阳没有走哦，是我们脚下的地球在转圈圈呢！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "用拟人化的方式帮孩子理解昼夜交替，减少分离焦虑。可以画太阳和月亮交替的图。",
+    "interactionType": "观察类"
   },
   {
     "id": "nature-003",
@@ -107,7 +119,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "光走直线，碰到你的身体过不去就被挡住了，后面没有光的地方就是影子！",
-      "image": "images/nature/nature-003-layer1.webp"
+      "image": "images/nature/nature-003-layer1.webp",
+      "interactionHint": "用手电筒照宝宝的手，看墙上影子变大变小，问：影子为什么会变呢？"
     },
     "layer2": {
       "followUp": "为什么影子有时候长有时候短？",
@@ -139,7 +152,12 @@
     "ipScene": "问问兔看到自己的影子吓了一跳：“有人跟着我！“答答熊指着影子说：“那是你自己呀，光被你挡住了才出现的！”",
     "scienceImage": "images/nature/nature-003-science.webp",
     "warmClosing": "下次天晴的时候去玩影子游戏，看看你的影子能变成什么形状！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "C",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "wise",
+    "parentGuide": "光影游戏是孩子理解光学原理的第一步，也是极好的亲子互动游戏。",
+    "interactionType": "观察类"
   },
   {
     "id": "nature-004",
@@ -153,7 +171,8 @@
     "safetyLevel": "B",
     "layer1": {
       "answer": "风就是空气在流动。太阳把空气晒热了往上飘，旁边凉空气跑过来补上，就是风！",
-      "image": "images/nature/nature-004-layer1.webp"
+      "image": "images/nature/nature-004-layer1.webp",
+      "interactionHint": "和宝宝一起吹纸巾，看纸巾飘起来，说：我们的嘴巴也能造风呢！"
     },
     "layer2": {
       "followUp": "为什么热空气会往上跑？",
@@ -188,7 +207,12 @@
     "ipScene": "问问兔追着风跑想抓住它，答答熊说：“风是空气在跑步呢，你抓不住它，但你能感受到它！”",
     "scienceImage": "images/nature/nature-004-science.webp",
     "warmClosing": "下次感受到风的时候，你可以说：空气在赶路呢！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "让孩子用身体感受\"制造风\"，比抽象解释更容易理解空气流动。",
+    "interactionType": "动作类"
   },
   {
     "id": "nature-005",
@@ -202,7 +226,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "太阳光里藏着七种颜色，钻进雨后的小水滴里被分开了，就变成了彩虹！",
-      "image": "images/nature/nature-005-layer1.webp"
+      "image": "images/nature/nature-005-layer1.webp",
+      "interactionHint": "晴天用喷壶对着阳光喷水，和宝宝一起找迷你彩虹，问：看到几种颜色？"
     },
     "layer2": {
       "followUp": "为什么水滴能把颜色分开？",
@@ -235,7 +260,12 @@
     "ipScene": "问问兔想爬到彩虹上面去滑滑梯，答答熊说：“彩虹是光和水滴变出来的魔法，只能看不能摸呢！”",
     "scienceImage": "images/nature/nature-005-science.webp",
     "warmClosing": "下次雨停了找找彩虹，那是太阳和水滴一起变的魔法！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "阳光+水雾=彩虹，这个简单的实验能让孩子直观理解彩虹的成因。",
+    "interactionType": "动作类"
   },
   {
     "id": "nature-006",
@@ -249,7 +279,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "太阳光里蓝色的光最爱到处乱跳，碰到空气里的小颗粒就弹满了整个天空，所以天是蓝的！",
-      "image": "images/nature/nature-006-layer1.webp"
+      "image": "images/nature/nature-006-layer1.webp",
+      "interactionHint": "晚上关灯，用手电筒照天花板，让宝宝跳起来\"抓光\"，问：光跑得快不快？"
     },
     "layer2": {
       "followUp": "那为什么傍晚天是红的？",
@@ -284,7 +315,12 @@
     "ipScene": "问问兔仰着头问：“谁把天空刷成蓝色的？“答答熊说：“是太阳光和空气一起变的魔法，蓝色的光最调皮到处跑！”",
     "scienceImage": "images/nature/nature-006-science.webp",
     "warmClosing": "天空蓝蓝的是因为蓝色的光最调皮到处跑，你记住了真棒！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "通过追逐光斑的游戏，让孩子感受光的速度和直线传播的特性。",
+    "interactionType": "触觉类"
   },
   {
     "id": "nature-007",
@@ -298,7 +334,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "月亮不会发光，是被太阳照亮的。它绕地球转，你看到亮的多就是圆，少就是弯。",
-      "image": "images/nature/nature-007-layer1.webp"
+      "image": "images/nature/nature-007-layer1.webp",
+      "interactionHint": "捡一片树叶让宝宝摸正面和背面，问：哪面更滑？哪面纹路更深？"
     },
     "layer2": {
       "followUp": "月亮为什么自己不会发光？",
@@ -331,7 +368,12 @@
     "ipScene": "问问兔问：“月亮是不是被谁咬了一口才变弯的？“答答熊笑着说：“没有，月亮一直是圆的，只是你看到亮的那部分不一样而已！”",
     "scienceImage": "images/nature/nature-007-science.webp",
     "warmClosing": "晚上和大人一起看看月亮，记录一下它今天是什么形状吧！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "触觉对比是孩子认知植物结构的重要方式，比看图更直观。",
+    "interactionType": "触觉类"
   },
   {
     "id": "nature-008",
@@ -345,7 +387,8 @@
     "safetyLevel": "B",
     "layer1": {
       "answer": "云是好多好多特别小的水滴聚在一起变成的，就像棉花堆在一起变成一大团！",
-      "image": "images/nature/nature-008-layer1.webp"
+      "image": "images/nature/nature-008-layer1.webp",
+      "interactionHint": "下雪天带宝宝去踩雪，听咯吱咯吱的声音，问：雪是什么味道的？"
     },
     "layer2": {
       "followUp": "那水怎么飘到天上去了？",
@@ -379,7 +422,12 @@
     "ipScene": "问问兔想跳上云朵当蹦蹦床，答答熊说：“云看着软绵绵的，其实它是小水滴做的，你跳上去就掉下来啦！”",
     "scienceImage": "images/nature/nature-008-science.webp",
     "warmClosing": "下次看到白云，你可以说：那是好多小水滴聚在一起的棉花糖！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "多感官体验（听、触、看）能让孩子更全面地理解雪的特质。注意保暖。",
+    "interactionType": "感知类"
   },
   {
     "id": "nature-009",
@@ -393,7 +441,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "大海里溶了好多好多盐，所以海水是咸的。",
-      "image": "images/nature/nature-009-layer1.webp"
+      "image": "images/nature/nature-009-layer1.webp",
+      "interactionHint": "打雷时抱着宝宝数：轰隆隆的声音要几秒才到？离我们越远声音越慢！"
     },
     "layer2": {
       "followUp": "盐是从哪里来的？",
@@ -428,7 +477,12 @@
     "ipScene": "问问兔在海边喝了一口海水赶紧吐出来：“好咸呀！“答答熊说：“大海攒了几十亿年的盐呢，当然咸啦！”",
     "scienceImage": "images/nature/nature-009-science.webp",
     "warmClosing": "大海的咸味是几十亿年攒出来的，大自然真有耐心！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "数秒法既能缓解孩子对雷声的恐惧，又能教他们理解光速和声速的区别。",
+    "interactionType": "感知类"
   },
   {
     "id": "nature-010",
@@ -442,7 +496,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "天上的云互相碰撞就会发出闪电和轰隆隆的雷声。",
-      "image": "images/nature/nature-010-layer1.webp"
+      "image": "images/nature/nature-010-layer1.webp",
+      "interactionHint": "和宝宝一起对着镜子哈气，看雾气出现又消失，问：雾去哪了？"
     },
     "layer2": {
       "followUp": "云怎么会碰出闪电？",
@@ -474,7 +529,12 @@
     "ipScene": "问问兔被一声雷吓得躲到答答熊身后。答答熊抱住它说：“别怕，雷是云里的小冰块撞出来的电，像天上放了个大鞭炮，响一下就没事了！”",
     "scienceImage": "images/nature/nature-010-science.webp",
     "warmClosing": "打雷只是云里的冰块撞出来的声音，不用害怕哦！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "A",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "parentGuide": "呼出的水蒸气遇冷凝结成雾，这个原理用镜子就能直观展示。 以上活动建议在家长全程陪同下进行，请根据实际情况判断安全性。",
+    "interactionType": "感知类"
   },
   {
     "id": "nature-011",
@@ -488,7 +548,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "沙子其实是大石头碎成的小颗粒，碎了很久才变这么细。",
-      "image": "images/nature/nature-011-layer1.webp"
+      "image": "images/nature/nature-011-layer1.webp",
+      "interactionHint": "请家长全程陪同，带宝宝去河边看水流，扔一片树叶看它漂走，问：水要流去哪里？"
     },
     "layer2": {
       "followUp": "大石头怎么变成小沙子的？",
@@ -521,7 +582,12 @@
     "ipScene": "问问兔在沙滩上捧起一把沙子说：“这些小颗粒是从哪来的？“答答熊说：“它们以前是大石头呢！被风和水磨了几百万年才变这么细！”",
     "scienceImage": "images/nature/nature-011-science.webp",
     "warmClosing": "下次去沙滩，每一粒沙都是大石头磨了很久变成的呢！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "观察水流方向是理解地理概念的起点。请确保远离河岸边缘，全程成人监护。",
+    "interactionType": "观察类"
   },
   {
     "id": "nature-012",
@@ -536,7 +602,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "天上小水滴冷得结成冰花，轻轻飘下来就是雪！",
-      "image": "images/nature/nature-012-layer1.webp"
+      "image": "images/nature/nature-012-layer1.webp",
+      "interactionHint": "用杯子装水放冰箱冻成冰，再拿出来看融化，问：冰怎么又变回水了？"
     },
     "layer2": {
       "followUp": "雪花为什么是六角形的？",
@@ -569,7 +636,12 @@
     "ipScene": "问问兔伸手接雪花说：“天上掉糖了！“答答熊笑着说：“那是云里的小水滴冷得变成冰花飘下来啦，每片都不一样！”",
     "scienceImage": "images/nature/nature-012-science.webp",
     "warmClosing": "下次下雪接一片雪花看看，每片都有六个角而且都不一样！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "水的三态变化是孩子最喜欢的科学实验之一，反复冻融能加深理解。",
+    "interactionType": "观察类"
   },
   {
     "id": "nature-013",
@@ -583,7 +655,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "地球肚子里有滚烫的岩浆，从火山口冒出来就像喷火。",
-      "image": "images/nature/nature-013-layer1.webp"
+      "image": "images/nature/nature-013-layer1.webp",
+      "interactionHint": "和宝宝一起躺在床上看云，找出像小动物的云朵，问：那朵云像什么？"
     },
     "layer2": {
       "followUp": "岩浆为什么会从火山里跑出来？",
@@ -619,7 +692,12 @@
     "ipScene": "问问兔看到火山喷发的图片说：“山怎么在吐火呀！“答答熊说：“地球肚子里有滚烫的石头汤，攒多了就从山顶冒出来了，就像可乐摇一摇会喷出来一样！”",
     "scienceImage": "images/nature/nature-013-science.webp",
     "warmClosing": "地球肚子里热热的岩浆就像可乐里的气泡，大自然的力量真大！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "A",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "parentGuide": "云朵想象游戏培养观察力和想象力，也是绝佳的亲子放松时刻。 以上活动建议在家长全程陪同下进行，请根据实际情况判断安全性。",
+    "interactionType": "观察类"
   },
   {
     "id": "nature-014",
@@ -634,7 +712,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "石头里的小颗粒手拉手抱得紧紧的，谁也拆不开，所以硬。",
-      "image": "images/nature/nature-014-layer1.webp"
+      "image": "images/nature/nature-014-layer1.webp",
+      "interactionHint": "请家长全程陪同，晴天用放大镜聚焦阳光照在纸上，看光点变亮，但不要照易燃物。"
     },
     "layer2": {
       "followUp": "石头是怎么来的？",
@@ -667,7 +746,12 @@
     "ipScene": "问问兔使劲踩石头说：“怎么踩不碎呀！“答答熊说：“石头里面的小颗粒手拉手抱得可紧了，比你的力气大多了！”",
     "scienceImage": "images/nature/nature-014-science.webp",
     "warmClosing": "下次捡到石头，试试比比哪块更硬，你就是小小地质学家！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "放大镜聚光实验展示太阳能量的集中，但必须全程成人监护，远离易燃物。",
+    "interactionType": "观察类"
   },
   {
     "id": "nature-015",
@@ -682,7 +766,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "磁铁有隐形的手，能隔空把铁的东西拉过来！",
-      "image": "images/nature/nature-015-layer1.webp"
+      "image": "images/nature/nature-015-layer1.webp",
+      "interactionHint": "请家长全程陪同，打雷闪电时和宝宝一起数闪电和雷声之间的秒数，闪电越近雷声越快。"
     },
     "layer2": {
       "followUp": "这个隐形的手是什么？",
@@ -715,7 +800,12 @@
     "ipScene": "问问兔拿着磁铁到处吸，回形针飞过来了，积木不动。答答熊说：“磁铁有隐形的手，只能拉住铁做的东西哦！”",
     "scienceImage": "images/nature/nature-015-science.webp",
     "warmClosing": "拿磁铁到处试试看，发现哪些东西能被吸住吧！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "C",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "wise",
+    "parentGuide": "这个活动能帮孩子理解闪电和雷声的关系，同时缓解对雷电的恐惧。请确保在室内安全位置。",
+    "interactionType": "观察类"
   },
   {
     "id": "nature-016",
@@ -730,7 +820,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "地球表面像拼图分成几大块，它们互相挤就会抖。",
-      "image": "images/nature/nature-016-layer1.webp"
+      "image": "images/nature/nature-016-layer1.webp",
+      "interactionHint": "下完雨带宝宝看地上的蚯蚓，轻轻说：蚯蚓出来透气啦，我们不要踩到它哦。"
     },
     "layer2": {
       "followUp": "地面下面是什么？",
@@ -764,7 +855,12 @@
     "ipScene": "问问兔觉得地面在晃说：“地球打喷嚏了吗？“答答熊拉着它躲到桌下说：“是地壳板块互相挤了一下，我们先躲好！”",
     "scienceImage": "images/nature/nature-016-science.webp",
     "warmClosing": "记住地震来了蹲下护头躲桌下，你已经学会保护自己了！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "A",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "parentGuide": "观察雨后小动物是培养孩子对自然生命敬畏心的好机会。 以上活动建议在家长全程陪同下进行，请根据实际情况判断安全性。",
+    "interactionType": "观察类"
   },
   {
     "id": "nature-017",
@@ -779,7 +875,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为水稻特别爱喝水，田里灤上水它才能长大变成米饭。",
-      "image": "images/nature/nature-017-layer1.webp"
+      "image": "images/nature/nature-017-layer1.webp",
+      "interactionHint": "让宝宝闭上眼睛听鸟叫声，猜猜有几只鸟在唱歌，问：哪只鸟唱得最好听？"
     },
     "layer2": {
       "followUp": "为什么水稻比别的植物更爱水？",
@@ -815,7 +912,12 @@
     "ipScene": "问问兔踩在田埂上看水田说：“为什么田里像小池塘？“答答熊说：“因为水稻特别爱喝水，有水它才能长大变成米饭呢！”",
     "scienceImage": "images/nature/nature-017-science.webp",
     "warmClosing": "一碗米饭需要好多水才能种出来，要珍惜粮食哦！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "听觉专注力训练，同时培养对大自然声音的敏感度和欣赏力。",
+    "interactionType": "感知类"
   },
   {
     "id": "nature-018",
@@ -830,7 +932,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "晚上空气变凉了，空气里的水蒸气碰到凉凉的草叶就变成小水珠啦！",
-      "image": "images/nature/nature-018-layer1.webp"
+      "image": "images/nature/nature-018-layer1.webp",
+      "interactionHint": "和宝宝一起种一颗豆子在土里，每天浇水看它发芽，问：豆子是怎么钻出来的？"
     },
     "layer2": {
       "followUp": "为什么白天水珠就不见了？",
@@ -863,7 +966,12 @@
     "ipScene": "问问兔早起看到草上亮晶晶的说：“草叶在流汗吗？“答答熊说：“不是流汗，是空气里的水蒸气碰到凉凉的草叶变成小水珠了，叫露水！”",
     "scienceImage": "images/nature/nature-018-science.webp",
     "warmClosing": "明天早起看看草叶上的露水，那是大自然送给早起小朋友的礼物！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "种植活动是孩子理解生命成长的最佳方式，培养耐心和责任感。",
+    "interactionType": "动作类"
   },
   {
     "id": "nature-019",
@@ -878,7 +986,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "雾就是飘在地面上的云！空气里的水蒸气变凉了就变成小水滴飘在空中。",
-      "image": "images/nature/nature-019-layer1.webp"
+      "image": "images/nature/nature-019-layer1.webp",
+      "interactionHint": "秋天和宝宝一起捡不同颜色的落叶，按颜色排队，问：为什么叶子会变色？"
     },
     "layer2": {
       "followUp": "雾和云有什么不一样？",
@@ -913,7 +1022,12 @@
     "ipScene": "问问兔在雾里走来走去说：“我是不是钻进云里了？“答答熊说：“没错！雾就是飘在地面上的云，你现在就在云里面呢！”",
     "scienceImage": "images/nature/nature-019-science.webp",
     "warmClosing": "下次看到雾，你可以说：我在云里面走路呢！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "收集和分类活动锻炼孩子的观察力和分类能力，同时也是美的启蒙。",
+    "interactionType": "触觉类"
   },
   {
     "id": "nature-020",
@@ -928,7 +1042,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为地球绕太阳转一圈要一年，而地球是歪着转的，所以不同时候晒到的太阳多少不一样。",
-      "image": "images/nature/nature-020-layer1.webp"
+      "image": "images/nature/nature-020-layer1.webp",
+      "interactionHint": "请家长全程陪同，用手指蘸水滴在热石头上，看水珠跳舞蒸发，问：水去哪了？"
     },
     "layer2": {
       "followUp": "地球为什么是歪着转的？",
@@ -962,7 +1077,12 @@
     "ipScene": "问问兔问：“为什么夏天热冬天冷呀？“答答熊拿着地球仪说：“因为地球是歪着绕太阳转的，歪向太阳那边就热，歪开就冷！”",
     "scienceImage": "images/nature/nature-020-science.webp",
     "warmClosing": "四季变化是因为地球歪着绕太阳转，大自然的设计真巧妙！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "蒸发实验直观展示水变成水蒸气的过程。注意石头温度不要过高烫伤。",
+    "interactionType": "感知类"
   },
   {
     "id": "nature-021",
@@ -977,7 +1097,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "星星的光要穿过厚厚的空气才能到你的眼睛，空气一直在动，光就被晃来晃去，看起来就一闪一闪的！",
-      "image": "images/nature/nature-021-layer1.webp"
+      "image": "images/nature/nature-021-layer1.webp",
+      "interactionHint": "和宝宝一起看月亮，每晚画下月亮的形状，问：月亮为什么有时候圆有时候弯？"
     },
     "layer2": {
       "followUp": "如果没有空气星星还会闪吗？",
@@ -1011,7 +1132,12 @@
     "ipScene": "问问兔唱着：“一闪一闪亮晶晶，星星为什么眨眼睛？“答答熊说：“星星没有眨眼，是空气在晃它的光呢！”",
     "scienceImage": "images/nature/nature-021-science.webp",
     "warmClosing": "下次看到星星闪，你可以告诉大人：是空气在晃星星的光呢！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "月亮观察日记是培养孩子长期观察习惯的绝佳科学启蒙活动。",
+    "interactionType": "动作类"
   },
   {
     "id": "nature-022",
@@ -1026,7 +1152,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "流星是太空里的小石头飞进地球的空气层，跑得太快摩擦发热发光了！",
-      "image": "images/nature/nature-022-layer1.webp"
+      "image": "images/nature/nature-022-layer1.webp",
+      "interactionHint": "沙滩上堆沙堡，看海浪冲过来把城堡冲平，问：海浪从哪里来？"
     },
     "layer2": {
       "followUp": "那小石头最后去哪了？",
@@ -1058,7 +1185,12 @@
     "ipScene": "问问兔看到流星赶紧许愿，答答熊说：“流星是太空的小石头飞太快烧起来了，不过许愿也很开心呢！”",
     "scienceImage": "images/nature/nature-022-science.webp",
     "warmClosing": "流星是太空小石头飞太快摩擦发光的，下次看到可以许个愿！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "通过玩沙玩水理解海浪的力量，是自然力学的感性启蒙。",
+    "interactionType": "观察类"
   },
   {
     "id": "nature-023",
@@ -1073,7 +1205,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "很久很久以前的动物和植物死后被泥沙埋住，慢慢变成了石头里的印记，就是化石！",
-      "image": "images/nature/nature-023-layer1.webp"
+      "image": "images/nature/nature-023-layer1.webp",
+      "interactionHint": "带宝宝闻花香、摸花瓣、看花蕊，问：蜜蜂为什么要来花这里？"
     },
     "layer2": {
       "followUp": "怎么变成石头的呢？",
@@ -1106,7 +1239,12 @@
     "ipScene": "问问兔在石头上看到一个贝壳的印子说：“贝壳钻进石头里了？“答答熊说：“这是化石！很久以前的贝壳被泥沙埋住慢慢变成石头里的印记了。”",
     "scienceImage": "images/nature/nature-023-science.webp",
     "warmClosing": "化石是大自然写的历史书，每一块都藏着几百万年前的故事！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "多感官探索花朵，同时引入授粉的初步概念，是生态学的第一课。",
+    "interactionType": "触觉类"
   },
   {
     "id": "nature-024",
@@ -1121,7 +1259,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "水滴总想把自己缩成最小的样子，圆球就是最小的形状，所以露珠就变圆圆的啦！",
-      "image": "images/nature/nature-024-layer1.webp"
+      "image": "images/nature/nature-024-layer1.webp",
+      "interactionHint": "和宝宝一起吹蒲公英，看种子飞走，说：蒲公英宝宝坐降落伞去旅行啦！"
     },
     "layer2": {
       "followUp": "为什么水滴想把自己缩小？",
@@ -1156,7 +1295,12 @@
     "ipScene": "问问兔趴在草地上说：\"露珠好圆呀，像一颗颗小玻璃球！\"答答熊说：\"因为水滴的表面有一层看不见的皮，会把水拉成圆球呢！\"",
     "scienceImage": "images/nature/nature-024-science.webp",
     "warmClosing": "一颗小露珠里藏着表面张力的大秘密，下次看到露珠可以仔细观察它圆圆的样子哦！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "蒲公英是理解植物传播种子的最佳教材，每个孩子都喜欢这个游戏。",
+    "interactionType": "动作类"
   },
   {
     "id": "nature-025",
@@ -1171,7 +1315,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "含羞草害羞了！一碰它叶子就赶紧合起来，像小朋友害羞捂脸一样。",
-      "image": "images/nature/nature-025-layer1.webp"
+      "image": "images/nature/nature-025-layer1.webp",
+      "interactionHint": "请家长全程陪同，用勺子敲不同大小的石头，听声音高低，问：哪块石头唱歌最高？"
     },
     "layer2": {
       "followUp": "它真的会害羞吗？",
@@ -1203,7 +1348,12 @@
     "ipScene": "问问兔碰了一下含羞草，叶子马上合上了。问问兔吓了一跳：“它生气了吗？“答答熊说：“没有生气，它是在保护自己呢，过一会儿就又打开了！”",
     "scienceImage": "images/nature/nature-025-science.webp",
     "warmClosing": "含羞草用合起叶子保护自己，植物也有自己的小聪明呢！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "天然乐器探索让孩子理解声音高低与物体大小的关系。注意不要扔石头。",
+    "interactionType": "感知类"
   },
   {
     "id": "nature-026",
@@ -1218,7 +1368,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "数树桩上的圈圈！一圈就是一岁，数数有几圈就知道树多大了。",
-      "image": "images/nature/nature-026-layer1.webp"
+      "image": "images/nature/nature-026-layer1.webp",
+      "interactionHint": "雨后和宝宝一起找水坑，看水坑里的倒影，问：水里的天空和真的天空哪个更蓝？"
     },
     "layer2": {
       "followUp": "为什么树会长圈圈？",
@@ -1250,7 +1401,12 @@
     "ipScene": "问问兔抱着一棵大树问：“你几岁呀？“答答熊指着旁边的树桩说：“数数树桩上的圈圈就知道了，一圈就是一岁！”",
     "scienceImage": "images/nature/nature-026-science.webp",
     "warmClosing": "下次看到树桩，数数年轮就知道这棵树活了多少年，你就是小小植物学家！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "水坑里的倒影是孩子理解\"反射\"概念的最简单方式，比镜子更自然。",
+    "interactionType": "观察类"
   },
   {
     "id": "nature-027",
@@ -1265,7 +1421,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为月亮有隐形的力量在拉海水！月亮离哪边近，哪边的海水就被拉高了。",
-      "image": "images/nature/nature-027-layer1.webp"
+      "image": "images/nature/nature-027-layer1.webp",
+      "interactionHint": "和宝宝一起把手放在胸口感受心跳，再跑几圈感受心跳加速，问：心跳为什么变快了？"
     },
     "layer2": {
       "followUp": "月亮怎么能拉动海水呢？",
@@ -1299,7 +1456,12 @@
     "ipScene": "问问兔在海边说：“早上水在这里，下午水跑到那里了！“答答熊说：“是月亮在拉海水呢，月亮走到哪边，海水就跟到哪边！”",
     "scienceImage": "images/nature/nature-027-science.webp",
     "warmClosing": "涨潮退潮是月亮在拉海水，大自然的力量真神奇！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "身体感知是理解生理现象的第一步，帮助孩子建立身体意识。",
+    "interactionType": "动作类"
   },
   {
     "id": "nature-028",
@@ -1314,7 +1476,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "瀑布的水是从山上的河流来的，河水流到悬崖边就像跳水一样冲下去了！",
-      "image": "images/nature/nature-028-layer1.webp"
+      "image": "images/nature/nature-028-layer1.webp",
+      "interactionHint": "让宝宝摸不同温度的石头（晒过的和阴凉的），问：太阳公公是不是把石头晒热了？"
     },
     "layer2": {
       "followUp": "那河里的水为什么不停地流？",
@@ -1348,7 +1511,12 @@
     "ipScene": "问问兔听到轰隆隆的声音跑过去看，发现是瀑布。问问兔说：“这么多水从哪来的？“答答熊说：“是山上的河水流到悬崖边跳下来了，好壮观！”",
     "scienceImage": "images/nature/nature-028-science.webp",
     "warmClosing": "瀑布就是河水从高处跳下来的，大自然的跳水真壮观！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "温度对比实验让孩子直观理解太阳的热量传递。",
+    "interactionType": "触觉类"
   },
   {
     "id": "nature-029",
@@ -1363,7 +1531,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为你的声音跑到山那边撞到了又弹回来了！就像你扔球到墙上球会弹回来一样。",
-      "image": "images/nature/nature-029-layer1.webp"
+      "image": "images/nature/nature-029-layer1.webp",
+      "interactionHint": "和宝宝一起观察蚂蚁搬家，看它们排成一队，问：蚂蚁要搬去哪里？"
     },
     "layer2": {
       "followUp": "为什么在家里喊没有回声？",
@@ -1395,7 +1564,12 @@
     "ipScene": "问问兔对着山谷喊：“你好——“过了一会儿听到“你好——“它吓了一跳：“谁在学我说话？“答答熊说：“那是你自己的回声，声音撞到山壁弹回来了！”",
     "scienceImage": "images/nature/nature-029-science.webp",
     "warmClosing": "下次到空旷的地方喊一声试试，听听你的声音弹回来的回声！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "观察昆虫社会行为是培养孩子耐心和科学观察力的好方法。",
+    "interactionType": "观察类"
   },
   {
     "id": "nature-030",
@@ -1410,7 +1584,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "太阳没有被吃掉！是月亮刚好跑到太阳前面挡住了一部分，叫日食。",
-      "image": "images/nature/nature-030-layer1.webp"
+      "image": "images/nature/nature-030-layer1.webp",
+      "interactionHint": "让宝宝对着风车吹气，看风车转起来，再拿到户外看风吹动，问：哪个转得更快？"
     },
     "layer2": {
       "followUp": "月亮那么小怎么能挡住太阳？",
@@ -1443,7 +1618,12 @@
     "ipScene": "问问兔看到太阳少了一块吓了一跳：“谁咬了太阳一口？“答答熊说：“是月亮跑到太阳前面挡住了，不是被咬了！过一会儿就恢复了。”",
     "scienceImage": "images/nature/nature-030-science.webp",
     "warmClosing": "日食是月亮挡住了太阳，不是被吃掉了，大自然的巧合真奇妙！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "风车是理解\"风能\"的最佳玩具，室内外对比能加深理解。",
+    "interactionType": "动作类"
   },
   {
     "id": "nature-031",
@@ -1458,7 +1638,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "植物喜欢阳光，哪边有光它就往哪边弯过去，就像你看到好吃的会凑过去一样！",
-      "image": "images/nature/nature-031-layer1.webp"
+      "image": "images/nature/nature-031-layer1.webp",
+      "interactionHint": "和宝宝一起用杯子装不同量的水，用筷子敲杯沿听声音，问：水多声音高还是低？"
     },
     "layer2": {
       "followUp": "植物怎么知道光在哪边？",
@@ -1491,7 +1672,12 @@
     "ipScene": "问问兔发现窗台上的植物都歪向窗户说：“它们想出去玩吗？“答答熊说：“它们在追阳光呢！哪边有光就往哪边弯，植物也爱晒太阳！”",
     "scienceImage": "images/nature/nature-031-science.webp",
     "warmClosing": "植物追着阳光长，就像你追着喜欢的东西跑一样，生命真奇妙！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "水杯音乐实验是声音物理学的启蒙，也培养音乐感知力。",
+    "interactionType": "感知类"
   },
   {
     "id": "nature-032",
@@ -1506,7 +1692,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "秋天天冷了，树叶里的绿色消失，黄色露出来了。树养不起那么多叶子，就让它们掉下来。",
-      "image": "images/nature/nature-032-layer1.webp"
+      "image": "images/nature/nature-032-layer1.webp",
+      "interactionHint": "晴天让宝宝站在太阳下看自己的影子，早上、中午、傍晚各看一次，问：影子怎么变了？"
     },
     "layer2": {
       "followUp": "叶子里一直有黄色吗？",
@@ -1539,7 +1726,12 @@
     "ipScene": "问问兔捡起一片黄叶子说：“叶子生病了变黄了吗？“答答熊说：“没有生病，是绿色素消失了黄色素就露出来了。树在准备过冬呢，春天会长新叶子的！”",
     "scienceImage": "images/nature/nature-032-science.webp",
     "warmClosing": "秋天落叶是树在准备过冬，春天又会长出新叶子，大自然一直在轮回！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "一天中影子变化的观察是理解地球自转的感性基础，也是时间概念的启蒙。",
+    "interactionType": "观察类"
   },
   {
     "id": "nature-033",
@@ -1554,7 +1746,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为地球肚子里是热的！地下的水碰到热热的石头就被烧热了，从地缝里冒出来就是温泉。",
-      "image": "images/nature/nature-033-layer1.webp"
+      "image": "images/nature/nature-033-layer1.webp",
+      "interactionHint": "和宝宝一起用嘴对着手哈气，感觉暖暖的；再吹气，感觉凉凉的，问：为什么不一样？"
     },
     "layer2": {
       "followUp": "地球肚子里为什么是热的？",
@@ -1589,7 +1782,12 @@
     "ipScene": "问问兔泡在温泉里说：“这水怎么自己就是热的？“答答熊说：“地球肚子里是热的，地下的水碰到热石头就被烧热了冒出来，就像大自然给我们烧的热水澡！”",
     "scienceImage": "images/nature/nature-033-science.webp",
     "warmClosing": "温泉是地球送给我们的天然热水澡，地球肚子里的热量真了不起！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "哈气和吹气的温度对比，让孩子理解气流速度和温度的关系。",
+    "interactionType": "感知类"
   },
   {
     "id": "nature-034",
@@ -1604,7 +1802,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为平静的水面像一面镜子！光从你的脸弹到水面上，又弹回你的眼睛，你就看到自己了。",
-      "image": "images/nature/nature-034-layer1.webp"
+      "image": "images/nature/nature-034-layer1.webp",
+      "interactionHint": "让宝宝摸树皮，粗糙的和光滑的都摸一摸，问：这棵树几岁了？"
     },
     "layer2": {
       "followUp": "为什么风吹水面就看不清了？",
@@ -1637,7 +1836,12 @@
     "ipScene": "问问兔趴在池塘边看到另一只兔子说：“水里住着一只兔子！”答答熊笑说：“那是你自己啦！水面像镜子，把你的样子弹回来了。”",
     "scienceImage": "images/nature/nature-034-experiment.webp",
     "warmClosing": "下次看到水面上的自己，记得那是光在帮你照镜子呢！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "触觉探索树皮纹理，引入年轮概念，让孩子对树的生命有感知。",
+    "interactionType": "触觉类"
   },
   {
     "id": "nature-035",
@@ -1652,7 +1856,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "空气当然存在！虽然你看不见它，但你能感觉到它——风就是空气在动，你每次呼吸都在吸空气。",
-      "image": "images/nature/nature-035-layer1.webp"
+      "image": "images/nature/nature-035-layer1.webp",
+      "interactionHint": "和宝宝一起看蜘蛛网上的露珠，看阳光照在露珠上闪闪发光，问：露珠像什么？"
     },
     "layer2": {
       "followUp": "空气到底是什么东西？",
@@ -1686,7 +1891,12 @@
     "ipScene": "问问兔使劲抓空气说：“我抓不到空气，它是骗人的吧？”答答熊吹了一口气到问问兔脸上：“你感觉到了吗？风就是空气在动，它一直在你身边！”",
     "scienceImage": "images/nature/nature-035-experiment.webp",
     "warmClosing": "空气虽然看不见，但它一直包围着我们保护着我们，是地球送给生命最重要的礼物！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "晨露观察是培养孩子发现日常之美的能力，也是水循环的微观展示。",
+    "interactionType": "观察类"
   },
   {
     "id": "nature-036",
@@ -1701,7 +1911,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为你嘴里呼出的热气遇到冬天的冷空气，热气里的水变成了小水珠，看起来就是白色的雾！",
-      "image": "images/nature/nature-036-layer1.webp"
+      "image": "images/nature/nature-036-layer1.webp",
+      "interactionHint": "让宝宝抓一把干沙子和湿沙子，问：哪个能堆成城堡？为什么？"
     },
     "layer2": {
       "followUp": "我呼出的气里怎么会有水？",
@@ -1733,7 +1944,12 @@
     "ipScene": "问问兔冬天呼出一口白雾说：“我会喷火了！”答答熊笑着说：“那不是火，是你嘴里的热气碰到冷空气，水蒸气变成小水珠了！”",
     "scienceImage": "images/nature/nature-036-experiment.webp",
     "warmClosing": "冬天的白雾其实是你身体里的水在和冷空气打招呼呢，有趣吧！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "干湿沙子的对比让孩子理解水的粘合作用，是物质状态变化的感性体验。",
+    "interactionType": "触觉类"
   },
   {
     "id": "nature-037",
@@ -1748,7 +1964,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为风一直在吹海面！风推着海水动起来，就像你对着水面吹气会起波纹一样。",
-      "image": "images/nature/nature-037-layer1.webp"
+      "image": "images/nature/nature-037-layer1.webp",
+      "interactionHint": "和宝宝一起看日落后的天空颜色变化，从橙到紫到黑，问：天空变了几种颜色？"
     },
     "layer2": {
       "followUp": "那没有风的时候海还有波浪吗？",
@@ -1781,7 +1998,12 @@
     "ipScene": "问问兔在海边看着波浪问：“大海不累吗？一直动一直动。”答答熊说：“风一直在推着海水，远处的波浪也在传过来，所以大海永远都在动！”",
     "scienceImage": "images/nature/nature-037-experiment.webp",
     "warmClosing": "大海的波浪永远不停歇，那是风和大海在永不疲倦地跳舞呢！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "黄昏色彩观察是自然美育的绝佳时刻，培养孩子对色彩和时间的感知。",
+    "interactionType": "动作类"
   },
   {
     "id": "nature-038",
@@ -1796,7 +2018,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为雪是很多小冰晶堆在一起的，你踩上去把它们压碎了，碎冰晶互相摩擦就发出咯吱咯吱的声音！",
-      "image": "images/nature/nature-038-layer1.webp"
+      "image": "images/nature/nature-038-layer1.webp",
+      "interactionHint": "洗澡时让宝宝把空瓶子按进水里，感觉水往上推的力量，问：水在推瓶子吗？"
     },
     "layer2": {
       "followUp": "为什么天气越冷踩雪越响？",
@@ -1830,7 +2053,12 @@
     "ipScene": "问问兔在雪地上跳来跳去听到咯吱咯吱的声音说：“雪在说话！”答答熊说：“是雪花的小冰晶被你踩碎了在摩擦呢，天越冷声音越响！”",
     "scienceImage": "images/nature/nature-038-experiment.webp",
     "warmClosing": "下次踩雪的时候仔细听，那是小冰晶在你脚下唱歌呢！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "浮力体验是最直观的物理学启蒙，洗澡就是最好的实验室。",
+    "interactionType": "触觉类"
   },
   {
     "id": "nature-039",
@@ -1845,7 +2073,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为那些石头里面有小晶体！晶体有平平的面像小镜子一样，阳光照上去就会闪闪发光。",
-      "image": "images/nature/nature-039-layer1.webp"
+      "image": "images/nature/nature-039-layer1.webp",
+      "interactionHint": "和宝宝一起看蝴蝶采花蜜，轻轻走近不要吓到它，问：蝴蝶的翅膀上有花纹吗？"
     },
     "layer2": {
       "followUp": "什么是晶体？",
@@ -1879,7 +2108,12 @@
     "ipScene": "问问兔捡到一块闪亮的石头说：“我找到宝石了！”答答熊笑着说：“那是石头里面的小晶体在反光呢！晶体有像镜子一样的面，阳光一照就闪闪发光。”",
     "scienceImage": "images/nature/nature-039-experiment.webp",
     "warmClosing": "下次在路边发现闪闪发光的石头，记得那是大自然用千万年长出来的小晶体！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "近距离观察蝴蝶培养孩子的专注力和对昆虫的友善态度。",
+    "interactionType": "观察类"
   },
   {
     "id": "nature-040",
@@ -1894,7 +2128,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为地下深处的温度一年四季差不多！井水在地下待着，不怕外面热也不怕外面冷。",
-      "image": "images/nature/nature-040-layer1.webp"
+      "image": "images/nature/nature-040-layer1.webp",
+      "interactionHint": "让宝宝用手摸不同材质的石头（大理石、砂岩、鹅卵石），问：哪块最滑？哪块最粗糙？"
     },
     "layer2": {
       "followUp": "为什么地下的温度不变？",
@@ -1929,7 +2164,12 @@
     "ipScene": "问问兔夏天喝了一口井水说：“好凉快！井里是不是有空调？”答答熊说：“地下深处温度一年四季都差不多，井水被厚厚的土保护着，不受外面冷热影响，天然的大冰箱！”",
     "scienceImage": "images/nature/nature-040-experiment.webp",
     "warmClosing": "井水冬暖夏凉是因为地下温度很稳定，大地就是最好的保温层！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "A",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "parentGuide": "岩石触觉分类是地质学的感性启蒙，培养孩子的观察和分类能力。 以上活动建议在家长全程陪同下进行，请根据实际情况判断安全性。",
+    "interactionType": "触觉类"
   },
   {
     "id": "nature-041",
@@ -1944,7 +2184,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为水变成冰的时候，小水分子手拉手排成六边形！所以雪花长出来就是六个角。",
-      "image": "images/nature/nature-041-layer1.webp"
+      "image": "images/nature/nature-041-layer1.webp",
+      "interactionHint": "和宝宝一起在雨后找彩虹，找不到就用喷壶造一个，问：彩虹有几种颜色？"
     },
     "layer2": {
       "followUp": "每片雪花长得一样吗？",
@@ -1978,7 +2219,12 @@
     "ipScene": "问问兔接住一片雪花说：“每片雪花都是六角的！谁剪的？”答答熊说：“是水分子自己排列成六边形的，每片雪花的花纹都不一样，世界上找不到两片完全相同的雪花呢！”",
     "scienceImage": "images/nature/nature-041-experiment.webp",
     "warmClosing": "每片雪花都是大自然独一无二的艺术品，六角形是水分子排列的小秘密！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "彩虹是孩子最迷恋的自然现象，造彩虹的实验能让孩子理解光的色散。",
+    "interactionType": "动作类"
   },
   {
     "id": "nature-042",
@@ -1993,7 +2239,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为石头在河水里被冲啊冲、磨啊磨，尖尖的角都被磨圆了，就变成圆溜溜的了！",
-      "image": "images/nature/nature-042-layer1.webp"
+      "image": "images/nature/nature-042-layer1.webp",
+      "interactionHint": "请家长全程陪同，带宝宝看篝火或蜡烛，观察火焰的颜色和形状，但不许靠近。"
     },
     "layer2": {
       "followUp": "石头要磨多久才能变圆？",
@@ -2027,7 +2274,12 @@
     "ipScene": "问问兔在河边捡起一个圆石头问：“谁把石头磨这么圆？”答答熊说：“是河水！石头在水里冲了好多好多年，和别的石头碰来碰去，尖角都磨掉了，就变圆溜溜了。”",
     "scienceImage": "images/nature/nature-042-experiment.webp",
     "warmClosing": "每一块圆溜溜的鹅卵石都经历了几百年的旅行，是大自然慢慢打磨的作品！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "火焰观察展示燃烧现象，但必须严格保持安全距离，全程成人监护。",
+    "interactionType": "观察类"
   },
   {
     "id": "nature-043",
@@ -2042,7 +2294,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "雾就是飘在地面附近的云！无数的小水珠挡在你和远处之间，光被挡住了你就看不清了。",
-      "image": "images/nature/nature-043-layer1.webp"
+      "image": "images/nature/nature-043-layer1.webp",
+      "interactionHint": "和宝宝一起听风吹树叶的声音，不同树叶子声音不同，问：这棵树在说什么？"
     },
     "layer2": {
       "followUp": "雾和云有什么区别？",
@@ -2077,7 +2330,12 @@
     "ipScene": "问问兔在雾里走来走去说：“我找不到答答熊了！”答答熊在旁边说：“我在这里呢！雾是飘在地上的云，无数小水珠挡住了你的视线。太阳出来就好了！”",
     "scienceImage": "images/nature/nature-043-experiment.webp",
     "warmClosing": "雾其实就是一朵落到地上的云，太阳出来暖暖一照就消散了！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "用拟人化的方式让孩子感受自然的声音之美，培养听觉敏感度。",
+    "interactionType": "感知类"
   },
   {
     "id": "nature-044",
@@ -2092,7 +2350,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "因为那里太干了，几乎不下雨！没有水植物就活不了，剩下的沙子和石头就变成了沙漠。",
-      "image": "images/nature/nature-044-layer1.webp"
+      "image": "images/nature/nature-044-layer1.webp",
+      "interactionHint": "让宝宝把冰块放在手心看它融化，问：冰块去哪了？手心怎么变凉了？"
     },
     "layer2": {
       "followUp": "沙漠里为什么不下雨？",
@@ -2127,7 +2386,12 @@
     "ipScene": "问问兔看着沙漠的图片说：“这里怎么什么都没有？”答答熊说：“这是沙漠，因为太干了几乎不下雨。但你看那边有仙人掌呢！它把水存在身体里，可聪明了！”",
     "scienceImage": "images/nature/nature-044-experiment.webp",
     "warmClosing": "沙漠看起来荒凉，但生命总能找到方法活下去，大自然的生命力真顽强！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "冰融化是孩子理解物质状态变化和热传导的最好实验。",
+    "interactionType": "感知类"
   },
   {
     "id": "nature-045",
@@ -2142,7 +2406,8 @@
     "safetyLevel": "A",
     "layer1": {
       "answer": "龙卷风是一个飞速旋转的空气柱！它转得特别特别快，像一个超级大吸尘器，能把东西吸到空中。",
-      "image": "images/nature/nature-045-layer1.webp"
+      "image": "images/nature/nature-045-layer1.webp",
+      "interactionHint": "和宝宝一起看星星，找最亮的那颗，问：星星为什么一闪一闪的？"
     },
     "layer2": {
       "followUp": "龙卷风是怎么形成的？",
@@ -2178,7 +2443,12 @@
     "ipScene": "问问兔看到龙卷风的视频害怕地说：“那个大漏斗怎么把房子都吸走了！”答答熊说：“龙卷风是空气飞快地打转形成的，像超级大吸尘器。不过别怕，龙卷风很少见，我们学会了就知道怎么保护自己！”",
     "scienceImage": "images/nature/nature-045-experiment.webp",
     "warmClosing": "龙卷风虽然很厉害，但了解了它的原理就不那么害怕了，知识就是最好的保护！",
-    "locale": "zh-CN"
+    "locale": "zh-CN",
+    "comfortCategory": "A",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "parentGuide": "观星是培养孩子对宇宙好奇心最美的方式，也是亲子间的珍贵时刻。 以上活动建议在家长全程陪同下进行，请根据实际情况判断安全性。",
+    "interactionType": "观察类"
   },
   {
     "id": "nature-046",
@@ -2194,7 +2464,8 @@
     "locale": "zh-CN",
     "layer1": {
       "answer": "冰是冻硬的水。太阳晒一晒、手摸一摸，冰就变暖变软，化回成水啦！",
-      "image": "images/nature/nature-046-layer1.webp"
+      "image": "images/nature/nature-046-layer1.webp",
+      "interactionHint": "让宝宝摸早晨草叶上的露水，问：露水从哪里来？为什么中午就没有了？"
     },
     "layer2": {
       "followUp": "为什么暖和了冰就会化？",
@@ -2226,7 +2497,12 @@
     },
     "ipScene": "问问兔拿着一块冰说：\"它怎么在滴水？\"答答熊说：\"它暖和了，正在脱掉硬硬的外套变回水呢！\"",
     "warmClosing": "下次吃冰棍的时候，你可以告诉大人：冰棍在嘴里暖和了，正在化成水呢！",
-    "scienceImage": "images/nature/nature-046-science.webp"
+    "scienceImage": "images/nature/nature-046-science.webp",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "露水的出现和消失是水循环的微观展示，也是培养观察力的好机会。",
+    "interactionType": "触觉类"
   },
   {
     "id": "nature-047",
@@ -2242,7 +2518,8 @@
     "locale": "zh-CN",
     "layer1": {
       "answer": "太阳是一个超级大的火球，离我们很远很远，但它把光和热送到地球，晒在身上暖暖的！",
-      "image": "images/nature/nature-047-layer1.webp"
+      "image": "images/nature/nature-047-layer1.webp",
+      "interactionHint": "和宝宝一起看蜜蜂在花间飞来飞去，保持距离，问：蜜蜂在做什么工作？"
     },
     "layer2": {
       "followUp": "火球的热是怎么过来的？",
@@ -2274,7 +2551,12 @@
     },
     "ipScene": "问问兔晒着太阳说：\"太阳在抱我吗？\"答答熊说：\"是太阳把热送过太空飞过来抱你啦！\"",
     "warmClosing": "下次晒太阳暖暖的时候，记得那是太阳飞了八分钟送来的拥抱！",
-    "scienceImage": "images/nature/nature-047-science.webp"
+    "scienceImage": "images/nature/nature-047-science.webp",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "观察蜜蜂采蜜是理解生态系统中\"授粉\"概念的第一步，注意保持安全距离。",
+    "interactionType": "动作类"
   },
   {
     "id": "nature-048",
@@ -2290,7 +2572,8 @@
     "locale": "zh-CN",
     "layer1": {
       "answer": "地球像个大皮球在转圈圈。转到对着太阳那一面是白天，背着太阳那一面就是黑夜！",
-      "image": "images/nature/nature-048-layer1.webp"
+      "image": "images/nature/nature-048-layer1.webp",
+      "interactionHint": "让宝宝用手接住飘落的树叶，比比谁接得多，问：树叶为什么会落下来？"
     },
     "layer2": {
       "followUp": "转一圈要多久？",
@@ -2322,7 +2605,12 @@
     },
     "ipScene": "问问兔问：\"天为什么会黑？\"答答熊转着皮球说：\"我们住的大球在转圈，转到背光那面就天黑啦！\"",
     "warmClosing": "今晚天黑的时候，告诉大人：我们转到背对太阳那面啦，明天转回来就又天亮！",
-    "scienceImage": "images/nature/nature-048-science.webp"
+    "scienceImage": "images/nature/nature-048-science.webp",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "接落叶游戏让孩子感受季节变化，同时锻炼手眼协调能力。",
+    "interactionType": "观察类"
   },
   {
     "id": "nature-2071",
@@ -2334,7 +2622,8 @@
     "age": "4-6岁",
     "layer1": {
       "answer": "因为厚厚的云层像一块黄色的大幕布，把太阳光染成了黄色。",
-      "image": "images/nature/nature-2071-layer1.webp"
+      "image": "images/nature/nature-2071-layer1.webp",
+      "interactionHint": "阴天时和宝宝一起看天空颜色变化，问：天空今天穿什么颜色的衣服？黄色还是灰色？"
     },
     "layer2": {
       "answer": "下雨前天空有很多又厚又密的云，云里的水滴把阳光中的蓝色光散射掉了，剩下的黄色和红色光照到地面上，天空就看起来黄黄的。",
@@ -2364,7 +2653,12 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔趴在窗边看天空\"天空怎么变成黄油色了？\"答答熊说\"云宝宝喝饱了水，把太阳光里的蓝色都藏起来了，只剩下黄色光偷偷溜出来告诉我们——快下雨啦！\"",
-    "warmClosing": ""
+    "warmClosing": "",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "观察天气变化帮孩子建立\"自然预兆\"的概念，培养观察力和预测能力。",
+    "interactionType": "观察类"
   },
   {
     "id": "nature-2072",
@@ -2375,8 +2669,9 @@
     "question": "为什么冬天呼气能看到白雾，夏天看不到？",
     "age": "3-5岁",
     "layer1": {
-      "answer": "因为冬天外面冷，你嘴里呼出来的热气一碰到冷空气就变成了小水滴，这些小水滴飘在空中就是白雾。夏天外面热，热气不会变成水，就看不见了。",
-      "image": "images/nature/nature-2072-layer1.webp"
+      "answer": "因为冬天外面冷，你嘴里呼出来的热气一碰到冷空气就变成了小水滴，这些小水滴飘在空中就是白雾。",
+      "image": "images/nature/nature-2072-layer1.webp",
+      "interactionHint": "冬天带宝宝到户外哈气，看白雾出现又消失，问：白雾跑去哪里了？"
     },
     "layer2": {
       "answer": "你呼出的气里有很多看不见的水蒸气。冬天空气冷，热的蒸气一碰到冷空气马上变成小水滴，就像烧开水时冒的白气。夏天空气本身就很热，蒸气不会变成水，所以看不见。",
@@ -2403,7 +2698,12 @@
       "experimentType": "观察"
     },
     "ipScene": "冬天早晨，问问兔对着窗户哈气，看白雾升腾。\"我是小火车！\"答答熊说\"你呼出的热气在冬天变成了看得见的云朵，夏天它们就隐形啦。\"",
-    "warmClosing": ""
+    "warmClosing": "",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "冬天哈气实验是最简单的水蒸气液化演示，孩子每次看到白雾都很兴奋。",
+    "interactionType": "感知类"
   },
   {
     "id": "nature-2073",
@@ -2414,8 +2714,9 @@
     "question": "为什么有的石头是光滑的，有的是粗糙的？",
     "age": "3-5岁",
     "layer1": {
-      "answer": "光滑的石头被水冲了很久很久，就像洗澡时搓了很久的皮肤一样变滑了。粗糙的石头是刚从山里出来的，还没被水洗过。",
-      "image": "images/nature/nature-2073-layer1.webp"
+      "answer": "光滑的石头被水冲了很久很久，就像洗澡时搓了很久的皮肤一样变滑了。",
+      "image": "images/nature/nature-2073-layer1.webp",
+      "interactionHint": "让宝宝摸不同石头，光滑的鹅卵石和粗糙的山石，闭眼猜哪块是哪块。"
     },
     "layer2": {
       "answer": "河里的石头被水流冲来冲去，石头之间互相摩擦，棱角都被磨圆了，所以光滑。山上的石头没有经过水流的打磨，保持着原来的粗糙样子。这个过程要花很长很长的时间。",
@@ -2444,7 +2745,12 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔在河边捡到一块光滑的鹅卵石，又看到路边一块粗糙的石头。\"为什么它们不一样？\"答答熊说\"河里那块石头被水洗了几万年的澡，棱角都被洗掉了。路边那块石头还没开始洗澡呢！\"",
-    "warmClosing": ""
+    "warmClosing": "",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "闭眼触觉游戏锻炼孩子的触觉分辨力，同时理解\"水流打磨\"的地质概念。",
+    "interactionType": "触觉类"
   },
   {
     "id": "nature-2074",
@@ -2456,7 +2762,8 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "因为云是由很小很小的水滴组成的，它们轻得像羽毛，空气托着它们，掉不下来。",
-      "image": "images/nature/nature-2074-layer1.webp"
+      "image": "images/nature/nature-2074-layer1.webp",
+      "interactionHint": "和宝宝一起看天上的云，找一朵像棉花糖的云，问：云为什么能飘在天上不下来？"
     },
     "layer2": {
       "answer": "云是无数极小的水滴或冰晶聚在一起。每个水滴轻得几乎没重量，空气的上升气流把它们托住了。当水滴变大变重，空气托不住了，就会掉下来——那就是下雨啦。",
@@ -2484,7 +2791,12 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔躺在草地上看云，突然担心\"云会不会掉下来砸到我？\"答答熊哈哈大笑\"云是最轻的棉花糖，空气用看不见的手一直托着它们。等它们喝水喝太胖了，才会变成雨掉下来。\"",
-    "warmClosing": ""
+    "warmClosing": "",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "云的观察是培养想象力和科学好奇心的完美结合，也是亲子间的诗意时刻。",
+    "interactionType": "观察类"
   },
   {
     "id": "nature-2075",
@@ -2496,7 +2808,8 @@
     "age": "3-6岁",
     "layer1": {
       "answer": "彩虹需要同时有太阳和下雨才能出现。太阳光穿过雨滴，就像穿过一个水晶球，变出了七种颜色。",
-      "image": "images/nature/nature-2075-layer1.webp"
+      "image": "images/nature/nature-2075-layer1.webp",
+      "interactionHint": "晴天往空中喷水，和宝宝一起找迷你彩虹，问：为什么现在能看到彩虹了？"
     },
     "layer2": {
       "answer": "下过雨后空中还有小水滴，太阳从你背后照过来，光穿过水滴就被分成了红橙黄绿青蓝紫七种颜色。没有太阳或者没有雨，彩虹就不会出现。",
@@ -2524,6 +2837,11 @@
       "experimentType": "观察"
     },
     "ipScene": "雨后初晴，问问兔指着天空尖叫\"彩虹！彩虹！\"答答熊说\"太阳公公和雨滴宝宝在合作画画，太阳负责打光，雨滴负责分颜色，他们画完就收工了，所以彩虹不会一直有哦。\"",
-    "warmClosing": ""
+    "warmClosing": "",
+    "comfortCategory": "B",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "parentGuide": "自制彩虹实验让孩子理解\"需要阳光+水滴\"两个条件同时满足才能看到彩虹。",
+    "interactionType": "动作类"
   }
 ]
