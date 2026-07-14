@@ -1,0 +1,180 @@
+/* V8.75 Sprint 74 第139轮：插画展示组件样式（微信小程序端） */
+
+.illustration-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16rpx;
+  border: 2rpx solid #FFCCBC;
+}
+
+.illustration--body { border-color: #FFCCBC; background: #FFF3E0; }
+.illustration--home { border-color: #FFE0B2; background: #FFF8E1; }
+.illustration--food { border-color: #C8E6C9; background: #F1F8E9; }
+.illustration--nature { border-color: #BBDEFB; background: #E3F2FD; }
+.illustration--animals { border-color: #C8E6C9; background: #E8F5E9; }
+.illustration--society { border-color: #E1BEE7; background: #F3E5F5; }
+
+/* V8.77 第141轮：textOnly 改为 opacity + max-height 过渡，替代 display:none */
+.illustration--text-only {
+  opacity: 0;
+  max-height: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  pointer-events: none;
+}
+
+.illustration-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.illustration--fade-in {
+  animation: fadeIn 0.5s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* 骨架屏 */
+.illustration-placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #F5F5F5;
+  position: relative;
+  overflow: hidden;
+}
+
+.placeholder-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 100%
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* V8.77 骨架屏超时后：淡色静态占位 */
+.illustration-placeholder--dimmed {
+  background: #F0F0F0;
+}
+
+.placeholder-dot {
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  background: #E0E0E0;
+  animation: dotPulse 2s infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+/* 错误状态 */
+.illustration-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12rpx;
+  padding: 32rpx;
+  background: #FAFAFA;
+  border: 1rpx dashed #E0E0E0;
+  aspect-ratio: 1 / 1;
+}
+
+.error-icon {
+  font-size: 48rpx;
+  opacity: 0.5;
+}
+
+.error-text {
+  font-size: 24rpx;
+  color: #9E9E9E;
+}
+
+.retry-btn {
+  padding: 12rpx 32rpx;
+  border-radius: 28rpx;
+  border: 1rpx solid #BDBDBD;
+  background: #fff;
+  font-size: 24rpx;
+  color: #757575;
+  line-height: 1.5;
+}
+
+/* V8.77 超过重试上限状态 */
+.illustration-error--final {
+  background: #FFF8E1;
+  border-color: #FFE082;
+}
+
+.illustration-error--final .error-text {
+  color: #FF8F00;
+  font-weight: 500;
+}
+
+/* V8.78 第142轮：fallbackCircleColor 圈层色系纯色占位 */
+.illustration-error--fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16rpx;
+  padding: 32rpx;
+  aspect-ratio: 1 / 1;
+}
+
+.fallback-icon {
+  font-size: 40rpx;
+  opacity: 0.35;
+}
+
+.fallback-text {
+  font-size: 22rpx;
+  color: rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+/* V8.88 第151轮：textOnly 心跳动画（苏体验+前端小凡） */
+.textonly-heartbeat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40rpx;
+  animation: heartbeatPulse 2s ease-in-out infinite;
+}
+
+.heartbeat-icon {
+  font-size: 80rpx;
+  opacity: 0.6;
+}
+
+@keyframes heartbeatPulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  15% { transform: scale(1.15); opacity: 0.8; }
+  30% { transform: scale(1); opacity: 0.6; }
+  45% { transform: scale(1.1); opacity: 0.75; }
+  60% { transform: scale(1); opacity: 0.6; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .textonly-heartbeat {
+    animation: none;
+    opacity: 0.5;
+  }
+}
