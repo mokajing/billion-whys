@@ -1,0 +1,38 @@
+<!--
+  Sprint 69 V8.62 第126轮：问问兔耳朵骨架屏组件（小程序版）
+  与 H5 SkeletonLoader.vue 同构，3 状态：loading / ready / error
+  墨小暖 V8.62：耳朵前倾 -12°（IP 一致性），error 抖动 1 次（情绪安全）
+  安全李姐 V8.62：loading 文案"问问兔正在认真听…"，error 文案"哎呀，问问兔打了个盹…点击重试"
+-->
+<view class="skeleton skeleton--{{state}}" role="status" aria-label="{{ariaLabel}}">
+  <view class="skeleton-rabbit" aria-hidden="true">
+    <!-- 问问兔 SVG，耳朵动画由 CSS 驱动 -->
+    <view class="rabbit-svg rabbit--{{state}}">
+      <!-- 左耳 -->
+      <view class="ear ear-left"></view>
+      <view class="ear-inner ear-inner-left"></view>
+      <!-- 右耳 -->
+      <view class="ear ear-right"></view>
+      <view class="ear-inner ear-inner-right"></view>
+      <!-- 脸 -->
+      <view class="rabbit-face"></view>
+      <!-- 眼睛 -->
+      <view class="eye eye-left"></view>
+      <view class="eye eye-right"></view>
+      <!-- 鼻子 -->
+      <view class="rabbit-nose"></view>
+    </view>
+  </view>
+
+  <view class="skeleton-text">
+    <text class="skeleton-message">{{message}}</text>
+    <view wx:if="{{state === 'loading'}}" class="skeleton-progress">
+      <view class="progress-bar" />
+    </view>
+    <text wx:if="{{state === 'loading'}}" class="skeleton-hint">{{timeoutMessage || '问问兔正在认真听…'}}</text>
+    <!-- V8.67 第131轮：两段式离线 CTA -->
+    <text wx:if="{{showOfflineHint && state === 'loading' && !showArchiveCTA}}" class="skeleton-offline-hint">还没好哦～再等一下下</text>
+    <navigator wx:if="{{showOfflineHint && showArchiveCTA && state === 'loading'}}" url="/pages/archive/archive" class="skeleton-offline-cta" open-type="navigate">去看看收藏吧 ›</navigator>
+    <text wx:if="{{state === 'error'}}" class="skeleton-retry-hint" bindtap="onRetry">哎呀，问问兔打了个盹…点击重试</text>
+  </view>
+</view>
