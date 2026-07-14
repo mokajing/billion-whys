@@ -238,15 +238,174 @@ def load_seed_library():
     return all_topics
 
 
+def _passes_merge_bar(q: dict) -> bool:
+    """Sprint 63 第118轮：#35 merge bar 写边界守卫（CTO + 后端老稳 + 安全李姐）。
+
+    未插画题（5 slot 任一空）不得入 live。live 只接收完整三层 + 科学 + 实验 + 全插画题。
+    未过门题路由 content/seed-library-staging/{cat}-pending.json，待 governed 流程补齐后 promote。
+    背景：Sprint 62 修了 gen_category_images.py 的 read-modify-write 竞态，但 sync 通道仍是 live 直写，
+    image_gen_supervisor / cron 拉 sync 时未插画新题直接 merge 进 live → 绕过 #35 → 红灯复发。
+    毒舌老王："治理门写在测试里，等于事后验尸；要写在写边界上才是门。"
+    """
+    # 5 slot：layer1/layer2/layer3/experiment 的 image 子字段 + scienceImage 顶层
+    for slot in ("layer1", "layer2", "layer3", "experiment"):
+        v = q.get(slot)
+        if not isinstance(v, dict) or not v.get("image"):
+            return False
+    if not q.get("scienceImage"):
+        return False
+    return True
+
+
 def save_seed_library(topics_by_cat):
-    """Save topics back to category JSON files"""
+    """Save topics back to category JSON files.
+
+    Sprint 63 第118轮：写边界 merge bar 守卫 —— 过门题写 live，未过门题路由 staging。
+    """
+    staging_dir = BASE_DIR / "content" / "seed-library-staging"
+    staging_dir.mkdir(parents=True, exist_ok=True)
     for cat, topics in topics_by_cat.items():
         # Remove _category_file marker
         clean = [{k: v for k, v in t.items() if not k.startswith("_")} for t in topics]
+        live_ready = [q for q in clean if _passes_merge_bar(q)]
+        pending = [q for q in clean if not _passes_merge_bar(q)]
+        # live：仅过 merge bar 的题（保留原有 live 题若已被 sync 加载，则原样写回；
+        # 未过门的 live 原有题若被误判，见下方 staging 兜底）
         path = SEED_DIR / f"{cat}.json"
         with open(path, "w", encoding="utf-8") as f:
-            json.dump(clean, f, ensure_ascii=False, indent=2)
-        log(f"  Saved {path}: {len(clean)} topics")
+            json.dump(live_ready, f, ensure_ascii=False, indent=2)
+        msg = f"  Saved LIVE {path}: {len(live_ready)} topics"
+        if pending:
+            staging_path = staging_dir / f"{cat}-pending.json"
+            with open(staging_path, "w", encoding="utf-8") as f:
+                json.dump(pending, f, ensure_ascii=False, indent=2)
+            msg += f" | STAGING {staging_path}: {len(pending)} (未过 #35 merge bar，待 governed 补齐)"
+        log(msg)
+    # Sprint 64 第119轮：PNG 写边界闭合 —— save_seed_library 后扫孤儿 PNG。
+    _sweep_orphan_pngs(topics_by_cat.keys())
+
+
+def _live_topic_ids(cat: str) -> set:
+    """Sprint 64 第119轮：返回 live seed-library 某 cat 全部 topic id 集合。"""
+    ids = set()
+    live_path = SEED_DIR / f"{cat}.json"
+    if not live_path.exists():
+        return ids
+    try:
+        topics = json.loads(live_path.read_text(encoding="utf-8"))
+    except Exception:
+        return ids
+    for q in topics:
+        if isinstance(q, dict) and q.get("id"):
+            ids.add(q["id"])
+    return ids
+
+
+def _image_file_topic_id(filename: str):
+    """Sprint 64 第119轮：从图片文件名反推 topic id。
+
+    文件名形如 animals-2071-layer1.png / body-001-layer3.webp /
+    animals-046-science.png / body-001-experiment.webp / body-001.png。
+    去掉扩展名 + 末尾 -layer1/-layer2/-layer3/-science/-experiment 即得 topic id。
+    """
+    name = filename
+    for ext in (".png", ".webp", ".jpg", ".jpeg"):
+        if name.lower().endswith(ext):
+            name = name[: -len(ext)]
+            break
+    for suffix in ("-layer1", "-layer2", "-layer3", "-science", "-experiment"):
+        if name.endswith(suffix):
+            name = name[: -len(suffix)]
+            break
+    return name
+
+
+def _staging_pending_topic_ids_with_empty_images(cat: str) -> set:
+    """Sprint 66 第121轮：返回 staging-pending 中 image 字段全空的 topic id 集合。
+
+    这些 topic 在 staging-pending 但 image 字段为空 → 未过 merge bar → 任何对应 PNG 是真孤儿。
+    仅检查 staging-pending JSON（seed-library-staging/{cat}-pending.json），不检查 _staging 目录。
+    """
+    ids = set()
+    pending_path = BASE_DIR / "content" / "seed-library-staging" / f"{cat}-pending.json"
+    if not pending_path.exists():
+        return ids
+    try:
+        topics = json.loads(pending_path.read_text(encoding="utf-8"))
+    except Exception:
+        return ids
+    for q in topics:
+        if not isinstance(q, dict):
+            continue
+        tid = q.get("id")
+        if not tid:
+            continue
+        # 检查 image 字段是否全空
+        layer_images = [
+            (q.get("layer1") or {}).get("image", ""),
+            (q.get("layer2") or {}).get("image", ""),
+            (q.get("layer3") or {}).get("image", ""),
+        ]
+        # Sprint 67 修复：science 是字符串文本，图片 URL 在独立 scienceImage 字段
+        science_img = q.get("scienceImage", "")
+        experiment_img = (q.get("experiment") or {}).get("image", "")
+        all_empty = all(not img for img in layer_images + [science_img, experiment_img])
+        if all_empty:
+            ids.add(tid)
+    return ids
+
+
+def _sweep_orphan_pngs(cats) -> int:
+    """Sprint 64 第119轮：删除 content/images/{cat}/ 下 topic id 不在 live JSON 的孤儿图片。
+    Sprint 66 第121轮扩展：同时检查 staging-pending 中 image 字段全空的 topic。
+    Sprint 67 第122轮修复：孤儿定义 = file exists && topic_id NOT IN live_catalog。
+    无论 staging-pending 中 image 字段是否为空，不在 live 的图片一律视为孤儿删除。
+    对应题要么未过 merge bar，要么已从 live 回退——留在磁盘只会在
+    sync-images 时让 src > dest 触发 build-integrity 红灯。
+
+    注意：live JSON 的 image 字段引用 .webp，但磁盘上同时存在同 topic 的 .png（如 body-001.png）
+    属于同 topic 的合法格式变体，topic id 在 live 即保留——所以用 topic id 判孤儿而非按文件名引用。
+    CTO + 后端老稳 + 测试虫虫 + 毒舌老王。
+    法务张律：image 不计 #33 baseline 文本 hash，零身份字段零网络。
+    """
+    removed = 0
+    for cat in cats:
+        cat_dir = IMAGE_DIR / cat
+        if not cat_dir.exists():
+            continue
+        live_ids = _live_topic_ids(cat)
+        # Sprint 66：staging-pending 中 image 全空的 topic 也是孤儿候选（辅助检查）
+        staging_empty_ids = _staging_pending_topic_ids_with_empty_images(cat)
+        for f in cat_dir.iterdir():
+            if not f.is_file():
+                continue
+            if f.suffix.lower() not in (".png", ".webp", ".jpg", ".jpeg"):
+                continue
+            tid = _image_file_topic_id(f.name)
+            # Sprint 67 第122轮：不在 live 即孤儿（主规则），staging_empty_ids 为辅助日志
+            if tid not in live_ids:
+                reason = "不在 live"
+                if tid in staging_empty_ids:
+                    reason += " + staging-pending image 全空"
+                try:
+                    f.unlink()
+                    removed += 1
+                    log(f"  [SWEEP] 删孤儿图片 {f} (topic {tid} {reason})")
+                except Exception as e:
+                    log(f"  [SWEEP-SKIP] {f}: {e}")
+    if removed:
+        log(f"  孤儿图片清理完成：删 {removed} 个")
+    return removed
+
+
+def sweep_orphan_pngs_standalone():
+    """Sprint 67 第122轮：独立孤儿 PNG 扫描入口。
+    供 build 脚本、pre-commit hook、cron 定时任务调用。
+    扫描全部 6 个 category，删除不在 live 的孤儿图片。
+    """
+    cats = ["body", "animals", "food", "home", "nature", "society"]
+    removed = _sweep_orphan_pngs(cats)
+    return removed
 
 
 def generate_image(prompt: str, out_path: Path, max_retries: int = 4) -> bool:
@@ -293,10 +452,20 @@ def generate_image(prompt: str, out_path: Path, max_retries: int = 4) -> bool:
 
 
 def ensure_image(topic_id: str, layer: str, prompt: str, dry_run: bool = False) -> str:
-    """Generate image if missing, return relative path"""
+    """Generate image if missing, return relative path.
+
+    Sprint 67 第122轮修复：仅对 live JSON 中的 topic 生成图片。
+    非 live topic（在 staging-pending / 未过 merge bar）跳过生图——避免孤儿 PNG 沉积。
+    """
     cat = topic_id.split("-")[0].lower()
     rel_path = f"images/{cat}/{topic_id}-{layer}.png"
     abs_path = BASE_DIR / "content" / rel_path
+
+    # Sprint 67 第122轮：不在 live 的 topic 不生成图片（防止孤儿 PNG）
+    live_ids = _live_topic_ids(cat)
+    if topic_id not in live_ids:
+        log(f"  [SKIP] {topic_id}-{layer}: topic 不在 live（在 staging-pending），跳过生图防孤儿 PNG")
+        return ""
 
     if abs_path.exists() and abs_path.stat().st_size > 1000:
         return rel_path
@@ -517,4 +686,9 @@ def sync(dry_run: bool = False):
 
 if __name__ == "__main__":
     dry = "--dry-run" in sys.argv
-    sync(dry_run=dry)
+    if "--sweep-only" in sys.argv:
+        log("=== 孤儿 PNG 独立扫描 ===")
+        removed = sweep_orphan_pngs_standalone()
+        log(f"=== 扫描完成：删 {removed} 个孤儿图片 ===")
+    else:
+        sync(dry_run=dry)
