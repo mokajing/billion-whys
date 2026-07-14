@@ -2318,7 +2318,8 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "猫咪的身体像弹簧一样灵活，它会用尾巴当方向盘，在空中扭来扭去，让自己四脚朝下稳稳落地。",
-      "image": "images/animals/animals-2071-layer1.webp"
+      "image": "images/animals/animals-2071-layer1.webp",
+      "interactionHint": "和宝宝一起探索这个有趣的问题"
     },
     "layer2": {
       "answer": "猫有一种天生的本领叫\"翻正反射\"。它从高处掉下来时，会先转动头看地面，然后身体跟着扭，短短半秒内就把身体翻正。它的脊柱特别灵活，像一串可以自由转动的珠子。",
@@ -2346,7 +2347,12 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔在树上看到一只猫从围墙跳下来，四脚稳稳落地。\"猫是不是有弹簧脚？\"答答熊说\"猫的脊椎像一串灵活的珠子，它能在空中翻跟斗，把自己调到最安全的姿势落地！\"",
-    "warmClosing": ""
+    "warmClosing": "",
+    "interactionType": "观察类",
+    "parentGuide": "本内容仅供亲子互动参考，涉及安全操作请在家长全程监护下进行。",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "C"
   },
   {
     "id": "animals-2074",
@@ -2358,7 +2364,8 @@
     "age": "4-6岁",
     "layer1": {
       "answer": "狗用鼻子代替眼睛了解对方——闻一闻就知道对方是谁、吃了什么饭、开不开心。屁股是狗狗的\"名片\"。",
-      "image": "images/animals/animals-2074-layer1.webp"
+      "image": "images/animals/animals-2074-layer1.webp",
+      "interactionHint": "和宝宝一起探索这个有趣的问题"
     },
     "layer2": {
       "answer": "狗屁股附近有特殊的腺体，会分泌一种带味道的液体，每只狗的味道都不一样。这就像狗狗的\"身份证\"，别的狗闻一下就知道\"你是谁、你是男是女、你今天心情好不好\"。",
@@ -2389,7 +2396,12 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔看到两只狗互相闻屁股，捂着嘴笑\"它们在干嘛？\"答答熊说\"这是狗狗的握手礼仪！它们的屁股上有味道名片，一闻就知道对方是谁、今天吃了什么，比我们交换名片还快呢。\"",
-    "warmClosing": ""
+    "warmClosing": "",
+    "interactionType": "观察类",
+    "parentGuide": "本内容仅供亲子互动参考，涉及安全操作请在家长全程监护下进行。",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "C"
   },
   {
     "id": "animals-2075",
@@ -2401,7 +2413,8 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "蜻蜓在水面上点来点去，是在把宝宝放进水里。蜻蜓宝宝要在水里才能长大。",
-      "image": "images/animals/animals-2075-layer1.webp"
+      "image": "images/animals/animals-2075-layer1.webp",
+      "interactionHint": "和宝宝一起探索这个有趣的问题"
     },
     "layer2": {
       "answer": "蜻蜓妈妈在水面上飞，用尾巴尖轻轻点水，每次点水都在水里产下一颗卵。等卵孵化出来，蜻蜓宝宝就在水里生活，吃水里的蚊子幼虫，长大了再爬出来变成会飞的蜻蜓。",
@@ -2429,6 +2442,11 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔指着池塘上飞来飞去的蜻蜓问\"它为什么一直用尾巴碰水？\"答答熊说\"那是蜻蜓妈妈在生宝宝！它把宝宝放进水里，宝宝在水里长大，会游泳，会抓蚊子，长大了才爬出水面变成蜻蜓。\"",
-    "warmClosing": ""
+    "warmClosing": "",
+    "interactionType": "观察类",
+    "parentGuide": "本内容仅供亲子互动参考，涉及安全操作请在家长全程监护下进行。",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle",
+    "comfortCategory": "C"
   }
 ]
