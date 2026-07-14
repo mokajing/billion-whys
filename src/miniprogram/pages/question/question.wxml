@@ -38,13 +38,45 @@
     <view class="knowledge-card layer1">
       <text class="card-badge badge-l1">{{t['qd.layer1Badge']}}</text>
       <view class="card-illustration" wx:if="{{layer1Image}}">
-        <image src="{{layer1Image}}" mode="aspectFill" aria-label="{{question.question}} 插图" binderror="onImgError" data-field="layer1Image" />
+        <image src="{{layer1Image}}" mode="aspectFill" aria-label="{{question.question}} 配图" binderror="onImgError" data-field="layer1Image" />
       </view>
       <view class="card-placeholder" wx:elif="{{!layer1Image}}">
         <text class="placeholder-icon">{{categoryIcon}}</text>
-        <text class="placeholder-text">精彩插画即将到来</text>
+        <text class="placeholder-text">精彩配图即将到来</text>
       </view>
       <text class="answer-text">{{question.layer1 ? question.layer1.answer : ''}}</text>
+      <!-- V9.16 第178轮：emotion 标签行渲染（墨小暖+前端小凡 P0 LEG-005）
+           与 H5 KnowledgeCard.vue 对齐：单行 mini 布局，IP 情绪标签
+           墨小暖一票否决：数据层 emotion 已注入但前端不渲染=无效工作 -->
+      <view wx:if="{{rabbitEmotion && bearEmotion}}" class="emotion-row">
+        <view class="emotion-tag" style="background: {{rabbitEmotionConfig.bg}}; color: {{rabbitEmotionConfig.color}};">
+          <text class="emotion-avatar">🐰</text>
+          <text class="emotion-label">{{rabbitEmotionConfig.icon}} {{rabbitEmotionConfig.label}}</text>
+        </view>
+        <view class="emotion-tag" style="background: {{bearEmotionConfig.bg}}; color: {{bearEmotionConfig.color}};">
+          <text class="emotion-avatar">🐻</text>
+          <text class="emotion-label">{{bearEmotionConfig.icon}} {{bearEmotionConfig.label}}</text>
+        </view>
+      </view>
+      <!-- V9.03 第165轮：parentGuide 家长指导渲染（前端小凡+王园长 P0#2）
+           代码路径: src/miniprogram/pages/question/question.wxml:49-53 -->
+      <view wx:if="{{parentGuide && parentGuide.length > 0}}" class="parent-guide">
+        <text class="guide-icon">👨‍👩‍👧</text>
+        <text class="guide-label">给家长的小提示：</text>
+        <text class="guide-text">{{parentGuide}}</text>
+      </view>
+      <!-- V8.94 第157轮：interactionHint 互动引导（前端小凡 P0#2，与 H5 KnowledgeCard.vue 对齐）
+           V9.11 第173轮：P0#7 友好 fallback——空 hint 时显示通用兜底文案（苏体验+前端小凡）
+           V9.21 第183轮：comfortCategory 图标前缀（苏体验+彩虹姐 P2#15）
+           V9.26 第188轮：图标同步至 COMFORT_CATEGORY_ICONS ——A级🛡️、B级🔍、C级💛 -->
+      <view wx:if="{{interactionHint && interactionHint.length > 0}}" class="interaction-guide">
+        <text class="guide-icon">{{comfortCategoryEmoji}}{{interactionHintEmoji}}</text>
+        <text class="guide-text">{{interactionHint}}</text>
+      </view>
+      <view wx:else class="interaction-guide interaction-guide--fallback">
+        <text class="guide-icon">✨</text>
+        <text class="guide-text">{{fallbackHint}}</text>
+      </view>
     </view>
 
     <!-- 答案反馈 (V7.9 第68轮 / V8.0 第69轮 🌟→问问兔鞠躬SVG / V8.1 第70轮 试试互动实验CTA) -->
@@ -83,7 +115,7 @@
         <text class="bubble-text bubble-l2">{{question.layer2.followUp}}</text>
       </view>
       <view class="card-illustration" wx:if="{{layer2Image}}">
-        <image src="{{layer2Image}}" mode="aspectFill" aria-label="{{question.question}} 延伸插图" binderror="onImgError" data-field="layer2Image" />
+        <image src="{{layer2Image}}" mode="aspectFill" aria-label="{{question.question}} 延伸配图" binderror="onImgError" data-field="layer2Image" />
       </view>
       <text class="answer-text">{{question.layer2.answer}}</text>
     </view>
@@ -98,7 +130,7 @@
         <text class="bubble-text bubble-l3">{{question.layer3.followUp}}</text>
       </view>
       <view class="card-illustration" wx:if="{{layer3Image}}">
-        <image src="{{layer3Image}}" mode="aspectFill" aria-label="{{question.question}} 趣味延伸插图" binderror="onImgError" data-field="layer3Image" />
+        <image src="{{layer3Image}}" mode="aspectFill" aria-label="{{question.question}} 趣味延伸配图" binderror="onImgError" data-field="layer3Image" />
       </view>
       <text class="answer-text">{{question.layer3.answer}}</text>
     </view>
