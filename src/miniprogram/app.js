@@ -39,6 +39,9 @@ App({
     appName: '十亿个什么与为什么',
     version,
     releaseDate,
+    // V8.81 Sprint 76 第145轮：插画显示偏好（全局共享，与 H5 端 Pinia store 对齐）
+    // 键名统一：bw_illustration_disabled，布尔值，true=关闭插画
+    illustrationDisabled: false,
   },
 
   onLaunch() {
