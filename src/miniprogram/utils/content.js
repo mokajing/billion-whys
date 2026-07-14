@@ -2,6 +2,7 @@
 // 旧方案：const questions = require('../data/questions-data')  // 670KB 同步阻塞
 // 新方案：先加载 index，异步加载全量数据；首屏渲染用 index 数据
 // V8.61 Sprint 69：分包异步加载失败降级策略——弱网/分包加载失败时展示 index 数据 + 提示
+// V9.18 第180轮：comfortCategory fallback（R180-013）——缺失时按 category 补充默认表情
 const questionsIndex = require('../data/questions-index-data')
 const { safeLoadSubpackage, safeToast } = require('./safe-wx')
 const storage = require('./storage')
@@ -77,7 +78,48 @@ async function _loadFullDataAsync() {
 
 function _rebuildQuestionMap() {
   questionMap.clear()
-  for (const q of questions) questionMap.set(q.id, q)
+  for (const q of questions) {
+    // V9.18 第180轮：comfortCategory fallback（R180-013）
+    // 当 comfortCategory 缺失时，按 category 类型补充默认 emotion
+    if (!q.comfortCategory || q.comfortCategory.trim() === '') {
+      const defaults = {
+        home: { rabbitEmotion: 'curious', bearEmotion: 'gentle' },
+        nature: { rabbitEmotion: 'curious', bearEmotion: 'wise' },
+        society: { rabbitEmotion: 'curious', bearEmotion: 'wise' },
+        food: { rabbitEmotion: 'curious', bearEmotion: 'gentle' },
+        body: { rabbitEmotion: 'curious', bearEmotion: 'warm' },
+        animals: { rabbitEmotion: 'curious', bearEmotion: 'gentle' },
+      }
+      const fallback = defaults[q.category] || { rabbitEmotion: 'curious', bearEmotion: 'gentle' }
+      if (!q.rabbitEmotion || q.rabbitEmotion.trim() === '') {
+        q.rabbitEmotion = fallback.rabbitEmotion
+      }
+      if (!q.bearEmotion || q.bearEmotion.trim() === '') {
+        q.bearEmotion = fallback.bearEmotion
+      }
+    }
+
+    // V9.19 第181轮：emotion 空值兜底（R181-013，前端小凡）
+    // 当 comfortCategory 有值但 rabbitEmotion/bearEmotion 为空时，注入 fallback
+    // 解决：comfortCategory已存在但emotion字段缺失的边缘情况
+    const defaults = {
+      home: { rabbitEmotion: 'curious', bearEmotion: 'gentle' },
+      nature: { rabbitEmotion: 'curious', bearEmotion: 'wise' },
+      society: { rabbitEmotion: 'curious', bearEmotion: 'wise' },
+      food: { rabbitEmotion: 'curious', bearEmotion: 'gentle' },
+      body: { rabbitEmotion: 'curious', bearEmotion: 'warm' },
+      animals: { rabbitEmotion: 'curious', bearEmotion: 'gentle' },
+    }
+    const fallback = defaults[q.category] || { rabbitEmotion: 'curious', bearEmotion: 'gentle' }
+    if (!q.rabbitEmotion || q.rabbitEmotion.trim() === '') {
+      q.rabbitEmotion = fallback.rabbitEmotion
+    }
+    if (!q.bearEmotion || q.bearEmotion.trim() === '') {
+      q.bearEmotion = fallback.bearEmotion
+    }
+
+    questionMap.set(q.id, q)
+  }
 }
 
 function isFullDataLoaded() {
