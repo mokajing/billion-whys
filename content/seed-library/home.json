@@ -2440,9 +2440,8 @@
     "question": "为什么遥控器可以控制电视，但看不见中间有绳子？",
     "age": "3-5岁",
     "layer1": {
-      "answer": "遥控器会发出一种看不见的光，电视能看到这种光，这很正常哦！它就知道你要它做什么了。",
-      "image": "images/home/home-2071-layer1.webp",
-      "interactionHint": "和宝宝一起按遥控器，观察电视的变化"
+      "answer": "遥控器会发出一种看不见的光，电视能\"看到\"这种光，就知道你要它做什么了。",
+      "image": "images/home/home-2071-layer1.webp"
     },
     "layer2": {
       "answer": "遥控器前面有个小灯泡，会发出一种人眼看不见的光叫红外线。按下按钮时，遥控器用这种光给电视发暗号，电视收到暗号就换台了。",
@@ -2470,12 +2469,7 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔拿起遥控器对着天花板按，电视没反应。答答熊说\"遥控器和电视在说悄悄话，你要让它们面对面才行！\"然后教问问兔用手机相机看到遥控器的\"秘密光\"。",
-    "warmClosing": "",
-    "parentGuide": "用简单的话解释遥控器可以控制电视，但看不见中间有绳子的工作原理，鼓励宝宝提问。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
-    "interactionType": "观察类",
-    "comfortCategory": "C",
-    "rabbitEmotion": "curious",
-    "bearEmotion": "wise"
+    "warmClosing": ""
   },
   {
     "id": "home-2072",
