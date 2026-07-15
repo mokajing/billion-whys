@@ -2554,9 +2554,8 @@
     "question": "为什么巧克力含在嘴里会化掉？",
     "age": "3-5岁",
     "layer1": {
-      "answer": "巧克力用一种叫可可脂的油做的，在嘴巴的温度下就会化，变成巧克力酱，每种味道都不一样，很正常。",
-      "image": "images/food/food-2073-layer1.webp",
-      "interactionHint": "和宝宝一起探索这个有趣的问题"
+      "answer": "巧克力是用一种叫可可脂的油做的，这种油刚好在嘴巴的温度下就会化，所以含在嘴里就变成巧克力酱啦。",
+      "image": "images/food/food-2073-layer1.webp"
     },
     "layer2": {
       "answer": "巧克力里的可可脂有一个神奇的\"开关温度\"——大约34°C。你的嘴巴正好也是这个温度，所以巧克力一进嘴就化了。如果放在冰箱里，它就保持硬硬的，因为它喜欢冷。",
@@ -2584,12 +2583,7 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔含着巧克力，惊喜地发现它慢慢变成了液体。\"巧克力在玩变魔术！\"答答熊说\"可可脂是个聪明的小家伙，它刚好在你嘴巴的温度下就变身——在冰箱里装硬汉，在嘴里变软妹子。\"",
-    "warmClosing": "",
-    "interactionType": "观察类",
-    "parentGuide": "本内容仅供亲子互动参考，涉及安全操作请在家长全程监护下进行。",
-    "rabbitEmotion": "curious",
-    "bearEmotion": "gentle",
-    "comfortCategory": "C"
+    "warmClosing": ""
   },
   {
     "id": "food-2074",
