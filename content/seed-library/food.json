@@ -179,7 +179,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "米饭是大米煮出来的。大米来自“水稻”，农民在水田里种稻苗，稻穗里就藏着一粒粒大米。",
+      "answer": "米饭是大米煮出来的。大米来自水稻，农民种稻苗，稻穗里藏着一粒粒大米，大人在旁边，放心吃。",
       "image": "images/food/food-004-layer1.webp",
       "interactionHint": "和大人一起，看看食物是怎么做出来的"
     },
@@ -509,7 +509,7 @@
     ],
     "safetyLevel": "B",
     "layer1": {
-      "answer": "生鸡蛋软软的，煮了以后蛋白和蛋黄都变硬了。",
+      "answer": "生鸡蛋软软的，煮了以后蛋白和蛋黄都变硬了，小心烫，大人帮你吹吹。",
       "image": "images/food/food-010-layer1.webp",
       "interactionHint": "和大人一起，观察食物在煮的时候颜色的变化，你很会发现哦！"
     },
@@ -723,7 +723,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "西瓜籽是西瓜的宝宝，种到土里就能长出新西瓜。",
+      "answer": "西瓜籽是西瓜的宝宝，种到土里就能长出新西瓜，慢慢吃，大人在陪着。",
       "image": "images/food/food-014-layer1.webp",
       "interactionHint": "和大人一起，探索这个食物的有趣故事"
     },
@@ -1102,7 +1102,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "因为饼干里面的水被烤箱烤干了，变得干干的就脆啦！就像树叶干了踩上去也会碎。",
+      "answer": "因为饼干里面的水被烤箱烤干了，变得干干的就脆啦！就像树叶干了踩上去也会碎，先问问大人再吃，很安全。",
       "image": "images/food/food-021-layer1.webp",
       "interactionHint": "和大人一起，摸一摸不同食物的软硬，比比看，你很会发现哦！"
     },
@@ -1209,7 +1209,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "豆腐是用黄豆做的！黄豆磨成豆浆，再用魔法把豆浆变成软软的豆腐。",
+      "answer": "豆腐是用黄豆做的！黄豆磨成豆浆，再用魔法把豆浆变成软软的豆腐，现在还不太适合宝宝吃，长大再尝。",
       "image": "images/food/food-023-layer1.webp",
       "interactionHint": "和大人一起，摸一摸不同食物的软硬，比比看，你很会发现哦！"
     },
@@ -1802,7 +1802,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "因为每个人的肚子不一样，有些人的肚子消化不了牛奶里的某种东西。",
+      "answer": "因为每个人的肚子不一样，有些人的肚子消化不了牛奶里的某种东西，大人在旁边，放心尝。",
       "image": "images/food/food-034-layer1.webp",
       "interactionHint": "和大人一起，探索这个食物的有趣故事"
     },
@@ -2025,7 +2025,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "虾壳里本来就藏着红色颜料，活着时被盖住了看不见，煮熟后盖子打开红色就跑出来啦！",
+      "answer": "虾壳里本来就藏着红色颜料，活着时被盖住了看不见，煮熟后盖子打开红色就跑出来啦，慢慢吃，不着急。",
       "image": "images/food/food-038-layer1.webp",
       "interactionHint": "和大人一起，观察食物在煮的时候颜色的变化，你很会发现哦！"
     },
@@ -2138,7 +2138,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "油和醋是合不来的朋友，不管怎么搅，它们都想分开住——油在上面醋在下面！",
+      "answer": "油和醋是合不来的朋友，不管怎么搅，它们都想分开住——油在上面醋在下面，大人在呢，很安全。",
       "image": "images/food/food-040-layer1.webp",
       "interactionHint": "和大人一起，探索这个食物的有趣故事"
     },
@@ -2362,7 +2362,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "绿豆口渴了在喝水呀！它喝了好多水把肚子撑得圆滚滚的，就变胖变大啦！",
+      "answer": "绿豆口渴了在喝水呀！它喝了好多水把肚子撑得圆滚滚的，就变胖变大啦，先闻一闻，大人在旁边。",
       "image": "images/food/food-044-layer1.webp",
       "interactionHint": "和大人一起，观察食物在煮的时候颜色的变化，你很会发现哦！"
     },
@@ -2474,8 +2474,7 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "牛奶里住着好多看不见的小小虫，它们饿了就吃牛奶里的糖，吃完以后放出酸酸的东西，牛奶就变酸了。",
-      "image": "images/food/food-2071-layer1.webp",
-      "interactionHint": "和宝宝一起探索这个有趣的问题"
+      "image": "images/food/food-2071-layer1.webp"
     },
     "layer2": {
       "answer": "空气中有很多微小的细菌，落到牛奶里就开始吃奶里的乳糖。细菌吃饱后排出乳酸，乳酸让牛奶变酸、变稠。这就是为什么酸奶也是酸的——是好细菌帮我们做的。",
@@ -2504,12 +2503,7 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔喝了一口放太久的牛奶，皱起眉头\"好酸！\"答答熊说\"是空气里的小细菌先你一步喝了牛奶，还留下了酸酸的礼物。不过别担心，好细菌做的酸奶可是美味！\"",
-    "warmClosing": "",
-    "interactionType": "观察类",
-    "parentGuide": "本内容仅供亲子互动参考，涉及安全操作请在家长全程监护下进行。",
-    "rabbitEmotion": "curious",
-    "bearEmotion": "gentle",
-    "comfortCategory": "C"
+    "warmClosing": ""
   },
   {
     "id": "food-2072",
@@ -2566,7 +2560,7 @@
     "question": "为什么巧克力含在嘴里会化掉？",
     "age": "3-5岁",
     "layer1": {
-      "answer": "巧克力是用一种叫可可脂的油做的，这种油刚好在嘴巴的温度下就会化，所以含在嘴里就变成巧克力酱啦。",
+      "answer": "巧克力用一种叫可可脂的油做的，在嘴巴的温度下就会化，变成巧克力酱，每种味道都不一样，很正常。",
       "image": "images/food/food-2073-layer1.webp",
       "interactionHint": "和宝宝一起探索这个有趣的问题"
     },
