@@ -170,7 +170,7 @@
     ],
     "safetyLevel": "B",
     "layer1": {
-      "answer": "风就是空气在流动。太阳把空气晒热了往上飘，旁边凉空气跑过来补上，就是风！",
+      "answer": "风就是空气在流动。太阳把空气晒热了往上飘，旁边凉空气跑过来补上，就是风，风轻轻地吹，很温柔。",
       "image": "images/nature/nature-004-layer1.webp",
       "interactionHint": "和宝宝一起吹纸巾，看纸巾飘起来，说：我们的嘴巴也能造风呢！"
     },
@@ -333,7 +333,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "月亮不会发光，是被太阳照亮的。它绕地球转，你看到亮的多就是圆，少就是弯。",
+      "answer": "月亮不会发光，是被太阳照亮的。它绕地球转，你看到亮的多就是圆，少就是弯，月亮在陪伴你，很美。",
       "image": "images/nature/nature-007-layer1.webp",
       "interactionHint": "捡一片树叶让宝宝摸正面和背面，问：哪面更滑？哪面纹路更深？"
     },
@@ -440,7 +440,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "大海里溶了好多好多盐，所以海水是咸的。",
+      "answer": "大海里溶了好多好多盐，所以海水是咸的，大海一直这样，很正常。",
       "image": "images/nature/nature-009-layer1.webp",
       "interactionHint": "打雷时抱着宝宝数：轰隆隆的声音要几秒才到？离我们越远声音越慢！"
     },
@@ -495,7 +495,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "天上的云互相碰撞就会发出闪电和轰隆隆的雷声。",
+      "answer": "天上的云互相碰撞就会发出闪电和轰隆隆的雷声，大人在陪伴你，声音很安全。",
       "image": "images/nature/nature-010-layer1.webp",
       "interactionHint": "和宝宝一起对着镜子哈气，看雾气出现又消失，问：雾去哪了？"
     },
@@ -765,7 +765,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "磁铁有隐形的手，能隔空把铁的东西拉过来！",
+      "answer": "磁铁有隐形的手，能隔空把铁的东西拉过来，磁铁很温柔，很安全。",
       "image": "images/nature/nature-015-layer1.webp",
       "interactionHint": "请家长全程陪同，打雷闪电时和宝宝一起数闪电和雷声之间的秒数，闪电越近雷声越快。"
     },
@@ -1041,7 +1041,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "因为地球绕太阳转一圈要一年，而地球是歪着转的，所以不同时候晒到的太阳多少不一样。",
+      "answer": "地球绕太阳转一圈要一年，地球歪着转，不同时候晒到的太阳不一样，四季变化很自然。",
       "image": "images/nature/nature-020-layer1.webp",
       "interactionHint": "请家长全程陪同，用手指蘸水滴在热石头上，看水珠跳舞蒸发，问：水去哪了？"
     },
@@ -1096,7 +1096,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "星星的光要穿过厚厚的空气才能到你的眼睛，空气一直在动，光就被晃来晃去，看起来就一闪一闪的！",
+      "answer": "星星的光穿过厚厚的空气，空气一直在动，光就被晃得一抖一抖，星星的光很温柔。",
       "image": "images/nature/nature-021-layer1.webp",
       "interactionHint": "和宝宝一起看月亮，每晚画下月亮的形状，问：月亮为什么有时候圆有时候弯？"
     },
@@ -1367,7 +1367,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "数树桩上的圈圈！一圈就是一岁，数数有几圈就知道树多大了。",
+      "answer": "数树桩上的圈圈！一圈就是一岁，数数有几圈就知道树多大了，大自然很温柔，很美。",
       "image": "images/nature/nature-026-layer1.webp",
       "interactionHint": "雨后和宝宝一起找水坑，看水坑里的倒影，问：水里的天空和真的天空哪个更蓝？"
     },
@@ -1420,7 +1420,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "因为月亮有隐形的力量在拉海水！月亮离哪边近，哪边的海水就被拉高了。",
+      "answer": "因为月亮有隐形的力量在拉海水！月亮离哪边近，哪边的海水就被拉高了，大海很温柔，很安全。",
       "image": "images/nature/nature-027-layer1.webp",
       "interactionHint": "和宝宝一起把手放在胸口感受心跳，再跑几圈感受心跳加速，问：心跳为什么变快了？"
     },
@@ -1475,7 +1475,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "瀑布的水是从山上的河流来的，河水流到悬崖边就像跳水一样冲下去了！",
+      "answer": "瀑布的水是从山上的河流来的，河水流到悬崖边就像跳水一样冲下去了，水很温柔，大人在陪伴。",
       "image": "images/nature/nature-028-layer1.webp",
       "interactionHint": "让宝宝摸不同温度的石头（晒过的和阴凉的），问：太阳公公是不是把石头晒热了？"
     },
@@ -1530,7 +1530,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "因为你的声音跑到山那边撞到了又弹回来了！就像你扔球到墙上球会弹回来一样。",
+      "answer": "因为你的声音跑到山那边撞到了又弹回来了！就像你扔球到墙上球会弹回来一样，大自然很奇妙，很安全。",
       "image": "images/nature/nature-029-layer1.webp",
       "interactionHint": "和宝宝一起观察蚂蚁搬家，看它们排成一队，问：蚂蚁要搬去哪里？"
     },
@@ -1583,7 +1583,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "太阳没有被吃掉！是月亮刚好跑到太阳前面挡住了一部分，叫日食。",
+      "answer": "太阳没有被吃掉！是月亮刚好跑到太阳前面挡住了一部分，叫日食，大自然很奇妙，很安全。",
       "image": "images/nature/nature-030-layer1.webp",
       "interactionHint": "让宝宝对着风车吹气，看风车转起来，再拿到户外看风吹动，问：哪个转得更快？"
     },
@@ -1637,7 +1637,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "植物喜欢阳光，哪边有光它就往哪边弯过去，就像你看到好吃的会凑过去一样！",
+      "answer": "植物喜欢阳光，哪边有光它就往哪边弯过去，就像你看到好吃的会凑过去一样，大自然很奇妙，很安全。",
       "image": "images/nature/nature-031-layer1.webp",
       "interactionHint": "和宝宝一起用杯子装不同量的水，用筷子敲杯沿听声音，问：水多声音高还是低？"
     },
@@ -1691,7 +1691,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "秋天天冷了，树叶里的绿色消失，黄色露出来了。树养不起那么多叶子，就让它们掉下来。",
+      "answer": "秋天天冷了，树叶里的绿色消失，黄色露出来了。树养不起那么多叶子，就让它们掉下来，大自然很温柔，很美。",
       "image": "images/nature/nature-032-layer1.webp",
       "interactionHint": "晴天让宝宝站在太阳下看自己的影子，早上、中午、傍晚各看一次，问：影子怎么变了？"
     },
@@ -1801,7 +1801,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "因为平静的水面像一面镜子！光从你的脸弹到水面上，又弹回你的眼睛，你就看到自己了。",
+      "answer": "平静的水面像一面镜子！光从你的脸弹到水面，又弹回眼睛，你就看到自己了，水很温柔，大人在陪伴。",
       "image": "images/nature/nature-034-layer1.webp",
       "interactionHint": "让宝宝摸树皮，粗糙的和光滑的都摸一摸，问：这棵树几岁了？"
     },
@@ -1855,7 +1855,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "空气当然存在！虽然你看不见它，但你能感觉到它——风就是空气在动，你每次呼吸都在吸空气。",
+      "answer": "空气当然存在！虽然看不见，但风就是空气在动，每次呼吸都在吸空气，空气很温柔，大人在陪伴。",
       "image": "images/nature/nature-035-layer1.webp",
       "interactionHint": "和宝宝一起看蜘蛛网上的露珠，看阳光照在露珠上闪闪发光，问：露珠像什么？"
     },
@@ -1963,7 +1963,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "因为风一直在吹海面！风推着海水动起来，就像你对着水面吹气会起波纹一样。",
+      "answer": "因为风一直在吹海面！风推着海水动起来，就像你对着水面吹气会起波纹一样，大海很温柔，很安全。",
       "image": "images/nature/nature-037-layer1.webp",
       "interactionHint": "和宝宝一起看日落后的天空颜色变化，从橙到紫到黑，问：天空变了几种颜色？"
     },
@@ -2405,7 +2405,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "龙卷风是一个飞速旋转的空气柱！它转得特别特别快，像一个超级大吸尘器，能把东西吸到空中。",
+      "answer": "龙卷风是飞速转圈的空气，像个大吸尘器，大人在身边，很安全。",
       "image": "images/nature/nature-045-layer1.webp",
       "interactionHint": "和宝宝一起看星星，找最亮的那颗，问：星星为什么一闪一闪的？"
     },
@@ -2622,8 +2622,7 @@
     "age": "4-6岁",
     "layer1": {
       "answer": "因为厚厚的云层像一块黄色的大幕布，把太阳光染成了黄色。",
-      "image": "images/nature/nature-2071-layer1.webp",
-      "interactionHint": "阴天时和宝宝一起看天空颜色变化，问：天空今天穿什么颜色的衣服？黄色还是灰色？"
+      "image": "images/nature/nature-2071-layer1.webp"
     },
     "layer2": {
       "answer": "下雨前天空有很多又厚又密的云，云里的水滴把阳光中的蓝色光散射掉了，剩下的黄色和红色光照到地面上，天空就看起来黄黄的。",
@@ -2653,12 +2652,7 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔趴在窗边看天空\"天空怎么变成黄油色了？\"答答熊说\"云宝宝喝饱了水，把太阳光里的蓝色都藏起来了，只剩下黄色光偷偷溜出来告诉我们——快下雨啦！\"",
-    "warmClosing": "",
-    "comfortCategory": "B",
-    "rabbitEmotion": "curious",
-    "bearEmotion": "gentle",
-    "parentGuide": "观察天气变化帮孩子建立\"自然预兆\"的概念，培养观察力和预测能力。",
-    "interactionType": "观察类"
+    "warmClosing": ""
   },
   {
     "id": "nature-2072",
