@@ -2600,9 +2600,8 @@
     "question": "为什么转圈圈以后会头晕？",
     "age": "3-5岁",
     "layer1": {
-      "answer": "因为耳朵里有个小水池，你一转圈，水池里的水就晃来晃去，告诉大脑\"还在转\"，但眼睛说\"没转了\"，",
-      "image": "images/body/body-2075-layer1.webp",
-      "interactionHint": "和宝宝一起探索这个有趣的问题"
+      "answer": "因为耳朵里有个小水池，你一转圈，水池里的水就晃来晃去，告诉大脑\"还在转\"，但眼睛说\"没转了\"，它们俩吵架了，你就晕了。",
+      "image": "images/body/body-2075-layer1.webp"
     },
     "layer2": {
       "answer": "耳朵最深处有一个像小水平仪的东西，里面装着水。你转圈时水跟着转，停下来了水还在晃，大脑以为你还在转，可眼睛看到的是静止的，两种信号打架，头晕就来了。",
@@ -2629,11 +2628,6 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔和答答熊在草地上比赛转圈。停下来后问问兔摇摇晃晃像喝醉了，答答熊扶住它说\"是你的耳朵里的小水手还在划船呢！\"",
-    "warmClosing": "",
-    "interactionType": "观察类",
-    "parentGuide": "本内容仅供亲子互动参考，涉及安全操作请在家长全程监护下进行。",
-    "rabbitEmotion": "curious",
-    "bearEmotion": "gentle",
-    "comfortCategory": "C"
+    "warmClosing": ""
   }
 ]
