@@ -2601,8 +2601,7 @@
     "age": "4-6岁",
     "layer1": {
       "answer": "胶水是液体的时候可以流进东西的小缝隙里，变干了以后就像很多小手，把两样东西紧紧拉住。",
-      "image": "images/home/home-2075-layer1.webp",
-      "interactionHint": "和宝宝一起观察胶水能粘东西，聊聊它怎么工作"
+      "image": "images/home/home-2075-layer1.webp"
     },
     "layer2": {
       "answer": "胶水涂上去的时候是湿的，里面有很多小分子。水分蒸发后，小分子们手拉手变成一张结实的网，把两样东西粘在一起。就像泥巴湿的时候能粘手，干了就变成硬块。",
@@ -2630,11 +2629,6 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔的手工作品散架了，急得跳脚。答答熊拿出胶水说\"别急，胶水是小小大力士，它钻进纸的缝隙里，等干了就变成千万只小手，把你的作品抓紧！\"",
-    "warmClosing": "",
-    "parentGuide": "用简单的话解释胶水能粘东西的工作原理，鼓励宝宝提问。",
-    "interactionType": "观察类",
-    "comfortCategory": "C",
-    "rabbitEmotion": "curious",
-    "bearEmotion": "wise"
+    "warmClosing": ""
   }
 ]
