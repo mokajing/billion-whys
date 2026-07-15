@@ -2784,8 +2784,7 @@
     "age": "3-6岁",
     "layer1": {
       "answer": "彩虹需要同时有太阳和下雨才能出现。太阳光穿过雨滴，就像穿过一个水晶球，变出了七种颜色。",
-      "image": "images/nature/nature-2075-layer1.webp",
-      "interactionHint": "晴天往空中喷水，和宝宝一起找迷你彩虹，问：为什么现在能看到彩虹了？"
+      "image": "images/nature/nature-2075-layer1.webp"
     },
     "layer2": {
       "answer": "下过雨后空中还有小水滴，太阳从你背后照过来，光穿过水滴就被分成了红橙黄绿青蓝紫七种颜色。没有太阳或者没有雨，彩虹就不会出现。",
@@ -2813,11 +2812,6 @@
       "experimentType": "观察"
     },
     "ipScene": "雨后初晴，问问兔指着天空尖叫\"彩虹！彩虹！\"答答熊说\"太阳公公和雨滴宝宝在合作画画，太阳负责打光，雨滴负责分颜色，他们画完就收工了，所以彩虹不会一直有哦。\"",
-    "warmClosing": "",
-    "comfortCategory": "B",
-    "rabbitEmotion": "curious",
-    "bearEmotion": "gentle",
-    "parentGuide": "自制彩虹实验让孩子理解\"需要阳光+水滴\"两个条件同时满足才能看到彩虹。",
-    "interactionType": "动作类"
+    "warmClosing": ""
   }
 ]
