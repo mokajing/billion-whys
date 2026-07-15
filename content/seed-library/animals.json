@@ -2318,8 +2318,7 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "猫咪的身体像弹簧一样灵活，它会用尾巴当方向盘，在空中扭来扭去，让自己四脚朝下稳稳落地。",
-      "image": "images/animals/animals-2071-layer1.webp",
-      "interactionHint": "和宝宝一起探索这个有趣的问题"
+      "image": "images/animals/animals-2071-layer1.webp"
     },
     "layer2": {
       "answer": "猫有一种天生的本领叫\"翻正反射\"。它从高处掉下来时，会先转动头看地面，然后身体跟着扭，短短半秒内就把身体翻正。它的脊柱特别灵活，像一串可以自由转动的珠子。",
@@ -2347,12 +2346,7 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔在树上看到一只猫从围墙跳下来，四脚稳稳落地。\"猫是不是有弹簧脚？\"答答熊说\"猫的脊椎像一串灵活的珠子，它能在空中翻跟斗，把自己调到最安全的姿势落地！\"",
-    "warmClosing": "",
-    "interactionType": "观察类",
-    "parentGuide": "本内容仅供亲子互动参考，涉及安全操作请在家长全程监护下进行。",
-    "rabbitEmotion": "curious",
-    "bearEmotion": "gentle",
-    "comfortCategory": "C"
+    "warmClosing": ""
   },
   {
     "id": "animals-2074",
