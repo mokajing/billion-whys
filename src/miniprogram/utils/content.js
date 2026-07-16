@@ -26,7 +26,73 @@ function _showDegradedNotice() {
   })
 }
 
-// 异步加载全量数据：从分包加载所有分类数据
+// CDN 动态数据加载：从 GitHub CDN 获取题目数据，无需发版即可更新内容
+const CDN_DATA_BASE = 'https://cdn.jsdelivr.net/gh/mokajing/billion-whys@main/content/seed-library'
+const CDN_DATA_FALLBACK = 'https://raw.githubusercontent.com/mokajing/billion-whys/main/content/seed-library'
+const CACHE_KEY_PREFIX = 'bw_cat_data_'
+const CACHE_VERSION_KEY = 'bw_data_version'
+const CACHE_EXPIRY_MS = 3600000  // 1 hour cache
+
+// 从 CDN 获取单个分类数据
+function _fetchCategoryFromCDN(cat) {
+  return new Promise((resolve) => {
+    const url = `${CDN_DATA_BASE}/${cat}.json`
+    const fallbackUrl = `${CDN_DATA_FALLBACK}/${cat}.json`
+
+    const doRequest = (targetUrl, isFallback) => {
+      if (typeof wx === 'undefined' || typeof wx.request !== 'function') {
+        resolve(null)
+        return
+      }
+      wx.request({
+        url: targetUrl,
+        method: 'GET',
+        timeout: 10000,
+        success: (res) => {
+          if (res.statusCode === 200 && res.data && Array.isArray(res.data)) {
+            // 缓存到本地
+            try {
+              wx.setStorageSync(`${CACHE_KEY_PREFIX}${cat}`, {
+                data: res.data,
+                timestamp: Date.now(),
+              })
+            } catch (_e) { /* 缓存失败不影响功能 */ }
+            resolve(res.data)
+          } else if (!isFallback) {
+            doRequest(fallbackUrl, true)
+          } else {
+            resolve(null)
+          }
+        },
+        fail: () => {
+          if (!isFallback) {
+            doRequest(fallbackUrl, true)
+          } else {
+            resolve(null)
+          }
+        },
+      })
+    }
+    doRequest(url, false)
+  })
+}
+
+// 从本地缓存获取分类数据
+function _getCategoryFromCache(cat) {
+  if (typeof wx === 'undefined' || typeof wx.getStorageSync !== 'function') return null
+  try {
+    const cached = wx.getStorageSync(`${CACHE_KEY_PREFIX}${cat}`)
+    if (cached && cached.data && cached.timestamp) {
+      const age = Date.now() - cached.timestamp
+      if (age < CACHE_EXPIRY_MS) {
+        return cached.data
+      }
+    }
+  } catch (_e) { /* ignore */ }
+  return null
+}
+
+// 异步加载全量数据：优先 CDN 动态加载 → 本地缓存 → 分包降级
 async function _loadFullDataAsync() {
   if (_fullDataLoaded) return
   if (_fullDataPromise) return _fullDataPromise
@@ -36,7 +102,27 @@ async function _loadFullDataAsync() {
       const allData = []
       const cats = SUBPACKAGE_CATEGORIES
       let loadedCount = 0
+      let cdnSuccess = false
+
       for (const cat of cats) {
+        // 1. 尝试 CDN 动态获取（前后端分离，无需发版）
+        let catData = await _fetchCategoryFromCDN(cat)
+        if (catData && Array.isArray(catData) && catData.length > 0) {
+          allData.push(...catData)
+          loadedCount++
+          cdnSuccess = true
+          continue
+        }
+
+        // 2. 尝试本地缓存（CDN 失败时用过期缓存）
+        const cached = _getCategoryFromCache(cat)
+        if (cached && Array.isArray(cached) && cached.length > 0) {
+          allData.push(...cached)
+          loadedCount++
+          continue
+        }
+
+        // 3. 降级：从分包加载（bundled，需发版才能更新）
         try {
           const ok = await safeLoadSubpackage(cat)
           if (ok) {
@@ -45,24 +131,21 @@ async function _loadFullDataAsync() {
             loadedCount++
           }
         } catch (_e) {
-          // 分包加载失败，跳过该分类
-          console.warn('[BillionWhys] Failed to load subpackage:', cat, _e)
+          console.warn('[BillionWhys] Failed to load:', cat, _e)
         }
       }
+
       if (allData.length > 0) {
         questions = allData
-        // 重建 questionMap
         _rebuildQuestionMap()
         _fullDataLoaded = true
-        console.log('[BillionWhys] Full data loaded:', allData.length, 'questions')
-        // V8.61：部分分包加载失败时提示用户
+        console.log('[BillionWhys] Full data loaded:', allData.length, 'questions (CDN:', cdnSuccess + ')')
         if (loadedCount < cats.length) {
           _showDegradedNotice()
         }
       } else {
-        // V8.61：全部分包加载失败，降级使用 index 数据
         _loadErrorCount++
-        console.warn('[BillionWhys] All subpackages failed, using index data only')
+        console.warn('[BillionWhys] All data sources failed, using index data only')
         _showDegradedNotice()
       }
     } catch (_e) {
