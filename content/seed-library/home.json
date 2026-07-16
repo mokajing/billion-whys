@@ -2520,8 +2520,7 @@
     "age": "4-6岁",
     "layer1": {
       "answer": "每个锁都有自己的\"密码\"，只有形状刚好对的钥匙才能打开，就像你的书包拉链只有配套的拉链头才能拉上。",
-      "image": "images/home/home-2073-layer1.webp",
-      "interactionHint": "和宝宝一起找找家里还有什么"
+      "image": "images/home/home-2073-layer1.webp"
     },
     "layer2": {
       "answer": "锁里面有几个小柱子，叫弹子，每个弹子高低不同。正确的钥匙插进去，每个齿刚好把所有弹子顶到正确的高度，锁芯就能转动了。别的钥匙齿形不对，弹子卡住，锁就打不开。",
@@ -2550,12 +2549,7 @@
       "experimentType": "观察"
     },
     "ipScene": "答答熊拿出一把钥匙和一把透明锁模型，问\"你看，钥匙上的锯齿像小楼梯，每个台阶刚好把锁里的小柱子顶到正确的高度！\"问问兔惊叹\"原来钥匙是会说话的密码！\"",
-    "warmClosing": "",
-    "comfortCategory": "C",
-    "interactionType": "观察类",
-    "parentGuide": "家里的物品是最好的教具，陪孩子一起发现它们的奥秘",
-    "rabbitEmotion": "curious",
-    "bearEmotion": "gentle"
+    "warmClosing": ""
   },
   {
     "id": "home-2074",
