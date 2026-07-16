@@ -2400,9 +2400,8 @@
     "question": "为什么蜻蜓会点水？",
     "age": "3-5岁",
     "layer1": {
-      "answer": "蜻蜓在水面上点来点去，是在把宝宝放进水里。蜻蜓宝宝要在水里才能长大，这很正常哦。",
-      "image": "images/animals/animals-2075-layer1.webp",
-      "interactionHint": "和宝宝一起观察，看看有什么发现"
+      "answer": "蜻蜓在水面上点来点去，是在把宝宝放进水里。蜻蜓宝宝要在水里才能长大。",
+      "image": "images/animals/animals-2075-layer1.webp"
     },
     "layer2": {
       "answer": "蜻蜓妈妈在水面上飞，用尾巴尖轻轻点水，每次点水都在水里产下一颗卵。等卵孵化出来，蜻蜓宝宝就在水里生活，吃水里的蚊子幼虫，长大了再爬出来变成会飞的蜻蜓。",
@@ -2430,11 +2429,6 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔指着池塘上飞来飞去的蜻蜓问\"它为什么一直用尾巴碰水？\"答答熊说\"那是蜻蜓妈妈在生宝宝！它把宝宝放进水里，宝宝在水里长大，会游泳，会抓蚊子，长大了才爬出水面变成蜻蜓。\"",
-    "warmClosing": "",
-    "comfortCategory": "C",
-    "interactionType": "观察类",
-    "parentGuide": "带孩子观察身边的动植物，培养对自然的好奇心",
-    "rabbitEmotion": "curious",
-    "bearEmotion": "gentle"
+    "warmClosing": ""
   }
 ]
