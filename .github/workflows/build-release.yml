@@ -1,0 +1,53 @@
+name: Build Mini-Program Release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/miniprogram/**'
+      - 'project.config.json'
+      - 'package.json'
+      - 'CLAUDE.md'
+      - 'rules/**'
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create lightweight package
+        run: |
+          mkdir -p /tmp/billion-whys-mp
+          cp -r src/miniprogram /tmp/billion-whys-mp/
+          cp project.config.json /tmp/billion-whys-mp/
+          cp package.json /tmp/billion-whys-mp/
+          cp CLAUDE.md /tmp/billion-whys-mp/ 2>/dev/null || true
+          cp -r rules /tmp/billion-whys-mp/ 2>/dev/null || true
+          find /tmp/billion-whys-mp -name "node_modules" -type d -exec rm -rf {} + 2>/dev/null || true
+          find /tmp/billion-whys-mp -name "_tmp" -type d -exec rm -rf {} + 2>/dev/null || true
+          cd /tmp
+          tar -czf billion-whys-mp-release.tar.gz billion-whys-mp/
+
+      - name: Upload to Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v1.0-mp-release
+          name: "十亿小程序轻量版（自动构建）"
+          body: |
+            ## 自动构建的轻量版小程序源码包
+            
+            每次推送代码到 main 分支时自动构建。
+            
+            ### 使用方法
+            1. 下载 billion-whys-mp-release.tar.gz
+            2. 解压
+            3. 微信开发者工具导入，AppID: wxb8d98b0d4b1d9d97
+            4. 编译，题目和图片自动从 CDN 加载
+            
+            内容更新（新题/图片）无需重新下载，走 CDN。
+          files: /tmp/billion-whys-mp-release.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
