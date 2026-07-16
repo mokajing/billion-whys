@@ -2481,8 +2481,7 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "冰箱门边上有个小按钮，开门的时候按钮弹起来灯就亮了，关门的时候按钮被按下去灯就灭了。",
-      "image": "images/home/home-2072-layer1.webp",
-      "interactionHint": "和宝宝一起找找家里还有什么"
+      "image": "images/home/home-2072-layer1.webp"
     },
     "layer2": {
       "answer": "冰箱门框上有一个凸起的小开关。门打开时开关弹出来，电路接通，灯就亮了；门关上时开关被压进去，电路断开，灯就灭了。和房间的灯开关是一个道理。",
@@ -2509,12 +2508,7 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔偷偷打开冰箱，灯亮了吓一跳。\"灯怎么知道我在偷看？\"答答熊指着门边的小按钮说\"这是冰箱的小鼻子，你一开门它就醒了，一关门它就睡觉。\"",
-    "warmClosing": "",
-    "comfortCategory": "C",
-    "interactionType": "观察类",
-    "parentGuide": "家里的物品是最好的教具，陪孩子一起发现它们的奥秘",
-    "rabbitEmotion": "curious",
-    "bearEmotion": "gentle"
+    "warmClosing": ""
   },
   {
     "id": "home-2073",
