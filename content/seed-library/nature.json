@@ -2702,9 +2702,8 @@
     "question": "为什么有的石头是光滑的，有的是粗糙的？",
     "age": "3-5岁",
     "layer1": {
-      "answer": "光滑的石头被水冲了很久很久，就像洗澡时搓了很久的皮肤一样变滑了。粗糙的石头是刚从山里出来的。",
-      "image": "images/nature/nature-2073-layer1.webp",
-      "interactionHint": "和宝宝一起看看窗外，有什么发现"
+      "answer": "光滑的石头被水冲了很久很久，就像洗澡时搓了很久的皮肤一样变滑了。粗糙的石头是刚从山里出来的，还没被水洗过。",
+      "image": "images/nature/nature-2073-layer1.webp"
     },
     "layer2": {
       "answer": "河里的石头被水流冲来冲去，石头之间互相摩擦，棱角都被磨圆了，所以光滑。山上的石头没有经过水流的打磨，保持着原来的粗糙样子。这个过程要花很长很长的时间。",
@@ -2733,12 +2732,7 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔在河边捡到一块光滑的鹅卵石，又看到路边一块粗糙的石头。\"为什么它们不一样？\"答答熊说\"河里那块石头被水洗了几万年的澡，棱角都被洗掉了。路边那块石头还没开始洗澡呢！\"",
-    "warmClosing": "",
-    "comfortCategory": "C",
-    "interactionType": "观察类",
-    "parentGuide": "大自然是最好的课堂，带孩子去户外感受真实的世界",
-    "rabbitEmotion": "curious",
-    "bearEmotion": "wise"
+    "warmClosing": ""
   },
   {
     "id": "nature-2074",
