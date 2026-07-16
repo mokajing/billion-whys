@@ -2663,8 +2663,9 @@
     "question": "为什么冬天呼气能看到白雾，夏天看不到？",
     "age": "3-5岁",
     "layer1": {
-      "answer": "因为冬天外面冷，你嘴里呼出来的热气一碰到冷空气就变成了小水滴，这些小水滴飘在空中就是白雾。夏天外面热，热气不会变成水，就看不见了。",
-      "image": "images/nature/nature-2072-layer1.webp"
+      "answer": "因为冬天外面冷，你嘴里呼出来的热气一碰到冷空气就变成了小水滴，这些小水滴飘在空中就是白雾。",
+      "image": "images/nature/nature-2072-layer1.webp",
+      "interactionHint": "和宝宝一起看看窗外，有什么发现"
     },
     "layer2": {
       "answer": "你呼出的气里有很多看不见的水蒸气。冬天空气冷，热的蒸气一碰到冷空气马上变成小水滴，就像烧开水时冒的白气。夏天空气本身就很热，蒸气不会变成水，所以看不见。",
@@ -2691,7 +2692,12 @@
       "experimentType": "观察"
     },
     "ipScene": "冬天早晨，问问兔对着窗户哈气，看白雾升腾。\"我是小火车！\"答答熊说\"你呼出的热气在冬天变成了看得见的云朵，夏天它们就隐形啦。\"",
-    "warmClosing": ""
+    "warmClosing": "",
+    "comfortCategory": "C",
+    "interactionType": "观察类",
+    "parentGuide": "大自然是最好的课堂，带孩子去户外感受真实的世界",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "wise"
   },
   {
     "id": "nature-2073",
@@ -2702,8 +2708,9 @@
     "question": "为什么有的石头是光滑的，有的是粗糙的？",
     "age": "3-5岁",
     "layer1": {
-      "answer": "光滑的石头被水冲了很久很久，就像洗澡时搓了很久的皮肤一样变滑了。粗糙的石头是刚从山里出来的，还没被水洗过。",
-      "image": "images/nature/nature-2073-layer1.webp"
+      "answer": "光滑的石头被水冲了很久很久，就像洗澡时搓了很久的皮肤一样变滑了。粗糙的石头是刚从山里出来的。",
+      "image": "images/nature/nature-2073-layer1.webp",
+      "interactionHint": "和宝宝一起看看窗外，有什么发现"
     },
     "layer2": {
       "answer": "河里的石头被水流冲来冲去，石头之间互相摩擦，棱角都被磨圆了，所以光滑。山上的石头没有经过水流的打磨，保持着原来的粗糙样子。这个过程要花很长很长的时间。",
@@ -2732,7 +2739,12 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔在河边捡到一块光滑的鹅卵石，又看到路边一块粗糙的石头。\"为什么它们不一样？\"答答熊说\"河里那块石头被水洗了几万年的澡，棱角都被洗掉了。路边那块石头还没开始洗澡呢！\"",
-    "warmClosing": ""
+    "warmClosing": "",
+    "comfortCategory": "C",
+    "interactionType": "观察类",
+    "parentGuide": "大自然是最好的课堂，带孩子去户外感受真实的世界",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "wise"
   },
   {
     "id": "nature-2074",
@@ -2744,7 +2756,8 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "因为云是由很小很小的水滴组成的，它们轻得像羽毛，空气托着它们，掉不下来。",
-      "image": "images/nature/nature-2074-layer1.webp"
+      "image": "images/nature/nature-2074-layer1.webp",
+      "interactionHint": "和宝宝一起看看窗外，有什么发现"
     },
     "layer2": {
       "answer": "云是无数极小的水滴或冰晶聚在一起。每个水滴轻得几乎没重量，空气的上升气流把它们托住了。当水滴变大变重，空气托不住了，就会掉下来——那就是下雨啦。",
@@ -2772,7 +2785,12 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔躺在草地上看云，突然担心\"云会不会掉下来砸到我？\"答答熊哈哈大笑\"云是最轻的棉花糖，空气用看不见的手一直托着它们。等它们喝水喝太胖了，才会变成雨掉下来。\"",
-    "warmClosing": ""
+    "warmClosing": "",
+    "comfortCategory": "C",
+    "interactionType": "观察类",
+    "parentGuide": "大自然是最好的课堂，带孩子去户外感受真实的世界",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "wise"
   },
   {
     "id": "nature-2075",
@@ -2783,8 +2801,9 @@
     "question": "为什么有时候能看到彩虹，有时候看不到？",
     "age": "3-6岁",
     "layer1": {
-      "answer": "彩虹需要同时有太阳和下雨才能出现。太阳光穿过雨滴，就像穿过一个水晶球，变出了七种颜色。",
-      "image": "images/nature/nature-2075-layer1.webp"
+      "answer": "彩虹需要同时有太阳和下雨才能出现。太阳光穿过雨滴，就像穿过一个水晶球，变出了七种颜色，这很正常哦。",
+      "image": "images/nature/nature-2075-layer1.webp",
+      "interactionHint": "和宝宝一起看看窗外，有什么发现"
     },
     "layer2": {
       "answer": "下过雨后空中还有小水滴，太阳从你背后照过来，光穿过水滴就被分成了红橙黄绿青蓝紫七种颜色。没有太阳或者没有雨，彩虹就不会出现。",
@@ -2812,6 +2831,11 @@
       "experimentType": "观察"
     },
     "ipScene": "雨后初晴，问问兔指着天空尖叫\"彩虹！彩虹！\"答答熊说\"太阳公公和雨滴宝宝在合作画画，太阳负责打光，雨滴负责分颜色，他们画完就收工了，所以彩虹不会一直有哦。\"",
-    "warmClosing": ""
+    "warmClosing": "",
+    "comfortCategory": "C",
+    "interactionType": "观察类",
+    "parentGuide": "大自然是最好的课堂，带孩子去户外感受真实的世界",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "wise"
   }
 ]
