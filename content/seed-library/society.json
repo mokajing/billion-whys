@@ -2622,7 +2622,8 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "幼儿园是有好多小朋友一起玩的地方，还有老师带你们唱歌、画画、做游戏，比一个人在家好玩多了！",
-      "image": "images/society/society-2075-layer1.webp"
+      "image": "images/society/society-2075-layer1.webp",
+      "interactionHint": "和宝宝一起聊聊，看看身边还有什么"
     },
     "layer2": {
       "answer": "幼儿园不只是玩的地方，还是学习怎么和别人相处的地方。在这里你学会了排队、分享、等别人说完再说话。爸爸妈妈去上班的时候，幼儿园就是小朋友的\"工作单位\"。",
@@ -2650,7 +2651,12 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔第一天去幼儿园，有点紧张地问\"为什么不能在家跟妈妈玩？\"答答熊说\"幼儿园是个神奇的地方——这里有好多跟你一样大的小朋友，你们可以一起搭积木、一起唱歌、一起学新本领。妈妈去上班，你来幼儿园，晚上回家再交换今天的故事！\"",
-    "warmClosing": ""
+    "warmClosing": "",
+    "comfortCategory": "C",
+    "interactionType": "感知类",
+    "parentGuide": "用孩子能理解的方式解释社会规则，不评判、不贴标签",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "wise"
   },
   {
     "id": "society-046",
