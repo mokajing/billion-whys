@@ -261,7 +261,7 @@
     "ipScene": "问问兔不小心蹭破了膝盖，答答熊帮忙贴上创可贴说：“别怕，你的小修理工已经开始干活啦！”",
     "locale": "zh-CN",
     "scienceImage": "images/body/body-005-experiment.webp",
-    "warmClosing": "小伤口别怕，你身体里的小修理工已经在干活啦！",
+    "warmClosing": "小伤口放心，你身体里的小修理工已经在干活啦！",
     "emotionSafety": {
       "status": "reviewed",
       "reviewers": [
@@ -343,7 +343,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "头皮下面藏着“头发工厂”，每天把头发往外推，像挤牙膏一样越长越长，真奇妙！",
+      "answer": "头皮下面藏着“头发工厂”，每天把头发往外推，像挤牙膏一样越长越长，这很正常哦！",
       "image": "images/body/body-007-layer1.webp",
       "interactionHint": "摸摸看，是什么感觉？"
     },
@@ -397,7 +397,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "你睡着了大脑还在悄悄整理白天的事，拼成奇奇怪怪的故事，就是梦，真奇妙！",
+      "answer": "你睡着了大脑还在悄悄整理白天的事，拼成奇奇怪怪的故事，就是梦，这很正常哦！",
       "image": "images/body/body-008-layer1.webp",
       "interactionHint": "和宝宝一起做做看！"
     },
@@ -501,7 +501,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "嘴巴里藏着几个小喷泉一直在冒水，让嘴巴湿湿的才能说话吃东西，真奇妙！",
+      "answer": "嘴巴里藏着几个小喷泉一直在冒水，让嘴巴湿湿的才能说话吃东西，这很正常哦！",
       "image": "images/body/body-010-layer1.webp",
       "interactionHint": "摸摸看，是什么感觉？"
     },
@@ -709,7 +709,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "鼻子里有能感觉气味的小帮手，闻到就报告给大脑，这很正常哦。，真奇妙，而且暖暖的！",
+      "answer": "鼻子里有能感觉气味的小帮手，闻到就报告给大脑，这很正常哦，而且暖暖的！",
       "image": "images/body/body-014-layer1.webp",
       "interactionHint": "摸摸看，是什么感觉？"
     },
@@ -817,7 +817,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "手指上有细细的花纹，帮你抓东西不打滑，这很正常哦。，暖暖的，太有趣了！",
+      "answer": "手指上有细细的花纹，帮你抓东西不打滑，这很正常哦，暖暖的，太有趣了！",
       "image": "images/body/body-016-layer1.webp",
       "interactionHint": "摸摸看，是什么感觉？"
     },
@@ -1194,7 +1194,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "身体太热了，皮肤冒出小水珠来降温，就像给身体洗了个凉水澡，真奇妙！",
+      "answer": "身体太热了，皮肤冒出小水珠来降温，就像给身体洗了个凉水澡，这很正常哦！",
       "image": "images/body/body-023-layer1.webp",
       "interactionHint": "闭上眼睛感受一下~"
     },
@@ -1246,7 +1246,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "肚脐是你出生前和家人连在一起的地方留下的小记号，这很正常哦。，暖暖的，真奇妙对吧？",
+      "answer": "肚脐是你出生前和家人连在一起的地方留下的小记号，这很正常哦，暖暖的，这很正常哦，对吧？",
       "image": "images/body/body-024-layer1.webp",
       "interactionHint": "摸摸看，是什么感觉？"
     },
@@ -1512,7 +1512,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "因为你的耳朵里有一面小鼓，声音的波波打到小鼓上，它就振动告诉大脑了，这很正常哦。，真奇妙！暖暖的。",
+      "answer": "因为你的耳朵里有一面小鼓，声音的波波打到小鼓上，它就振动告诉大脑了，这很正常哦！暖暖的。",
       "image": "images/body/body-029-layer1.webp",
       "interactionHint": "摸摸看，是什么感觉？"
     },
@@ -1566,7 +1566,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "因为你的牙齿上会藏着看不见的小坏蛋，刷牙就是把它们赶走，这很正常哦。，轻轻呼吸，暖暖的！",
+      "answer": "因为你的牙齿上会藏着看不见的小坏蛋，刷牙就是把它们赶走，这很正常哦，轻轻呼吸，暖暖的！",
       "image": "images/body/body-030-layer1.webp",
       "interactionHint": "和宝宝一起做做看！"
     },
@@ -1621,7 +1621,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "因为手指上的皮肤吸了好多水，变大了但下面的肉没变，就皱巴巴的了，这很正常哦。，真奇妙，轻轻地试试！",
+      "answer": "因为手指上的皮肤吸了好多水，变大了但下面的肉没变，就皱巴巴的了，这很正常哦，轻轻地试试！",
       "image": "images/body/body-031-layer1.webp",
       "interactionHint": "摸摸看，是什么感觉？"
     },
@@ -1725,7 +1725,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "因为每个人眼睛里的颜色颗粒多少不一样，就像画画用了不同的颜料，这很正常哦。，暖暖的，好舒服呀！",
+      "answer": "因为每个人眼睛里的颜色颗粒多少不一样，就像画画用了不同的颜料，这很正常哦，暖暖的，好舒服呀！",
       "image": "images/body/body-033-layer1.webp",
       "interactionHint": "摸摸看，是什么感觉？"
     },
@@ -1887,7 +1887,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "大脑有一边更能干，所以有人用左手有人用右手，就像各有最顺手的一边，真奇妙！",
+      "answer": "大脑有一边更能干，所以有人用左手有人用右手，就像各有最顺手的一边，这很正常哦！",
       "image": "images/body/body-036-layer1.webp",
       "interactionHint": "摸摸看，是什么感觉？"
     },
@@ -2049,7 +2049,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "肚脐是你出生前和妈妈连接的小管子掉下来后留下的小印记，就像礼物标签的痕迹，这很正常哦。，暖暖的。",
+      "answer": "肚脐是你出生前和妈妈连接的小管子掉下来后留下的小印记，就像礼物标签的痕迹，这很正常哦，暖暖的。",
       "image": "images/body/body-039-layer1.webp",
       "interactionHint": "摸摸看，是什么感觉？"
     },
@@ -2211,7 +2211,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "耳朵里有个小陀螺告诉大脑在动，可眼睛看到车没动。两边吵架了，大脑就糊涂了，你就晕晕的想吐。，很安全！",
+      "answer": "耳朵里有个小陀螺告诉大脑在动，可眼睛看到车没动。两边吵架了，大脑就糊涂了，你就晕晕的想吐，很安全！",
       "image": "images/body/body-042-layer1.webp",
       "interactionHint": "和宝宝一起做做看！"
     },
@@ -2318,7 +2318,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "睡觉时喉咙里的小帘子放松了，呼吸的风吹过去让它抖动，就像风吹窗帘，真奇妙！",
+      "answer": "睡觉时喉咙里的小帘子放松了，呼吸的风吹过去让它抖动，就像风吹窗帘，这很正常哦！",
       "image": "images/body/body-044-layer1.webp",
       "interactionHint": "和宝宝一起做做看！"
     },
@@ -2369,7 +2369,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "坐太久时，腿里的电话线（神经）被压住了，大脑打电话给腿接不到，腿就麻了不听指挥。，轻轻做，没关系！",
+      "answer": "坐太久时，腿里的电话线（神经）被压住了，大脑打电话给腿接不到，腿就麻了不听指挥，轻轻做，没关系！",
       "image": "images/body/body-045-layer1.webp",
       "interactionHint": "摸摸看，是什么感觉？"
     },
@@ -2419,7 +2419,7 @@
     "question": "为什么我有时候觉得时间过得快，有时候觉得时间过得慢？",
     "age": "4-6岁",
     "layer1": {
-      "answer": "开心的时候时间像小兔子跑得快，等着的时候时间像小蜗牛慢慢爬。，真奇妙，暖暖的很舒服！",
+      "answer": "开心的时候时间像小兔子跑得快，等着的时候时间像小蜗牛慢慢爬，这很正常哦，暖暖的很舒服！",
       "image": "images/body/body-2071-layer1.webp",
       "interactionHint": "仔细看看，有什么变化？"
     },
@@ -2555,7 +2555,7 @@
     "question": "为什么挠痒痒的时候会忍不住笑？",
     "age": "3-5岁",
     "layer1": {
-      "answer": "因为你的身体在说\"有人在碰我！\"然后笑是身体保护自己的方式。，暖暖的，轻轻碰碰！",
+      "answer": "因为你的身体在说\"有人在碰我！\"然后笑是身体保护自己的方式，暖暖的，轻轻碰碰！",
       "image": "images/body/body-2074-layer1.webp",
       "interactionHint": "摸摸看，是什么感觉？"
     },
