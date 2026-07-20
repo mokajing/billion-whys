@@ -880,7 +880,7 @@
     },
     "layer2": {
       "followUp": "为什么水稻比别的植物更爱水？",
-      "answer": "水稻老家在沼泽地，天生喜欢泡在水里。水还能挤掉杂草——杂草泡在水里会淩死，水稻不怕。",
+      "answer": "水稻老家在沼泽地，天生喜欢泡在水里。水还能挤掉杂草——杂草泡在水里会淩死，水稻没关系。",
       "image": "images/nature/nature-017-layer2.webp"
     },
     "layer3": {
@@ -1617,7 +1617,7 @@
     },
     "ipScene": "问问兔看到太阳少了一块吓了一跳：“谁咬了太阳一口？“答答熊说：“是月亮跑到太阳前面挡住了，不是被咬了！过一会儿就恢复了。”",
     "scienceImage": "images/nature/nature-030-science.webp",
-    "warmClosing": "日食是月亮挡住了太阳，不是被吃掉了，大自然的巧合真奇妙！",
+    "warmClosing": "日食是月亮挡住了太阳，不是被吃掉了，大自然的巧合这很正常哦！",
     "locale": "zh-CN",
     "comfortCategory": "B",
     "rabbitEmotion": "curious",
@@ -1671,7 +1671,7 @@
     },
     "ipScene": "问问兔发现窗台上的植物都歪向窗户说：“它们想出去玩吗？“答答熊说：“它们在追阳光呢！哪边有光就往哪边弯，植物也爱晒太阳！”",
     "scienceImage": "images/nature/nature-031-science.webp",
-    "warmClosing": "植物追着阳光长，就像你追着喜欢的东西跑一样，生命真奇妙！",
+    "warmClosing": "植物追着阳光长，就像你追着喜欢的东西跑一样，生命这很正常哦！",
     "locale": "zh-CN",
     "comfortCategory": "B",
     "rabbitEmotion": "curious",
@@ -1702,7 +1702,7 @@
     },
     "layer3": {
       "followUp": "那为什么松树不掉叶子？",
-      "answer": "松树的叶子又细又小像针一样，表面还有一层蜡。这样水分蒸发很少，冬天也不怕冷不怕干。所以松树不需要掉叶子过冬，一年四季都是绿色的，叫常绿树。不过松针也会换，只是慢慢地换不会一下掉光。",
+      "answer": "松树的叶子又细又小像针一样，表面还有一层蜡。这样水分蒸发很少，冬天也没关系冷没关系干。所以松树不需要掉叶子过冬，一年四季都是绿色的，叫常绿树。不过松针也会换，只是慢慢地换不会一下掉光。",
       "image": "images/nature/nature-032-layer3.webp"
     },
     "science": "落叶是落叶树对冬季低温短日照的适应策略。秋季日照缩短→叶绿素（绿）分解→类胡萝卜素（黄/橙）显现；部分树种合成花青素（红/紫）。叶柄基部形成离层（离层区细胞木质化），切断水分和养分运输，叶片脱落。落叶减少冬季水分蒸腾和冻害风险。常绿针叶树通过减小叶面积和蜡质层降低蒸腾实现全年保叶。",
@@ -2127,7 +2127,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "因为地下深处的温度一年四季差不多！井水在地下待着，不怕外面热也不怕外面冷。",
+      "answer": "因为地下深处的温度一年四季差不多！井水在地下待着，没关系外面热也没关系外面冷。",
       "image": "images/nature/nature-040-layer1.webp",
       "interactionHint": "让宝宝用手摸不同材质的石头（大理石、砂岩、鹅卵石），问：哪块最滑？哪块最粗糙？"
     },
@@ -2238,7 +2238,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "因为石头在河水里被冲啊冲、磨啊磨，尖尖的角都被磨圆了，就变成圆溜溜的了！",
+      "answer": "石头在河水里被冲啊冲，尖角都磨圆了，就变成圆溜溜的，河水磨圆的。",
       "image": "images/nature/nature-042-layer1.webp",
       "interactionHint": "请家长全程陪同，带宝宝看篝火或蜡烛，观察火焰的颜色和形状，但不许靠近。"
     },
@@ -2349,7 +2349,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "因为那里太干了，几乎不下雨！没有水植物就活不了，剩下的沙子和石头就变成了沙漠。",
+      "answer": "那里太干了几乎不下雨！没有水植物活不了，沙子和石头就变成了沙漠。",
       "image": "images/nature/nature-044-layer1.webp",
       "interactionHint": "让宝宝把冰块放在手心看它融化，问：冰块去哪了？手心怎么变凉了？"
     },
@@ -2463,7 +2463,7 @@
     "baselineEpoch": "post-sprint53",
     "locale": "zh-CN",
     "layer1": {
-      "answer": "冰是冻硬的水。太阳晒一晒、手摸一摸，冰就变暖变软，化回成水啦！",
+      "answer": "冰是冻硬的水。太阳晒一晒，手摸一摸，冰就变暖化回水，自然的循环。",
       "image": "images/nature/nature-046-layer1.webp",
       "interactionHint": "让宝宝摸早晨草叶上的露水，问：露水从哪里来？为什么中午就没有了？"
     },
@@ -2571,7 +2571,7 @@
     "baselineEpoch": "post-sprint53",
     "locale": "zh-CN",
     "layer1": {
-      "answer": "地球像个大皮球在转圈圈。转到对着太阳那一面是白天，背着太阳那一面就是黑夜！",
+      "answer": "地球像大皮球在转圈，转到太阳那面是白天，背着是黑夜，太阳每天回来。",
       "image": "images/nature/nature-048-layer1.webp",
       "interactionHint": "让宝宝用手接住飘落的树叶，比比谁接得多，问：树叶为什么会落下来？"
     },
@@ -2663,8 +2663,11 @@
     "question": "为什么冬天呼气能看到白雾，夏天看不到？",
     "age": "3-5岁",
     "layer1": {
-      "answer": "因为冬天外面冷，你嘴里呼出来的热气一碰到冷空气就变成了小水滴，这些小水滴飘在空中就是白雾。夏天外面热，热气不会变成水，就看不见了。",
-      "image": "images/nature/nature-2072-layer1.webp"
+      "answer": "冬天外面冷，嘴巴呼出的热气遇冷变成小水滴，飘在空中就是白雾。夏天热看不见。",
+      "image": "images/nature/nature-2072-layer1.webp",
+      "interactionHint": "冬天在外面让宝宝对着镜子或玻璃哈气，看白雾出现又消失——\"哈~看！你的热气变成小水滴了！\"",
+      "comfortCategory": "B",
+      "interactionType": "观察类"
     },
     "layer2": {
       "answer": "你呼出的气里有很多看不见的水蒸气。冬天空气冷，热的蒸气一碰到冷空气马上变成小水滴，就像烧开水时冒的白气。夏天空气本身就很热，蒸气不会变成水，所以看不见。",
@@ -2691,7 +2694,12 @@
       "experimentType": "观察"
     },
     "ipScene": "冬天早晨，问问兔对着窗户哈气，看白雾升腾。\"我是小火车！\"答答熊说\"你呼出的热气在冬天变成了看得见的云朵，夏天它们就隐形啦。\"",
-    "warmClosing": ""
+    "warmClosing": "冬天能看到白雾说明你的身体暖烘烘的——这是你身体里热气出来玩的信号！",
+    "comfortCategory": "B",
+    "interactionType": "观察类",
+    "rabbitEmotion": "surprised",
+    "bearEmotion": "comforting",
+    "parentGuide": "让孩子对比冬天/夏天呼气的差异，理解\"温差→凝结\"的概念。可以用\"对着冷玻璃哈气\"的小游戏加深印象。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "nature-2073",
@@ -2702,8 +2710,11 @@
     "question": "为什么有的石头是光滑的，有的是粗糙的？",
     "age": "3-5岁",
     "layer1": {
-      "answer": "光滑的石头被水冲了很久很久，就像洗澡时搓了很久的皮肤一样变滑了。粗糙的石头是刚从山里出来的，还没被水洗过。",
-      "image": "images/nature/nature-2073-layer1.webp"
+      "answer": "光滑的石头被水冲了很久，棱角磨圆了。粗糙的石头刚从山里出来，还没被水洗过。",
+      "image": "images/nature/nature-2073-layer1.webp",
+      "interactionHint": "去河边或公园找两块石头，让宝宝闭着眼睛摸一摸——\"猜猜哪块是光滑的，哪块是粗糙的？\"",
+      "comfortCategory": "B",
+      "interactionType": "触觉类"
     },
     "layer2": {
       "answer": "河里的石头被水流冲来冲去，石头之间互相摩擦，棱角都被磨圆了，所以光滑。山上的石头没有经过水流的打磨，保持着原来的粗糙样子。这个过程要花很长很长的时间。",
@@ -2732,7 +2743,12 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔在河边捡到一块光滑的鹅卵石，又看到路边一块粗糙的石头。\"为什么它们不一样？\"答答熊说\"河里那块石头被水洗了几万年的澡，棱角都被洗掉了。路边那块石头还没开始洗澡呢！\"",
-    "warmClosing": ""
+    "warmClosing": "光滑的石头和粗糙的石头都是石头——就像有的小朋友爱穿裙子，有的爱穿裤子，都是好看的！",
+    "comfortCategory": "B",
+    "interactionType": "触觉类",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "wise",
+    "parentGuide": "带孩子收集不同质地的石头，闭眼摸一摸判断\"光滑\"还是\"粗糙\"，锻炼触觉辨识力。可以讨论\"光滑的石头被水冲过，粗糙的石头刚从山里出来\"。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "nature-2074",
@@ -2744,7 +2760,10 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "因为云是由很小很小的水滴组成的，它们轻得像羽毛，空气托着它们，掉不下来。",
-      "image": "images/nature/nature-2074-layer1.webp"
+      "image": "images/nature/nature-2074-layer1.webp",
+      "interactionHint": "带宝宝看天上的云，用手指追踪一朵云的移动——\"看，那朵云在飘，它是不是在找朋友？\"",
+      "comfortCategory": "B",
+      "interactionType": "观察类"
     },
     "layer2": {
       "answer": "云是无数极小的水滴或冰晶聚在一起。每个水滴轻得几乎没重量，空气的上升气流把它们托住了。当水滴变大变重，空气托不住了，就会掉下来——那就是下雨啦。",
@@ -2772,7 +2791,12 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔躺在草地上看云，突然担心\"云会不会掉下来砸到我？\"答答熊哈哈大笑\"云是最轻的棉花糖，空气用看不见的手一直托着它们。等它们喝水喝太胖了，才会变成雨掉下来。\"",
-    "warmClosing": ""
+    "warmClosing": "云不会掉下来，就像你吹的泡泡飘在空中——轻的东西就是能飘着，很正常！",
+    "comfortCategory": "B",
+    "interactionType": "观察类",
+    "rabbitEmotion": "surprised",
+    "bearEmotion": "comforting",
+    "parentGuide": "引导孩子观察云的飘动，理解\"很轻的东西可以被空气托住\"。可以用\"吹羽毛\"对比\"扔石头\"体验轻重的概念。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "nature-2075",
@@ -2783,8 +2807,11 @@
     "question": "为什么有时候能看到彩虹，有时候看不到？",
     "age": "3-6岁",
     "layer1": {
-      "answer": "彩虹需要同时有太阳和下雨才能出现。太阳光穿过雨滴，就像穿过一个水晶球，变出了七种颜色。",
-      "image": "images/nature/nature-2075-layer1.webp"
+      "answer": "彩虹要太阳和下雨同时出现，阳光穿过雨滴变成七色，下雨后记得抬头看看。",
+      "image": "images/nature/nature-2075-layer1.webp",
+      "interactionHint": "在阳光好的时候，用喷壶喷水，让宝宝找一找小彩虹——\"看！你自己造了一道彩虹！\"",
+      "comfortCategory": "A",
+      "interactionType": "观察类"
     },
     "layer2": {
       "answer": "下过雨后空中还有小水滴，太阳从你背后照过来，光穿过水滴就被分成了红橙黄绿青蓝紫七种颜色。没有太阳或者没有雨，彩虹就不会出现。",
@@ -2812,6 +2839,11 @@
       "experimentType": "观察"
     },
     "ipScene": "雨后初晴，问问兔指着天空尖叫\"彩虹！彩虹！\"答答熊说\"太阳公公和雨滴宝宝在合作画画，太阳负责打光，雨滴负责分颜色，他们画完就收工了，所以彩虹不会一直有哦。\"",
-    "warmClosing": ""
+    "warmClosing": "彩虹不是每次都会出现，但每次出现都是给你的惊喜——就像藏起来的糖果，找到的时候更开心！",
+    "comfortCategory": "A",
+    "interactionType": "观察类",
+    "rabbitEmotion": "excited",
+    "bearEmotion": "playful",
+    "parentGuide": "用喷壶+阳光制造小彩虹，让孩子体验\"光+水=彩虹\"。可以讨论\"彩虹需要太阳和雨同时出现\"。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   }
 ]
