@@ -2783,11 +2783,8 @@
     "question": "为什么有时候能看到彩虹，有时候看不到？",
     "age": "3-6岁",
     "layer1": {
-      "answer": "彩虹要太阳和下雨同时出现，阳光穿过雨滴变成七色，下雨后记得抬头看看。",
-      "image": "images/nature/nature-2075-layer1.webp",
-      "interactionHint": "在阳光好的时候，用喷壶喷水，让宝宝找一找小彩虹——\"看！你自己造了一道彩虹！\"",
-      "comfortCategory": "A",
-      "interactionType": "观察类"
+      "answer": "彩虹需要同时有太阳和下雨才能出现。太阳光穿过雨滴，就像穿过一个水晶球，变出了七种颜色。",
+      "image": "images/nature/nature-2075-layer1.webp"
     },
     "layer2": {
       "answer": "下过雨后空中还有小水滴，太阳从你背后照过来，光穿过水滴就被分成了红橙黄绿青蓝紫七种颜色。没有太阳或者没有雨，彩虹就不会出现。",
@@ -2815,11 +2812,6 @@
       "experimentType": "观察"
     },
     "ipScene": "雨后初晴，问问兔指着天空尖叫\"彩虹！彩虹！\"答答熊说\"太阳公公和雨滴宝宝在合作画画，太阳负责打光，雨滴负责分颜色，他们画完就收工了，所以彩虹不会一直有哦。\"",
-    "warmClosing": "彩虹不是每次都会出现，但每次出现都是给你的惊喜——就像藏起来的糖果，找到的时候更开心！",
-    "comfortCategory": "A",
-    "interactionType": "观察类",
-    "rabbitEmotion": "excited",
-    "bearEmotion": "playful",
-    "parentGuide": "用喷壶+阳光制造小彩虹，让孩子体验\"光+水=彩虹\"。可以讨论\"彩虹需要太阳和雨同时出现\"。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
+    "warmClosing": ""
   }
 ]
