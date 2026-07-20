@@ -12,7 +12,10 @@
     "layer1": {
       "answer": "墙壁里藏着“小电流”，按下开关它就跑到灯泡里把灯点亮啦！像打开水龙头水就流。",
       "image": "images/home/home-001-layer1.webp",
-      "interactionHint": "和宝宝一起玩手电筒，看看按开关会发生什么"
+      "interactionHint": "在房间里找到开关，按一下——灯亮了！再按一下——灯灭了。你发现了什么？",
+      "parentGuide": "让孩子自己按开关，感受\"控制\"的成就感。手电筒玩完后可以关上房间灯，用手电筒在墙上做手影。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+      "comfortCategory": "A",
+      "interactionType": "动作类"
     },
     "layer2": {
       "followUp": "小电流是什么呀？",
@@ -64,7 +67,10 @@
     "layer1": {
       "answer": "地球像超级大磁铁，一直把东西往自己身上拉，这很正常哦！水也被拉住了，所以只能往下流。",
       "image": "images/home/home-002-layer1.webp",
-      "interactionHint": "和宝宝一起打开水龙头，看水往哪里流"
+      "interactionHint": "打开水龙头，看水往哪边流——往下！再试试把杯子倒过来，水也往下流，对不对？",
+      "parentGuide": "在洗手池边操作最安全。让孩子自己开水龙头、关水龙头，感受水流方向。可以试试倒水实验——杯子举高倒水，水永远往下。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+      "comfortCategory": "A",
+      "interactionType": "动作类"
     },
     "layer2": {
       "followUp": "为什么地球要拉住东西呢？",
@@ -170,7 +176,10 @@
     "layer1": {
       "answer": "光照到你身上弹到镜子上，镜子光滑又把光弹回来，这很正常哦！你就看到自己啦！",
       "image": "images/home/home-004-layer1.webp",
-      "interactionHint": "和宝宝一起玩影子游戏，用手比出不同形状"
+      "interactionHint": "站在镜子前做个鬼脸，镜子里的你也做鬼脸！挥挥手，镜子里的你也挥手——真好玩！",
+      "parentGuide": "镜子游戏是发展自我认知的经典活动。还可以问孩子\"镜子里是谁呀？\"帮助建立自我意识。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+      "comfortCategory": "A",
+      "interactionType": "观察类"
     },
     "layer2": {
       "followUp": "那为什么墙上看不到自己？",
@@ -223,7 +232,7 @@
     "layer1": {
       "answer": "肥皂遇水变得滑滑的，和水手拉手变成薄膜，这很正常哦！你吹气进去就变泡泡啦！",
       "image": "images/home/home-005-layer1.webp",
-      "interactionHint": "和宝宝一起观察肥皂，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有肥皂，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "那泡泡怎么把脏东西洗掉的？",
@@ -262,7 +271,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释肥皂的工作原理，鼓励宝宝提问。",
+    "parentGuide": "用简单的话解释肥皂的原理，鼓励孩子提问。无需额外材料。",
     "interactionType": "动作类"
   },
   {
@@ -278,7 +287,7 @@
     "layer1": {
       "answer": "泡泡的皮会自己往里缩，想缩到最小。圆形是最省力最小的形状，所以泡泡总是圆的！",
       "image": "images/home/home-006-layer1.webp",
-      "interactionHint": "和宝宝一起观察泡泡是圆的，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有泡泡是圆的，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "不能吹出方形的泡泡吗？",
@@ -316,7 +325,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释泡泡是圆的的工作原理，鼓励宝宝提问。",
+    "parentGuide": "用简单的话解释泡泡是圆的的原理，鼓励孩子提问。无需额外材料。",
     "interactionType": "动作类"
   },
   {
@@ -387,7 +396,7 @@
     "layer1": {
       "answer": "那“烟”其实是小水滴！热水变成看不见的气飘上去，碰到凉空气又变成水珠，像白烟一样。",
       "image": "images/home/home-008-layer1.webp",
-      "interactionHint": "和爸爸妈妈一起，小心地观察开水"
+      "interactionHint": "轻轻地，没关系。用手指轻轻碰一下开水，感觉一下"
     },
     "layer2": {
       "followUp": "水怎么会变成气呢？",
@@ -425,7 +434,7 @@
     "comfortCategory": "A",
     "rabbitEmotion": "brave",
     "bearEmotion": "protective",
-    "parentGuide": "在水槽或浴室进行，让宝宝自己接水、倒水、观察水流。注意防滑，避免水洒到地上。全程监护。。",
+    "parentGuide": "在水槽或浴室进行，让孩子自己接水、倒水、观察水流。无需额外材料。注意防滑，避免水洒到地上。全程监护。。",
     "interactionType": "动作类"
   },
   {
@@ -441,7 +450,7 @@
     "layer1": {
       "answer": "人没有钻进去哦！屏幕上的小彩灯一闪一闪拼出了人的样子。",
       "image": "images/home/home-009-layer1.webp",
-      "interactionHint": "和宝宝一起玩影子游戏，用手比出不同形状"
+      "interactionHint": "用手在墙上做小鸟，看影子飞起来了！飞高飞低"
     },
     "layer2": {
       "followUp": "那电视怎么知道要拼什么样子？",
@@ -478,7 +487,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "在暗一些的房间进行效果更好，引导宝宝观察光影变化。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
+    "parentGuide": "在暗一些的房间进行效果更好，引导孩子观察光影变化。零材料。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
     "interactionType": "动作类"
   },
   {
@@ -494,7 +503,7 @@
     "layer1": {
       "answer": "风扇里有个电动机，通上电它就转起来扇风，这很正常哦！夏天吹着风真舒服。",
       "image": "images/home/home-010-layer1.webp",
-      "interactionHint": "和宝宝一起观察风扇，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有风扇，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "电动机怎么让风扇转的？",
@@ -531,7 +540,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释风扇的工作原理，鼓励宝宝提问。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
+    "parentGuide": "用简单的话解释风扇的原理，鼓励孩子提问。无需额外材料。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
     "interactionType": "动作类"
   },
   {
@@ -547,7 +556,7 @@
     "layer1": {
       "answer": "微波炉发出一种看不见的“小波浪”，让食物里的水动起来变热。",
       "image": "images/home/home-011-layer1.webp",
-      "interactionHint": "和宝宝一起观察，感受微波炉能加热食物的特点"
+      "interactionHint": "摸摸微波炉能加热食物，再摸摸别的东西，比比有什么不一样？真暖和！"
     },
     "layer2": {
       "followUp": "小波浪怎么让水变热的？",
@@ -586,7 +595,7 @@
     "comfortCategory": "B",
     "rabbitEmotion": "curious",
     "bearEmotion": "gentle",
-    "parentGuide": "鼓励宝宝自己探索微波炉能加热食物，在旁观察并描述变化。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
+    "parentGuide": "鼓励孩子自己探索微波炉能加热食物，在旁观察并用语言描述变化。零准备。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
     "interactionType": "动作类"
   },
   {
@@ -655,7 +664,7 @@
     "layer1": {
       "answer": "空气里的水气碰到冷风变成小水珠，像冷饮杯出汗。",
       "image": "images/home/home-013-layer1.webp",
-      "interactionHint": "和宝宝一起观察夏天空调房，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有夏天空调房，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "空气里怎么会有水？",
@@ -693,7 +702,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释夏天空调房的工作原理，鼓励宝宝提问。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
+    "parentGuide": "用简单的话解释夏天空调房的原理，鼓励孩子提问。无需额外材料。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
     "interactionType": "动作类"
   },
   {
@@ -709,7 +718,7 @@
     "layer1": {
       "answer": "锁里有小弹簧和小柱子，只有对的钥匙才能推到位。",
       "image": "images/home/home-014-layer1.webp",
-      "interactionHint": "和宝宝一起观察钥匙能开门，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有钥匙能开门，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "那为什么别的钥匙打不开？",
@@ -746,7 +755,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释钥匙能开门的工作原理，鼓励宝宝提问。",
+    "parentGuide": "用简单的话解释钥匙能开门的原理，鼓励孩子提问。无需额外材料。",
     "interactionType": "动作类"
   },
   {
@@ -762,7 +771,7 @@
     "layer1": {
       "answer": "闹钟里有小锤子，到了时间就敲铃铛叮铃铃响。",
       "image": "images/home/home-015-layer1.webp",
-      "interactionHint": "和宝宝一起闭上眼睛，听听家里有哪些声音"
+      "interactionHint": "闭上眼睛，听听家里有什么声音？冰箱嗡嗡、水滴滴答答"
     },
     "layer2": {
       "followUp": "闹钟怎么知道时间到了？",
@@ -798,7 +807,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "安静环境下进行，让宝宝闭眼分辨不同声音来源。",
+    "parentGuide": "安静环境下进行，让孩子闭眼分辨不同声音来源。无需任何准备。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
     "interactionType": "动作类"
   },
   {
@@ -814,7 +823,7 @@
     "layer1": {
       "answer": "拉链两边有小牙齿，滑块把它们一颗颗咬在一起。",
       "image": "images/home/home-016-layer1.webp",
-      "interactionHint": "和宝宝一起观察拉链能合上，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有拉链能合上，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "小牙齿是怎么咬住的？",
@@ -851,7 +860,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释拉链能合上的工作原理，鼓励宝宝提问。",
+    "parentGuide": "用简单的话解释拉链能合上的原理，鼓励孩子提问。无需额外材料。",
     "interactionType": "动作类"
   },
   {
@@ -868,7 +877,7 @@
     "layer1": {
       "answer": "玻璃里的小颗粒排列得很整齐，光能直接穿过去。",
       "image": "images/home/home-017-layer1.webp",
-      "interactionHint": "和宝宝一起玩影子游戏，用手比出不同形状"
+      "interactionHint": "用手在墙上做小鸟，看影子飞起来了！飞高飞低"
     },
     "layer2": {
       "followUp": "为什么光能穿过玻璃却穿不过墙？",
@@ -908,7 +917,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "在暗一些的房间进行效果更好，引导宝宝观察光影变化。",
+    "parentGuide": "在暗一些的房间进行效果更好，引导孩子观察光影变化。零材料。",
     "interactionType": "动作类"
   },
   {
@@ -924,7 +933,7 @@
     "layer1": {
       "answer": "马桶边上的出水孔是斜着喷水的，水就被推着转圈圈冲下去了，这很正常哦！",
       "image": "images/home/home-018-layer1.webp",
-      "interactionHint": "和宝宝一起观察马桶冲水，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有马桶冲水，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "水为什么要转圈圈？",
@@ -962,7 +971,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "在水槽或浴室进行，让宝宝自己接水、倒水、观察水流。注意防滑，避免水洒到地上。全程监护。。",
+    "parentGuide": "在水槽或浴室进行，让孩子自己接水、倒水、观察水流。无需额外材料。注意防滑，避免水洒到地上。全程监护。。",
     "interactionType": "动作类"
   },
   {
@@ -978,7 +987,7 @@
     "layer1": {
       "answer": "因为橡皮很黏，它擦过去的时候就把铅笔的小黑粉粘走了。",
       "image": "images/home/home-019-layer1.webp",
-      "interactionHint": "和宝宝一起观察橡皮能擦掉铅笔字，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有橡皮能擦掉铅笔字，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "铅笔字是什么做的？",
@@ -1017,7 +1026,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释橡皮能擦掉铅笔字的工作原理，鼓励宝宝提问。",
+    "parentGuide": "用简单的话解释橡皮能擦掉铅笔字的原理，鼓励孩子提问。无需额外材料。",
     "interactionType": "动作类"
   },
   {
@@ -1033,7 +1042,7 @@
     "layer1": {
       "answer": "因为热水瓶有好几层保护，把热气锁在里面跑不出去。",
       "image": "images/home/home-020-layer1.webp",
-      "interactionHint": "和宝宝一起观察热水瓶能保温，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有热水瓶能保温，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "热水瓶怎么锁住热气的？",
@@ -1071,7 +1080,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释热水瓶能保温的工作原理，鼓励宝宝提问。",
+    "parentGuide": "用简单的话解释热水瓶能保温的原理，鼓励孩子提问。无需额外材料。",
     "interactionType": "动作类"
   },
   {
@@ -1087,7 +1096,7 @@
     "layer1": {
       "answer": "吸铁石有一种看不见的力量能把铁东西拉过来，这很正常哦！冰箱门是铁的，所以被吸住了。",
       "image": "images/home/home-021-layer1.webp",
-      "interactionHint": "和宝宝一起观察吸铁石能吸住冰箱，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有吸铁石能吸住冰箱，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "这种看不见的力量是什么？",
@@ -1123,7 +1132,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释吸铁石能吸住冰箱的工作原理，鼓励宝宝提问。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
+    "parentGuide": "用简单的话解释吸铁石能吸住冰箱的原理，鼓励孩子提问。无需额外材料。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
     "interactionType": "动作类"
   },
   {
@@ -1139,7 +1148,7 @@
     "layer1": {
       "answer": "洗衣机让衣服在水和洗衣液里转来转去，脏东西就被甩掉了，这很正常哦！衣服就变干净了。",
       "image": "images/home/home-022-layer1.webp",
-      "interactionHint": "在大人陪同下，和宝宝一起观察家电是怎么工作的"
+      "interactionHint": "看看冰箱灯什么时候亮？打开门就亮了，关上就灭了！"
     },
     "layer2": {
       "followUp": "转来转去怎么就洗干净了？",
@@ -1178,7 +1187,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "在安全距离外观察，引导宝宝猜猜家电是怎么工作的。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
+    "parentGuide": "在安全距离外观察，引导孩子猜猜家电是怎么工作的。在家即可完成。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
     "interactionType": "动作类"
   },
   {
@@ -1194,7 +1203,7 @@
     "layer1": {
       "answer": "下水道里有用过的脏水和食物渣渣，时间长了就有味道了，这很正常哦！开窗通通风就好。",
       "image": "images/home/home-023-layer1.webp",
-      "interactionHint": "和宝宝一起观察下水道，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有下水道，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "那味道为什么不一直冒上来？",
@@ -1232,7 +1241,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "在水槽或浴室进行，让宝宝自己接水、倒水、观察水流。注意防滑，避免水洒到地上。全程监护。。",
+    "parentGuide": "在水槽或浴室进行，让孩子自己接水、倒水、观察水流。无需额外材料。注意防滑，避免水洒到地上。全程监护。。",
     "interactionType": "动作类"
   },
   {
@@ -1248,7 +1257,7 @@
     "layer1": {
       "answer": "遥控器会发出一种你看不见的光，电视能看到这种光，这很正常哦！它就知道你要做什么了。",
       "image": "images/home/home-024-layer1.webp",
-      "interactionHint": "和宝宝一起玩影子游戏，用手比出不同形状"
+      "interactionHint": "用手在墙上做小鸟，看影子飞起来了！飞高飞低"
     },
     "layer2": {
       "followUp": "看不见的光是什么光？",
@@ -1285,7 +1294,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "在暗一些的房间进行效果更好，引导宝宝观察光影变化。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
+    "parentGuide": "在暗一些的房间进行效果更好，引导孩子观察光影变化。零材料。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
     "interactionType": "动作类"
   },
   {
@@ -1301,7 +1310,7 @@
     "layer1": {
       "answer": "瓷碗很硬但也很脆，碰到地板受不了冲击力就裂开了，这很正常哦！下次要小心拿稳。",
       "image": "images/home/home-025-layer1.webp",
-      "interactionHint": "和宝宝一起观察瓷碗掉地上，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有瓷碗掉地上，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "塑料碗为什么摔不碎？",
@@ -1338,7 +1347,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释瓷碗掉地上的工作原理，鼓励宝宝提问。",
+    "parentGuide": "用简单的话解释瓷碗掉地上的原理，鼓励孩子提问。无需额外材料。",
     "interactionType": "动作类"
   },
   {
@@ -1354,7 +1363,7 @@
     "layer1": {
       "answer": "电梯的房间挂在一根粗绳子上，上面有个大机器拉着它上去放它下来，这很正常哦！",
       "image": "images/home/home-026-layer1.webp",
-      "interactionHint": "和宝宝一起观察电梯能上上下下，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有电梯能上上下下，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "电梯不会掉下来吗？",
@@ -1392,7 +1401,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释电梯能上上下下的工作原理，鼓励宝宝提问。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
+    "parentGuide": "用简单的话解释电梯能上上下下的原理，鼓励孩子提问。无需额外材料。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
     "interactionType": "动作类"
   },
   {
@@ -1408,7 +1417,7 @@
     "layer1": {
       "answer": "充电器在把墙里的电变成手机能用的电，变的时候会产生一点热，这很正常哦！不会烫到你的。",
       "image": "images/home/home-027-layer1.webp",
-      "interactionHint": "和宝宝一起观察充电器，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有充电器，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "为什么变电会发热？",
@@ -1445,7 +1454,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释充电器的工作原理，鼓励宝宝提问。",
+    "parentGuide": "用简单的话解释充电器的原理，鼓励孩子提问。无需额外材料。",
     "interactionType": "观察类"
   },
   {
@@ -1461,7 +1470,7 @@
     "layer1": {
       "answer": "夜灯插在插座上就一直有电流过它，LED灯珠就一直亮着，这很正常哦！它守护着你睡觉。",
       "image": "images/home/home-028-layer1.webp",
-      "interactionHint": "和宝宝一起观察夜灯插着就一直亮，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有夜灯插着就一直亮，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "夜灯为什么不热？",
@@ -1497,7 +1506,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释夜灯插着就一直亮的工作原理，鼓励宝宝提问。",
+    "parentGuide": "用简单的话解释夜灯插着就一直亮的原理，鼓励孩子提问。无需额外材料。",
     "interactionType": "观察类"
   },
   {
@@ -1513,7 +1522,7 @@
     "layer1": {
       "answer": "门的合页干了，两块铁互相摩擦就发出了吱吱的声音，这很正常哦！加点油就好了。",
       "image": "images/home/home-029-layer1.webp",
-      "interactionHint": "和宝宝一起闭上眼睛，听听家里有哪些声音"
+      "interactionHint": "闭上眼睛，听听家里有什么声音？冰箱嗡嗡、水滴滴答答"
     },
     "layer2": {
       "followUp": "怎么让门不吱吱响？",
@@ -1551,7 +1560,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "安静环境下进行，让宝宝闭眼分辨不同声音来源。",
+    "parentGuide": "安静环境下进行，让孩子闭眼分辨不同声音来源。无需任何准备。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
     "interactionType": "动作类"
   },
   {
@@ -1567,7 +1576,7 @@
     "layer1": {
       "answer": "那是静电！你走路的时候身体偷偷攒了一些小电荷，碰到金属门把手的时候它们一下子跑出去了，就“啪“一下。",
       "image": "images/home/home-030-layer1.webp",
-      "interactionHint": "和爸爸妈妈一起，小心地观察有时候碰门把手"
+      "interactionHint": "轻轻地，没关系。用手指轻轻碰一下有时候碰门把手，感觉一下"
     },
     "layer2": {
       "followUp": "身体怎么会有电？",
@@ -1604,7 +1613,7 @@
     "comfortCategory": "A",
     "rabbitEmotion": "brave",
     "bearEmotion": "protective",
-    "parentGuide": "全程陪同，引导宝宝安全地观察有时候碰门把手。注意安全，全程监护。。",
+    "parentGuide": "全程陪同，引导孩子安全地探索有时候碰门把手。3分钟内可完成。注意安全，全程监护。。",
     "interactionType": "观察类"
   },
   {
@@ -1620,7 +1629,7 @@
     "layer1": {
       "answer": "光走直线碰到你就被挡住了，这很正常哦！你后面没有光照到的地方就是暗暗的影子。",
       "image": "images/home/home-031-layer1.webp",
-      "interactionHint": "和宝宝一起在灯光下玩影子游戏"
+      "interactionHint": "站在灯前面，举起手，看影子也在举手！变小鸟飞飞飞"
     },
     "layer2": {
       "followUp": "为什么影子的形状和我一样？",
@@ -1656,7 +1665,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "在暗一些的房间进行效果更好，引导宝宝观察光影变化。",
+    "parentGuide": "在暗一些的房间进行效果更好，引导孩子观察光影变化。零材料。",
     "interactionType": "动作类"
   },
   {
@@ -1672,7 +1681,7 @@
     "layer1": {
       "answer": "水在管子里流得很快，突然关掉水龙头水停下来撞到管子就咚咚响了，这很正常哦！",
       "image": "images/home/home-032-layer1.webp",
-      "interactionHint": "和宝宝一起闭上眼睛，听听家里有哪些声音"
+      "interactionHint": "闭上眼睛，听听家里有什么声音？冰箱嗡嗡、水滴滴答答"
     },
     "layer2": {
       "followUp": "水撞管子为什么会响？",
@@ -1709,7 +1718,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "在水槽或浴室进行，让宝宝自己接水、倒水、观察水流。注意防滑，避免水洒到地上。全程监护。。",
+    "parentGuide": "在水槽或浴室进行，让孩子自己接水、倒水、观察水流。无需额外材料。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
     "interactionType": "动作类"
   },
   {
@@ -1725,7 +1734,7 @@
     "layer1": {
       "answer": "你用嘴巴吸的时候，把吸管里的空气吸走了，水就被推上来了，这很正常哦！你吸得好棒。",
       "image": "images/home/home-033-layer1.webp",
-      "interactionHint": "和宝宝一起观察吸管能吸上水来，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有吸管能吸上水来，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "水是被什么推上来的？",
@@ -1763,7 +1772,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释吸管能吸上水来的工作原理，鼓励宝宝提问。",
+    "parentGuide": "用简单的话解释吸管能吸上水来的原理，鼓励孩子提问。无需额外材料。",
     "interactionType": "动作类"
   },
   {
@@ -1778,9 +1787,9 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "光从水里出来时会拐弯，骗了你的眼睛，这很正常哦！让勺子看起来像折断了，真有趣！",
+      "answer": "光从水里出来时会拐弯，骗了你的眼睛，这很正常哦！让勺子看起来像折断了，你发现了！",
       "image": "images/home/home-034-layer1.webp",
-      "interactionHint": "和宝宝一起打开水龙头，用手接水感受水的流动"
+      "interactionHint": "打开水龙头一点点，用手接水，看水在你手心里变成小水池"
     },
     "layer2": {
       "followUp": "光为什么会拐弯？",
@@ -1818,7 +1827,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "在水槽或浴室进行，让宝宝自己接水、倒水、观察水流。注意防滑，避免水洒到地上。全程监护。。",
+    "parentGuide": "在水槽或浴室进行，让孩子自己接水、倒水、观察水流。无需额外材料。注意防滑，避免水洒到地上。全程监护。。",
     "interactionType": "动作类"
   },
   {
@@ -1835,7 +1844,7 @@
     "layer1": {
       "answer": "搭得越高越容易歪，一歪重心就跑到外面去了，积木就哗啦倒了，这很正常哦！再搭一次就好了。",
       "image": "images/home/home-035-layer1.webp",
-      "interactionHint": "和宝宝一起观察积木搭高了，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有积木搭高了，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "什么是重心？",
@@ -1872,7 +1881,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释积木搭高了的工作原理，鼓励宝宝提问。",
+    "parentGuide": "用简单的话解释积木搭高了的原理，鼓励孩子提问。无需额外材料。",
     "interactionType": "动作类"
   },
   {
@@ -1889,7 +1898,7 @@
     "layer1": {
       "answer": "暖水瓶有两层玻璃墙，中间是真空热量跑不出去，这很正常哦！所以水一直暖暖的。",
       "image": "images/home/home-036-layer1.webp",
-      "interactionHint": "和宝宝一起观察暖水瓶能保温一整天，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有暖水瓶能保温一整天，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "什么都没有为什么热就跑不了？",
@@ -1929,7 +1938,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释暖水瓶能保温一整天的工作原理，鼓励宝宝提问。",
+    "parentGuide": "用简单的话解释暖水瓶能保温一整天的原理，鼓励孩子提问。无需额外材料。",
     "interactionType": "动作类"
   },
   {
@@ -1946,7 +1955,7 @@
     "layer1": {
       "answer": "因为车里有个小发条弹簧，你往后拉的时候给它\"攒劲儿\"，松手它就把劲儿放出来推着车跑！",
       "image": "images/home/home-037-layer1.webp",
-      "interactionHint": "和宝宝一起观察有些玩具车拉一下松手，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有有些玩具车拉一下松手，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "弹簧怎么让车跑的？",
@@ -1985,7 +1994,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释有些玩具车拉一下松手的工作原理，鼓励宝宝提问。",
+    "parentGuide": "用简单的话解释有些玩具车拉一下松手的原理，鼓励孩子提问。无需额外材料。",
     "interactionType": "动作类"
   },
   {
@@ -2002,7 +2011,7 @@
     "layer1": {
       "answer": "剪刀的两片刀刃像两颗牙齿合在一起，把纸咬断了，这很正常哦！用剪刀要小心慢慢来。",
       "image": "images/home/home-038-layer1.webp",
-      "interactionHint": "和宝宝一起观察剪刀能剪断纸，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有剪刀能剪断纸，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "为什么刀刃能咬断纸？",
@@ -2040,7 +2049,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释剪刀能剪断纸的工作原理，鼓励宝宝提问。",
+    "parentGuide": "用简单的话解释剪刀能剪断纸的原理，鼓励孩子提问。无需额外材料。",
     "interactionType": "动作类"
   },
   {
@@ -2057,7 +2066,7 @@
     "layer1": {
       "answer": "因为瓶子里有个小泵，按下去的时候把洗手液和空气搅在一起，变成软绵绵的泡泡挤出来！",
       "image": "images/home/home-039-layer1.webp",
-      "interactionHint": "和宝宝一起观察洗手液按一下就出来泡泡，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有洗手液按一下就出来泡泡，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "怎么搅在一起的？",
@@ -2095,7 +2104,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释洗手液按一下就出来泡泡的工作原理，鼓励宝宝提问。",
+    "parentGuide": "用简单的话解释洗手液按一下就出来泡泡的原理，鼓励孩子提问。无需额外材料。",
     "interactionType": "动作类"
   },
   {
@@ -2112,7 +2121,7 @@
     "layer1": {
       "answer": "因为饺子一开始比水重就沉下去，煮热了里面的空气膨胀变大，饺子就像小气球一样浮起来了！",
       "image": "images/home/home-040-layer1.webp",
-      "interactionHint": "和宝宝一起观察煮饺子的时候饺子先沉后浮，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有煮饺子的时候饺子先沉后浮，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "什么空气膨胀？",
@@ -2150,7 +2159,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释煮饺子的时候饺子先沉后浮的工作原理，鼓励宝宝提问。",
+    "parentGuide": "用简单的话解释煮饺子的时候饺子先沉后浮的原理，鼓励孩子提问。无需额外材料。",
     "interactionType": "动作类"
   },
   {
@@ -2167,7 +2176,7 @@
     "layer1": {
       "answer": "空调里有一种神奇的搬运工，夏天把热气搬到屋外，冬天把热气搬进屋里，这很正常哦！",
       "image": "images/home/home-041-layer1.webp",
-      "interactionHint": "和宝宝一起观察空调能吹出冷风也能吹出热风，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有空调能吹出冷风也能吹出热风，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "什么搬运工？怎么搬的？",
@@ -2203,7 +2212,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释空调能吹出冷风也能吹出热风的工作原理，鼓励宝宝提问。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
+    "parentGuide": "用简单的话解释空调能吹出冷风也能吹出热风的原理，鼓励孩子提问。无需额外材料。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
     "interactionType": "动作类"
   },
   {
@@ -2220,7 +2229,7 @@
     "layer1": {
       "answer": "因为铁和空气里的水、氧气慢慢\"打架\"，表面变成了红红的铁锈！",
       "image": "images/home/home-042-layer1.webp",
-      "interactionHint": "和宝宝一起观察铁的东西放久了，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有铁的东西放久了，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "铁怎么跟空气打架的？",
@@ -2260,7 +2269,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释铁的东西放久了的工作原理，鼓励宝宝提问。",
+    "parentGuide": "用简单的话解释铁的东西放久了的原理，鼓励孩子提问。无需额外材料。",
     "interactionType": "动作类"
   },
   {
@@ -2277,7 +2286,7 @@
     "layer1": {
       "answer": "玻璃的内部结构很特别，光可以直接穿过去不被挡住，这很正常哦！所以你能透过它看另一边。",
       "image": "images/home/home-043-layer1.webp",
-      "interactionHint": "和宝宝一起观察玻璃是透明的能看穿它，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有玻璃是透明的能看穿它，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "为什么光能穿过玻璃，却穿不过墙？",
@@ -2319,7 +2328,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "在暗一些的房间进行效果更好，引导宝宝观察光影变化。",
+    "parentGuide": "在暗一些的房间进行效果更好，引导孩子观察光影变化。零材料。",
     "interactionType": "动作类"
   },
   {
@@ -2336,7 +2345,7 @@
     "layer1": {
       "answer": "因为毛衣和你的身体摩擦产生了\"静电\"，脱的时候静电一下子跑掉就噼啪响、还会冒小火花！",
       "image": "images/home/home-044-layer1.webp",
-      "interactionHint": "和宝宝一起观察脱毛衣时，聊聊它怎么工作"
+      "interactionHint": "找找家里还有没有脱毛衣时，看看它们有什么不一样"
     },
     "layer2": {
       "followUp": "为什么脱衣服会有静电？",
@@ -2374,7 +2383,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "用简单的话解释脱毛衣时的工作原理，鼓励宝宝提问。",
+    "parentGuide": "用简单的话解释脱毛衣时的原理，鼓励孩子提问。无需额外材料。",
     "interactionType": "动作类"
   },
   {
@@ -2391,7 +2400,7 @@
     "layer1": {
       "answer": "水快烧开时壶里的泡泡又产生又破掉，让壶盖抖动发出呜呜声，这很正常哦！水烧开就好了。",
       "image": "images/home/home-045-layer1.webp",
-      "interactionHint": "和宝宝一起闭上眼睛，听听家里有哪些声音"
+      "interactionHint": "闭上眼睛，听听家里有什么声音？冰箱嗡嗡、水滴滴答答"
     },
     "layer2": {
       "followUp": "为什么气泡会让壶叫？",
@@ -2428,7 +2437,7 @@
     "comfortCategory": "C",
     "rabbitEmotion": "curious",
     "bearEmotion": "wise",
-    "parentGuide": "安静环境下进行，让宝宝闭眼分辨不同声音来源。",
+    "parentGuide": "安静环境下进行，让孩子闭眼分辨不同声音来源。无需任何准备。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
     "interactionType": "动作类"
   },
   {
@@ -2481,7 +2490,10 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "冰箱门边上有个小按钮，开门的时候按钮弹起来灯就亮了，关门的时候按钮被按下去灯就灭了。",
-      "image": "images/home/home-2072-layer1.webp"
+      "image": "images/home/home-2072-layer1.webp",
+      "interactionHint": "摸摸冰箱门，凉凉的！再摸摸冰箱后面，热热的！真暖和",
+      "comfortCategory": "B",
+      "interactionType": "触觉类"
     },
     "layer2": {
       "answer": "冰箱门框上有一个凸起的小开关。门打开时开关弹出来，电路接通，灯就亮了；门关上时开关被压进去，电路断开，灯就灭了。和房间的灯开关是一个道理。",
@@ -2508,7 +2520,12 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔偷偷打开冰箱，灯亮了吓一跳。\"灯怎么知道我在偷看？\"答答熊指着门边的小按钮说\"这是冰箱的小鼻子，你一开门它就醒了，一关门它就睡觉。\"",
-    "warmClosing": ""
+    "warmClosing": "冰箱里的灯就像一个小精灵，关门就睡觉，开门就醒来——它陪着你拿好吃的！",
+    "parentGuide": "用简单的话解释冰箱里的灯的原理，鼓励孩子提问。无需额外材料。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
+    "comfortCategory": "B",
+    "interactionType": "触觉类",
+    "rabbitEmotion": "surprised",
+    "bearEmotion": "playful"
   },
   {
     "id": "home-2073",
@@ -2519,8 +2536,11 @@
     "question": "为什么钥匙能开锁，别的钥匙不行？",
     "age": "4-6岁",
     "layer1": {
-      "answer": "每个锁都有自己的\"密码\"，只有形状刚好对的钥匙才能打开，就像你的书包拉链只有配套的拉链头才能拉上。",
-      "image": "images/home/home-2073-layer1.webp"
+      "answer": "每个锁有自己的\"密码\"，只有形状对的钥匙才能打开，大人会帮你保管好钥匙。",
+      "image": "images/home/home-2073-layer1.webp",
+      "interactionHint": "找找家里还有没有钥匙能开锁，别的钥匙不行，看看它们有什么不一样",
+      "comfortCategory": "C",
+      "interactionType": "触觉类"
     },
     "layer2": {
       "answer": "锁里面有几个小柱子，叫弹子，每个弹子高低不同。正确的钥匙插进去，每个齿刚好把所有弹子顶到正确的高度，锁芯就能转动了。别的钥匙齿形不对，弹子卡住，锁就打不开。",
@@ -2549,7 +2569,12 @@
       "experimentType": "观察"
     },
     "ipScene": "答答熊拿出一把钥匙和一把透明锁模型，问\"你看，钥匙上的锯齿像小楼梯，每个台阶刚好把锁里的小柱子顶到正确的高度！\"问问兔惊叹\"原来钥匙是会说话的密码！\"",
-    "warmClosing": ""
+    "warmClosing": "每个锁有自己的\"密码\"，就像每个小朋友有自己的名字——独一无二，很正常！",
+    "parentGuide": "用简单的话解释钥匙能开锁，别的钥匙不行的原理，鼓励孩子提问。无需额外材料。",
+    "comfortCategory": "C",
+    "interactionType": "触觉类",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "wise"
   },
   {
     "id": "home-2074",
@@ -2560,8 +2585,11 @@
     "question": "为什么吸尘器能把灰尘吸进去？",
     "age": "3-5岁",
     "layer1": {
-      "answer": "吸尘器像一个大嘴巴，使劲吸气，把灰尘和碎屑都吸进肚子里了。",
-      "image": "images/home/home-2074-layer1.webp"
+      "answer": "吸尘器像一个大嘴巴，使劲吸气，把灰尘和碎屑都吸进肚子里了，大人也在用，我们一起推着它走。。",
+      "image": "images/home/home-2074-layer1.webp",
+      "interactionHint": "找找家里还有没有吸尘器能把灰尘吸进去，看看它们有什么不一样",
+      "comfortCategory": "B",
+      "interactionType": "动作类"
     },
     "layer2": {
       "answer": "吸尘器里面有个风扇转得飞快，把机器里的空气推出去，机器里就变空了——空气少了，外面的空气就会带着灰尘冲进去填补。",
@@ -2589,7 +2617,12 @@
       "experimentType": "观察"
     },
     "ipScene": "答答熊在打扫卫生，问问兔好奇地把手放在吸尘口，\"哇，它在吸我的手！\"答答熊说\"吸尘器在玩一个把空气吃掉、把灰尘留下的游戏！\"",
-    "warmClosing": ""
+    "warmClosing": "吸尘器帮我们把灰尘吃掉，它呼噜呼噜的声音是它在说\"我正在努力工作呢\"！",
+    "parentGuide": "用简单的话解释吸尘器能把灰尘吸进去的原理，鼓励孩子提问。无需额外材料。",
+    "comfortCategory": "B",
+    "interactionType": "动作类",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "playful"
   },
   {
     "id": "home-2075",
@@ -2601,7 +2634,10 @@
     "age": "4-6岁",
     "layer1": {
       "answer": "胶水是液体的时候可以流进东西的小缝隙里，变干了以后就像很多小手，把两样东西紧紧拉住。",
-      "image": "images/home/home-2075-layer1.webp"
+      "image": "images/home/home-2075-layer1.webp",
+      "interactionHint": "找找家里还有没有胶水能粘东西，看看它们有什么不一样",
+      "comfortCategory": "C",
+      "interactionType": "动作类"
     },
     "layer2": {
       "answer": "胶水涂上去的时候是湿的，里面有很多小分子。水分蒸发后，小分子们手拉手变成一张结实的网，把两样东西粘在一起。就像泥巴湿的时候能粘手，干了就变成硬块。",
@@ -2629,6 +2665,11 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔的手工作品散架了，急得跳脚。答答熊拿出胶水说\"别急，胶水是小小大力士，它钻进纸的缝隙里，等干了就变成千万只小手，把你的作品抓紧！\"",
-    "warmClosing": ""
+    "warmClosing": "胶水的小手抓住东西就不放，就像你紧紧抱住妈妈时一样——黏黏的就对了！",
+    "parentGuide": "用简单的话解释胶水能粘东西的原理，鼓励孩子提问。无需额外材料。",
+    "comfortCategory": "C",
+    "interactionType": "动作类",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "gentle"
   }
 ]
