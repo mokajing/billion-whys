@@ -2663,11 +2663,8 @@
     "question": "为什么冬天呼气能看到白雾，夏天看不到？",
     "age": "3-5岁",
     "layer1": {
-      "answer": "冬天外面冷，嘴巴呼出的热气遇冷变成小水滴，飘在空中就是白雾。夏天热看不见。",
-      "image": "images/nature/nature-2072-layer1.webp",
-      "interactionHint": "冬天在外面让宝宝对着镜子或玻璃哈气，看白雾出现又消失——\"哈~看！你的热气变成小水滴了！\"",
-      "comfortCategory": "B",
-      "interactionType": "观察类"
+      "answer": "因为冬天外面冷，你嘴里呼出来的热气一碰到冷空气就变成了小水滴，这些小水滴飘在空中就是白雾。夏天外面热，热气不会变成水，就看不见了。",
+      "image": "images/nature/nature-2072-layer1.webp"
     },
     "layer2": {
       "answer": "你呼出的气里有很多看不见的水蒸气。冬天空气冷，热的蒸气一碰到冷空气马上变成小水滴，就像烧开水时冒的白气。夏天空气本身就很热，蒸气不会变成水，所以看不见。",
@@ -2694,12 +2691,7 @@
       "experimentType": "观察"
     },
     "ipScene": "冬天早晨，问问兔对着窗户哈气，看白雾升腾。\"我是小火车！\"答答熊说\"你呼出的热气在冬天变成了看得见的云朵，夏天它们就隐形啦。\"",
-    "warmClosing": "冬天能看到白雾说明你的身体暖烘烘的——这是你身体里热气出来玩的信号！",
-    "comfortCategory": "B",
-    "interactionType": "观察类",
-    "rabbitEmotion": "surprised",
-    "bearEmotion": "comforting",
-    "parentGuide": "让孩子对比冬天/夏天呼气的差异，理解\"温差→凝结\"的概念。可以用\"对着冷玻璃哈气\"的小游戏加深印象。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
+    "warmClosing": ""
   },
   {
     "id": "nature-2073",
