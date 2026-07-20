@@ -2490,10 +2490,7 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "冰箱门边上有个小按钮，开门的时候按钮弹起来灯就亮了，关门的时候按钮被按下去灯就灭了。",
-      "image": "images/home/home-2072-layer1.webp",
-      "interactionHint": "摸摸冰箱门，凉凉的！再摸摸冰箱后面，热热的！真暖和",
-      "comfortCategory": "B",
-      "interactionType": "触觉类"
+      "image": "images/home/home-2072-layer1.webp"
     },
     "layer2": {
       "answer": "冰箱门框上有一个凸起的小开关。门打开时开关弹出来，电路接通，灯就亮了；门关上时开关被压进去，电路断开，灯就灭了。和房间的灯开关是一个道理。",
@@ -2520,12 +2517,7 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔偷偷打开冰箱，灯亮了吓一跳。\"灯怎么知道我在偷看？\"答答熊指着门边的小按钮说\"这是冰箱的小鼻子，你一开门它就醒了，一关门它就睡觉。\"",
-    "warmClosing": "冰箱里的灯就像一个小精灵，关门就睡觉，开门就醒来——它陪着你拿好吃的！",
-    "parentGuide": "用简单的话解释冰箱里的灯的原理，鼓励孩子提问。无需额外材料。本活动需家长全程陪同，请勿让儿童单独接触电器。如发生意外，请立即就医。。",
-    "comfortCategory": "B",
-    "interactionType": "触觉类",
-    "rabbitEmotion": "surprised",
-    "bearEmotion": "playful"
+    "warmClosing": ""
   },
   {
     "id": "home-2073",
