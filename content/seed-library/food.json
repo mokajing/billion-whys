@@ -2604,10 +2604,7 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "因为舌头上有好多好多感觉小兵，比身体其他地方都多，所以咬到舌头特别疼。",
-      "image": "images/food/food-2074-layer1.webp",
-      "interactionHint": "让宝宝伸出舌头，用指尖轻轻碰一下，感受舌头的敏感——\"舌头上有好多感觉小兵，所以咬到会特别疼呢！\"",
-      "comfortCategory": "A",
-      "interactionType": "触觉类"
+      "image": "images/food/food-2074-layer1.webp"
     },
     "layer2": {
       "answer": "舌头是身体上感觉最灵敏的地方之一，比手指尖还灵敏。它上面密密麻麻挤满了感觉神经，吃饭时不小心咬到，这些神经一起大喊\"疼！\"，你就觉得特别疼。",
@@ -2634,12 +2631,7 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔正在狼吞虎咽吃胡萝卜，突然\"啊\"一声捂住嘴——咬到舌头了。答答熊递过一杯凉水说\"慢慢吃，舌头上有千千万万个小哨兵，咬到它们比咬到手疼多了！\"",
-    "warmClosing": "咬到舌头虽然疼，但很快就会好——你的身体在帮你修复，舌头很厉害！",
-    "comfortCategory": "A",
-    "interactionType": "触觉类",
-    "rabbitEmotion": "curious",
-    "bearEmotion": "comforting",
-    "parentGuide": "咬到舌头是孩子吃饭时的常见小意外，用\"感觉小兵\"的比喻帮孩子理解疼痛原理，同时安抚情绪。注意：如果频繁咬到舌头，建议咨询医生。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
+    "warmClosing": ""
   },
   {
     "id": "food-2075",
