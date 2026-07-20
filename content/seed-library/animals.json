@@ -2364,10 +2364,7 @@
     "age": "4-6岁",
     "layer1": {
       "answer": "狗用鼻子代替眼睛了解对方——闻一闻就知道对方是谁、吃了什么饭、开不开心。屁股是狗狗的\"名片\"。",
-      "image": "images/animals/animals-2074-layer1.webp",
-      "interactionHint": "在公园远远看狗狗见面，问宝宝：\"狗狗在做什么？它是不是在打招呼？\"",
-      "comfortCategory": "C",
-      "interactionType": "观察类"
+      "image": "images/animals/animals-2074-layer1.webp"
     },
     "layer2": {
       "answer": "狗屁股附近有特殊的腺体，会分泌一种带味道的液体，每只狗的味道都不一样。这就像狗狗的\"身份证\"，别的狗闻一下就知道\"你是谁、你是男是女、你今天心情好不好\"。",
@@ -2398,12 +2395,7 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔看到两只狗互相闻屁股，捂着嘴笑\"它们在干嘛？\"答答熊说\"这是狗狗的握手礼仪！它们的屁股上有味道名片，一闻就知道对方是谁、今天吃了什么，比我们交换名片还快呢。\"",
-    "warmClosing": "狗狗闻屁股就像我们握手打招呼——每只动物都有自己的问好方式，很有趣吧！",
-    "comfortCategory": "C",
-    "interactionType": "观察类",
-    "rabbitEmotion": "curious",
-    "bearEmotion": "wise",
-    "parentGuide": "用孩子能理解的方式解释狗狗的社交行为，帮助孩子理解\"不同动物用不同方式交流\"。带孩子观察狗狗互动时保持安全距离，不打扰动物。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
+    "warmClosing": ""
   },
   {
     "id": "animals-2075",
