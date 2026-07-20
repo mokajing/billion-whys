@@ -2569,11 +2569,8 @@
     "question": "为什么吸尘器能把灰尘吸进去？",
     "age": "3-5岁",
     "layer1": {
-      "answer": "吸尘器像一个大嘴巴，使劲吸气，把灰尘和碎屑都吸进肚子里了，大人也在用，我们一起推着它走。。",
-      "image": "images/home/home-2074-layer1.webp",
-      "interactionHint": "找找家里还有没有吸尘器能把灰尘吸进去，看看它们有什么不一样",
-      "comfortCategory": "B",
-      "interactionType": "动作类"
+      "answer": "吸尘器像一个大嘴巴，使劲吸气，把灰尘和碎屑都吸进肚子里了。",
+      "image": "images/home/home-2074-layer1.webp"
     },
     "layer2": {
       "answer": "吸尘器里面有个风扇转得飞快，把机器里的空气推出去，机器里就变空了——空气少了，外面的空气就会带着灰尘冲进去填补。",
@@ -2601,12 +2598,7 @@
       "experimentType": "观察"
     },
     "ipScene": "答答熊在打扫卫生，问问兔好奇地把手放在吸尘口，\"哇，它在吸我的手！\"答答熊说\"吸尘器在玩一个把空气吃掉、把灰尘留下的游戏！\"",
-    "warmClosing": "吸尘器帮我们把灰尘吃掉，它呼噜呼噜的声音是它在说\"我正在努力工作呢\"！",
-    "parentGuide": "用简单的话解释吸尘器能把灰尘吸进去的原理，鼓励孩子提问。无需额外材料。",
-    "comfortCategory": "B",
-    "interactionType": "动作类",
-    "rabbitEmotion": "curious",
-    "bearEmotion": "playful"
+    "warmClosing": ""
   },
   {
     "id": "home-2075",
