@@ -2524,10 +2524,7 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "薯片被炸过，里面的水都跑掉了，变得干干的就很脆；面包里面有很多小气孔，像海绵一样软软的。",
-      "image": "images/food/food-2072-layer1.webp",
-      "interactionHint": "把薯片和面包放在一起，让宝宝用手捏一捏、听一听咔嚓声——感受脆和软的差别！",
-      "comfortCategory": "B",
-      "interactionType": "感知类"
+      "image": "images/food/food-2072-layer1.webp"
     },
     "layer2": {
       "answer": "脆和软的区别在于食物里有多少水。薯片在油炸时水分几乎全被炸干了，只剩下脆脆的淀粉架子。面包在烤的时候酵母产生气泡，形成了软软的蜂窝结构，而且面包里还保留了一些水分。",
@@ -2555,12 +2552,7 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔左手拿着薯片\"咔嚓\"，右手捏着面包\"软乎乎\"，困惑地问\"它们都是吃的，为什么一个像树枝一个像云朵？\"答答熊说\"薯片把水都送走了，面包把水留在了肚子里！\"",
-    "warmClosing": "脆的薯片和软的面包都是好吃的，就像有的小朋友喜欢跑跳，有的喜欢安静，不一样都很好！",
-    "comfortCategory": "B",
-    "interactionType": "感知类",
-    "rabbitEmotion": "curious",
-    "bearEmotion": "playful",
-    "parentGuide": "让孩子用手直接感受不同食物的质地差异，锻炼触觉辨识能力。可以问\"这个捏起来是什么感觉？\"以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
+    "warmClosing": ""
   },
   {
     "id": "food-2073",
