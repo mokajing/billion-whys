@@ -62,7 +62,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "蚂蚁像小士兵一样，排着队去找食物！前面的蚂蚁留下香味记号，后面的跟着走，真有趣！",
+      "answer": "蚂蚁像小士兵一样，排着队去找食物！前面的蚂蚁留下香味记号，后面的跟着走，你发现了！",
       "image": "images/animals/animals-002-layer1.webp",
       "interactionHint": "蹲下来看看地上的蚂蚁，跟着它们走走~"
     },
@@ -114,7 +114,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "小鸟有翅膀，轻轻一扇就能飞起来！它身体轻，骨头是空心的，就像气球一样飘上去，好奇妙！",
+      "answer": "小鸟有翅膀，轻轻一扇就能飞起来！它身体轻，骨头是空心的，就像气球一样飘上去，这很正常哦！",
       "image": "images/animals/animals-003-layer1.webp",
       "interactionHint": "张开手臂学小鸟飞，在房间里蹦蹦跳跳~"
     },
@@ -178,7 +178,7 @@
     },
     "layer3": {
       "followUp": "那为什么松树冬天不掉叶子？",
-      "answer": "因为松树的叶子是细细的松针，表面有一层蜡，水分不容易散失。而且松针很耐寒，不怕冷。所以松树不需要掉叶子过冬，一年四季都是绿色的，这叫“常绿树”。掉叶子的树叫“落叶树”，它们各有各的过冬办法！",
+      "answer": "因为松树的叶子是细细的松针，表面有一层蜡，水分不容易散失。而且松针很耐寒，没关系冷。所以松树不需要掉叶子过冬，一年四季都是绿色的，这叫“常绿树”。掉叶子的树叫“落叶树”，它们各有各的过冬办法！",
       "image": "images/animals/animals-004-layer3.webp"
     },
     "science": "秋季日照缩短、气温下降，落叶树启动叶片脱落程序：叶柄基部形成离层→叶绿素分解回收氮磷等营养→类胡萝卜素（黄/橙）显现，部分树种合成花青素（红）→离层完全形成→叶片脱落。落叶减少冬季水分蒸发和冻害风险。常绿树（如松柏）的针叶表面积小、角质层厚、含抗冻蛋白，适应低温环境。",
@@ -258,7 +258,7 @@
     "locale": "zh-CN",
     "parentGuide": "见到小狗时，教宝宝观察尾巴的摆动方式。",
     "comfortCategory": "B",
-    "rabbitEmotion": "happy",
+    "rabbitEmotion": "curious",
     "bearEmotion": "playful",
     "interactionType": "动作类"
   },
@@ -379,7 +379,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "对呀，毛毛虫给自己做了个小房子，在里面变成了蝴蝶！就像变魔术一样，好奇妙！",
+      "answer": "对呀，毛毛虫给自己做了个小房子，在里面变成了蝴蝶！就像变魔术一样，这很正常哦！",
       "image": "images/animals/animals-008-layer1.webp",
       "interactionHint": "和宝宝一起假装是毛毛虫，缩成一团再展开变成蝴蝶~"
     },
@@ -432,7 +432,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "兔子的长耳朵就像小雷达，能听到很远的声音！耳朵大大还能帮它散热，好厉害！",
+      "answer": "兔子的长耳朵就像小雷达，能听到很远的声音！耳朵大大还能帮它散热，真棒！",
       "image": "images/animals/animals-009-layer1.webp",
       "interactionHint": "用手在头上比兔耳朵，跳一跳~"
     },
@@ -484,7 +484,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "大象的长鼻子像手一样灵活，能拿东西、喝水、洗澡！还能跟小伙伴打招呼，真有趣！",
+      "answer": "大象的长鼻子像手一样灵活，能拿东西、喝水、洗澡！还能跟小伙伴打招呼，你发现了！",
       "image": "images/animals/animals-010-layer1.webp",
       "interactionHint": "用手臂当大象鼻子，学大象喷水~"
     },
@@ -594,7 +594,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "含羞草怕痒痒，一碰就合上叶子！它用这种方式保护自己，不让小虫子咬它，真有趣！",
+      "answer": "含羞草怕痒痒，一碰就合上叶子！它用这种方式保护自己，不让小虫子咬它，你发现了！",
       "image": "images/animals/animals-012-layer1.webp",
       "interactionHint": "轻轻碰碰含羞草（如果有），看它害羞合上~"
     },
@@ -647,7 +647,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "萤火虫肚子里有个小灯笼，会发光！晚上它用亮光跟小伙伴说：我在这里呀，好神奇！",
+      "answer": "萤火虫肚子里有个小灯笼，会发光！晚上它用亮光跟小伙伴说：我在这里呀，这很自然！",
       "image": "images/animals/animals-013-layer1.webp",
       "interactionHint": "晚上关灯，用手电筒玩萤火虫发光的游戏~"
     },
@@ -701,7 +701,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "小蝌蚪慢慢长出腿，尾巴变短，就变成小青蛙啦！就像你从宝宝慢慢长大，好奇妙！",
+      "answer": "小蝌蚪慢慢长出腿，尾巴变短，就变成小青蛙啦！就像你从宝宝慢慢长大，这很正常哦！",
       "image": "images/animals/animals-014-layer1.webp",
       "interactionHint": "和宝宝一起画小蝌蚪，再画它长出腿变成青蛙~"
     },
@@ -756,7 +756,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "公鸡有个小闹钟在身体里，天亮了就叫大家起床！它是农场的小喇叭，好厉害！",
+      "answer": "公鸡有个小闹钟在身体里，天亮了就叫大家起床！它是农场的小喇叭，真棒！",
       "image": "images/animals/animals-015-layer1.webp",
       "interactionHint": "早上学公鸡叫\"喔喔喔\"，叫醒玩具~"
     },
@@ -809,7 +809,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "蜗牛背着自己的小房子到处走！累了就缩进去休息，下雨天也不怕，好聪明！",
+      "answer": "蜗牛背着自己的小房子到处走！累了就缩进去休息，下雨天也没关系，好聪明！",
       "image": "images/animals/animals-016-layer1.webp",
       "interactionHint": "假装背着小房子，慢慢爬像蜗牛一样~"
     },
@@ -844,7 +844,7 @@
     "ipScene": "问问兔看蜗牛背着壳慢慢爬说：“它不累吗？“答答熊说：“壳是蜗牛的小房子，走到哪住到哪，遇到危险缩进去就安全啦！”",
     "locale": "zh-CN",
     "scienceImage": "images/animals/animals-016-science.webp",
-    "warmClosing": "蜗牛的壳是它的小房子，走到哪都不怕下雨呢！",
+    "warmClosing": "蜗牛的壳是它的小房子，走到哪都没关系下雨呢！",
     "parentGuide": "雨后找蜗牛，观察它背着壳慢慢爬。",
     "comfortCategory": "B",
     "rabbitEmotion": "curious",
@@ -863,7 +863,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "变色龙的身体会变颜色，像穿了一件魔法衣！它变色是为了躲开敌人，好神奇！",
+      "answer": "变色龙的身体会变颜色，像穿了一件魔法衣！它变色是为了躲开敌人，这很自然！",
       "image": "images/animals/animals-018-layer1.webp",
       "interactionHint": "玩变色龙游戏：摸红色东西就变红，摸绿色就变绿~"
     },
@@ -975,7 +975,9 @@
     "layer1": {
       "answer": "别担心，蜘蛛织网是给自己盖房子呢！它用肚子里的丝线编出一张精致的网，等小飞虫来做客。",
       "image": "images/animals/animals-020-layer1.webp",
-      "interactionHint": "和宝宝一起画蜘蛛网，用手指画线~"
+      "interactionHint": "和宝宝一起画蜘蛛网，用手指画线~",
+      "comfortCategory": "A",
+      "emotion": "protective"
     },
     "layer2": {
       "followUp": "蜘蛛丝是从哪里来的？",
@@ -1059,7 +1061,7 @@
     },
     "ipScene": "问问兔指着图片说：“北极熊和雪一个颜色！“答答熊说：“它的毛其实是透明的呢，像冰一样，好多根在一起就变白了，这样在雪地里别人看不见它！”",
     "scienceImage": "images/animals/animals-021-science.webp",
-    "warmClosing": "北极熊看起来白、皮肤却是黑的，大自然的设计真奇妙！",
+    "warmClosing": "北极熊看起来白、皮肤却是黑的，大自然的设计这很正常哦！",
     "locale": "zh-CN",
     "parentGuide": "玩捉迷藏游戏，让宝宝理解白色=在雪地里隐身。",
     "comfortCategory": "B",
@@ -1079,7 +1081,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "鹦鹉是个小模仿家，能学人说话！它嘴巴和舌头很灵活，听到什么说什么，真有趣！",
+      "answer": "鹦鹉是个小模仿家，能学人说话！它嘴巴和舌头很灵活，听到什么说什么，你发现了！",
       "image": "images/animals/animals-022-layer1.webp",
       "interactionHint": "学鹦鹉说话，宝宝说一句你跟一句~"
     },
@@ -1185,9 +1187,11 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "长颈鹿的脖子长，能吃到树顶的嫩叶子！别的动物够不着，它轻松就吃到了，好厉害！",
+      "answer": "长颈鹿的脖子长，能吃到树顶的嫩叶子！别的动物够不着，它轻松就吃到了，真棒！",
       "image": "images/animals/animals-024-layer1.webp",
-      "interactionHint": "伸长脖子学长颈鹿，看谁够得高~"
+      "interactionHint": "伸长脖子学长颈鹿，看谁够得高——大人在旁边，很安全！",
+      "comfortCategory": "A",
+      "emotion": "protective"
     },
     "layer2": {
       "followUp": "长颈鹿的脖子有多长？",
@@ -1220,10 +1224,10 @@
     },
     "ipScene": "问问兔仰着头看长颈鹿说：“它的脖子好长呀！“答答熊说：“长颈鹿的脖子和你一样只有七块骨头，不过每块都特别长，这样它就能吃到最高的树叶啦！”",
     "scienceImage": "images/animals/animals-024-science.webp",
-    "warmClosing": "长颈鹿的脖子骨头和你一样多，只是每块都很长，大自然真有趣！",
+    "warmClosing": "长颈鹿的脖子骨头和你一样多，只是每块都很长，大自然你发现了！",
     "locale": "zh-CN",
     "parentGuide": "和宝宝比谁能够得高，一边说长颈鹿能吃到树顶。",
-    "comfortCategory": "B",
+    "comfortCategory": "A",
     "rabbitEmotion": "curious",
     "bearEmotion": "warm",
     "interactionType": "动作类"
@@ -1240,9 +1244,11 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "猫头鹰是夜晚的小卫士，白天睡觉晚上出来！它的眼睛在夜里看得特别清楚，好神奇！",
+      "answer": "猫头鹰是夜晚的小卫士，白天睡觉晚上出来！它的眼睛在夜里看得特别清楚，这很自然！",
       "image": "images/animals/animals-025-layer1.webp",
-      "interactionHint": "晚上关灯，用手电筒当猫头鹰的大眼睛~"
+      "interactionHint": "晚上关灯，用手电筒当猫头鹰的大眼睛~",
+      "comfortCategory": "A",
+      "emotion": "brave"
     },
     "layer2": {
       "followUp": "猫头鹰的眼睛为什么这么大？",
@@ -1348,7 +1354,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "壁虎脚上有好多小吸盘，能牢牢吸在墙上！就像你穿的吸盘鞋子，走到哪里都稳稳的，好厉害！",
+      "answer": "壁虎脚上有好多小吸盘，能牢牢吸在墙上！就像你穿的吸盘鞋子，走到哪里都稳稳的，真棒！",
       "image": "images/animals/animals-027-layer1.webp",
       "interactionHint": "用吸盘玩具贴在墙上，感受壁虎的本领~"
     },
@@ -1402,7 +1408,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "海豚的大脑特别发达，会玩游戏还会帮助别人！它是海洋里最聪明的小动物，真有趣！",
+      "answer": "海豚的大脑特别发达，会玩游戏还会帮助别人！它是海洋里最聪明的小动物，你发现了！",
       "image": "images/animals/animals-028-layer1.webp",
       "interactionHint": "学海豚跳起来，发出\"啾啾\"的声音~"
     },
@@ -1562,7 +1568,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "大树拼命往上长，想多晒晒太阳！阳光是它的食物，越高越能吃到，就像你长高高，好厉害！",
+      "answer": "大树拼命往上长，想多晒晒太阳！阳光是它的食物，越高越能吃到，就像你长高高，真棒！",
       "image": "images/animals/animals-031-layer1.webp",
       "interactionHint": "和宝宝一起量身高，看看长高了多少~"
     },
@@ -1669,7 +1675,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "鲸鱼头顶有个鼻孔，浮出水面喷水换气！就像一个大喷泉，呼——好高好高，好神奇！",
+      "answer": "鲸鱼头顶有个鼻孔，浮出水面喷水换气！就像一个大喷泉，呼——好高好高，这很自然！",
       "image": "images/animals/animals-033-layer1.webp",
       "interactionHint": "用吸管在水杯里吹气，看水花喷出来~"
     },
@@ -1722,7 +1728,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "孔雀开屏是男生在展示漂亮的羽毛！它在说：看我多漂亮呀，就像穿了一条大裙子，真有趣！",
+      "answer": "孔雀开屏是男生在展示漂亮的羽毛！它在说：看我多漂亮呀，就像穿了一条大裙子，你发现了！",
       "image": "images/animals/animals-034-layer1.webp",
       "interactionHint": "拿把扇子打开，学孔雀开屏~"
     },
@@ -1885,7 +1891,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "树桩上一圈一圈的是年轮，像树的日记本！每一圈代表它长了一岁，好神奇！",
+      "answer": "树桩上一圈一圈的是年轮，像树的日记本！每一圈代表它长了一岁，这很自然！",
       "image": "images/animals/animals-037-layer1.webp",
       "interactionHint": "找一块木头，和宝宝一起数上面的圈圈~"
     },
@@ -1940,7 +1946,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "苍蝇搓手是在给自己洗手呢！它是个爱干净的小家伙，吃饭前先把手洗干净，真有趣！",
+      "answer": "苍蝇搓手是在给自己洗手呢！它是个爱干净的小家伙，吃饭前先把手洗干净，你发现了！",
       "image": "images/animals/animals-039-layer1.webp",
       "interactionHint": "学苍蝇搓手，两只手搓搓搓~"
     },
@@ -1994,7 +2000,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "爬墙植物有好多小吸盘或小卷须，能抓住墙壁往上爬！就像小登山家，一点一点往上攀，好厉害！",
+      "answer": "爬墙植物有好多小吸盘或小卷须，能抓住墙壁往上爬！就像小登山家，一点一点往上攀，真棒！",
       "image": "images/animals/animals-040-layer1.webp",
       "interactionHint": "看看窗外墙上的爬山虎，摸摸它的小吸盘~"
     },
@@ -2103,7 +2109,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "鸵鸟翅膀太小了，飞不起来，但它的腿超级有力！跑得比汽车还快，是草原上的跑步冠军，好厉害！",
+      "answer": "鸵鸟翅膀太小了，飞不起来，但它的腿超级有力！跑得比汽车还快，是草原上的跑步冠军，真棒！",
       "image": "images/animals/animals-043-layer1.webp",
       "interactionHint": "学鸵鸟跑步，原地跑得飞快~"
     },
@@ -2212,7 +2218,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "有些花只在晚上开，是为了迎接夜晚的客人！比如飞蛾会在晚上来帮它传花粉，好神奇！",
+      "answer": "有些花只在晚上开，是为了迎接夜晚的客人！比如飞蛾会在晚上来帮它传花粉，这很自然！",
       "image": "images/animals/animals-045-layer1.webp",
       "interactionHint": "晚上出门，看看有没有开花的植物~"
     },
@@ -2358,7 +2364,10 @@
     "age": "4-6岁",
     "layer1": {
       "answer": "狗用鼻子代替眼睛了解对方——闻一闻就知道对方是谁、吃了什么饭、开不开心。屁股是狗狗的\"名片\"。",
-      "image": "images/animals/animals-2074-layer1.webp"
+      "image": "images/animals/animals-2074-layer1.webp",
+      "interactionHint": "在公园远远看狗狗见面，问宝宝：\"狗狗在做什么？它是不是在打招呼？\"",
+      "comfortCategory": "C",
+      "interactionType": "观察类"
     },
     "layer2": {
       "answer": "狗屁股附近有特殊的腺体，会分泌一种带味道的液体，每只狗的味道都不一样。这就像狗狗的\"身份证\"，别的狗闻一下就知道\"你是谁、你是男是女、你今天心情好不好\"。",
@@ -2389,7 +2398,12 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔看到两只狗互相闻屁股，捂着嘴笑\"它们在干嘛？\"答答熊说\"这是狗狗的握手礼仪！它们的屁股上有味道名片，一闻就知道对方是谁、今天吃了什么，比我们交换名片还快呢。\"",
-    "warmClosing": ""
+    "warmClosing": "狗狗闻屁股就像我们握手打招呼——每只动物都有自己的问好方式，很有趣吧！",
+    "comfortCategory": "C",
+    "interactionType": "观察类",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "wise",
+    "parentGuide": "用孩子能理解的方式解释狗狗的社交行为，帮助孩子理解\"不同动物用不同方式交流\"。带孩子观察狗狗互动时保持安全距离，不打扰动物。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "animals-2075",
@@ -2401,7 +2415,11 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "蜻蜓在水面上点来点去，是在把宝宝放进水里。蜻蜓宝宝要在水里才能长大。",
-      "image": "images/animals/animals-2075-layer1.webp"
+      "image": "images/animals/animals-2075-layer1.webp",
+      "interactionHint": "用手指在水盆里轻轻点一下，看水波一圈圈散开——蜻蜓也是这样点水的！",
+      "comfortCategory": "A",
+      "emotion": "brave",
+      "interactionType": "观察类"
     },
     "layer2": {
       "answer": "蜻蜓妈妈在水面上飞，用尾巴尖轻轻点水，每次点水都在水里产下一颗卵。等卵孵化出来，蜻蜓宝宝就在水里生活，吃水里的蚊子幼虫，长大了再爬出来变成会飞的蜻蜓。",
@@ -2429,6 +2447,11 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔指着池塘上飞来飞去的蜻蜓问\"它为什么一直用尾巴碰水？\"答答熊说\"那是蜻蜓妈妈在生宝宝！它把宝宝放进水里，宝宝在水里长大，会游泳，会抓蚊子，长大了才爬出水面变成蜻蜓。\"",
-    "warmClosing": ""
+    "warmClosing": "",
+    "comfortCategory": "A",
+    "rabbitEmotion": "brave",
+    "bearEmotion": "protective",
+    "parentGuide": "在户外池塘边观察蜻蜓时注意安全，拉住孩子的手。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+    "interactionType": "观察类"
   }
 ]
