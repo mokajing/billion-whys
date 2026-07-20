@@ -2622,10 +2622,7 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "幼儿园是有好多小朋友一起玩的地方，还有老师带你们唱歌、画画、做游戏，比一个人在家好玩多了！",
-      "image": "images/society/society-2075-layer1.webp",
-      "interactionHint": "出门前让宝宝自己背小书包，说今天去幼儿园找好朋友——用愉快语气建立期待！",
-      "comfortCategory": "A",
-      "interactionType": "动作类"
+      "image": "images/society/society-2075-layer1.webp"
     },
     "layer2": {
       "answer": "幼儿园不只是玩的地方，还是学习怎么和别人相处的地方。在这里你学会了排队、分享、等别人说完再说话。爸爸妈妈去上班的时候，幼儿园就是小朋友的\"工作单位\"。",
@@ -2653,12 +2650,7 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔第一天去幼儿园，有点紧张地问\"为什么不能在家跟妈妈玩？\"答答熊说\"幼儿园是个神奇的地方——这里有好多跟你一样大的小朋友，你们可以一起搭积木、一起唱歌、一起学新本领。妈妈去上班，你来幼儿园，晚上回家再交换今天的故事！\"",
-    "warmClosing": "上幼儿园是你长大的标志——就像小鸟学会飞之前要先跟其他小鸟一起练习，这是很棒的事！",
-    "comfortCategory": "A",
-    "interactionType": "动作类",
-    "rabbitEmotion": "curious",
-    "bearEmotion": "gentle",
-    "parentGuide": "用\"小鸟学飞\"的比喻帮孩子理解幼儿园的意义——练习社交、学习规则、结交朋友。如果孩子有分离焦虑，温柔地告诉孩子\"妈妈下午一定来接你\"。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
+    "warmClosing": ""
   },
   {
     "id": "society-046",
