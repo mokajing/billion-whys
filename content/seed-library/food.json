@@ -12,7 +12,10 @@
     "layer1": {
       "answer": "牛奶是奶牛身上来的！奶牛吃了好多草，身体把草变成白白的牛奶，从肚子下面挤出来。",
       "image": "images/food/food-001-layer1.webp",
-      "interactionHint": "一起看看牛奶盒，摸摸凉凉的，喝一小口暖暖的！"
+      "interactionHint": "摸摸牛奶盒有多凉，倒进杯子里看它白白的，喝一口暖暖的！",
+      "parentGuide": "让孩子自己倒牛奶，训练手眼协调。小心别洒出来哦！以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+      "comfortCategory": "A",
+      "interactionType": "触觉类"
     },
     "layer2": {
       "followUp": "奶牛为什么会产牛奶呢？",
@@ -235,7 +238,10 @@
     "layer1": {
       "answer": "糖没有真的不见，它变得特别特别小化在水里了！尝一口水，甜甜的——糖在里面呢！",
       "image": "images/food/food-005-layer1.webp",
-      "interactionHint": "把糖放进水里，一起数到5，看看糖去哪了？"
+      "interactionHint": "拿一颗糖放进水里，用勺子慢慢搅，看它变小——尝一口，糖还在水里呢！",
+      "parentGuide": "用透明杯子更方便观察。糖完全溶解后让孩子尝一小口，建立\"看不见但存在\"的概念。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+      "comfortCategory": "A",
+      "interactionType": "触觉类"
     },
     "layer2": {
       "followUp": "糖怎么变那么小的？",
@@ -290,7 +296,7 @@
     "layer1": {
       "answer": "蔬菜里住着好多“营养小精灵”，能帮身体变强壮。吃蔬菜就像给身体吃超级能量丸！",
       "image": "images/food/food-006-layer1.webp",
-      "interactionHint": "和大人一起，探索食物的小秘密"
+      "interactionHint": "和大人一起，摸一摸、闻一闻，探索食物的小秘密"
     },
     "layer2": {
       "followUp": "不吃蔬菜会怎么样？",
@@ -347,7 +353,10 @@
     "layer1": {
       "answer": "冰淇淋是冰冰的，外面空气暖暖的。暖空气像大暖炉一直给它加热，它就慢慢化成水啦！",
       "image": "images/food/food-007-layer1.webp",
-      "interactionHint": "暖暖的第一！和大人一起，一起慢慢探索这个食物的小秘密"
+      "interactionHint": "把冰淇淋从冰箱拿出来，放盘子里，看它慢慢变软——用手指碰碰，凉凉的化掉了！",
+      "parentGuide": "选择安全的观察位置。冰淇淋融化是物理变化——没有新物质产生，只是状态改变。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。",
+      "comfortCategory": "B",
+      "interactionType": "观察类"
     },
     "layer2": {
       "followUp": "热气是怎么让冰淇淋化的？",
@@ -401,7 +410,7 @@
     "layer1": {
       "answer": "面包用面粉、水和“酵母”做的。揉成面团放进烤箱烤，就变成香香软软的面包！",
       "image": "images/food/food-008-layer1.webp",
-      "interactionHint": "和大人一起，探索食物的小秘密"
+      "interactionHint": "和大人一起，看一看、尝一尝，探索食物的小秘密"
     },
     "layer2": {
       "followUp": "面包为什么软软的有好多小洞洞？",
@@ -437,7 +446,7 @@
     "ipScene": "问问兔看着面团越来越大吓了一跳：“面团在长胖！“答答熊说：“是酵母在里面吹泡泡呢！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-008-science.webp",
-    "warmClosing": "面包里的小洞洞都是酵母吹出来的泡泡，真有趣！",
+    "warmClosing": "面包里的小洞洞都是酵母吹出来的泡泡，你发现了！",
     "rabbitEmotion": "curious",
     "bearEmotion": "gentle",
     "comfortCategory": "B",
@@ -671,7 +680,7 @@
     "layer1": {
       "answer": "辣椒里有“辣椒素”，骗你的嘴巴说着火了，其实没有。",
       "image": "images/food/food-013-layer1.webp",
-      "interactionHint": "和大人一起，探索食物的小秘密"
+      "interactionHint": "和大人一起，摸一摸、闻一闻，探索食物的小秘密"
     },
     "layer2": {
       "followUp": "为什么辣的时候喝水没用？",
@@ -680,7 +689,7 @@
     },
     "layer3": {
       "followUp": "辣椒为什么要做出辣味？",
-      "answer": "辣味保护辣椒不被动物吃，但鸟不怕辣能帮辣椒把种子带到远处长出新辣椒，很聪明。",
+      "answer": "辣味保护辣椒不被动物吃，但鸟没关系辣能帮辣椒把种子带到远处长出新辣椒，很聪明。",
       "image": "images/food/food-013-layer3.webp"
     },
     "science": "辣椒素（capsaicin）与口腔中TRPV1受体结合，该受体原本感知43°C以上高温，被辣椒素激活后产生灼烧感（痛觉而非味觉）。辣椒素为脂溶性，水无法溶解带走，酪蛋白（牛奶中）可与辣椒素结合解辣。鸟类缺乏TRPV1的辣椒素结合位点，不感知辣味，是辣椒的天然种子传播者。",
@@ -834,7 +843,7 @@
     "layer1": {
       "answer": "井水在地底下太阳晒不到，像躲在阴凉下所以凉凉的。",
       "image": "images/food/food-016-layer1.webp",
-      "interactionHint": "和大人一起，探索食物的小秘密"
+      "interactionHint": "和大人一起，看一看、尝一尝，探索食物的小秘密"
     },
     "layer2": {
       "followUp": "冬天井水也是凉的吗？",
@@ -922,7 +931,7 @@
     "ipScene": "问问兔听到微波炉里“砰砰砰“吓了一跳，答答熊笑着说：“别怕，那是小玉米在变身呢！水蒸气把它们的外衣撑破了，就变成白白的爆米花啦！”",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-017-science.webp",
-    "warmClosing": "每一粒爆米花都是一次小小的'爆炸'，大自然真有趣！",
+    "warmClosing": "每一粒爆米花都是一次小小的'爆炸'，大自然你发现了！",
     "rabbitEmotion": "brave",
     "bearEmotion": "protective",
     "comfortCategory": "A",
@@ -1050,7 +1059,7 @@
     "layer1": {
       "answer": "因为洋葱被切开的时候会放出一种让眼睛不舒服的东西，眼睛就流泪把它冲掉。",
       "image": "images/food/food-020-layer1.webp",
-      "interactionHint": "和大人一起，探索食物的小秘密"
+      "interactionHint": "和大人一起，摸一摸、闻一闻，探索食物的小秘密"
     },
     "layer2": {
       "followUp": "洋葱放出的是什么东西？",
@@ -1157,7 +1166,7 @@
     "layer1": {
       "answer": "因为可乐里面藏了好多好多小气泡，打开盖子它们就迫不及待地跑出来了！",
       "image": "images/food/food-022-layer1.webp",
-      "interactionHint": "和大人一起，探索食物的小秘密"
+      "interactionHint": "和大人一起，看一看、尝一尝，探索食物的小秘密"
     },
     "layer2": {
       "followUp": "气泡是怎么进去的？",
@@ -1209,7 +1218,7 @@
     ],
     "safetyLevel": "A",
     "layer1": {
-      "answer": "豆腐是用黄豆做的！黄豆磨成豆浆，再用魔法把豆浆变成软软的豆腐，现在还不太适合宝宝吃，长大再尝。",
+      "answer": "豆腐是用黄豆做的！黄豆磨成豆浆，再用魔法变成软软的豆腐，长大了和大人一起尝尝吧。",
       "image": "images/food/food-023-layer1.webp",
       "interactionHint": "和大人一起，摸一摸不同食物的软硬，比比看，你很会发现哦！"
     },
@@ -1536,7 +1545,7 @@
     "layer1": {
       "answer": "因为粥里的淀粉让泡泡变得不容易破，泡泡越来越多就从锅里爬出来了。",
       "image": "images/food/food-029-layer1.webp",
-      "interactionHint": "和大人一起，探索食物的小秘密"
+      "interactionHint": "和大人一起，摸一摸、闻一闻，探索食物的小秘密"
     },
     "layer2": {
       "followUp": "为什么煮水不扑锅煮粥会？",
@@ -1696,7 +1705,7 @@
     "layer1": {
       "answer": "因为红薯在火上烤的时候，里面的东西变成了香甜的味道飘出来了！",
       "image": "images/food/food-032-layer1.webp",
-      "interactionHint": "和大人一起，探索食物的小秘密"
+      "interactionHint": "和大人一起，看一看、尝一尝，探索食物的小秘密"
     },
     "layer2": {
       "followUp": "烤了为什么比生的甜？",
@@ -1863,7 +1872,7 @@
     },
     "layer2": {
       "followUp": "什么是坏细菌？为什么加热能消灭它们？",
-      "answer": "生的食物上面可能藏着很多坏细菌，它们太小了眼睛看不见，但吃进肚子会让你拉肚子、发烧。这些坏细菌特别怕热，就像你怕烫一样——火一烤它们就受不了，统统被消灭啦！所以煮熟等于给食物洗了个热水澡杀菌。",
+      "answer": "生的食物上面可能藏着很多坏细菌，它们太小了眼睛看不见，但吃进肚子会让你拉肚子、发烧。这些坏细菌特放心热，就像你怕烫一样——火一烤它们就受不了，统统被消灭啦！所以煮熟等于给食物洗了个热水澡杀菌。",
       "image": "images/food/food-035-layer2.webp"
     },
     "layer3": {
@@ -1949,7 +1958,7 @@
     "ipScene": "问问兔含了一颗薄荷糖，呼出一口气：哈——好凉好凉！使劲扇着嘴巴，仿佛在吹空调。答答熊摸了摸问问兔的嘴巴温度计一样地说：其实你嘴巴没变冷哦，是薄荷在骗你的感觉小哨兵呢！",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-036-experiment.webp",
-    "warmClosing": "嘴巴里的感觉小哨兵真有趣，下次吃薄荷糖时想想它们是怎么被骗的吧！",
+    "warmClosing": "嘴巴里的感觉小哨兵你发现了，下次吃薄荷糖时想想它们是怎么被骗的吧！",
     "rabbitEmotion": "brave",
     "bearEmotion": "protective",
     "comfortCategory": "A",
@@ -2006,7 +2015,7 @@
     "ipScene": "问问兔举起一片满是洞的奶酪片，透过洞洞看答答熊，哈哈大笑：你脸上怎么有这么多圈圈！答答熊凑过来闻闻奶酪说：这是小细菌在里面吹泡泡留下的，每个洞都是一个小气球的印记呢！",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-037-experiment.webp",
-    "warmClosing": "小细菌虽然看不见，但它们在食物里做的事情可真奇妙呢！",
+    "warmClosing": "小细菌虽然看不见，但它们在食物里做的事情可这很正常哦呢！",
     "comfortCategory": "A",
     "rabbitEmotion": "brave",
     "bearEmotion": "protective",
@@ -2062,7 +2071,7 @@
     "ipScene": "问问兔指着碗里红彤彤的大虾惊讶地说：它们刚才在水里还是灰灰的呀，怎么变红了？是害羞了吗？答答熊夹起一只虾笑着说：不是害羞啦，是它的蛋白质外套被热水脱掉了，露出了里面红色的真面目！",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-038-experiment.webp",
-    "warmClosing": "大自然的颜色变化好神奇，虾壳里居然藏着这么美丽的秘密！",
+    "warmClosing": "大自然的颜色变化这很自然，虾壳里居然藏着这么美丽的秘密！",
     "rabbitEmotion": "curious",
     "bearEmotion": "gentle",
     "comfortCategory": "B",
@@ -2116,7 +2125,7 @@
       "experimentType": "hands-on",
       "image": "images/food/food-039-experiment.webp"
     },
-    "ipScene": "问问兔趴在桌边看大碗里的面团，惊呼：它在长大！面团自己在长大！答答熊掀开纱布笑着说：那是酵母宝宝在里面开吹气大赛呢，每个吹出的气泡都让面团胖一点！",
+    "ipScene": "问问兔盯着蒸锅盖子问：馒头怎么变大了？答答熊揭开锅盖，热气冒出来，笑着说：酵母宝宝在里面吹了好多好多小气泡，每个气泡都让馒头胖一点！",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-039-experiment.webp",
     "warmClosing": "小小的酵母看不见摸不着，却能让面团变成又大又软的馒头，微生物真厉害！",
@@ -2197,7 +2206,7 @@
     "layer1": {
       "answer": "洋葱被切开后会放出一种催泪烟雾弹，飘到眼睛里就让你忍不住流泪！",
       "image": "images/food/food-041-layer1.webp",
-      "interactionHint": "和大人一起，探索食物的小秘密"
+      "interactionHint": "和大人一起，摸一摸、闻一闻，探索食物的小秘密"
     },
     "layer2": {
       "followUp": "洋葱为什么要放催泪烟雾弹呢？",
@@ -2288,7 +2297,7 @@
     "ipScene": "问问兔不小心碰到了一根红辣椒又舔了舔手指，立刻哇——嘴巴像喷火龙一样伸舌头扇风。答答熊赶紧递上一杯牛奶：快喝牛奶！水没用的，牛奶才是辣椒的克星！",
     "locale": "zh-CN",
     "scienceImage": "images/food/food-042-experiment.webp",
-    "warmClosing": "辣椒用火辣辣的方式保护自己不被吃掉，但小鸟却一点也不怕辣，大自然真奇妙！",
+    "warmClosing": "辣椒用火辣辣的方式保护自己不被吃掉，但小鸟却一点也没关系辣，大自然这很正常哦！",
     "comfortCategory": "A",
     "parentGuide": "辣椒素不溶于水，牛奶解辣最有效。本内容仅供亲子互动参考，涉及安全操作请在家长全程监护下进行。如发生意外，请立即就医。",
     "rabbitEmotion": "brave",
@@ -2515,7 +2524,10 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "薯片被炸过，里面的水都跑掉了，变得干干的就很脆；面包里面有很多小气孔，像海绵一样软软的。",
-      "image": "images/food/food-2072-layer1.webp"
+      "image": "images/food/food-2072-layer1.webp",
+      "interactionHint": "把薯片和面包放在一起，让宝宝用手捏一捏、听一听咔嚓声——感受脆和软的差别！",
+      "comfortCategory": "B",
+      "interactionType": "感知类"
     },
     "layer2": {
       "answer": "脆和软的区别在于食物里有多少水。薯片在油炸时水分几乎全被炸干了，只剩下脆脆的淀粉架子。面包在烤的时候酵母产生气泡，形成了软软的蜂窝结构，而且面包里还保留了一些水分。",
@@ -2543,7 +2555,12 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔左手拿着薯片\"咔嚓\"，右手捏着面包\"软乎乎\"，困惑地问\"它们都是吃的，为什么一个像树枝一个像云朵？\"答答熊说\"薯片把水都送走了，面包把水留在了肚子里！\"",
-    "warmClosing": ""
+    "warmClosing": "脆的薯片和软的面包都是好吃的，就像有的小朋友喜欢跑跳，有的喜欢安静，不一样都很好！",
+    "comfortCategory": "B",
+    "interactionType": "感知类",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "playful",
+    "parentGuide": "让孩子用手直接感受不同食物的质地差异，锻炼触觉辨识能力。可以问\"这个捏起来是什么感觉？\"以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "food-2073",
@@ -2554,8 +2571,11 @@
     "question": "为什么巧克力含在嘴里会化掉？",
     "age": "3-5岁",
     "layer1": {
-      "answer": "巧克力是用一种叫可可脂的油做的，这种油刚好在嘴巴的温度下就会化，所以含在嘴里就变成巧克力酱啦。",
-      "image": "images/food/food-2073-layer1.webp"
+      "answer": "巧克力用可可脂做的，嘴巴的温度刚好让它化掉，含在嘴里就变成巧克力酱，暖暖的。",
+      "image": "images/food/food-2073-layer1.webp",
+      "interactionHint": "拿一小块巧克力放在宝宝手心，让宝宝用手心的温度感受巧克力慢慢变软——就像变魔术！",
+      "comfortCategory": "A",
+      "interactionType": "感知类"
     },
     "layer2": {
       "answer": "巧克力里的可可脂有一个神奇的\"开关温度\"——大约34°C。你的嘴巴正好也是这个温度，所以巧克力一进嘴就化了。如果放在冰箱里，它就保持硬硬的，因为它喜欢冷。",
@@ -2583,7 +2603,12 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔含着巧克力，惊喜地发现它慢慢变成了液体。\"巧克力在玩变魔术！\"答答熊说\"可可脂是个聪明的小家伙，它刚好在你嘴巴的温度下就变身——在冰箱里装硬汉，在嘴里变软妹子。\"",
-    "warmClosing": ""
+    "warmClosing": "巧克力化掉是因为你的体温让它变暖，这是自然的反应，和你没关系哦！",
+    "comfortCategory": "A",
+    "interactionType": "感知类",
+    "rabbitEmotion": "surprised",
+    "bearEmotion": "gentle",
+    "parentGuide": "让孩子用手心温度熔化巧克力，体验\"体温→固体变液体\"的物理变化。注意控制巧克力量，避免过量食用。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "food-2074",
@@ -2595,7 +2620,10 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "因为舌头上有好多好多感觉小兵，比身体其他地方都多，所以咬到舌头特别疼。",
-      "image": "images/food/food-2074-layer1.webp"
+      "image": "images/food/food-2074-layer1.webp",
+      "interactionHint": "让宝宝伸出舌头，用指尖轻轻碰一下，感受舌头的敏感——\"舌头上有好多感觉小兵，所以咬到会特别疼呢！\"",
+      "comfortCategory": "A",
+      "interactionType": "触觉类"
     },
     "layer2": {
       "answer": "舌头是身体上感觉最灵敏的地方之一，比手指尖还灵敏。它上面密密麻麻挤满了感觉神经，吃饭时不小心咬到，这些神经一起大喊\"疼！\"，你就觉得特别疼。",
@@ -2622,7 +2650,12 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔正在狼吞虎咽吃胡萝卜，突然\"啊\"一声捂住嘴——咬到舌头了。答答熊递过一杯凉水说\"慢慢吃，舌头上有千千万万个小哨兵，咬到它们比咬到手疼多了！\"",
-    "warmClosing": ""
+    "warmClosing": "咬到舌头虽然疼，但很快就会好——你的身体在帮你修复，舌头很厉害！",
+    "comfortCategory": "A",
+    "interactionType": "触觉类",
+    "rabbitEmotion": "curious",
+    "bearEmotion": "comforting",
+    "parentGuide": "咬到舌头是孩子吃饭时的常见小意外，用\"感觉小兵\"的比喻帮孩子理解疼痛原理，同时安抚情绪。注意：如果频繁咬到舌头，建议咨询医生。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   },
   {
     "id": "food-2075",
@@ -2634,7 +2667,10 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "可乐里住着好多二氧化碳小气泡，平时被关在瓶子里很乖，一倒进杯子它们就开心地往外跑啦。",
-      "image": "images/food/food-2075-layer1.webp"
+      "image": "images/food/food-2075-layer1.webp",
+      "interactionHint": "倒一杯可乐，让宝宝用手指轻轻碰一下杯子壁上爬上去的小气泡——\"看，气泡在挠你的手指呢！\"",
+      "comfortCategory": "B",
+      "interactionType": "观察类"
     },
     "layer2": {
       "answer": "可乐里被压进了很多二氧化碳气体，瓶盖盖着的时候气压高，气体被迫溶解在水里。一打开瓶盖，气压降低，气体就变成泡泡跑出来了。倒进杯子时晃动更厉害，泡泡跑得更快。",
@@ -2664,6 +2700,11 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔倒可乐时泡泡\"嘶嘶\"冒出来，吓得往后退。\"可乐生气了吗？\"答答熊笑着说\"是可乐里的小气泡被关了太久，一打开盖子就迫不及待地要出来跳舞啦！\"",
-    "warmClosing": ""
+    "warmClosing": "气泡跑出来是可乐在跟你打招呼呢！就像你打开门时开心地跑出来一样。",
+    "comfortCategory": "B",
+    "interactionType": "观察类",
+    "rabbitEmotion": "excited",
+    "bearEmotion": "playful",
+    "parentGuide": "用可乐气泡展示\"气体溶解→释放\"的物理现象，引导孩子观察气泡从哪里冒出来、往哪里跑。注意控制可乐摄入量。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
   }
 ]
