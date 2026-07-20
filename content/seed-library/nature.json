@@ -2744,10 +2744,7 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "因为云是由很小很小的水滴组成的，它们轻得像羽毛，空气托着它们，掉不下来。",
-      "image": "images/nature/nature-2074-layer1.webp",
-      "interactionHint": "带宝宝看天上的云，用手指追踪一朵云的移动——\"看，那朵云在飘，它是不是在找朋友？\"",
-      "comfortCategory": "B",
-      "interactionType": "观察类"
+      "image": "images/nature/nature-2074-layer1.webp"
     },
     "layer2": {
       "answer": "云是无数极小的水滴或冰晶聚在一起。每个水滴轻得几乎没重量，空气的上升气流把它们托住了。当水滴变大变重，空气托不住了，就会掉下来——那就是下雨啦。",
@@ -2775,12 +2772,7 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔躺在草地上看云，突然担心\"云会不会掉下来砸到我？\"答答熊哈哈大笑\"云是最轻的棉花糖，空气用看不见的手一直托着它们。等它们喝水喝太胖了，才会变成雨掉下来。\"",
-    "warmClosing": "云不会掉下来，就像你吹的泡泡飘在空中——轻的东西就是能飘着，很正常！",
-    "comfortCategory": "B",
-    "interactionType": "观察类",
-    "rabbitEmotion": "surprised",
-    "bearEmotion": "comforting",
-    "parentGuide": "引导孩子观察云的飘动，理解\"很轻的东西可以被空气托住\"。可以用\"吹羽毛\"对比\"扔石头\"体验轻重的概念。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
+    "warmClosing": ""
   },
   {
     "id": "nature-2075",
