@@ -2643,10 +2643,7 @@
     "age": "3-5岁",
     "layer1": {
       "answer": "可乐里住着好多二氧化碳小气泡，平时被关在瓶子里很乖，一倒进杯子它们就开心地往外跑啦。",
-      "image": "images/food/food-2075-layer1.webp",
-      "interactionHint": "倒一杯可乐，让宝宝用手指轻轻碰一下杯子壁上爬上去的小气泡——\"看，气泡在挠你的手指呢！\"",
-      "comfortCategory": "B",
-      "interactionType": "观察类"
+      "image": "images/food/food-2075-layer1.webp"
     },
     "layer2": {
       "answer": "可乐里被压进了很多二氧化碳气体，瓶盖盖着的时候气压高，气体被迫溶解在水里。一打开瓶盖，气压降低，气体就变成泡泡跑出来了。倒进杯子时晃动更厉害，泡泡跑得更快。",
@@ -2676,11 +2673,6 @@
       "experimentType": "观察"
     },
     "ipScene": "问问兔倒可乐时泡泡\"嘶嘶\"冒出来，吓得往后退。\"可乐生气了吗？\"答答熊笑着说\"是可乐里的小气泡被关了太久，一打开盖子就迫不及待地要出来跳舞啦！\"",
-    "warmClosing": "气泡跑出来是可乐在跟你打招呼呢！就像你打开门时开心地跑出来一样。",
-    "comfortCategory": "B",
-    "interactionType": "观察类",
-    "rabbitEmotion": "excited",
-    "bearEmotion": "playful",
-    "parentGuide": "用可乐气泡展示\"气体溶解→释放\"的物理现象，引导孩子观察气泡从哪里冒出来、往哪里跑。注意控制可乐摄入量。以上内容仅供参考，如遇紧急情况请及时就医或咨询专业人士。"
+    "warmClosing": ""
   }
 ]
